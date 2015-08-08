@@ -13,7 +13,6 @@
 		786FE8E71B760F37005F98B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 786FE8E51B760F37005F98B2 /* Main.storyboard */; };
 		786FE8E91B760F37005F98B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786FE8E81B760F37005F98B2 /* Images.xcassets */; };
 		786FE8EC1B760F37005F98B2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786FE8EA1B760F37005F98B2 /* LaunchScreen.xib */; };
-		786FE8F81B760F37005F98B2 /* ProtocolDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 786FE8F71B760F37005F98B2 /* ProtocolDemoTests.m */; };
 		786FE92F1B761DD8005F98B2 /* CELL_STRUCT.m in Sources */ = {isa = PBXBuildFile; fileRef = 786FE9211B761DD8005F98B2 /* CELL_STRUCT.m */; };
 		786FE9301B761DD8005F98B2 /* CELL_STRUCT_Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 786FE9231B761DD8005F98B2 /* CELL_STRUCT_Common.m */; };
 		786FE9311B761DD8005F98B2 /* CELL_STRUCT_KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 786FE9261B761DD8005F98B2 /* CELL_STRUCT_KVO.m */; };
@@ -23,16 +22,6 @@
 		786FE9351B761DD8005F98B2 /* UIButton+PENG.m in Sources */ = {isa = PBXBuildFile; fileRef = 786FE92E1B761DD8005F98B2 /* UIButton+PENG.m */; };
 		A04766D5754C254C33AFBD39 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB484CED3ECA2940D811C93 /* libPods.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		786FE8F21B760F37005F98B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 786FE8D01B760F37005F98B2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 786FE8D71B760F37005F98B2;
-			remoteInfo = ProtocolDemo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4CB484CED3ECA2940D811C93 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,7 +35,6 @@
 		786FE8E61B760F37005F98B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		786FE8E81B760F37005F98B2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		786FE8EB1B760F37005F98B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		786FE8F11B760F37005F98B2 /* HBFastTableViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HBFastTableViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		786FE8F61B760F37005F98B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		786FE8F71B760F37005F98B2 /* ProtocolDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtocolDemoTests.m; sourceTree = "<group>"; };
 		786FE9201B761DD8005F98B2 /* CELL_STRUCT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT.h; sourceTree = "<group>"; };
@@ -77,13 +65,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		786FE8EE1B760F37005F98B2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -110,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				786FE8D81B760F37005F98B2 /* HBFastTableViewController.app */,
-				786FE8F11B760F37005F98B2 /* HBFastTableViewControllerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,24 +190,6 @@
 			productReference = 786FE8D81B760F37005F98B2 /* HBFastTableViewController.app */;
 			productType = "com.apple.product-type.application";
 		};
-		786FE8F01B760F37005F98B2 /* HBFastTableViewControllerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 786FE8FE1B760F37005F98B2 /* Build configuration list for PBXNativeTarget "HBFastTableViewControllerTests" */;
-			buildPhases = (
-				786FE8ED1B760F37005F98B2 /* Sources */,
-				786FE8EE1B760F37005F98B2 /* Frameworks */,
-				786FE8EF1B760F37005F98B2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				786FE8F31B760F37005F98B2 /* PBXTargetDependency */,
-			);
-			name = HBFastTableViewControllerTests;
-			productName = ProtocolDemoTests;
-			productReference = 786FE8F11B760F37005F98B2 /* HBFastTableViewControllerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -239,10 +201,6 @@
 				TargetAttributes = {
 					786FE8D71B760F37005F98B2 = {
 						CreatedOnToolsVersion = 6.2;
-					};
-					786FE8F01B760F37005F98B2 = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 786FE8D71B760F37005F98B2;
 					};
 				};
 			};
@@ -260,7 +218,6 @@
 			projectRoot = "";
 			targets = (
 				786FE8D71B760F37005F98B2 /* HBFastTableViewController */,
-				786FE8F01B760F37005F98B2 /* HBFastTableViewControllerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -273,13 +230,6 @@
 				786FE8E71B760F37005F98B2 /* Main.storyboard in Resources */,
 				786FE8EC1B760F37005F98B2 /* LaunchScreen.xib in Resources */,
 				786FE8E91B760F37005F98B2 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		786FE8EF1B760F37005F98B2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,23 +286,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		786FE8ED1B760F37005F98B2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				786FE8F81B760F37005F98B2 /* ProtocolDemoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		786FE8F31B760F37005F98B2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 786FE8D71B760F37005F98B2 /* HBFastTableViewController */;
-			targetProxy = 786FE8F21B760F37005F98B2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		786FE8E51B760F37005F98B2 /* Main.storyboard */ = {
@@ -476,40 +410,6 @@
 			};
 			name = Release;
 		};
-		786FE8FF1B760F37005F98B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ProtocolDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = HBFastTableViewControllerTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProtocolDemo.app/ProtocolDemo";
-			};
-			name = Debug;
-		};
-		786FE9001B760F37005F98B2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ProtocolDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = HBFastTableViewControllerTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProtocolDemo.app/ProtocolDemo";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -527,15 +427,6 @@
 			buildConfigurations = (
 				786FE8FC1B760F37005F98B2 /* Debug */,
 				786FE8FD1B760F37005F98B2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		786FE8FE1B760F37005F98B2 /* Build configuration list for PBXNativeTarget "HBFastTableViewControllerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				786FE8FF1B760F37005F98B2 /* Debug */,
-				786FE9001B760F37005F98B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
