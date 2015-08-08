@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>36D02C20-FC6D-4FEF-B87A-43284F7D1F37</string>
+	<string>CCCBC2C5-1B95-419E-B039-F8D6CFEB5B4A</string>
 	<key>IDESourceControlProjectName</key>
 	<string>HBFastTableViewController</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/Natoto/HBFastTableViewCotroller.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>HBFastTableViewController.xcworkspace</string>
+	<string>HBFastTableViewController.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>760C4DBE4840D67EE2327748FBF93C06D9115FFA</key>
-		<string>..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Natoto/HBFastTableViewCotroller.git</string>
