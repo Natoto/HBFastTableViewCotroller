@@ -22,15 +22,18 @@
                             <constraint firstAttribute="height" constant="40" id="wpN-gN-P1J"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbi-gq-Ord">
-                        <rect key="frame" x="68" y="15" width="55" height="22"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbi-gq-Ord">
+                        <rect key="frame" x="68" y="15" width="177" height="22"/>
                         <state key="normal" title="汤唯 " image="cf_huangguan.png">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="223-NJ-4gG">
-                        <rect key="frame" x="256" y="13" width="59" height="34"/>
+                        <rect key="frame" x="255" y="13" width="60" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="ccx-02-Cvx"/>
+                        </constraints>
                         <state key="normal" title="￥2000">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -41,11 +44,15 @@
                     <constraint firstAttribute="trailingMargin" secondItem="223-NJ-4gG" secondAttribute="trailing" constant="10" id="2G1-k4-63B"/>
                     <constraint firstAttribute="centerY" secondItem="223-NJ-4gG" secondAttribute="centerY" constant="-0.5" id="47b-Oi-m5P"/>
                     <constraint firstAttribute="centerY" secondItem="NhM-KA-hoh" secondAttribute="centerY" id="Fz2-9L-016"/>
+                    <constraint firstItem="223-NJ-4gG" firstAttribute="leading" secondItem="Qbi-gq-Ord" secondAttribute="trailing" constant="10" id="P2d-ti-mOa"/>
                     <constraint firstItem="NhM-KA-hoh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="WPD-lh-9ax"/>
                     <constraint firstAttribute="centerY" secondItem="Qbi-gq-Ord" secondAttribute="centerY" constant="3.5" id="aSV-0S-S6u"/>
                     <constraint firstItem="Qbi-gq-Ord" firstAttribute="leading" secondItem="NhM-KA-hoh" secondAttribute="trailing" constant="10" id="qhi-ih-9We"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="lbl_title" destination="Qbi-gq-Ord" id="b8j-Pb-l3A"/>
+            </connections>
             <point key="canvasLocation" x="313.5" y="190"/>
         </tableViewCell>
     </objects>

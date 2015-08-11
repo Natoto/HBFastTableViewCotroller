@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "HBTable.h"
 #import "TESTXIBViewController.h"
+#import "TESTAutoHeightViewController.h"
 
 @interface ViewController ()
 //step 1
@@ -42,6 +43,11 @@ GET_CELL_SELECT_ACTION(cellstruct)
         TESTXIBViewController * ctr = [[TESTXIBViewController alloc] init];
         [self.navigationController pushViewController:ctr animated:YES];
     }
+    else if(cellstruct == self.cell_struct_autoheight)
+    {
+        TESTAutoHeightViewController * ctr =[[TESTAutoHeightViewController alloc] init];
+        [self.navigationController pushViewController:ctr animated:YES];
+    }
 }
 
 - (void)viewDidLoad {
@@ -51,6 +57,7 @@ GET_CELL_SELECT_ACTION(cellstruct)
     [self.dataDictionary setObject:self.cell_struct_sys forKey:KEY_INDEXPATH(0, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_xib forKey:KEY_INDEXPATH(0, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_autoheight forKey:KEY_INDEXPATH(0, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_refresh forKey:KEY_INDEXPATH(0, rowIndex++)];
   
 }
 

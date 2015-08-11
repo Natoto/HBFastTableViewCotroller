@@ -29,6 +29,8 @@
 		18678F5A1B79EEF10062A073 /* CF_SupporterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18678F581B79EEF10062A073 /* CF_SupporterTableViewCell.m */; };
 		18678F5B1B79EEF10062A073 /* CF_SupporterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18678F591B79EEF10062A073 /* CF_SupporterTableViewCell.xib */; };
 		18678F5D1B79EF230062A073 /* beauty.png in Resources */ = {isa = PBXBuildFile; fileRef = 18678F5C1B79EF230062A073 /* beauty.png */; };
+		18678F601B7A09DD0062A073 /* TESTAutoHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18678F5F1B7A09DD0062A073 /* TESTAutoHeightViewController.m */; };
+		5154282E333DB6FB31B053AC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47243643C8635681725F3A66 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,11 @@
 		18678F581B79EEF10062A073 /* CF_SupporterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CF_SupporterTableViewCell.m; sourceTree = "<group>"; };
 		18678F591B79EEF10062A073 /* CF_SupporterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CF_SupporterTableViewCell.xib; sourceTree = "<group>"; };
 		18678F5C1B79EF230062A073 /* beauty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beauty.png; sourceTree = "<group>"; };
+		18678F5E1B7A09DD0062A073 /* TESTAutoHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TESTAutoHeightViewController.h; sourceTree = "<group>"; };
+		18678F5F1B7A09DD0062A073 /* TESTAutoHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESTAutoHeightViewController.m; sourceTree = "<group>"; };
+		47243643C8635681725F3A66 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA8C334F8F9913F1207427FD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BAD90533045FAC1328C1175F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5154282E333DB6FB31B053AC /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +118,8 @@
 				1841309F1B79DF4A002AB4C0 /* demo */,
 				184130B91B79DF4A002AB4C0 /* demoTests */,
 				1841309E1B79DF4A002AB4C0 /* Products */,
+				D16DBC8AEE4E9705E0F362E0 /* Pods */,
+				9ACE7B77D01F4B286050C2D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +141,8 @@
 				18678F461B79E8240062A073 /* SystyleviewController.m */,
 				18678F4A1B79ED6A0062A073 /* TESTXIBViewController.h */,
 				18678F4B1B79ED6A0062A073 /* TESTXIBViewController.m */,
+				18678F5E1B7A09DD0062A073 /* TESTAutoHeightViewController.h */,
+				18678F5F1B7A09DD0062A073 /* TESTAutoHeightViewController.m */,
 				18678F521B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.h */,
 				18678F531B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.m */,
 				18678F541B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.xib */,
@@ -199,6 +211,23 @@
 			path = ../HBFastTableViewController;
 			sourceTree = "<group>";
 		};
+		9ACE7B77D01F4B286050C2D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47243643C8635681725F3A66 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D16DBC8AEE4E9705E0F362E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA8C334F8F9913F1207427FD /* Pods.debug.xcconfig */,
+				BAD90533045FAC1328C1175F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -206,9 +235,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 184130C01B79DF4A002AB4C0 /* Build configuration list for PBXNativeTarget "demo" */;
 			buildPhases = (
+				CF6828FEB959769E1C8534CD /* Check Pods Manifest.lock */,
 				184130991B79DF4A002AB4C0 /* Sources */,
 				1841309A1B79DF4A002AB4C0 /* Frameworks */,
 				1841309B1B79DF4A002AB4C0 /* Resources */,
+				4DC490534AA93E50438CEE32 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,6 +329,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4DC490534AA93E50438CEE32 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF6828FEB959769E1C8534CD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		184130991B79DF4A002AB4C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -309,6 +373,7 @@
 				184130A91B79DF4A002AB4C0 /* ViewController.m in Sources */,
 				18678F4C1B79ED6A0062A073 /* TESTXIBViewController.m in Sources */,
 				18678F5A1B79EEF10062A073 /* CF_SupporterTableViewCell.m in Sources */,
+				18678F601B7A09DD0062A073 /* TESTAutoHeightViewController.m in Sources */,
 				184130A61B79DF4A002AB4C0 /* AppDelegate.m in Sources */,
 				18678F441B79E3620062A073 /* UIButton+PENG.m in Sources */,
 				18678F551B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.m in Sources */,
@@ -442,6 +507,7 @@
 		};
 		184130C11B79DF4A002AB4C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA8C334F8F9913F1207427FD /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = demo/Info.plist;
@@ -453,6 +519,7 @@
 		};
 		184130C21B79DF4A002AB4C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAD90533045FAC1328C1175F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = demo/Info.plist;

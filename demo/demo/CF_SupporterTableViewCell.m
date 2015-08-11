@@ -9,7 +9,18 @@
 #import "CF_SupporterTableViewCell.h"
 
 @implementation CF_SupporterTableViewCell
+//NO_DEFAULT_TITLE
+NO_DEFAULT_PLACEHOLDER
+NO_DEFAULT_TITLE_PROFILE
 
+-(void)setcellTitle:(NSString *)title
+{
+    self.lbl_title.titleLabel.numberOfLines = 0;
+    self.lbl_title.titleLabel.lineBreakMode = 0;
+    
+    [self.lbl_title setTitle:title forState:UIControlStateNormal];
+    [self.lbl_title sizeThatFits:CGSizeMake(177, 30)];
+}
 - (void)awakeFromNib {
     // Initialization code
 }
@@ -22,6 +33,8 @@
 
 -(CGSize)sizeThatFits:(CGSize)size
 {
-    return CGSizeMake(size.width, 55);
+    CGSize btnsize = [self.lbl_title.titleLabel sizeThatFits:CGSizeMake(177, 20)];
+    btnsize.height = btnsize.height + 20;
+    return CGSizeMake(size.width, btnsize.height);
 }
 @end

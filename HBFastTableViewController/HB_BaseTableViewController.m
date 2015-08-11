@@ -342,7 +342,7 @@
             {
                 cell = [[cls alloc]  initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:identifier01];
             }
-            else if(cellstruct.CellStyleValue == 3)
+            else if(cellstruct.CellStyleValue == 3)// (Used in iPod).
             {
                 cell = [[cls alloc]  initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier01];
             }

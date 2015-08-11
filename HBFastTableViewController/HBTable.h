@@ -7,4 +7,5 @@
 //
 
 #import "HB_BaseTableViewController.h"
-#import "CELL_STRUCT_Common.H"
+#import "CELL_STRUCT_Common.h"
+#import "HB_BaseTableViewCell.h"

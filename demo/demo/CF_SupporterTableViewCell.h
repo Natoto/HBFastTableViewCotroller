@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "HB_BaseTableViewCell.h"
 @interface CF_SupporterTableViewCell : HB_BaseTableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *lbl_title;
 
 @end
