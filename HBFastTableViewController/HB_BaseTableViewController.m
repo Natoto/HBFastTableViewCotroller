@@ -9,7 +9,7 @@
 #import "HB_BaseTableViewController.h"
 #import <objc/runtime.h>
 
-#if USERMJREFRESH
+#if USE_MJREFRESH
 #import "MJRefresh.h"
 #endif
 
@@ -115,7 +115,7 @@
 }
 
 
-#if USEMJREFRESH
+#if USE_MJREFRESH
 /**
  *  集成刷新控件
  */
@@ -148,8 +148,7 @@
     }
     else
     {
-        self.tableView.footer = [MJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(getNextPageView)];
-//        [self.tableView addFooterWithTarget:self action:@selector(getNextPageView)];
+        self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(getNextPageView)];
     }
 }
 

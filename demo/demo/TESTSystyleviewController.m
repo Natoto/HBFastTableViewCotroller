@@ -6,18 +6,18 @@
 //  Copyright (c) 2015年 nonato. All rights reserved.
 //
 
-#import "SystyleviewController.h"
+#import "TESTSystyleviewController.h"
 #import "HBTable.h"
 //随机颜色
 
 #undef HBRandomColor
 #define HBRandomColor [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1]
 
-@interface SystyleviewController ()
+@interface TESTSystyleviewController ()
 
 @end
 
-@implementation SystyleviewController
+@implementation TESTSystyleviewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

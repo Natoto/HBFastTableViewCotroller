@@ -8,6 +8,6 @@
 
 #import "HB_BaseTableViewController.h"
 
-@interface SystyleviewController : HB_BaseTableViewController
+@interface TESTSystyleviewController : HB_BaseTableViewController
 
 @end

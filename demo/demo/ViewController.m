@@ -5,12 +5,12 @@
 //  Created by 跑酷 on 15/8/11.
 //  Copyright (c) 2015年 nonato. All rights reserved.
 //
-#import "SystyleviewController.h"
+#import "TESTSystyleviewController.h"
 #import "ViewController.h"
 #import "HBTable.h"
 #import "TESTXIBViewController.h"
 #import "TESTAutoHeightViewController.h"
-
+#import "TESTRefreshViewController.h"
 @interface ViewController ()
 //step 1
 AS_CELL_STRUCT_COMMON(sys)
@@ -35,7 +35,7 @@ GET_CELL_SELECT_ACTION(cellstruct)
 {
     if(cellstruct == self.cell_struct_sys)
     {
-        SystyleviewController * ctr = [[SystyleviewController alloc] init];
+        TESTSystyleviewController * ctr = [[TESTSystyleviewController alloc] init];
         [self.navigationController pushViewController:ctr animated:YES];
     }
     else if(cellstruct == self.cell_struct_xib)
@@ -46,6 +46,11 @@ GET_CELL_SELECT_ACTION(cellstruct)
     else if(cellstruct == self.cell_struct_autoheight)
     {
         TESTAutoHeightViewController * ctr =[[TESTAutoHeightViewController alloc] init];
+        [self.navigationController pushViewController:ctr animated:YES];
+    }
+    else if(cellstruct == self.cell_struct_refresh)
+    {
+        TESTRefreshViewController * ctr =[[TESTRefreshViewController alloc] init];
         [self.navigationController pushViewController:ctr animated:YES];
     }
 }

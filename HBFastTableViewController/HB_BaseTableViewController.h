@@ -16,7 +16,7 @@
  pod 'MJRefresh', '~> 2.2.1'
  - Homepage: https://github.com/CoderMJLee/MJRefresh
  */
-#define USERMJREFRESH 0 //0不用到MJRefresh 1 用到了MJRefresh
+#define USE_MJREFRESH 1 //0不用到MJRefresh 1 用到了MJRefresh
 
 static NSString * notify_basetableview_tap = @"basetableview_tap";
 static NSString * notify_basetableview_sender = @"BaseViewController";
@@ -34,7 +34,7 @@ static NSString * notify_basetableview_sender = @"BaseViewController";
 //点击之后不自动变回未选状态
 @property (nonatomic, assign) BOOL                       nodeselectRow;
 
-#if USERMJREFRESH //是否需要用到MJRefresh
+#if USE_MJREFRESH //是否需要用到MJRefresh
 //上下拉要用到的
 @property (nonatomic, assign) BOOL                       noFooterView;
 @property (nonatomic, assign) BOOL                       noHeaderFreshView;
