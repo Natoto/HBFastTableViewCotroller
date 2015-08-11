@@ -57,4 +57,6 @@ __MOTHOD\
 -(void)setcelldetailtitle:(NSString *)detailtitle;
 -(void)setcellimageCornerRadius:(BOOL)CornerRadius;
 //-(void)setcellAction:(SEL)action;
+
+-(CGSize)sizeThatFits:(CGSize)size;
 @end

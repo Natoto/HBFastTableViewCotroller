@@ -233,4 +233,9 @@
 -(void)setcellAction:(SEL)action{}
 -(void)setinputAccessoryView:(NSString *)inputAccessoryView{}
 -(void)setinputView:(NSString *)inputView{}
+
+-(CGSize)sizeThatFits:(CGSize)size
+{
+    return CGSizeMake(size.width, 50);
+}
 @end
