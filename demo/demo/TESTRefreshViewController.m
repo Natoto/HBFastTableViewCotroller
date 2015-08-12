@@ -7,7 +7,7 @@
 //
 #import "HBTable.h"
 #import "TESTRefreshViewController.h"
-
+ 
 //上下拉需要解开
 //#define USERMJREFRESH 1 //0不用到MJRefresh 1 用到了MJRefresh
 @interface TESTRefreshViewController ()
@@ -62,14 +62,5 @@ GET_CELL_SELECT_ACTION(cellstruct)
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
