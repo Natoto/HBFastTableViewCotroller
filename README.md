@@ -4,6 +4,7 @@
 
 
 ##用法
+pod 'HBFastTable', :git => 'https://github.com/Natoto/HBFastTableViewCotroller.git'
 
 ```javascript
 
