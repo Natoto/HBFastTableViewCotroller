@@ -213,3 +213,43 @@
 }
 
 @end
+
+
+@implementation UIViewController(KEYINDEXPATH)
+-(NSString *)KEY_INDEXPATH:(NSInteger )SECTION ROW:(NSInteger)ROW
+{
+  return KEY_INDEXPATH(SECTION,ROW); //[NSString stringWithFormat:@"section%u_%u",(int)SECTION,(int)ROW];
+}
+
+-(NSString *)KEY_SECTION:(NSInteger)SECTION
+{
+    return KEY_SECTION(SECTION);
+}
+//#define KEY_SECTION(SECTION) [NSString stringWithFormat:@"section%d",(int)SECTION]
+//#define KEY_SECTION_MARK(SECTION) [NSString stringWithFormat:@"section%d_",(int)SECTION]
+-(NSString *)KEY_SECTION_MARK:(NSInteger)SECTION
+{
+    return  [NSString stringWithFormat:@"section%d_",(int)SECTION];
+}
+
+-(NSString *)KEY_SECTION_INDEX_STR:(NSString *)INDEXPATHKEY
+{
+    return  ((INDEXPATHKEY.length >9)?[INDEXPATHKEY substringWithRange:NSMakeRange(7, 1)]:nil);
+}
+//#define KEY_SECTION_INDEX_STR(INDEXPATHKEY)  ((INDEXPATHKEY.length >9)?[INDEXPATHKEY substringWithRange:NSMakeRange(7, 1)]:nil)
+
+//SECTION
+//#define KEY_INDEXPATH_SECTION_STR(INDEXPATHKEY)  ((INDEXPATHKEY.length >9)?[INDEXPATHKEY substringWithRange:NSMakeRange(7, 1)]:nil)
+-(NSString *)KEY_INDEXPATH_SECTION_STR:(NSString *)INDEXPATHKEY
+{
+    return  ((INDEXPATHKEY.length >9)?[INDEXPATHKEY substringWithRange:NSMakeRange(7, 1)]:nil);
+}
+
+//ROW
+//#define KEY_INDEXPATH_ROW_STR(INDEXPATHKEY)  [INDEXPATHKEY substringFromIndex:(([INDEXPATHKEY rangeOfString:@"_"]).location + ([INDEXPATHKEY rangeOfString:@"_"]).length)]
+-(NSString *)KEY_INDEXPATH_ROW_STR:(NSString *)INDEXPATHKEY
+{
+    return  [INDEXPATHKEY substringFromIndex:(([INDEXPATHKEY rangeOfString:@"_"]).location + ([INDEXPATHKEY rangeOfString:@"_"]).length)];
+}
+
+@end

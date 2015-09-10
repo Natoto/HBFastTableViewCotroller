@@ -122,3 +122,12 @@ return _cell_struct_##OBJ;\
 +(UIColor *)colorWithStructKey:(NSString *)key;
 
 @end
+
+@interface UIViewController(KEYINDEXPATH)
+-(NSString *)KEY_INDEXPATH:(NSInteger )SECTION ROW:(NSInteger)ROW;
+-(NSString *)KEY_SECTION:(NSInteger)SECTION;
+-(NSString *)KEY_SECTION_MARK:(NSInteger)SECTION;
+-(NSString *)KEY_SECTION_INDEX_STR:(NSString *)INDEXPATHKEY;
+-(NSString *)KEY_INDEXPATH_SECTION_STR:(NSString *)INDEXPATHKEY;
+-(NSString *)KEY_INDEXPATH_ROW_STR:(NSString *)INDEXPATHKEY;
+@end
