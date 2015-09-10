@@ -1,0 +1,11 @@
+platform :ios, "7.0"
+pod 'HBFastTable', :git => 'https://github.com/Natoto/HBFastTableViewCotroller.git'
+
+#use_frameworks!
+#pod 'Alamofire', '~> 2.0.0-beta.3'
+
+
+#pod "<#PodName#>"
+#target :<#TargetName#>Tests, :exclusive => true do
+  # pod 'Kiwi'
+#end
