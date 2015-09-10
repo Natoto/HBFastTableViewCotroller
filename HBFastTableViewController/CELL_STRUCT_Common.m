@@ -186,9 +186,7 @@
  + (UIColor *)brownColor;      // 0.6, 0.4, 0.2 RGB
  + (UIColor *)clearColor;      // 0.0 white, 0.0 alpha
  */
-
-
-
+ 
 +(UIColor *)colorWithStructKey:(NSString *)key
 {
     if ([key isEqualToString:value_cellstruct_blue]) {
