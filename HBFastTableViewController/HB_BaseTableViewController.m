@@ -33,7 +33,7 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     //    self.dataDictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    //[self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     if (!self.noAutoConfigTableView) {
         [self configTableView];
     }

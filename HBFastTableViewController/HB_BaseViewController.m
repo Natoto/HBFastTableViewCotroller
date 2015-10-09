@@ -23,9 +23,7 @@
     // Drawing code
 }
 @end
-
-
-
+ 
 @implementation HB_BaseViewController
 
 
@@ -62,34 +60,11 @@
     
 //    ADD_HBSIGNAL_OBSERVER(self, @"networkerror", @"HTTPSEngine");
 }
--(void)setTitle:(NSString *)title
-{
-    //设置标题栏
-//    UIButton * button = [UIButton CreateButtonWithFrame:CGRectMake(80, 5, 220, 44) andTxt:title];
-//    //    [self.navigationbar setTitle:title];
-//    [button addTarget:self action:@selector(hbNavigationbartitleTap:) forControlEvents:UIControlEventTouchUpInside];
-//    self.navigationbar.titleView = button;
-}
-
 -(IBAction)hbNavigationbartitleTap:(id)sender
 {
     
 }
-//- (UIStatusBarStyle)preferredStatusBarStyle
-//{
-//     if (self.statusBarStyleDefault) {
-//         return UIStatusBarStyleDefault;
-//     }
-//    else
-//        return UIStatusBarStyleLightContent;
-//}
-//
-//-(void)setStatusBarStyleDefault:(BOOL)statusBarStyleDefault
-//{
-//    _statusBarStyleDefault = statusBarStyleDefault; 
-//}
 
-//static UIStatusBarStyle barstyle;
 
 -(void)setStatusBarStyleDefault:(BOOL)statusBarStyleDefault
 {

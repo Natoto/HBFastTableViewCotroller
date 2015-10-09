@@ -252,4 +252,8 @@
     return  [INDEXPATHKEY substringFromIndex:(([INDEXPATHKEY rangeOfString:@"_"]).location + ([INDEXPATHKEY rangeOfString:@"_"]).length)];
 }
 
+//-(void)reduceblock:(void (^)(NSString *, NSNumber *))block
+//{
+//}
+
 @end

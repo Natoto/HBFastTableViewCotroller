@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="RefreshTableView" customModuleProvider="target">
+            <connections>
+                <outlet property="btn_login" destination="pIZ-Zm-UUS" id="XEN-gj-P0G"/>
+                <outlet property="txt_account" destination="EW9-Po-UVC" id="uhE-YR-rMx"/>
+                <outlet property="txt_password" destination="Gyj-GO-rFd" id="YGC-cj-CMI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="389" height="456"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="QQ账号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EW9-Po-UVC">
+                    <rect key="frame" x="95" y="78" width="166" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="166" id="Mfn-VM-4bv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gyj-GO-rFd">
+                    <rect key="frame" x="95" y="116" width="166" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIZ-Zm-UUS">
+                    <rect key="frame" x="103" y="171" width="151" height="30"/>
+                    <state key="normal" title="登陆">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="login:" destination="-1" eventType="touchUpInside" id="Jq3-bk-9tD"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="EW9-Po-UVC" secondAttribute="centerX" constant="16.5" id="12X-ee-RcD"/>
+                <constraint firstItem="EW9-Po-UVC" firstAttribute="width" secondItem="Gyj-GO-rFd" secondAttribute="width" id="8qI-3E-hfr"/>
+                <constraint firstItem="Gyj-GO-rFd" firstAttribute="top" secondItem="EW9-Po-UVC" secondAttribute="bottom" constant="8" id="MHw-qf-7Ul"/>
+                <constraint firstItem="EW9-Po-UVC" firstAttribute="centerX" secondItem="Gyj-GO-rFd" secondAttribute="centerX" id="Qyg-IW-09i"/>
+                <constraint firstAttribute="centerX" secondItem="pIZ-Zm-UUS" secondAttribute="centerX" constant="16" id="S1o-nB-6vf"/>
+                <constraint firstItem="pIZ-Zm-UUS" firstAttribute="top" secondItem="Gyj-GO-rFd" secondAttribute="bottom" constant="25" id="vS2-gu-B7u"/>
+                <constraint firstItem="EW9-Po-UVC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="78" id="yZ9-j4-Vkg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="166.5" y="301"/>
+        </view>
+    </objects>
+</document>

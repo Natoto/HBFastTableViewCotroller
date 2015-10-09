@@ -190,6 +190,7 @@
 //        [self.imageView sd_setImageWithURL:[NSURL URLWithString:profile] placeholderImage:[UIImage imageFileNamed:@"big_icon"] options:SDWebImageLowPriority completed:nil];
         return;
     }
+    if(profile.length)
     self.imageView.image = [UIImage imageNamed:profile];
 }
 
