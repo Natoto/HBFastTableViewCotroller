@@ -6,8 +6,7 @@
 //  Copyright (c) 2015年 BooB. All rights reserved.
 //
 
-#import "CELL_STRUCT.h"
-
+#import "CELL_STRUCT.h" 
 
 @implementation CELL_STRUCT
 -(id)initWithtitle:(NSString *)title cellclass:(NSString *)cellclass placeholder:(NSString *)placehoder accessory:(BOOL)accessory sel_selctor:(SEL)selector delegate:(id)delegate

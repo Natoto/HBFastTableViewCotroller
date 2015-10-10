@@ -24,6 +24,17 @@ class HB_BaseTableViewCell: UITableViewCell {
         self.object = object;
         
     }
+    override required init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+      super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

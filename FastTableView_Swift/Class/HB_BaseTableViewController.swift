@@ -43,18 +43,40 @@ class HB_BaseTableViewController: HB_BaseViewController,UITableViewDelegate,UITa
         return self.MAX_ROW(section, ALLINDEXPATHKEYS:allkeys)
     }
     
+    //TODO: 设置行
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var Cell:HB_BaseTableViewCell? = tableView.dequeueReusableCellWithIdentifier("cell") as? HB_BaseTableViewCell
-        if  (Cell == nil)
-        {
-            Cell = HB_BaseTableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
-        }
         let key_indexpath:String? = self.KEY_INDEXPATH(indexPath.section, ROW: indexPath.row)
-        let cellstruct:HB_CELLSTRUCT! = self.dataDictionary[key_indexpath!] as! HB_CELLSTRUCT
-      
-        Cell?.setcellTitle(cellstruct!.title)
+        let cellstruct:HB_CELLSTRUCT! = self.getcellstructWithIndexPath(indexPath)
+        let identifier01:String = cellstruct.cellclass
         
-//        let key_indexpath = self.KEY_INDEXPATH(indexPath.section, ROW: indexPath.row)
+        var Cell:HB_BaseTableViewCell?
+        if cellstruct.xibvalue != nil &&  cellstruct.xibvalue == HB_CELLSTRUCT.xib()
+        {
+            Cell = tableView.dequeueReusableCellWithIdentifier(identifier01, forIndexPath: indexPath) as? HB_BaseTableViewCell
+        }
+        else
+        {
+            Cell = tableView.dequeueReusableCellWithIdentifier(identifier01) as? HB_BaseTableViewCell
+        }
+        if (Cell == nil)
+        {
+            let ClassName:String = cellstruct.cellclass
+//            let cls:AnyClass? = NSClassFromString(ClassName)!
+            
+             let cls:HB_BaseTableViewCell.Type? = NSClassFromString(ClassName)! as? HB_BaseTableViewCell.Type
+            assert(cls != nil, "class not found,please check className")
+            
+            if cellstruct.xibvalue != nil &&  cellstruct.xibvalue == HB_CELLSTRUCT.xib()
+            {
+                Cell = NSBundle.mainBundle().loadNibNamed(ClassName, owner: self, options: nil).last as? HB_BaseTableViewCell
+            }
+            else
+            {
+               Cell = cls!.init(style: UITableViewCellStyle.Default, reuseIdentifier: identifier01)
+            }
+        }
+        Cell?.setcellTitle(cellstruct!.title!)
+        
         let key_sectionstr = self.KEY_INDEXPATH_SECTION_STR(key_indexpath!)
         let key_rowstr = self.KEY_INDEXPATH_ROW_STR(key_indexpath!)
         print(key_indexpath! + " section: " + key_sectionstr + " row: "  + key_rowstr)
@@ -62,9 +84,46 @@ class HB_BaseTableViewController: HB_BaseViewController,UITableViewDelegate,UITa
         return Cell!
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 44.0
+    func  getTableViewCellStyleFrom(cellStyleValue:Int)->UITableViewCellStyle
+    {
+        switch cellStyleValue{
+        case 0:
+            return UITableViewCellStyle.Default
+        case 1:
+            return UITableViewCellStyle.Value1
+        case 2:
+            return UITableViewCellStyle.Value2
+        default:
+            return UITableViewCellStyle.Default
+        }
     }
+    
+    //MARK 其他设置用在 cellForRowAtIndexPath
+    func othercellsetting(){}
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        let cellstruct:HB_CELLSTRUCT! = self.getcellstructWithIndexPath(indexPath)
+        return CGFloat(cellstruct.cellheight)
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if self.getcellstructWithIndexPath(indexPath).deselectRow == true
+        {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true);
+        }
+    }
+    
+    func getcellstructWithIndexPath(indexPath:NSIndexPath) ->HB_CELLSTRUCT
+    {
+        let key_indexpath:String? = self.KEY_INDEXPATH(indexPath.section, ROW: indexPath.row)
+        let cellstruct:HB_CELLSTRUCT! = self.dataDictionary[key_indexpath!] as! HB_CELLSTRUCT
+        return cellstruct;
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

@@ -24,13 +24,13 @@
 		18678F5D1B79EF230062A073 /* beauty.png in Resources */ = {isa = PBXBuildFile; fileRef = 18678F5C1B79EF230062A073 /* beauty.png */; };
 		18678F601B7A09DD0062A073 /* TESTAutoHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18678F5F1B7A09DD0062A073 /* TESTAutoHeightViewController.m */; };
 		18678F631B7A115B0062A073 /* TESTRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18678F621B7A115B0062A073 /* TESTRefreshViewController.m */; };
-		188BF4AF1B7AE94D00A04A49 /* CELL_STRUCT.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BF4A01B7AE94D00A04A49 /* CELL_STRUCT.m */; };
-		188BF4B01B7AE94D00A04A49 /* CELL_STRUCT_Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BF4A21B7AE94D00A04A49 /* CELL_STRUCT_Common.m */; };
-		188BF4B11B7AE94D00A04A49 /* CELL_STRUCT_KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BF4A51B7AE94D00A04A49 /* CELL_STRUCT_KVO.m */; };
-		188BF4B21B7AE94D00A04A49 /* HB_BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BF4A71B7AE94D00A04A49 /* HB_BaseTableViewCell.m */; };
-		188BF4B31B7AE94D00A04A49 /* HB_BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BF4A91B7AE94D00A04A49 /* HB_BaseTableViewController.m */; };
-		188BF4B41B7AE94D00A04A49 /* HB_BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BF4AB1B7AE94D00A04A49 /* HB_BaseViewController.m */; };
-		188BF4B51B7AE94D00A04A49 /* UIButton+PENG.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BF4AE1B7AE94D00A04A49 /* UIButton+PENG.m */; };
+		33B49BD71BC8B6AF00D41052 /* CELL_STRUCT.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B49BC81BC8B6AF00D41052 /* CELL_STRUCT.m */; settings = {ASSET_TAGS = (); }; };
+		33B49BD81BC8B6AF00D41052 /* CELL_STRUCT_Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B49BCA1BC8B6AF00D41052 /* CELL_STRUCT_Common.m */; settings = {ASSET_TAGS = (); }; };
+		33B49BD91BC8B6AF00D41052 /* CELL_STRUCT_KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B49BCD1BC8B6AF00D41052 /* CELL_STRUCT_KVO.m */; settings = {ASSET_TAGS = (); }; };
+		33B49BDA1BC8B6AF00D41052 /* HB_BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B49BCF1BC8B6AF00D41052 /* HB_BaseTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		33B49BDB1BC8B6AF00D41052 /* HB_BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B49BD11BC8B6AF00D41052 /* HB_BaseTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		33B49BDC1BC8B6AF00D41052 /* HB_BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B49BD31BC8B6AF00D41052 /* HB_BaseViewController.m */; settings = {ASSET_TAGS = (); }; };
+		33B49BDD1BC8B6AF00D41052 /* UIButton+PENG.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B49BD61BC8B6AF00D41052 /* UIButton+PENG.m */; settings = {ASSET_TAGS = (); }; };
 		5154282E333DB6FB31B053AC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47243643C8635681725F3A66 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -74,22 +74,22 @@
 		18678F5F1B7A09DD0062A073 /* TESTAutoHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESTAutoHeightViewController.m; sourceTree = "<group>"; };
 		18678F611B7A115B0062A073 /* TESTRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TESTRefreshViewController.h; sourceTree = "<group>"; };
 		18678F621B7A115B0062A073 /* TESTRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESTRefreshViewController.m; sourceTree = "<group>"; };
-		188BF49F1B7AE94D00A04A49 /* CELL_STRUCT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT.h; sourceTree = "<group>"; };
-		188BF4A01B7AE94D00A04A49 /* CELL_STRUCT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CELL_STRUCT.m; sourceTree = "<group>"; };
-		188BF4A11B7AE94D00A04A49 /* CELL_STRUCT_Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT_Common.h; sourceTree = "<group>"; };
-		188BF4A21B7AE94D00A04A49 /* CELL_STRUCT_Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CELL_STRUCT_Common.m; sourceTree = "<group>"; };
-		188BF4A31B7AE94D00A04A49 /* CELL_STRUCT_KEY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT_KEY.h; sourceTree = "<group>"; };
-		188BF4A41B7AE94D00A04A49 /* CELL_STRUCT_KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT_KVO.h; sourceTree = "<group>"; };
-		188BF4A51B7AE94D00A04A49 /* CELL_STRUCT_KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CELL_STRUCT_KVO.m; sourceTree = "<group>"; };
-		188BF4A61B7AE94D00A04A49 /* HB_BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HB_BaseTableViewCell.h; sourceTree = "<group>"; };
-		188BF4A71B7AE94D00A04A49 /* HB_BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB_BaseTableViewCell.m; sourceTree = "<group>"; };
-		188BF4A81B7AE94D00A04A49 /* HB_BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HB_BaseTableViewController.h; sourceTree = "<group>"; };
-		188BF4A91B7AE94D00A04A49 /* HB_BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB_BaseTableViewController.m; sourceTree = "<group>"; };
-		188BF4AA1B7AE94D00A04A49 /* HB_BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HB_BaseViewController.h; sourceTree = "<group>"; };
-		188BF4AB1B7AE94D00A04A49 /* HB_BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB_BaseViewController.m; sourceTree = "<group>"; };
-		188BF4AC1B7AE94D00A04A49 /* HBTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTable.h; sourceTree = "<group>"; };
-		188BF4AD1B7AE94D00A04A49 /* UIButton+PENG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PENG.h"; sourceTree = "<group>"; };
-		188BF4AE1B7AE94D00A04A49 /* UIButton+PENG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PENG.m"; sourceTree = "<group>"; };
+		33B49BC71BC8B6AF00D41052 /* CELL_STRUCT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT.h; sourceTree = "<group>"; };
+		33B49BC81BC8B6AF00D41052 /* CELL_STRUCT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CELL_STRUCT.m; sourceTree = "<group>"; };
+		33B49BC91BC8B6AF00D41052 /* CELL_STRUCT_Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT_Common.h; sourceTree = "<group>"; };
+		33B49BCA1BC8B6AF00D41052 /* CELL_STRUCT_Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CELL_STRUCT_Common.m; sourceTree = "<group>"; };
+		33B49BCB1BC8B6AF00D41052 /* CELL_STRUCT_KEY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT_KEY.h; sourceTree = "<group>"; };
+		33B49BCC1BC8B6AF00D41052 /* CELL_STRUCT_KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT_KVO.h; sourceTree = "<group>"; };
+		33B49BCD1BC8B6AF00D41052 /* CELL_STRUCT_KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CELL_STRUCT_KVO.m; sourceTree = "<group>"; };
+		33B49BCE1BC8B6AF00D41052 /* HB_BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HB_BaseTableViewCell.h; sourceTree = "<group>"; };
+		33B49BCF1BC8B6AF00D41052 /* HB_BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB_BaseTableViewCell.m; sourceTree = "<group>"; };
+		33B49BD01BC8B6AF00D41052 /* HB_BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HB_BaseTableViewController.h; sourceTree = "<group>"; };
+		33B49BD11BC8B6AF00D41052 /* HB_BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB_BaseTableViewController.m; sourceTree = "<group>"; };
+		33B49BD21BC8B6AF00D41052 /* HB_BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HB_BaseViewController.h; sourceTree = "<group>"; };
+		33B49BD31BC8B6AF00D41052 /* HB_BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB_BaseViewController.m; sourceTree = "<group>"; };
+		33B49BD41BC8B6AF00D41052 /* HBTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTable.h; sourceTree = "<group>"; };
+		33B49BD51BC8B6AF00D41052 /* UIButton+PENG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PENG.h"; sourceTree = "<group>"; };
+		33B49BD61BC8B6AF00D41052 /* UIButton+PENG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PENG.m"; sourceTree = "<group>"; };
 		47243643C8635681725F3A66 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8C334F8F9913F1207427FD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BAD90533045FAC1328C1175F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		184130941B79DF49002AB4C0 = {
 			isa = PBXGroup;
 			children = (
-				188BF49E1B7AE94D00A04A49 /* HBFastTableViewController */,
+				33B49BC61BC8B6AF00D41052 /* HBFastTableViewController */,
 				1841309F1B79DF4A002AB4C0 /* demo */,
 				184130B91B79DF4A002AB4C0 /* demoTests */,
 				1841309E1B79DF4A002AB4C0 /* Products */,
@@ -192,28 +192,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		188BF49E1B7AE94D00A04A49 /* HBFastTableViewController */ = {
+		33B49BC61BC8B6AF00D41052 /* HBFastTableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				188BF49F1B7AE94D00A04A49 /* CELL_STRUCT.h */,
-				188BF4A01B7AE94D00A04A49 /* CELL_STRUCT.m */,
-				188BF4A11B7AE94D00A04A49 /* CELL_STRUCT_Common.h */,
-				188BF4A21B7AE94D00A04A49 /* CELL_STRUCT_Common.m */,
-				188BF4A31B7AE94D00A04A49 /* CELL_STRUCT_KEY.h */,
-				188BF4A41B7AE94D00A04A49 /* CELL_STRUCT_KVO.h */,
-				188BF4A51B7AE94D00A04A49 /* CELL_STRUCT_KVO.m */,
-				188BF4A61B7AE94D00A04A49 /* HB_BaseTableViewCell.h */,
-				188BF4A71B7AE94D00A04A49 /* HB_BaseTableViewCell.m */,
-				188BF4A81B7AE94D00A04A49 /* HB_BaseTableViewController.h */,
-				188BF4A91B7AE94D00A04A49 /* HB_BaseTableViewController.m */,
-				188BF4AA1B7AE94D00A04A49 /* HB_BaseViewController.h */,
-				188BF4AB1B7AE94D00A04A49 /* HB_BaseViewController.m */,
-				188BF4AC1B7AE94D00A04A49 /* HBTable.h */,
-				188BF4AD1B7AE94D00A04A49 /* UIButton+PENG.h */,
-				188BF4AE1B7AE94D00A04A49 /* UIButton+PENG.m */,
+				33B49BC71BC8B6AF00D41052 /* CELL_STRUCT.h */,
+				33B49BC81BC8B6AF00D41052 /* CELL_STRUCT.m */,
+				33B49BC91BC8B6AF00D41052 /* CELL_STRUCT_Common.h */,
+				33B49BCA1BC8B6AF00D41052 /* CELL_STRUCT_Common.m */,
+				33B49BCB1BC8B6AF00D41052 /* CELL_STRUCT_KEY.h */,
+				33B49BCC1BC8B6AF00D41052 /* CELL_STRUCT_KVO.h */,
+				33B49BCD1BC8B6AF00D41052 /* CELL_STRUCT_KVO.m */,
+				33B49BCE1BC8B6AF00D41052 /* HB_BaseTableViewCell.h */,
+				33B49BCF1BC8B6AF00D41052 /* HB_BaseTableViewCell.m */,
+				33B49BD01BC8B6AF00D41052 /* HB_BaseTableViewController.h */,
+				33B49BD11BC8B6AF00D41052 /* HB_BaseTableViewController.m */,
+				33B49BD21BC8B6AF00D41052 /* HB_BaseViewController.h */,
+				33B49BD31BC8B6AF00D41052 /* HB_BaseViewController.m */,
+				33B49BD41BC8B6AF00D41052 /* HBTable.h */,
+				33B49BD51BC8B6AF00D41052 /* UIButton+PENG.h */,
+				33B49BD61BC8B6AF00D41052 /* UIButton+PENG.m */,
 			);
 			name = HBFastTableViewController;
-			path = ../HBFastTableViewController;
+			path = ../../HBFastTableViewController;
 			sourceTree = "<group>";
 		};
 		9ACE7B77D01F4B286050C2D4 /* Frameworks */ = {
@@ -372,22 +372,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188BF4AF1B7AE94D00A04A49 /* CELL_STRUCT.m in Sources */,
+				33B49BD71BC8B6AF00D41052 /* CELL_STRUCT.m in Sources */,
 				184130A91B79DF4A002AB4C0 /* ViewController.m in Sources */,
-				188BF4B21B7AE94D00A04A49 /* HB_BaseTableViewCell.m in Sources */,
+				33B49BDA1BC8B6AF00D41052 /* HB_BaseTableViewCell.m in Sources */,
 				18678F631B7A115B0062A073 /* TESTRefreshViewController.m in Sources */,
 				18678F4C1B79ED6A0062A073 /* TESTXIBViewController.m in Sources */,
 				18678F5A1B79EEF10062A073 /* CF_SupporterTableViewCell.m in Sources */,
 				18678F601B7A09DD0062A073 /* TESTAutoHeightViewController.m in Sources */,
 				184130A61B79DF4A002AB4C0 /* AppDelegate.m in Sources */,
-				188BF4B01B7AE94D00A04A49 /* CELL_STRUCT_Common.m in Sources */,
-				188BF4B51B7AE94D00A04A49 /* UIButton+PENG.m in Sources */,
+				33B49BD81BC8B6AF00D41052 /* CELL_STRUCT_Common.m in Sources */,
+				33B49BDD1BC8B6AF00D41052 /* UIButton+PENG.m in Sources */,
 				18678F551B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.m in Sources */,
 				184130A31B79DF4A002AB4C0 /* main.m in Sources */,
 				18678F471B79E8240062A073 /* TESTSystyleviewController.m in Sources */,
-				188BF4B41B7AE94D00A04A49 /* HB_BaseViewController.m in Sources */,
-				188BF4B31B7AE94D00A04A49 /* HB_BaseTableViewController.m in Sources */,
-				188BF4B11B7AE94D00A04A49 /* CELL_STRUCT_KVO.m in Sources */,
+				33B49BDC1BC8B6AF00D41052 /* HB_BaseViewController.m in Sources */,
+				33B49BDB1BC8B6AF00D41052 /* HB_BaseTableViewController.m in Sources */,
+				33B49BD91BC8B6AF00D41052 /* CELL_STRUCT_KVO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

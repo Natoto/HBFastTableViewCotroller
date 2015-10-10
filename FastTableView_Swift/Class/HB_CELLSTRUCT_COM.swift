@@ -11,10 +11,17 @@ import UIKit
 typealias CELL_STRUCT_Common = HB_CELLSTRUCT_COM
 
 class HB_CELLSTRUCT_COM: NSObject {
-
+    class func cell_x_x_struct(title:String,detailvalue:String,target:AnyObject,selectAction:Selector)->HB_CELLSTRUCT
+    {
+        let cellstruct:HB_CELLSTRUCT = HB_CELLSTRUCT.init(title: title)
+        cellstruct.detailtitle = detailvalue;
+        cellstruct.delegate = target
+        cellstruct.cel_selector = selectAction
+        return cellstruct
+    }
+    
+    
 }
-
-
 
 
 extension UIViewController
