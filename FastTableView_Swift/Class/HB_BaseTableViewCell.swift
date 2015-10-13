@@ -8,28 +8,20 @@
 
 import UIKit
 
+//@objc(HB_BaseTableViewCell) //自动转换的方法名
 class HB_BaseTableViewCell: UITableViewCell {
 
+    var indexPath:NSIndexPath?
+    var selector:Selector?
+    var delegate:AnyObject?
+    var dictionary:[String:AnyObject]?
     var object:AnyObject?
-    func setcellTitle(title:String)
-    {
-        if !title.isEmpty
-        {
-            self.textLabel?.text = title;
-        }
-    }
-    
-    func setcellObject(object:AnyObject)
-    {
-        self.object = object;
-        
-    }
+
     override required init(style: UITableViewCellStyle, reuseIdentifier: String?) {
       super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
-
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
 
 //    required init?(coder aDecoder: NSCoder) {
@@ -42,8 +34,42 @@ class HB_BaseTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+ 
     }
-
+    func setcelldictionary(dictionary:[String:AnyObject]?)
+    {
+        self.dictionary = dictionary;
+    }
+    func setcellobject(object:AnyObject?)
+    {
+        self.object = object
+    }
+    func setcelldelegate(delegate:AnyObject)
+    {
+        self.delegate = delegate
+    }
+    func setcellProfile(profile:String?){}
+    func setcellTitle(title:String?){
+        if title != nil {
+            self.textLabel?.text = title;
+        }
+    }
+    func setcellObject(object:AnyObject?){
+        self.object = object;
+    }
+    func setcellTitleColor(color:String?){}
+    func setcellValue(value:String?){}
+    func setcellValue2(value:String?){}
+    func setcellRightValue(value:String?){}
+    func setcellplaceholder(placeholder:String?){
+        if placeholder != nil {
+            
+        }
+    }
+    func setcellArray(array:[AnyObject]){}
+    func setinputAccessoryView(inputAccessoryView:String?){}
+//    -(void)setinputView:(NSString *)inputView;
+//    -(void)setcelldetailtitle:(NSString *)detailtitle;
+//    -(void)setcellimageCornerRadius:(BOOL)CornerRadius;
+ 
 }

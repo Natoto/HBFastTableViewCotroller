@@ -16,14 +16,12 @@ class HB_CELLSTRUCT_COM: NSObject {
         let cellstruct:HB_CELLSTRUCT = HB_CELLSTRUCT.init(title: title)
         cellstruct.detailtitle = detailvalue;
         cellstruct.delegate = target
-        cellstruct.cel_selector = selectAction
+        cellstruct.sel_selector = selectAction
         return cellstruct
     }
     
     
 }
-
-
 extension UIViewController
 {
     func SECTION()->String
@@ -111,8 +109,7 @@ extension UIViewController
             }
         }
         return maxrow;
-    }
-    
+    }    
     /*
     -(NSString *)KEY_INDEXPATH:(NSInteger )SECTION ROW:(NSInteger)ROW;
     -(NSString *)KEY_SECTION:(NSInteger)SECTION;
@@ -122,3 +119,57 @@ extension UIViewController
     -(NSString *)KEY_INDEXPATH_ROW_STR:(NSString *)INDEXPATHKEY;
     */
 }
+
+//MARK:常用的变量
+
+let key_cellstruct_sectionfooterheight: String = "key_cellstruct_sectionfooterheight"
+let key_cellstruct_cellheight: String = "key_cellstruct_cellheight"
+let key_cellstruct_selector: String = "key_cellstruct_sel_selector"
+let key_cellstruct_selectionStyle: String = "key_cellstruct_selectionStyle"
+let key_cellstruct_key_indexpath: String = "key_cellstruct_key_indexpath"
+let key_cellstruct_sectiontitle: String = "key_cellstruct_sectiontitle"
+let key_cellstruct_sectionfooter: String = "key_cellstruct_sectionfooter"
+let key_cellstruct_sectionheight: String = "key_cellstruct_sectionheight"
+let key_cellstruct_sectionHeaderView: String = "key_cellstruct_sectionHeaderView"
+let key_cellstruct_title: String = "key_cellstruct_title"
+let key_cellstruct_titlecolor: String = "key_cellstruct_titlecolor"
+let key_cellstruct_textAlignment: String = "key_cellstruct_textAlignment"
+let key_cellstruct_placehoder: String = "key_cellstruct_placehoder"
+let key_cellstruct_detailvalue: String = "key_cellstruct_detailvalue"
+let key_cellstruct_imageCornerRadius: String = "key_cellstruct_imageCornerRadius"
+let key_cellstruct_imageRight: String = "key_cellstruct_imageRight"
+let key_cellstruct_txtsecureTextEntry: String = "key_cellstruct_txtsecureTextEntry"
+let key_cellstruct_txtkeyboardtype: String = "key_cellstruct_txtkeyboardtype"
+let key_cellstruct_accessory: String = "key_cellstruct_accessory"
+let key_cellstruct_cellclass: String = "key_cellstruct_cellclass"
+let key_cellstruct_delegate: String = "key_cellstruct_delegate"
+let key_cellstruct_background: String = "key_cellstruct_background"
+let key_cellstruct_profile: String = "key_cellstruct_profile"
+let key_cellstruct_xibvalue: String = "key_cellstruct_xibvalue"
+let key_cellstruct_subvalue2: String = "key_cellstruct_subvalue2"
+let key_cellstruct_active: String = "key_cellstruct_active"
+let key_cellstruct_editing: String = "key_cellstruct_editing"
+let key_cellstruct_editabled: String = "key_cellstruct_editabled"
+let key_cellstruct_pushcontroller: String = "key_cellstruct_pushcontroller"
+let key_cellstruct_pushcontroller_xib: String = "key_cellstruct_pushcontroller_xib"
+let value_cellstruct_black: String = "black"
+let value_cellstruct_Gray: String = "Gray"
+let value_cellstruct_lightGray: String = "lightGrayColor"
+let value_cellstruct_write: String = "white"
+let value_cellstruct_gray: String = "gray"
+let value_cellstruct_clear: String = "clear"
+let value_cellstruct_red: String = "red"
+let value_cellstruct_green: String = "green"
+let value_cellstruct_blue: String = "blue"
+let value_cellstruct_cyan: String = "cyan"
+let value_cellstruct_yellow: String = "yellow"
+let value_cellstruct_magenta: String = "magenta"
+let value_cellstruct_orange: String = "orange"
+let value_cellstruct_purple: String = "purple"
+let value_cellstruct_brown: String = "brown"
+let value_cellstruct_textAlignment_left: String = "left"
+let value_cellstruct_textAlignment_right: String = "right"
+let value_cellstruct_textAlignment_center: String = "center"
+let value_cellstruct_txtkeyboardtype_number: String = "number"
+let value_cellstruct_txtkeyboardtype_default: String = "default"
+

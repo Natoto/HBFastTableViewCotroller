@@ -8,7 +8,7 @@
 
 import UIKit
  
-class HB_BaseTableViewController: HB_BaseViewController,UITableViewDelegate,UITableViewDataSource {
+class HB_BaseTableViewController: HB_BaseViewController {
 
     lazy var dataDictionary:Dictionary<String,AnyObject> = {
         var dic = Dictionary<String,HB_CELLSTRUCT>() //NSMutableDictionary(capacity: 0)
@@ -32,7 +32,34 @@ class HB_BaseTableViewController: HB_BaseViewController,UITableViewDelegate,UITa
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    //注册NIB 和 Class
+    func TABLEVIEW_REGISTERXIBCELL_CLASS(CELLCLSSTR:String)
+    {
+        self.TableView.registerClass(NSObject.swiftClassFromString(CELLCLSSTR),
+            forCellReuseIdentifier: CELLCLSSTR)
+        self.TableView.registerNib(UINib.init(nibName: CELLCLSSTR, bundle: nil), forCellReuseIdentifier: CELLCLSSTR)
+    }
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    func getcellstructWithIndexPath(indexPath:NSIndexPath) ->HB_CELLSTRUCT
+    {
+        let key_indexpath:String? = self.KEY_INDEXPATH(indexPath.section, ROW: indexPath.row)
+        let cellstruct:HB_CELLSTRUCT! = self.dataDictionary[key_indexpath!] as! HB_CELLSTRUCT
+        return cellstruct;
+    }
     
+
+}
+//MARK: - datasource
+extension HB_BaseTableViewController:UITableViewDataSource
+{
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         let allkeys = Array(self.dataDictionary.keys)
         return self.MAX_SECTION(allkeys)
@@ -60,10 +87,8 @@ class HB_BaseTableViewController: HB_BaseViewController,UITableViewDelegate,UITa
         }
         if (Cell == nil)
         {
-            let ClassName:String = cellstruct.cellclass
-//            let cls:AnyClass? = NSClassFromString(ClassName)!
-            
-             let cls:HB_BaseTableViewCell.Type? = NSClassFromString(ClassName)! as? HB_BaseTableViewCell.Type
+            let ClassName:String =  cellstruct.cellclass
+            let cls:HB_BaseTableViewCell.Type? = NSObject.swiftClassFromString(cellstruct.cellclass) as? HB_BaseTableViewCell.Type // NSClassFromString(ClassName) as? HB_BaseTableViewCell.Type
             assert(cls != nil, "class not found,please check className")
             
             if cellstruct.xibvalue != nil &&  cellstruct.xibvalue == HB_CELLSTRUCT.xib()
@@ -72,16 +97,35 @@ class HB_BaseTableViewController: HB_BaseViewController,UITableViewDelegate,UITa
             }
             else
             {
-               Cell = cls!.init(style: UITableViewCellStyle.Default, reuseIdentifier: identifier01)
+                Cell = cls!.init(style: self.getTableViewCellStyleFrom(cellstruct.CellStyleValue!), reuseIdentifier: identifier01)
             }
         }
-        Cell?.setcellTitle(cellstruct!.title!)
+        if Cell?.dynamicType.isSubclassOfClass(HB_BaseTableViewCell) == true
+        {
+            Cell?.delegate = self
+            Cell?.indexPath = indexPath
+            Cell?.selector = cellstruct.sel_selector
+            Cell?.selectionStyle = cellstruct.selectionStyle == true ? UITableViewCellSelectionStyle.Default : UITableViewCellSelectionStyle.None
+            Cell?.accessoryType = cellstruct.accessory == true ? UITableViewCellAccessoryType.DetailButton : UITableViewCellAccessoryType.None
+            Cell?.setcellTitle(cellstruct!.title!)
+            Cell?.setcellplaceholder(cellstruct!.placeHolder)
+            Cell?.setcellProfile(cellstruct!.picture)
+            Cell?.setcellobject(cellstruct!.object)
+            Cell?.setcelldictionary(cellstruct.dictionary)
+            
+        }
         
         let key_sectionstr = self.KEY_INDEXPATH_SECTION_STR(key_indexpath!)
         let key_rowstr = self.KEY_INDEXPATH_ROW_STR(key_indexpath!)
         print(key_indexpath! + " section: " + key_sectionstr + " row: "  + key_rowstr)
         
         return Cell!
+    }
+
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        let cellstruct:HB_CELLSTRUCT! = self.getcellstructWithIndexPath(indexPath)
+        return CGFloat(cellstruct.cellheight)
     }
     
     func  getTableViewCellStyleFrom(cellStyleValue:Int)->UITableViewCellStyle
@@ -97,16 +141,12 @@ class HB_BaseTableViewController: HB_BaseViewController,UITableViewDelegate,UITa
             return UITableViewCellStyle.Default
         }
     }
-    
     //MARK 其他设置用在 cellForRowAtIndexPath
     func othercellsetting(){}
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        let cellstruct:HB_CELLSTRUCT! = self.getcellstructWithIndexPath(indexPath)
-        return CGFloat(cellstruct.cellheight)
-    }
-    
+}
+// MARK: - delegate
+extension HB_BaseTableViewController:UITableViewDelegate
+{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         if self.getcellstructWithIndexPath(indexPath).deselectRow == true
@@ -114,24 +154,19 @@ class HB_BaseTableViewController: HB_BaseViewController,UITableViewDelegate,UITa
             tableView.deselectRowAtIndexPath(indexPath, animated: true);
         }
     }
-    
-    func getcellstructWithIndexPath(indexPath:NSIndexPath) ->HB_CELLSTRUCT
-    {
-        let key_indexpath:String? = self.KEY_INDEXPATH(indexPath.section, ROW: indexPath.row)
-        let cellstruct:HB_CELLSTRUCT! = self.dataDictionary[key_indexpath!] as! HB_CELLSTRUCT
-        return cellstruct;
-    }
-    
-    
-    
-    /*
-    // MARK: - Navigation
+     
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension NSObject {
+    // create a static method to get a swift class for a string name
+    class func swiftClassFromString(className: String) -> AnyClass! {
+        // get the project name
+        if  let appName: String? = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as! String? {
+            // generate the full name of your class (take a look into your "YourProject-swift.h" file)
+            let classStringName = appName! + "." + className
+            // return the class!
+            return NSClassFromString(classStringName)
+        }
+        return nil;
     }
-    */
-
 }

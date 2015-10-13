@@ -14,7 +14,7 @@ typealias CELL_STRUCT = HB_CELLSTRUCT
 class HB_CELLSTRUCT: NSObject {
     //常用的
     var cellheight:Float = 44.0
-    var cel_selector:Selector = nil
+    var sel_selector:Selector = nil
     var cellclass:String = "HB_BaseTableViewCell"
     var title:String? = "Title"
     var key_indexpath:String? = nil
@@ -22,8 +22,8 @@ class HB_CELLSTRUCT: NSObject {
     var selectionStyle:Bool? = true
     var delegate:AnyObject? = nil
     var dictionary:[String:AnyObject]? = nil
-    var picture:String? = nil
-    
+    var picture:String! //? = nil
+    var object:AnyObject! //= nil
     //MARK: section -
     var sectiontitle:String = ""
     var sectionfont:Float = 12.0
