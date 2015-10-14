@@ -157,6 +157,62 @@ extension HB_BaseTableViewController:UITableViewDelegate
      
 }
 
+
+//  MARK: 计算CELL高度
+var key_templateCellsByIdentifiers:Int?
+extension UITableView
+{
+    func fd_templateCellForReuseIdentifier(identifier: String) -> AnyObject {
+        assert(identifier.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0, "Expect a valid identifier ")
+        var templateCellsByIdentifiers:[String : UITableViewCell] = (objc_getAssociatedObject(self, &key_templateCellsByIdentifiers) as? [ String : UITableViewCell])!
+        var templateCell: UITableViewCell? = templateCellsByIdentifiers[identifier]!
+        if templateCell == nil {
+            templateCell = self.dequeueReusableCellWithIdentifier(identifier)
+            assert(templateCell != nil, "Cell must be registered to table view for identifier - \(identifier)")
+            templateCell!.contentView.translatesAutoresizingMaskIntoConstraints = false
+            templateCellsByIdentifiers[identifier] = templateCell
+        }
+        return templateCell!
+    }
+    //configuration:(void (^)(id cell))configuration
+
+    func hb_heightForCellWithIdentifier(identifier: String, configuration:(cell:UITableViewCell) -> Void) -> CGFloat {
+        
+        let cell: UITableViewCell = self.fd_templateCellForReuseIdentifier(identifier) as! UITableViewCell
+        cell.prepareForReuse()
+        configuration(cell: cell)
+        
+        var contentViewWidth: CGFloat = CGRectGetWidth(self.frame)
+        if cell.accessoryView != nil {
+            contentViewWidth -= 16 + CGRectGetWidth(cell.accessoryView!.frame)
+        }
+        else {
+            let systemAccessoryWidths: [UITableViewCellAccessoryType:CGFloat] = [UITableViewCellAccessoryType.None: 0,
+                UITableViewCellAccessoryType.DisclosureIndicator: 34,
+                UITableViewCellAccessoryType.DetailDisclosureButton:68,
+                UITableViewCellAccessoryType.Checkmark:40,
+                UITableViewCellAccessoryType.DetailButton:48]
+            contentViewWidth -= systemAccessoryWidths[cell.accessoryType]!
+        }
+        var fittingSize:CGSize? = CGSizeZero
+        
+        let selector:Selector = Selector("sizeThatFits:")
+        let inherited = cell.isMemberOfClass(UITableViewCell)
+        let overrided = cell.dynamicType.instanceMethodForSelector(selector) != UITableViewCell.instanceMethodForSelector(selector)
+        if inherited == true && overrided == false
+        {
+            assert(false, "Customized cell must override '-sizeThatFits:' method if not using auto layout.")
+        }
+        fittingSize = cell.sizeThatFits(CGSizeMake(contentViewWidth, 0))
+        if self.separatorStyle != UITableViewCellSeparatorStyle.None
+        {
+            fittingSize?.height += 1.0 / UIScreen.mainScreen().scale
+        }
+        
+        return (fittingSize?.height)!
+    }
+}
+
 extension NSObject {
     // create a static method to get a swift class for a string name
     class func swiftClassFromString(className: String) -> AnyClass! {

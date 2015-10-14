@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: HB_BaseTableViewController {
 
@@ -35,6 +36,28 @@ class ViewController: HB_BaseTableViewController {
 //        NSLog(@"2");
 //        });
 //        NSLog(@"3"); 
+        
+        
+        //Alamofire.request(.GET, "http://httpbin.org/get")
+        
+//        Alamofire.request(.GET, "http://httpbin.org/get", parameters: ["foo": "bar"])
+//            .response { request, response, data, error in
+//                print("request = \(request)")
+//                print("response =\(response)")
+//                print("error = \(error)")
+//        }
+        
+       Alamofire.request(.GET, "http://httpbin.org/get").responseString(encoding: NSUTF8StringEncoding) { (request, response, result) -> Void in
+            print("request = \(request)")
+            print("response =\(response)")
+            print("result = \(result)")
+        }
+//            .responseString { _, _, string, _ in
+//                print(string)
+//            }
+//            .responseJSON { _, _, JSON, _ in
+//                print(JSON)
+//        }
         
     }
 

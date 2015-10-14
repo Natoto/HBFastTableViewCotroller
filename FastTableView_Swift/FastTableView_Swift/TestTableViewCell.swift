@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class TestTableViewCell: HB_BaseTableViewCell {
 
     override func awakeFromNib() {
