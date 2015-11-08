@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>20C22BFC-95FD-44F0-B36C-7B52EC867922</string>
+	<key>IDESourceControlProjectName</key>
+	<string>demo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>760C4DBE4840D67EE2327748FBF93C06D9115FFA</key>
+		<string>https://github.com/Natoto/HBFastTableViewCotroller.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>demo/demo.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>760C4DBE4840D67EE2327748FBF93C06D9115FFA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Natoto/HBFastTableViewCotroller.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>760C4DBE4840D67EE2327748FBF93C06D9115FFA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>760C4DBE4840D67EE2327748FBF93C06D9115FFA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HBFastTableViewCotroller</string>
+		</dict>
+	</array>
+</dict>
+</plist>

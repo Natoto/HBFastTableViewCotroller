@@ -5,15 +5,8 @@
 //  Created by nonato on 14-11-25.
 //  Copyright (c) 2014年 Nonato. All rights reserved.
 //
-//#import "HBSignalBus.h"
 #import "HB_BaseViewController.h"
-#import "MJRefresh.h"
 #import "UIButton+PENG.h"
-//#import "UIViewController+TopBarMessage.h"
-//#import "UIImage+Tint.h"
-//#import "NSObject+HBHUD.h"
-//#import "ToolsFunc.h"
-//#import "UINavigationController+FDFullscreenPopGesture.h"
 
 #define HB_UIColorWithRGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 
@@ -30,9 +23,7 @@
     // Drawing code
 }
 @end
-
-
-
+ 
 @implementation HB_BaseViewController
 
 
@@ -69,34 +60,11 @@
     
 //    ADD_HBSIGNAL_OBSERVER(self, @"networkerror", @"HTTPSEngine");
 }
--(void)setTitle:(NSString *)title
-{
-    //设置标题栏
-//    UIButton * button = [UIButton CreateButtonWithFrame:CGRectMake(80, 5, 220, 44) andTxt:title];
-//    //    [self.navigationbar setTitle:title];
-//    [button addTarget:self action:@selector(hbNavigationbartitleTap:) forControlEvents:UIControlEventTouchUpInside];
-//    self.navigationbar.titleView = button;
-}
-
 -(IBAction)hbNavigationbartitleTap:(id)sender
 {
     
 }
-//- (UIStatusBarStyle)preferredStatusBarStyle
-//{
-//     if (self.statusBarStyleDefault) {
-//         return UIStatusBarStyleDefault;
-//     }
-//    else
-//        return UIStatusBarStyleLightContent;
-//}
-//
-//-(void)setStatusBarStyleDefault:(BOOL)statusBarStyleDefault
-//{
-//    _statusBarStyleDefault = statusBarStyleDefault; 
-//}
 
-//static UIStatusBarStyle barstyle;
 
 -(void)setStatusBarStyleDefault:(BOOL)statusBarStyleDefault
 {

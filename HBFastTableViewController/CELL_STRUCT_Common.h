@@ -10,7 +10,7 @@
 #import "CELL_STRUCT.h"
 
 
-#define AS_CELL_STRUCT_JXLCOMMON(OBJ) @property(nonatomic,retain) CELL_STRUCT * cell_struct_##OBJ;
+#define AS_CELL_STRUCT_COMMON(OBJ) @property(nonatomic,retain) CELL_STRUCT * cell_struct_##OBJ;
 
 
 #define GET_CELL_STRUCT_ALLPARA_WITH(OBJ,TITLE,SELECTENABLE,ACCESSORY,HEIGHT,IMAGERIGHT,IMAGECORNER,TARGET,SELECTOR) -(CELL_STRUCT *)cell_struct_##OBJ\
@@ -121,4 +121,13 @@ return _cell_struct_##OBJ;\
 
 +(UIColor *)colorWithStructKey:(NSString *)key;
 
+@end
+
+@interface UIViewController(KEYINDEXPATH)
+-(NSString *)KEY_INDEXPATH:(NSInteger )SECTION ROW:(NSInteger)ROW;
+-(NSString *)KEY_SECTION:(NSInteger)SECTION;
+-(NSString *)KEY_SECTION_MARK:(NSInteger)SECTION;
+-(NSString *)KEY_SECTION_INDEX_STR:(NSString *)INDEXPATHKEY;
+-(NSString *)KEY_INDEXPATH_SECTION_STR:(NSString *)INDEXPATHKEY;
+-(NSString *)KEY_INDEXPATH_ROW_STR:(NSString *)INDEXPATHKEY; 
 @end

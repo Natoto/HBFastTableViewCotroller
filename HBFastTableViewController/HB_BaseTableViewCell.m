@@ -190,6 +190,7 @@
 //        [self.imageView sd_setImageWithURL:[NSURL URLWithString:profile] placeholderImage:[UIImage imageFileNamed:@"big_icon"] options:SDWebImageLowPriority completed:nil];
         return;
     }
+    if(profile.length)
     self.imageView.image = [UIImage imageNamed:profile];
 }
 
@@ -233,4 +234,9 @@
 -(void)setcellAction:(SEL)action{}
 -(void)setinputAccessoryView:(NSString *)inputAccessoryView{}
 -(void)setinputView:(NSString *)inputView{}
+
+-(CGSize)sizeThatFits:(CGSize)size
+{
+    return CGSizeMake(size.width, 50);
+}
 @end
