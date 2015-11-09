@@ -14,11 +14,11 @@
 		<string>https://github.com/Natoto/HBFastTableViewCotroller.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>demo/demo.xcworkspace</string>
+	<string>demo/oc/demo.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>760C4DBE4840D67EE2327748FBF93C06D9115FFA</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Natoto/HBFastTableViewCotroller.git</string>
