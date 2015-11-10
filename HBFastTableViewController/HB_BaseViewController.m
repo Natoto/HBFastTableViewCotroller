@@ -32,12 +32,10 @@
     _showBackItem = showBackItem;
     //TODO:设置返回按钮
     if (_showBackItem) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@""
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回"
                                                                                 style:UIBarButtonItemStylePlain
                                                                                target:self
                                                                                action:@selector(backtoparent:)];
-        
-//        [self.navigationItem setleftBarButtonItemWithImage:[UIImage imageNamed:@"white_back_btn"] target:self selector:@selector(backtoparent:)];
     }
     else
     {
@@ -53,17 +51,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-//    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
-//        self.edgesForExtendedLayout = UIRectEdgeAll;
-//    }
-//    self.fd_prefersNavigationBarHidden = YES;
-    self.view.backgroundColor = HB_UIColorWithRGB(245, 245, 245);// [UIColor grayColor];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@""
-                                                                           style:UIBarButtonItemStylePlain
-                                                                          target:self
-                                                                          action:@selector(backtoparent:)];
-    
-//    ADD_HBSIGNAL_OBSERVER(self, @"networkerror", @"HTTPSEngine");
+    self.view.backgroundColor = HB_UIColorWithRGB(245, 245, 245);
 }
 -(IBAction)hbNavigationbartitleTap:(id)sender
 {
@@ -109,7 +97,6 @@
 -(void)userDefaultBackground
 {
     [self changeBackGroundWithBackColor:HB_UIColorWithRGB(14, 113, 196)];
-//    [self changeBackGroundWithBackimg:@"backgroundimage@2x" ofType:@"png"];
 }
 
 -(void)changeBackGroundWithBackImage:(UIImage *)Image
@@ -160,6 +147,16 @@
 
 -(void)showhbnavigationbarBackItem:(BOOL)show
 {
+    if (show) {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回"
+                                                                                style:UIBarButtonItemStylePlain
+                                                                               target:self
+                                                                               action:@selector(backtoparent:)];
+    }
+    else
+    {
+        self.navigationItem.leftBarButtonItem = nil;
+    }
 //TODO:设置返回键
 //    [self.navigationbar setleftBarButtonItemWithImage:[UIImage imageNamed:@"white_back_btn"] target:self selector:@selector(backtoparent:)];
 }
