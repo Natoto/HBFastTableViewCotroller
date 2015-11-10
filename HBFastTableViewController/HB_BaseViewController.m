@@ -31,13 +31,18 @@
 {
     _showBackItem = showBackItem;
     //TODO:设置返回按钮
-//    if (_showBackItem) {
-//        [self.navigationbar setleftBarButtonItemWithImage:[UIImage imageNamed:@"white_back_btn"] target:self selector:@selector(backtoparent:)];
-//    }
-//    else
-//    {
-//        self.navigationbar.leftItem = nil;
-//    }
+    if (_showBackItem) {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@""
+                                                                                style:UIBarButtonItemStylePlain
+                                                                               target:self
+                                                                               action:@selector(backtoparent:)];
+        
+//        [self.navigationItem setleftBarButtonItemWithImage:[UIImage imageNamed:@"white_back_btn"] target:self selector:@selector(backtoparent:)];
+    }
+    else
+    {
+        self.navigationItem.leftBarButtonItem = nil;
+    }
 }
 
 -(void)dealloc
@@ -55,8 +60,8 @@
     self.view.backgroundColor = HB_UIColorWithRGB(245, 245, 245);// [UIColor grayColor];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@""
                                                                            style:UIBarButtonItemStylePlain
-                                                                          target:nil
-                                                                          action:nil];
+                                                                          target:self
+                                                                          action:@selector(backtoparent:)];
     
 //    ADD_HBSIGNAL_OBSERVER(self, @"networkerror", @"HTTPSEngine");
 }
@@ -95,11 +100,6 @@
         }
     }
 }
-//TODO: 网络错误
-//ON_HBSIGNAL(HTTPSEngine, networkerror, notify)
-//{
-//    [self dismissAllTips];
-//}
 
 -(void)changeFaceStyle:(int)style view:(UIView *)View
 {
@@ -181,64 +181,6 @@
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:seletor];
     [superview addGestureRecognizer:tap];
 }
-
-
-/**
- * 设置navigationbar的状态
- */
-
-//-(void)setnavigationWithBarBackgroundImage:(CGFloat)alpha
-//{
-//    if (alpha) {
-//        UIImage * bgimage = [UIImage imageNamed:@"navigationbar.jpg"];
-//        bgimage = [bgimage imageWithTintColor:[UIColor colorWithWhite:0 alpha:alpha]];
-//        [self.navigationController.navigationBar setBackgroundImage:bgimage
-//                                                      forBarMetrics:UIBarMetricsDefault];
-//    }
-//    else
-//    {
-//        [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-//                                                      forBarMetrics:UIBarMetricsDefault];
-//    }
-//    self.navigationController.navigationBar.shadowImage = [UIImage new];
-//}
-//
-//-(void)setnavigationWithBarBackgroundColor:(UIColor *)color
-//{
-//    if (color) {
-//        UIImage * bgimage = [UIImage imageNamed:@"navigationbar.jpg"];
-//        bgimage = [bgimage imageWithTintColor:color]; 
-//        [self.navigationController.navigationBar setBackgroundImage:bgimage
-//                                                      forBarMetrics:UIBarMetricsDefault];
-//    }
-//    else
-//    {
-//        [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-//                                                      forBarMetrics:UIBarMetricsDefault];
-//    }
-//    self.navigationController.navigationBar.shadowImage = [UIImage new];
-//}
-//
-//
-//-(HBNavigationbar *)navigationtoolsbar
-//{
-//    if (!_navigationtoolsbar) {
-//        _navigationtoolsbar = [HBNavigationbar navigationtoolbar];
-//        [self.view addSubview:_navigationtoolsbar];
-//    }
-//    return _navigationtoolsbar;
-//}
-//
-//-(HBNavigationbar *)navigationbar
-//{
-//    if (!_navigationbar) {
-//       _navigationbar = [HBNavigationbar navigationbar];
-//        _navigationbar.backgroundColor = KT_HEXCOLOR(0xffb612);
-//        [self.view addSubview:_navigationbar];
-//    }
-//    return _navigationbar;
-//}
-
 
 -(BackGroundView *)backgroundview
 {
