@@ -16,7 +16,7 @@
 #define GET_CELL_STRUCT_ALLPARA_WITH(OBJ,TITLE,SELECTENABLE,ACCESSORY,HEIGHT,IMAGERIGHT,IMAGECORNER,TARGET,SELECTOR) -(CELL_STRUCT *)cell_struct_##OBJ\
 {\
 if (!_cell_struct_##OBJ) {\
-_cell_struct_##OBJ = [CELL_STRUCT_Common cell_x_x_struct:@#TITLE detailvalue:nil footerheight:20 selectionStyle:SELECTENABLE  accessory:ACCESSORY cellheight:HEIGHT imageRight:IMAGERIGHT imageCornerRadius:IMAGECORNER target:TARGET selectAction:SELECTOR];\
+_cell_struct_##OBJ = [CELL_STRUCT cell_x_x_struct:@#TITLE detailvalue:nil footerheight:20 selectionStyle:SELECTENABLE  accessory:ACCESSORY cellheight:HEIGHT imageRight:IMAGERIGHT imageCornerRadius:IMAGECORNER target:TARGET selectAction:SELECTOR];\
 }\
 return _cell_struct_##OBJ;}
 
@@ -24,7 +24,7 @@ return _cell_struct_##OBJ;}
 #define GET_CELL_STRUCT_WITH(OBJ,TITLE) -(CELL_STRUCT *)cell_struct_##OBJ\
 {\
     if (!_cell_struct_##OBJ) {\
-        _cell_struct_##OBJ = [CELL_STRUCT_Common cell_x_x_struct:@#TITLE detailvalue:nil footerheight:0 selectionStyle:YES accessory:YES cellheight:44 imageRight:NO imageCornerRadius:NO picture:nil target:self selectAction:@selector(selectAction:) background:[UIColor whiteColor]];\
+        _cell_struct_##OBJ = [CELL_STRUCT cell_x_x_struct:@#TITLE detailvalue:nil footerheight:0 selectionStyle:YES accessory:YES cellheight:44 imageRight:NO imageCornerRadius:NO picture:nil target:self selectAction:@selector(selectAction:) background:[UIColor whiteColor]];\
     }\
     return _cell_struct_##OBJ;\
 }
@@ -36,7 +36,7 @@ return _cell_struct_##OBJ;}
 #define GET_CELL_STRUCT_WITH_OBJ_TITLE_IMAGE(OBJ,TITLE,IMAGE,TARGET,SELECTOR) -(CELL_STRUCT *)cell_struct_##OBJ\
 {\
 if (!_cell_struct_##OBJ) {\
-_cell_struct_##OBJ = [CELL_STRUCT_Common cell_x_x_struct:@#TITLE detailvalue:nil \
+_cell_struct_##OBJ = [CELL_STRUCT cell_x_x_struct:@#TITLE detailvalue:nil \
                     footerheight:20 \
                     selectionStyle:YES  \
                     accessory:NO \
@@ -54,7 +54,7 @@ return _cell_struct_##OBJ;}
 #define GET_CELL_STRUCT_DICTIONARY(OBJ,DIC) -(CELL_STRUCT *)cell_struct_##OBJ\
 {\
 if (!_cell_struct_##OBJ) {\
-_cell_struct_##OBJ = [CELL_STRUCT_Common cell_x_x_structWithDictionary:DIC];\
+_cell_struct_##OBJ = [CELL_STRUCT cell_x_x_structWithDictionary:DIC];\
 }\
 return _cell_struct_##OBJ;}
 
@@ -73,8 +73,10 @@ _cell_struct_##OBJ = cell1_0;\
 return _cell_struct_##OBJ;\
 }
 
-@interface CELL_STRUCT_Common : NSObject
+@interface CELL_STRUCT_Common : CELL_STRUCT
+@end
 
+@interface CELL_STRUCT(Common)
 //+(UIView *)BigButtonview:(CGRect)frame btnframe:(CGRect)buttonFrame title:(NSString *)title target:(id)target sel:(SEL)selector;
 
 +(CELL_STRUCT *)cell_x_x_struct:(NSString *)title

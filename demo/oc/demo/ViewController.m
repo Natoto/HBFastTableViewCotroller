@@ -7,7 +7,7 @@
 //
 #import "TESTSystyleviewController.h"
 #import "ViewController.h"
-#import "HBTable.h"
+#import "HBFastTable.h"
 #import "TESTXIBViewController.h"
 #import "TESTAutoHeightViewController.h"
 #import "TESTRefreshViewController.h"
