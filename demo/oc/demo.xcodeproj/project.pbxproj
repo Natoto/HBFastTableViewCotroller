@@ -87,7 +87,7 @@
 		33B49BD11BC8B6AF00D41052 /* HB_BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB_BaseTableViewController.m; sourceTree = "<group>"; };
 		33B49BD21BC8B6AF00D41052 /* HB_BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HB_BaseViewController.h; sourceTree = "<group>"; };
 		33B49BD31BC8B6AF00D41052 /* HB_BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB_BaseViewController.m; sourceTree = "<group>"; };
-		33B49BD41BC8B6AF00D41052 /* HBTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTable.h; sourceTree = "<group>"; };
+		33B49BD41BC8B6AF00D41052 /* HBFastTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFastTable.h; sourceTree = "<group>"; };
 		33B49BD51BC8B6AF00D41052 /* UIButton+PENG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PENG.h"; sourceTree = "<group>"; };
 		33B49BD61BC8B6AF00D41052 /* UIButton+PENG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PENG.m"; sourceTree = "<group>"; };
 		47243643C8635681725F3A66 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,7 +208,7 @@
 				33B49BD11BC8B6AF00D41052 /* HB_BaseTableViewController.m */,
 				33B49BD21BC8B6AF00D41052 /* HB_BaseViewController.h */,
 				33B49BD31BC8B6AF00D41052 /* HB_BaseViewController.m */,
-				33B49BD41BC8B6AF00D41052 /* HBTable.h */,
+				33B49BD41BC8B6AF00D41052 /* HBFastTable.h */,
 				33B49BD51BC8B6AF00D41052 /* UIButton+PENG.h */,
 				33B49BD61BC8B6AF00D41052 /* UIButton+PENG.m */,
 			);

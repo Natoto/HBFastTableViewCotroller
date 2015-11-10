@@ -48,12 +48,12 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
-        self.edgesForExtendedLayout = UIRectEdgeAll;
-    }
+//    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+//        self.edgesForExtendedLayout = UIRectEdgeAll;
+//    }
 //    self.fd_prefersNavigationBarHidden = YES;
     self.view.backgroundColor = HB_UIColorWithRGB(245, 245, 245);// [UIColor grayColor];
-    self.navigationItem.backBarButtonItem= [[UIBarButtonItem alloc]initWithTitle:@""
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@""
                                                                            style:UIBarButtonItemStylePlain
                                                                           target:nil
                                                                           action:nil];
