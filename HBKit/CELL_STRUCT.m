@@ -29,6 +29,8 @@
         self.delegate = delegate;
         self.sectionheight = 0;
         self.sectionfont = 13;
+        self.titleLabelNumberOfLines = 1;
+        self.dictionary = [NSMutableDictionary new];
     }
     return self;
 }

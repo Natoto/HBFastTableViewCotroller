@@ -10,7 +10,16 @@
 #import "CELL_STRUCT_Common.h"
 #import <objc/runtime.h>
 
+@interface HBCirclePoint : UIView
+@property(nonatomic,strong) UIColor * color;
+@end
+
+@interface HBRedPoint : HBCirclePoint
+@end
+
+
 @interface HBBaseTableViewCell()
+@property(nonatomic,strong) HBRedPoint * redPoint;
 
 @end
 @implementation HBBaseTableViewCell
@@ -20,46 +29,18 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.detailTextLabel.textColor = [UIColor grayColor]; 
+        self.detailTextLabel.textColor = [UIColor grayColor];
         self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        _redPoint = [[HBRedPoint alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+        [self.contentView addSubview:_redPoint];
     }
     return self;
 }
 - (void)awakeFromNib {
     
-    NSString * string =(@"//////////////////////////////////////////////////////////////////////////////////////////");
-    NSLog(@"%@",[string stringByReplacingOccurrencesOfString:@"/" withString:@" "]);
     
-    string = (@"//////////////////////////////////////////////////////////////////////////////////////////");
-    NSLog(@"%@",[string stringByReplacingOccurrencesOfString:@"/" withString:@" "]);
-    
-    string = (@"//////  //// /// //// ///   ////// ////// ///       ///// /      //////    ////////////////");
-    string = [string stringByReplacingOccurrencesOfString:@" " withString:@"\\"];
-    NSLog(@"%@",[string stringByReplacingOccurrencesOfString:@"/" withString:@" "]);
-    
-    
-    string = (@"/////  //// /// //// /// // ///// / //// /// /////////// ////// ///// //// //////////////");
-    string = [string stringByReplacingOccurrencesOfString:@" " withString:@"\\"];
-    NSLog(@"%@",[string stringByReplacingOccurrencesOfString:@"/" withString:@" "]);
-    
-    string = (@"////       /// //// /// ///  /// // /// // /////   //// //    ////// //// ///////////////");
-    string = [string stringByReplacingOccurrencesOfString:@" " withString:@"\\"];
-    NSLog(@"%@",[string stringByReplacingOccurrencesOfString:@"/" withString:@" "]);
-    
-    
-    string = (@"///  //// /// //// ///       // //// / /// ////// //// ////// ///// //// ////////////////");
-    string = [string stringByReplacingOccurrencesOfString:@" " withString:@"\\"];
-    NSLog(@"%@",[string stringByReplacingOccurrencesOfString:@"/" withString:@" "]);
-    
-    string = (@"//  //// ////   ///// ////// / ////// /////     ///// /      //////   /////////////////");
-    string = [string stringByReplacingOccurrencesOfString:@" " withString:@"\\"];
-    NSLog(@"%@",[string stringByReplacingOccurrencesOfString:@"/" withString:@" "]);
-    
-    HBLOG(@"//////////////////////////////////////////////////////////////////////////////////////////");
-    HBLOG(@"//////////////////////////////////////////////////////////////////////////////////////////");
-    HBLOG(@"//////////////////////////////////////////////////////////////////////////////////////////");
 }
-
+ 
 -(void)layoutSubviews
 {
     [super layoutSubviews];
@@ -110,7 +91,6 @@
         }
     }
     
-    
     if (self.showTopLine) {
         [self clearTopLayer];
         [self drawToplinelayer];
@@ -119,8 +99,10 @@
         [self clearBottomLayer];
         [self drawBottomlinelayer];
     }
-
-//   [self.textLabel setFrame:CGRectMake(0, 0, self.contentView.bounds.size.width * 3 / 4, self.contentView.bounds.size.height / 2)];
+    //    if (self.showNewPoint) {
+    self.redPoint.center = CGPointMake(self.contentView.frame.size.width - 20, self.contentView.frame.size.height/2);
+    //    }
+    //   [self.textLabel setFrame:CGRectMake(0, 0, self.contentView.bounds.size.width * 3 / 4, self.contentView.bounds.size.height / 2)];
 }
 
 -(void)setcellimageRight:(BOOL)imageRight
@@ -155,14 +137,25 @@
 {
     _dictionary = dictionary;
     UIColor * bgcolor = [dictionary objectForKey:key_cellstruct_background];
-    if (bgcolor) {
+    if ([[bgcolor class] isSubclassOfClass:[UIColor class]]) {
         self.contentView.backgroundColor = bgcolor;
         self.backgroundColor = bgcolor;
+    }
+    if ([[bgcolor class] isSubclassOfClass:[NSString class]]) {
+        NSString * bgcolorstring= [dictionary objectForKey:key_cellstruct_background];
+        self.contentView.backgroundColor = [CELL_STRUCT colorWithStructKey:bgcolorstring];
+        self.backgroundColor = self.contentView.backgroundColor;
     }
     NSString * detailvalue = [dictionary objectForKey:key_cellstruct_detailvalue];
     OBJ_NULL_DEFAULT(detailvalue, @"")
     NSNumber * imageCornerRadius = DIC_OBJ_KEY(dictionary, key_cellstruct_detailvalue);
     OBJ_NULL_DEFAULT(imageCornerRadius, @0)
+    
+    NSNumber * newmsgcount = DIC_OBJ_KEY(dictionary, key_cellstruct_newmessagecount);
+    OBJ_NULL_DEFAULT(newmsgcount, @0)
+    self.showNewMsg = newmsgcount.boolValue;//是否显示红点
+    self.redPoint.hidden = !self.showNewMsg;
+    
     NSNumber * footerheight = DIC_OBJ_KEY(dictionary, key_cellstruct_sectionfooterheight);
     OBJ_NULL_DEFAULT(footerheight, @0)
     NSNumber * accessory = [dictionary objectForKey:key_cellstruct_accessory];
@@ -175,16 +168,21 @@
     OBJ_NULL_DEFAULT(titlecolor, @"black")
     NSNumber * sectionheight = [dictionary objectForKey:key_cellstruct_sectionheight];
     OBJ_NULL_DEFAULT(sectionheight, @25)
-//    [self setcellTitleColor:titlecolor];
+    //    [self setcellTitleColor:titlecolor];
 };
 
 
 
-
+-(void)setcellTitleFont:(UIFont *)titleFont
+{
+    if (titleFont) {
+        self.textLabel.font = titleFont;
+    }
+}
 //这个方法需要在子类写[super setcellobject];
 -(void)setcellobject:(id)object
-{   _object = object;    
- 
+{   _object = object;
+    
 } ;
 
 -(void)setcellobject2:(id)object
@@ -198,10 +196,9 @@
 -(void)setcellProfile:(NSString *)profile
 {
     if ([profile hasPrefix:@"http://"] || [profile hasPrefix:@"https://"]) {//如果是网络图片 就加载网络图片
-//        [self.imageView sd_setImageWithURL:[NSURL URLWithString:profile] placeholderImage:[UIImage imageFileNamed:@"big_icon"] options:SDWebImageLowPriority completed:nil];
+//        [self.imageView hb_setImageWithURL:[NSURL URLWithString:profile] placeholderImage:[UIImage imageFileNamed:@"big_icon"] options:0 completed:nil];
         return;
     }
-    if(profile.length)
     self.imageView.image = [UIImage imageNamed:profile];
 }
 
@@ -209,22 +206,27 @@
 {
     if (picturecolor) {
         if (self.imageView) {
-            UIColor *  color = [CELL_STRUCT_Common colorWithStructKey:picturecolor];
+            UIColor *  color = [CELL_STRUCT colorWithStructKey:picturecolor];
             self.imageView.backgroundColor = color;
             self.imageView.contentMode = UIViewContentModeScaleAspectFit;
         }
     }
 }
-
+-(void)setcellAttributeTitle:(NSAttributedString *)attributeTitle
+{//被坑了  不起作用妈的
+    //    if (attributeTitle) {
+    //      self.textLabel.attributedText = attributeTitle;
+    //    }
+}
 -(void)setcellTitle:(NSString *)title
 {
     self.textLabel.text = title;
 }
 -(void)setcellTitleColor:(NSString *)color
 {
-     UIColor * titlecolor = [CELL_STRUCT_Common colorWithStructKey:color] ;
+    UIColor * titlecolor = [CELL_STRUCT colorWithStructKey:color] ;
     if (titlecolor) {
-         self.textLabel.textColor = titlecolor;
+        self.textLabel.textColor = titlecolor;
     }
     else
     {
@@ -234,11 +236,23 @@
 -(void)setcelldetailtitle:(NSString *)detailtitle
 {
     if (detailtitle) {
-        self.detailTextLabel.text = detailtitle;        
+        self.detailTextLabel.text = detailtitle;
     }
 }
+-(void)setcellTitleLabelNumberOfLines:(NSInteger)numberOfLines
+{
+    self.numberOfLines = numberOfLines;
+    self.textLabel.numberOfLines = numberOfLines;
+    self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+}
+-(CGSize)sizeThatFits:(CGSize)size
+{
+    CGFloat totalHeight = 0;
+    totalHeight += [self.textLabel sizeThatFits:size].height;
+    totalHeight += [self.detailTextLabel sizeThatFits:size].height;
+    return CGSizeMake(size.width, totalHeight);
+}
 
--(void)setcellAttributeTitle:(NSAttributedString *)attributeTitle{};
 -(void)setcellRightValue:(NSString *)value{};
 -(void)setcellValue:(NSString *)value{}
 -(void)setcellValue2:(NSString *)value{}
@@ -247,11 +261,6 @@
 -(void)setcellAction:(SEL)action{}
 -(void)setinputAccessoryView:(NSString *)inputAccessoryView{}
 -(void)setinputView:(NSString *)inputView{}
-
--(CGSize)sizeThatFits:(CGSize)size
-{
-    return CGSizeMake(size.width, 50);
-}
 @end
 
 
@@ -351,5 +360,75 @@ static char  key_bottomlayer;
  // Drawing code
  }
  */
+
+@end
+
+
+
+#pragma mark - REDPoint
+
+@implementation HBRedPoint
+-(id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor =[UIColor clearColor];
+        self.color = [UIColor redColor];
+        // Initialization code
+    }
+    return self;
+}
+@end
+
+@implementation HBCirclePoint : UIView
+
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor =[UIColor clearColor];
+        // Initialization code
+    }
+    return self;
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    [self drawCircleWithCenter:CGPointMake(rect.size.width/2, rect.size.height/2)
+                        radius:rect.size.width/2];
+}
+
+-(void)setColor:(UIColor *)color
+{
+    _color = color;
+    //    [self setNeedsDisplay];
+}
+
+//圆形
+-(void)drawCircleWithCenter:(CGPoint)center
+                     radius:(float)radius
+{
+    CGContextRef     context = UIGraphicsGetCurrentContext();
+    
+    CGMutablePathRef pathRef = CGPathCreateMutable();
+    
+    CGPathAddArc(pathRef,
+                 &CGAffineTransformIdentity,
+                 center.x,
+                 center.y,
+                 radius,
+                 -M_PI/2,
+                 radius*2*M_PI-M_PI/2,
+                 NO);
+    CGPathCloseSubpath(pathRef);
+    
+    CGContextAddPath(context, pathRef);
+    UIColor * color = self.color?self.color:[UIColor redColor];
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillPath(context);
+    //    CGContextDrawPath(context,kCGPathFillStroke); //画空心圆 并且去掉前面两行
+    CGPathRelease(pathRef);
+}
 
 @end

@@ -29,20 +29,23 @@ __MOTHOD\
 
 @interface HBBaseTableViewCell : UITableViewCell
 
+
 @property (nonatomic,assign) BOOL               showNewMsg;
 @property (nonatomic,assign) BOOL               showTopLine;
 @property (nonatomic,assign) BOOL               showBottomLine;
+@property (nonatomic,assign) BOOL                canAnimate;
+@property (nonatomic,assign) BOOL                RoundCircleType;
+@property (nonatomic,strong) NSIndexPath         * indexPath;
+@property (nonatomic,assign) SEL                 selector;
+@property (nonatomic,assign) id                  delegate;
+@property (nonatomic,retain) NSString            * subvalue2;
+@property (nonatomic,weak  ) id                  object;
+@property (nonatomic,weak  ) id                  object2;
+@property (nonatomic,assign) BOOL                imageRight;
+@property (nonatomic,assign) BOOL                CornerRadius;
+@property (nonatomic,assign) int                 numberOfLines;
+@property (nonatomic,retain) NSMutableDictionary * dictionary;
 
-@property(nonatomic,assign) BOOL RoundCircleType;
-@property(nonatomic,strong) NSIndexPath * indexPath;
-@property(nonatomic,assign) SEL selector;
-@property(nonatomic,assign) id  delegate;
-@property(nonatomic,retain) NSString* subvalue2;
-@property(nonatomic,weak) id object;
-@property(nonatomic,weak) id object2;
-@property(nonatomic,assign) BOOL imageRight;
-@property(nonatomic,assign) BOOL CornerRadius;
-@property(nonatomic,retain) NSMutableDictionary * dictionary;
 -(void)setcelldictionary:(NSMutableDictionary *)dictionary;
 -(void)setcellimageRight:(BOOL)imageRight;
 -(void)setcellpicturecolor:(NSString *)picturecolor;
@@ -51,8 +54,9 @@ __MOTHOD\
 -(void)setcelldelegate:(id)delegate;
 -(void)setcellProfile:(NSString *)profile;
 -(void)setcellTitle:(NSString *)title;
--(void)setcellTitleColor:(NSString *)color;
+-(void)setcellTitleFont:(UIFont *)titleFont;
 -(void)setcellAttributeTitle:(NSAttributedString *)attributeTitle;
+-(void)setcellTitleColor:(NSString *)color;
 -(void)setcellValue:(NSString *)value;
 -(void)setcellValue2:(NSString *)value;
 -(void)setcellRightValue:(NSString *)value;
@@ -62,8 +66,16 @@ __MOTHOD\
 -(void)setinputView:(NSString *)inputView;
 -(void)setcelldetailtitle:(NSString *)detailtitle;
 -(void)setcellimageCornerRadius:(BOOL)CornerRadius;
-//-(void)setcellAction:(SEL)action;
+-(void)setcellTitleLabelNumberOfLines:(NSInteger)numberOfLines;
 
+//-(void)setcellAction:(SEL)action;
+/**
+ *  返回cell的高度 子类需要覆盖此方法
+ *
+ *  @param size
+ *
+ *  @return cell的size
+ */
 -(CGSize)sizeThatFits:(CGSize)size;
 @end
 

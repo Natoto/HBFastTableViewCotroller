@@ -356,15 +356,17 @@
         cell.delegate = self;
         cell.showTopLine = cellstruct.showTopLine;
         cell.showBottomLine = cellstruct.showBottomLine;
-        cell.indexPath = indexPath; 
+        cell.indexPath = indexPath;
         cell.selector = cellstruct.sel_selector;
         cell.selectionStyle = cellstruct.selectionStyle?UITableViewCellSelectionStyleDefault:UITableViewCellSelectionStyleNone;
         cell.accessoryType = cellstruct.accessory?UITableViewCellAccessoryDisclosureIndicator:UITableViewCellAccessoryNone;
+        [cell setcellTitleLabelNumberOfLines:cellstruct.titleLabelNumberOfLines];
         [cell setcellimageRight:cellstruct.imageRight];
         [cell setcelldetailtitle:cellstruct.detailtitle];
         [cell setcellplaceholder:cellstruct.placeHolder];
         [cell setcelldictionary:cellstruct.dictionary];
         [cell setcellTitle:cellstruct.title];
+        [cell setcellTitleFont:cellstruct.titleFont];
         [cell setcellAttributeTitle:cellstruct.attributeTitle];
         [cell setcellValue2:cellstruct.subvalue2];
         [cell setcellProfile:cellstruct.picture];
