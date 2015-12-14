@@ -365,6 +365,7 @@
         [cell setcellplaceholder:cellstruct.placeHolder];
         [cell setcelldictionary:cellstruct.dictionary];
         [cell setcellTitle:cellstruct.title];
+        [cell setcellAttributeTitle:cellstruct.attributeTitle];
         [cell setcellValue2:cellstruct.subvalue2];
         [cell setcellProfile:cellstruct.picture];
         [cell setcellpicturecolor:cellstruct.picturecolor];

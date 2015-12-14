@@ -27,7 +27,7 @@
 @property(nonatomic,assign) CGFloat     sectionheight;
 @property(nonatomic,assign) CGFloat     sectionfooterheight;
 @property(nonatomic,retain) NSString  * title;
-
+@property (nonatomic,retain) NSAttributedString  * attributeTitle;
 //@property(nonatomic,retain) NSString  * textAlignment;
 
 @property(nonatomic,retain) NSString  * detailtitle;

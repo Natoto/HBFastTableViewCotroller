@@ -52,6 +52,7 @@ __MOTHOD\
 -(void)setcellProfile:(NSString *)profile;
 -(void)setcellTitle:(NSString *)title;
 -(void)setcellTitleColor:(NSString *)color;
+-(void)setcellAttributeTitle:(NSAttributedString *)attributeTitle;
 -(void)setcellValue:(NSString *)value;
 -(void)setcellValue2:(NSString *)value;
 -(void)setcellRightValue:(NSString *)value;

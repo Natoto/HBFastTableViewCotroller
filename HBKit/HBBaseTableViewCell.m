@@ -231,12 +231,14 @@
         self.textLabel.textColor = [UIColor blackColor];
     }
 }
- -(void)setcelldetailtitle:(NSString *)detailtitle
+-(void)setcelldetailtitle:(NSString *)detailtitle
 {
     if (detailtitle) {
         self.detailTextLabel.text = detailtitle;        
     }
 }
+
+-(void)setcellAttributeTitle:(NSAttributedString *)attributeTitle{};
 -(void)setcellRightValue:(NSString *)value{};
 -(void)setcellValue:(NSString *)value{}
 -(void)setcellValue2:(NSString *)value{}
