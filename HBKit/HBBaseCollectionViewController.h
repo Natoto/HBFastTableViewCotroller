@@ -19,6 +19,8 @@
 #define COLLECTIONVIEW_REGISTER_CELLCLASS(COLLECTIONVIEW,CELLCLSSTR) \
 [COLLECTIONVIEW registerClass:NSClassFromString(CELLCLSSTR) forCellWithReuseIdentifier:CELLCLSSTR];
 
+
+
 @protocol HBCollectionViewControllerConfig <NSObject>
 @required
 /**

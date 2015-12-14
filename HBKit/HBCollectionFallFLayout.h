@@ -18,7 +18,7 @@ extern NSString *const WaterFallSectionFooter;
 
 
 #pragma mark WaterF
-@protocol WaterFLayoutDelegate <UICollectionViewDelegate>
+@protocol HBWaterFLayoutDelegate <UICollectionViewDelegate>
 @required
 /**
  *  Asks the delegate for the size of the specified item’s cell.

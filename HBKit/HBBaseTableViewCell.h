@@ -81,7 +81,7 @@ __MOTHOD\
 
 
 
-@interface UIView(PENG)
+@interface UIView(HBBASECELL)
 @property(nonatomic,retain) CALayer * toplayer;
 @property(nonatomic,retain) CALayer * bottomlayer;
 

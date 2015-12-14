@@ -266,7 +266,7 @@
 
 
 
-@implementation UIView(PENG)
+@implementation UIView(HBBASECELL)
 @dynamic toplayer;
 @dynamic bottomlayer;
 

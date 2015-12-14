@@ -15,7 +15,7 @@ NSString *const WaterFallSectionFooter = @"WaterFallSectionFooter";
 @interface HBCollectionFallFLayout ()
 
 /// The delegate will point to collection view's delegate automatically.
-@property (nonatomic, weak) id <WaterFLayoutDelegate> delegate;
+@property (nonatomic, weak) id <HBWaterFLayoutDelegate> delegate;
 /// Array to store height for each column
 @property (nonatomic, strong) NSMutableArray *columnHeights;
 /// Array of arrays. Each array stores item attributes for each section
@@ -186,7 +186,7 @@ const NSInteger unionSize = 20;
         return;
     }
     
-    self.delegate = (id <WaterFLayoutDelegate> )self.collectionView.delegate;
+    self.delegate = (id <HBWaterFLayoutDelegate> )self.collectionView.delegate;
 //    NSAssert([self.delegate conformsToProtocol:@protocol(WaterFLayoutDelegate)], @"UICollectionView's delegate should conform to WaterFLayoutDelegate protocol");
 //    NSAssert(self.columnCount > 0, @"UICollectionViewWaterfallLayout's columnCount should be greater than 0");
     // Initialize variables
