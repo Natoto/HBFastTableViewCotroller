@@ -354,6 +354,8 @@
     }
     if ([[cell class] isSubclassOfClass:[HBBaseTableViewCell class]]) {
         cell.delegate = self;
+        cell.showTopLine = cellstruct.showTopLine;
+        cell.showBottomLine = cellstruct.showBottomLine;
         cell.indexPath = indexPath; 
         cell.selector = cellstruct.sel_selector;
         cell.selectionStyle = cellstruct.selectionStyle?UITableViewCellSelectionStyleDefault:UITableViewCellSelectionStyleNone;
@@ -419,10 +421,8 @@
     }
     
     return nil;
-}
-
+} 
 @end
-
 
 
 
