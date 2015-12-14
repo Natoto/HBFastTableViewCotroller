@@ -27,7 +27,7 @@ __MOTHOD\
 //使用 imageWithName 降低内存压力
 //#import "UIImage+LocalImage.h"
 
-@interface HB_BaseTableViewCell : UITableViewCell
+@interface HBBaseTableViewCell : UITableViewCell
 @property(nonatomic,assign) BOOL RoundCircleType;
 @property(nonatomic,strong) NSIndexPath * indexPath;
 @property(nonatomic,assign) SEL selector;

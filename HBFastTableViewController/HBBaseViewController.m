@@ -5,7 +5,7 @@
 //  Created by nonato on 14-11-25.
 //  Copyright (c) 2014年 Nonato. All rights reserved.
 //
-#import "HB_BaseViewController.h"
+#import "HBBaseViewController.h"
 #import "UIButton+PENG.h"
 
 #define HB_UIColorWithRGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
@@ -24,7 +24,7 @@
 }
 @end
  
-@implementation HB_BaseViewController
+@implementation HBBaseViewController
 
 
 -(void)setShowBackItem:(BOOL)showBackItem

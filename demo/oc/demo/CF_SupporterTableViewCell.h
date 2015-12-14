@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HB_BaseTableViewCell.h"
-@interface CF_SupporterTableViewCell : HB_BaseTableViewCell
-@property (weak, nonatomic) IBOutlet UIButton *lbl_title;
+#import "HBBaseTableViewCell.h"
+@interface CF_SupporterTableViewCell : HBBaseTableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lbl_title;
 
 @end

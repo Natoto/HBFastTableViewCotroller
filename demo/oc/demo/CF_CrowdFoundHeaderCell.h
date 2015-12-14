@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HB_BaseTableViewCell.h"
-@interface CF_CrowdFoundHeaderCell : HB_BaseTableViewCell
+#import "HBBaseTableViewCell.h"
+@interface CF_CrowdFoundHeaderCell : HBBaseTableViewCell
 +(CGFloat)heightOfCell;
 @end

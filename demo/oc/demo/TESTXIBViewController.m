@@ -5,7 +5,7 @@
 //  Created by 跑酷 on 15/8/11.
 //  Copyright (c) 2015年 nonato. All rights reserved.
 //
-#import "HBFastTable.h"
+#import "HBKit.h"
 #import "TESTXIBViewController.h"
 
 #import "CF_SupporterTableViewCell.h"

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 nonato. All rights reserved.
 //
  
-#import "HBFastTable.h"
+#import "HBKit.h"
 #import "TESTAutoHeightViewController.h"
 #import "CF_CrowdFoundHeaderCell.h"
 #import "CF_SupporterTableViewCell.h"
@@ -46,7 +46,7 @@ GET_CELL_SELECT_ACTION(cellstruct)
     int randnumber = arc4random_uniform(2);
     NSString * title = randnumber?[self teststring1]:[self teststring2];
     CELL_STRUCT *cellstruct = [[CELL_STRUCT alloc] initWithtitle:title cellclass:@"CF_SupporterTableViewCell" placeholder:nil accessory:NO sel_selctor:@selector(cellselector:) delegate:self];
-    cellstruct.cellheight = [self.tableView hb_heightForCellWithIdentifier:@"CF_SupporterTableViewCell" configuration:^(HB_BaseTableViewCell * cell) {
+    cellstruct.cellheight = [self.tableView hb_heightForCellWithIdentifier:@"CF_SupporterTableViewCell" configuration:^(HBBaseTableViewCell * cell) {
         [cell setcellTitle:title];
     }];//auto
     cellstruct.xibvalue = @"xib";

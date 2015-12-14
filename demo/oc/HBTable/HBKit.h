@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 nonato. All rights reserved.
 //
 
-#import "HB_BaseTableViewController.h"
+#import "HBBaseTableViewController.h"
 #import "CELL_STRUCT_Common.h"
-#import "HB_BaseTableViewCell.h"
+#import "HBBaseTableViewCell.h"
+#import "HBBaseCollectionViewCell.h"
+#import "HBBaseCollectionViewController.h"

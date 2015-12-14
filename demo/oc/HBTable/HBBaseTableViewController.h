@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HB_BaseTableViewCell.h" 
-#import "HB_BaseViewController.h"
+#import "HBBaseTableViewCell.h" 
+#import "HBBaseViewController.h"
 
 /*
  MJRefresh (2.2.1)
@@ -16,6 +16,8 @@
  pod 'MJRefresh', '~> 2.2.1'
  - Homepage: https://github.com/CoderMJLee/MJRefresh
  */
+
+
 #define USE_MJREFRESH 1 //0不用到MJRefresh 1 用到了MJRefresh
 
 static NSString * notify_basetableview_tap = @"basetableview_tap";
@@ -26,7 +28,7 @@ static NSString * notify_basetableview_sender = @"BaseViewController";
 #define TABLEVIEW_REGISTERXIBCELL_CLASS(TABLEVIEW,CELLCLSSTR) {[TABLEVIEW registerClass:NSClassFromString(CELLCLSSTR) forCellReuseIdentifier:CELLCLSSTR];\
 [TABLEVIEW registerNib:[UINib nibWithNibName:CELLCLSSTR bundle:nil] forCellReuseIdentifier:CELLCLSSTR];}
 
-@interface HB_BaseTableViewController : HB_BaseViewController<UITableViewDataSource,UITableViewDelegate>
+@interface HBBaseTableViewController : HBBaseViewController<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong) NSMutableDictionary * dataDictionary;
 @property (nonatomic, strong) UITableView               * tableView;
 //不自动配置tableview

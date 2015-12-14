@@ -15,11 +15,11 @@ NO_DEFAULT_TITLE_PROFILE
 
 -(void)setcellTitle:(NSString *)title
 {
-    self.lbl_title.titleLabel.numberOfLines = 0;
-    self.lbl_title.titleLabel.lineBreakMode = 0;
+    self.lbl_title.numberOfLines = 0;
+    self.lbl_title.lineBreakMode = 0;
     
-    [self.lbl_title setTitle:title forState:UIControlStateNormal];
-    [self.lbl_title sizeThatFits:CGSizeMake(177, 30)];
+    self.lbl_title.text = title;
+    [self.lbl_title sizeThatFits:CGSizeMake(177, 0)];
 }
 - (void)awakeFromNib {
     // Initialization code
@@ -33,7 +33,7 @@ NO_DEFAULT_TITLE_PROFILE
 
 -(CGSize)sizeThatFits:(CGSize)size
 {
-    CGSize btnsize = [self.lbl_title.titleLabel sizeThatFits:CGSizeMake(177, 20)];
+    CGSize btnsize = [self.lbl_title sizeThatFits:CGSizeMake(177, 0)];
     btnsize.height = btnsize.height + 20;
     return CGSizeMake(size.width, btnsize.height);
 }

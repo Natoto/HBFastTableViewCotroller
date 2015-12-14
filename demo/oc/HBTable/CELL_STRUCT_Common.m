@@ -7,7 +7,7 @@
 //
 
 #import "CELL_STRUCT_Common.h"
-#import "HB_BaseTableViewCell.h"
+#import "HBBaseTableViewCell.h"
 #import "CELL_STRUCT.h"
 #import "UIButton+PENG.h" 
 @implementation CELL_STRUCT_Common
@@ -108,7 +108,7 @@
                      titlecolor:(NSString *)titlecolor
                   sectionheight:(CGFloat)sectionheight
 {
-    CELL_STRUCT * cell1_0 = [[CELL_STRUCT alloc] initWithtitle:title cellclass:NSStringFromClass([HB_BaseTableViewCell class]) placeholder:@"" accessory:NO sel_selctor:selectAction delegate:target];
+    CELL_STRUCT * cell1_0 = [[CELL_STRUCT alloc] initWithtitle:title cellclass:NSStringFromClass([HBBaseTableViewCell class]) placeholder:@"" accessory:NO sel_selctor:selectAction delegate:target];
     cell1_0.selectionStyle = selectionStyle;
     cell1_0.cellheight = cellheight;
     cell1_0.detailtitle = detailvalue?detailvalue:@"";
@@ -156,7 +156,7 @@
     OBJ_NULL_DEFAULT(sectionheight, @25)
     NSString * textAlignment = [dictionary objectForKey:key_cellstruct_textAlignment];
     
-    CELL_STRUCT * cell1_0 = [[CELL_STRUCT alloc] initWithtitle:title cellclass:NSStringFromClass([HB_BaseTableViewCell class]) placeholder:@"" accessory:NO sel_selctor:selectAction delegate:target];
+    CELL_STRUCT * cell1_0 = [[CELL_STRUCT alloc] initWithtitle:title cellclass:NSStringFromClass([HBBaseTableViewCell class]) placeholder:@"" accessory:NO sel_selctor:selectAction delegate:target];
     cell1_0.selectionStyle = selectionStyle.boolValue;
     cell1_0.cellheight = cellheight.floatValue;
     cell1_0.detailtitle = detailvalue;
@@ -202,7 +202,7 @@
     {
         return CELL_STRUCT_COLOR(clear);
     }
-    else if([key isEqualToString:value_cellstruct_write])
+    else if([key isEqualToString:value_cellstruct_white])
     {
         return CELL_STRUCT_COLOR(white);
     }

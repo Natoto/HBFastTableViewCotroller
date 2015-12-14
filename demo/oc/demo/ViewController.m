@@ -7,17 +7,18 @@
 //
 #import "TESTSystyleviewController.h"
 #import "ViewController.h"
-#import "HBFastTable.h"
+#import "HBKit.h"
 #import "TESTXIBViewController.h"
 #import "TESTAutoHeightViewController.h"
 #import "TESTRefreshViewController.h"
+#import "TESTCollectionViewController.h"
 @interface ViewController ()
 //step 1
 AS_CELL_STRUCT_COMMON(sys)
 AS_CELL_STRUCT_COMMON(xib)
 AS_CELL_STRUCT_COMMON(autoheight)
 AS_CELL_STRUCT_COMMON(refresh)
-
+AS_CELL_STRUCT_COMMON(collection)
 @end
 
 @implementation ViewController
@@ -26,7 +27,7 @@ GET_CELL_STRUCT_WITH(sys, HBTABLE-系统控件)
 GET_CELL_STRUCT_WITH(xib, HBTABLE-加载XIB)
 GET_CELL_STRUCT_WITH(autoheight, HBTABLE-自动高度)
 GET_CELL_STRUCT_WITH(refresh, HBTABLE-上下拉)
-
+GET_CELL_STRUCT_WITH(collection, COLLECTION-加载);
 /**
  *  响应的CELselect的方法
  */
@@ -53,6 +54,11 @@ GET_CELL_SELECT_ACTION(cellstruct)
         TESTRefreshViewController * ctr =[[TESTRefreshViewController alloc] init];
         [self.navigationController pushViewController:ctr animated:YES];
     }
+    else if(cellstruct == self.cell_struct_collection)
+    {
+        TESTCollectionViewController * ctr = [[TESTCollectionViewController alloc] init];
+        [self.navigationController pushViewController:ctr animated:YES];
+    }
 }
 
 - (void)viewDidLoad {
@@ -63,7 +69,7 @@ GET_CELL_SELECT_ACTION(cellstruct)
     [self.dataDictionary setObject:self.cell_struct_xib forKey:KEY_INDEXPATH(0, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_autoheight forKey:KEY_INDEXPATH(0, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_refresh forKey:KEY_INDEXPATH(0, rowIndex++)];
-  
+   [self.dataDictionary setObject:self.cell_struct_collection forKey:KEY_INDEXPATH(0, rowIndex++)];
 }
 
 - (void)didReceiveMemoryWarning {

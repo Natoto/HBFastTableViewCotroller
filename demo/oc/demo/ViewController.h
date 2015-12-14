@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HBFastTable.h"
-@interface ViewController : HB_BaseTableViewController
+#import "HBKit.h"
+@interface ViewController : HBBaseTableViewController
 
 
 @end

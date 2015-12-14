@@ -6,18 +6,18 @@
 //  Copyright (c) 2014年 Nonato. All rights reserved.
 //
 #import "CELL_STRUCT.h"
-#import "HB_BaseTableViewController.h"
+#import "HBBaseTableViewController.h"
 #import <objc/runtime.h>
 
 #if USE_MJREFRESH
 #import "MJRefresh.h"
 #endif
 
-@interface HB_BaseTableViewController()
+@interface HBBaseTableViewController()
 
 @end;
 
-@implementation HB_BaseTableViewController
+@implementation HBBaseTableViewController
 
 
 -(void)dealloc
@@ -313,7 +313,7 @@
     
     CELL_STRUCT * cellstruct = [self.dataDictionary objectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
     NSString * identifier01 = cellstruct.cellclass;
-    HB_BaseTableViewCell *cell ;
+    HBBaseTableViewCell *cell ;
     if(cellstruct.xibvalue && [cellstruct.xibvalue isEqualToString:@"xib"])
     {
 //        [tableView registerClass:NSClassFromString(cellstruct.cellclass) forCellReuseIdentifier:identifier01];
@@ -352,7 +352,7 @@
             
         }
     }
-    if ([[cell class] isSubclassOfClass:[HB_BaseTableViewCell class]]) {
+    if ([[cell class] isSubclassOfClass:[HBBaseTableViewCell class]]) {
         cell.delegate = self;
         cell.indexPath = indexPath; 
         cell.selector = cellstruct.sel_selector;
@@ -409,7 +409,7 @@
     {
         return CELL_STRUCT_COLOR(clear);
     }
-    else if([key isEqualToString:value_cellstruct_write])
+    else if([key isEqualToString:value_cellstruct_white])
     {
         return CELL_STRUCT_COLOR(white);
     }

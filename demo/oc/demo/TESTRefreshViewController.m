@@ -5,7 +5,7 @@
 //  Created by 跑酷 on 15/8/11.
 //  Copyright (c) 2015年 nonato. All rights reserved.
 //
-#import "HBFastTable.h"
+#import "HBKit.h"
 #import "TESTRefreshViewController.h"
 
 //上下拉需要解开

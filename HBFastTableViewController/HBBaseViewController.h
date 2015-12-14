@@ -27,7 +27,7 @@
 
 @protocol BaseViewControllerDelegate ;
 
-@interface HB_BaseViewController : UIViewController
+@interface HBBaseViewController : UIViewController
 {
     BOOL statusbarhidden;
 }
@@ -72,7 +72,7 @@
 @protocol BaseViewControllerDelegate
 
 @optional
--(void)BaseViewController:(HB_BaseViewController *)ViewController left:(BOOL)left navigationItem:(id)sender;
+-(void)BaseViewController:(HBBaseViewController *)ViewController left:(BOOL)left navigationItem:(id)sender;
 
 
 @end

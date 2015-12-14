@@ -7,7 +7,7 @@
 //
 
 #import "TESTSystyleviewController.h"
-#import "HBFastTable.h"
+#import "HBKit.h"
 //随机颜色
 
 #undef HBRandomColor
