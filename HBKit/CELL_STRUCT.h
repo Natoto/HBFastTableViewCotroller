@@ -14,6 +14,8 @@
 #define KEY_SECTION(SECTION) [NSString stringWithFormat:@"section%d",(int)SECTION]
 @interface CELL_STRUCT : NSObject
 
+@property (nonatomic,assign) BOOL     showTopLine;//显示顶部分割线
+@property (nonatomic,assign) BOOL     showBottomLine;//显示底部分割线
 @property(nonatomic,assign) CGFloat     cellheight;
 @property(nonatomic,assign) SEL         sel_selector;
 @property(nonatomic,retain) NSString  * key_indexpath;

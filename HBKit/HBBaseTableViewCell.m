@@ -8,6 +8,7 @@
 #import "CELL_STRUCT_KEY.h"
 #import "HBBaseTableViewCell.h"
 #import "CELL_STRUCT_Common.h"
+#import <objc/runtime.h>
 
 @interface HBBaseTableViewCell()
 
@@ -107,6 +108,16 @@
             //            self.textLabel.textAlignment = NSTextAlignmentRight;
             self.textLabel.center = CGPointMake(self.contentView.bounds.size.width - self.textLabel.bounds.size.width/2 ,self.textLabel.center.y);
         }
+    }
+    
+    
+    if (self.showTopLine) {
+        [self clearTopLayer];
+        [self drawToplinelayer];
+    }
+    if (self.showBottomLine) {
+        [self clearBottomLayer];
+        [self drawBottomlinelayer];
     }
 
 //   [self.textLabel setFrame:CGRectMake(0, 0, self.contentView.bounds.size.width * 3 / 4, self.contentView.bounds.size.height / 2)];
@@ -239,4 +250,104 @@
 {
     return CGSizeMake(size.width, 50);
 }
+@end
+
+
+
+
+@implementation UIView(PENG)
+@dynamic toplayer;
+@dynamic bottomlayer;
+
+#define PENG_COLOR_LINE [UIColor colorWithRed:219./255. green:219./255. blue:219./255. alpha:1] 
+//219 219 219
+/**
+ *  清除顶部分割线
+ */
+-(void)clearTopLayer
+{
+    CALayer *imageLayer = self.toplayer;
+    if (imageLayer) {
+        imageLayer = [self createLayer:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0.5) color:[UIColor clearColor]];
+        [self.layer replaceSublayer:self.toplayer with:imageLayer];
+        self.toplayer = nil;
+    }
+}
+
+/**
+ *  清除底部分割线
+ */
+-(void)clearBottomLayer
+{
+    CALayer *imageLayer = self.bottomlayer;
+    if (imageLayer) {
+        imageLayer =  [self createLayer:CGRectMake(0, self.frame.size.height - 0.5, [UIScreen mainScreen].bounds.size.width, 0.5) color:[UIColor clearColor]];
+        [self.layer replaceSublayer:self.bottomlayer with:imageLayer];
+        self.bottomlayer = nil;
+    }
+}
+
+-(void)drawBottomlinelayer
+{
+    CALayer *imageLayer = self.bottomlayer;
+    if (!imageLayer) {
+        imageLayer =  [self createLayer:CGRectMake(0, self.frame.size.height - 0.5, [UIScreen mainScreen].bounds.size.width, 0.5) color:PENG_COLOR_LINE];
+        [self.layer addSublayer:imageLayer];
+        self.bottomlayer = imageLayer;
+    }
+}
+
+-(void)drawToplinelayer
+{
+    CALayer *imageLayer = self.toplayer;
+    if (!imageLayer) {
+        imageLayer =  [self createLayer:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0.5) color:PENG_COLOR_LINE];
+        [self.layer addSublayer:imageLayer];
+        self.toplayer = imageLayer;
+    }
+}
+
+-(CALayer *)createLayer:(CGRect)frame color:(UIColor *)color
+{
+    CALayer *imageLayer = [CALayer layer];
+    imageLayer.frame = frame; //CGRectMake(0, 0, UISCREEN_WIDTH, 0.5);
+    imageLayer.cornerRadius = 0;  //设置layer圆角半径
+    imageLayer.masksToBounds = YES;  //隐藏边界
+    imageLayer.borderColor = color.CGColor;//[UIColor colorWithWhite:0.6 alpha:0.8].CGColor;  //边框颜色
+    imageLayer.borderWidth = 0.5;
+    return imageLayer;
+}
+
+static char  key_toplayer;
+static char  key_bottomlayer;
+
+-(CALayer *)toplayer
+{
+    CALayer * layer = (CALayer *)objc_getAssociatedObject(self, &key_toplayer);
+    return layer;
+}
+
+-(void)setToplayer:(CALayer *)toplayer
+{
+    objc_setAssociatedObject(self, &key_toplayer, toplayer, OBJC_ASSOCIATION_RETAIN);
+}
+-(CALayer *)bottomlayer
+{
+    CALayer * layer = (CALayer *)objc_getAssociatedObject(self, &key_bottomlayer);
+    return layer;
+}
+
+-(void)setBottomlayer:(CALayer *)bottomlayer
+{
+    objc_setAssociatedObject(self, &key_bottomlayer, bottomlayer, OBJC_ASSOCIATION_RETAIN);
+}
+
+/*
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
+
 @end

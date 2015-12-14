@@ -28,6 +28,11 @@ __MOTHOD\
 //#import "UIImage+LocalImage.h"
 
 @interface HBBaseTableViewCell : UITableViewCell
+
+@property (nonatomic,assign) BOOL               showNewMsg;
+@property (nonatomic,assign) BOOL               showTopLine;
+@property (nonatomic,assign) BOOL               showBottomLine;
+
 @property(nonatomic,assign) BOOL RoundCircleType;
 @property(nonatomic,strong) NSIndexPath * indexPath;
 @property(nonatomic,assign) SEL selector;
@@ -59,4 +64,16 @@ __MOTHOD\
 //-(void)setcellAction:(SEL)action;
 
 -(CGSize)sizeThatFits:(CGSize)size;
+@end
+
+
+
+@interface UIView(PENG)
+@property(nonatomic,retain) CALayer * toplayer;
+@property(nonatomic,retain) CALayer * bottomlayer;
+
+-(void)clearTopLayer;
+-(void)clearBottomLayer;
+-(void)drawBottomlinelayer;
+-(void)drawToplinelayer;
 @end

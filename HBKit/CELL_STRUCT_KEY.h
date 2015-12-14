@@ -31,17 +31,19 @@ static NSString * key_cellstruct_sectionheight          = @"key_cellstruct_secti
 static NSString * key_cellstruct_sectionHeaderView      = @"key_cellstruct_sectionHeaderView";
 
 static NSString * key_cellstruct_title                  = @"key_cellstruct_title";
+static NSString * key_cellstruct_titleFont              = @"key_cellstruct_titleFont";
 static NSString * key_cellstruct_titlecolor             = @"key_cellstruct_titlecolor";
 static NSString * key_cellstruct_textAlignment          = @"key_cellstruct_textAlignment";
 
 static NSString * key_cellstruct_placehoder             = @"key_cellstruct_placehoder";
 static NSString * key_cellstruct_detailvalue            = @"key_cellstruct_detailvalue";
+static NSString * key_cellstruct_newmessagecount        = @"key_cellstruct_newmessagecount";
 
 static NSString * key_cellstruct_imageCornerRadius      = @"key_cellstruct_imageCornerRadius";
 static NSString * key_cellstruct_imageRight             = @"key_cellstruct_imageRight";
 static NSString * key_cellstruct_txtsecureTextEntry     = @"key_cellstruct_txtsecureTextEntry";
 static NSString * key_cellstruct_txtkeyboardtype        = @"key_cellstruct_txtkeyboardtype";
- 
+
 static NSString * key_cellstruct_accessory              = @"key_cellstruct_accessory";
 static NSString * key_cellstruct_cellclass              = @"key_cellstruct_cellclass";
 static NSString * key_cellstruct_delegate               = @"key_cellstruct_delegate";
@@ -55,12 +57,22 @@ static NSString * key_cellstruct_editing                = @"key_cellstruct_editi
 static NSString * key_cellstruct_editabled              = @"key_cellstruct_editabled";
 static NSString * key_cellstruct_pushcontroller         = @"key_cellstruct_pushcontroller";
 static NSString * key_cellstruct_pushcontroller_xib     = @"key_cellstruct_pushcontroller_xib";
+static NSString * key_cellstruct_hiddenView             = @"key_cellstruct_hiddenView";
+static NSString * key_cellstruct_leftWidth             = @"key_cellstruct_leftWidth";
+static NSString * key_cellstruct_rightWidth             = @"key_cellstruct_rightWidth";
+static NSString * key_cellstruct_numberOfLines             = @"key_cellstruct_numberOfLines";
 
+static NSString * key_cellstruct_showtoplayer           = @"key_cellstruct_showtoplayer";
+static NSString * key_cellstruct_showbottomlayer           = @"key_cellstruct_showbottomlayer";
+
+static NSString * key_cellstruct_imageHeight            = @"key_cellstruct_imageHeight";
+
+static NSString * key_cellstruct_AutoSavePictures             = @"key_cellstruct_AutoSavePictures";
 
 static NSString * value_cellstruct_black = @"black";      // 0.0 white
 static NSString * value_cellstruct_Gray = @"Gray"; //GrayColor;   // 0.333 white
 static NSString * value_cellstruct_lightGray = @"lightGrayColor";  // 0.667 white
-static NSString * value_cellstruct_write = @"white";//Color;      // 1.0 white
+static NSString * value_cellstruct_white = @"white";//Color;      // 1.0 white
 static NSString * value_cellstruct_gray = @"gray";//Color;       // 0.5 white
 static NSString * value_cellstruct_clear = @"clear";
 

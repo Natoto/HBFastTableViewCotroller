@@ -202,7 +202,7 @@
     {
         return CELL_STRUCT_COLOR(clear);
     }
-    else if([key isEqualToString:value_cellstruct_write])
+    else if([key isEqualToString:value_cellstruct_white])
     {
         return CELL_STRUCT_COLOR(white);
     }

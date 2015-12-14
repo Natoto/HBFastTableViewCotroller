@@ -9,3 +9,5 @@
 #import "HBBaseTableViewController.h"
 #import "CELL_STRUCT_Common.h"
 #import "HBBaseTableViewCell.h"
+#import "HBBaseCollectionViewCell.h"
+#import "HBBaseCollectionViewController.h"
