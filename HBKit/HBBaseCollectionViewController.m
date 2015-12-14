@@ -10,7 +10,7 @@
 #import "HBBaseCollectionViewCell.h"
 #import "HBCollectionFallFLayout.h"
 
-#if USE_MJREFRESH //是否需要用到MJRefresh
+#if 1 //是否需要用到MJRefresh
 #import <MJRefresh/MJRefresh.h>
 #endif
 
@@ -234,9 +234,9 @@
 }
  
 
-#pragma mark - USE_MJREFRESH
+#pragma mark - 1
 
-#if USE_MJREFRESH //是否需要用到MJRefresh
+#if 1 //是否需要用到MJRefresh
 
 -(void)setNoHeaderFreshView:(BOOL)noHeaderFreshView
 {

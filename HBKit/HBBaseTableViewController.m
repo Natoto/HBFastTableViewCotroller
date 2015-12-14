@@ -9,7 +9,7 @@
 #import "HBBaseTableViewController.h"
 #import <objc/runtime.h>
 
-#if USE_MJREFRESH
+#if 1
 #import "MJRefresh.h"
 #endif
 
@@ -115,7 +115,7 @@
 }
 
 
-#if USE_MJREFRESH
+#if 1
 /**
  *  集成刷新控件
  */

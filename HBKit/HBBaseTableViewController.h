@@ -27,7 +27,7 @@ static NSString * notify_basetableview_sender = @"BaseViewController";
 //点击之后不自动变回未选状态
 @property (nonatomic, assign) BOOL                       nodeselectRow;
 
-#if USE_MJREFRESH //是否需要用到MJRefresh
+#if 1 //是否需要用到MJRefresh
 //上下拉要用到的
 @property (nonatomic, assign) BOOL                       noFooterView;
 @property (nonatomic, assign) BOOL                       noHeaderFreshView;
