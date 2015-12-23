@@ -23,7 +23,6 @@
     [super viewDidLoad];
     self.title = @"系统TABLE STYLE";
     for (int index = 0; index < 10; index ++) {
-        
         NSString * title = [NSString stringWithFormat:@"cell %d",index];
         NSString * detail = [NSString stringWithFormat:@"detail cell %d",index];
         CELL_STRUCT * cellstruct = [self createcellstruct:title detail:detail index:index];

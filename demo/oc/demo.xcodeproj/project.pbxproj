@@ -38,6 +38,8 @@
 		339E0DE61C1E94AE00035B65 /* HBCollectionFallFLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 339E0DDA1C1E94AE00035B65 /* HBCollectionFallFLayout.m */; };
 		339E0DE71C1E94AE00035B65 /* UIButton+PENG.m in Sources */ = {isa = PBXBuildFile; fileRef = 339E0DDD1C1E94AE00035B65 /* UIButton+PENG.m */; };
 		5154282E333DB6FB31B053AC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47243643C8635681725F3A66 /* libPods.a */; };
+		78EE98601C2AC6AB004C97A9 /* NormalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE985F1C2AC6AB004C97A9 /* NormalTableViewController.m */; };
+		78EE98631C2ACCCF004C97A9 /* NormalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE98621C2ACCCF004C97A9 /* NormalCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,10 @@
 		339E0DDC1C1E94AE00035B65 /* UIButton+PENG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PENG.h"; sourceTree = "<group>"; };
 		339E0DDD1C1E94AE00035B65 /* UIButton+PENG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PENG.m"; sourceTree = "<group>"; };
 		47243643C8635681725F3A66 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		78EE985E1C2AC6AB004C97A9 /* NormalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalTableViewController.h; sourceTree = "<group>"; };
+		78EE985F1C2AC6AB004C97A9 /* NormalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalTableViewController.m; sourceTree = "<group>"; };
+		78EE98611C2ACCCF004C97A9 /* NormalCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalCollectionViewController.h; sourceTree = "<group>"; };
+		78EE98621C2ACCCF004C97A9 /* NormalCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalCollectionViewController.m; sourceTree = "<group>"; };
 		AA8C334F8F9913F1207427FD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BAD90533045FAC1328C1175F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +165,10 @@
 				184130A51B79DF4A002AB4C0 /* AppDelegate.m */,
 				184130A71B79DF4A002AB4C0 /* ViewController.h */,
 				184130A81B79DF4A002AB4C0 /* ViewController.m */,
+				78EE985E1C2AC6AB004C97A9 /* NormalTableViewController.h */,
+				78EE985F1C2AC6AB004C97A9 /* NormalTableViewController.m */,
+				78EE98611C2ACCCF004C97A9 /* NormalCollectionViewController.h */,
+				78EE98621C2ACCCF004C97A9 /* NormalCollectionViewController.m */,
 				18678F451B79E8240062A073 /* TESTSystyleviewController.h */,
 				18678F461B79E8240062A073 /* TESTSystyleviewController.m */,
 				18678F4A1B79ED6A0062A073 /* TESTXIBViewController.h */,
@@ -411,10 +421,12 @@
 				339E0DDE1C1E94AE00035B65 /* CELL_STRUCT.m in Sources */,
 				339E0DE21C1E94AE00035B65 /* HBBaseCollectionViewController.m in Sources */,
 				18678F5A1B79EEF10062A073 /* CF_SupporterTableViewCell.m in Sources */,
+				78EE98631C2ACCCF004C97A9 /* NormalCollectionViewController.m in Sources */,
 				339E0DB81C1E6F8F00035B65 /* TESTCollectionViewController.m in Sources */,
 				339E0DE41C1E94AE00035B65 /* HBBaseTableViewController.m in Sources */,
 				339E0DE01C1E94AE00035B65 /* CELL_STRUCT_KVO.m in Sources */,
 				339E0DE71C1E94AE00035B65 /* UIButton+PENG.m in Sources */,
+				78EE98601C2AC6AB004C97A9 /* NormalTableViewController.m in Sources */,
 				18678F601B7A09DD0062A073 /* TESTAutoHeightViewController.m in Sources */,
 				184130A61B79DF4A002AB4C0 /* AppDelegate.m in Sources */,
 				18678F551B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.m in Sources */,
