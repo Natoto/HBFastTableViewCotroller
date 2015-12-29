@@ -9,7 +9,7 @@
 #import "TESTCollectionViewController.h"
 #import "TestCollectionViewCell.h"
 
-@interface TESTCollectionViewController ()
+@interface TESTCollectionViewController ()<HBCollectionViewControllerConfig>
 
 @end
 

@@ -199,7 +199,9 @@
 //        [self.imageView hb_setImageWithURL:[NSURL URLWithString:profile] placeholderImage:[UIImage imageFileNamed:@"big_icon"] options:0 completed:nil];
         return;
     }
-    self.imageView.image = [UIImage imageNamed:profile];
+    if (profile.length) {
+        self.imageView.image = [UIImage imageNamed:profile];
+    }
 }
 
 -(void)setcellpicturecolor:(NSString *)picturecolor
