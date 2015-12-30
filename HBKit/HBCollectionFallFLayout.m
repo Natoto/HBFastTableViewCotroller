@@ -257,13 +257,12 @@ const NSInteger unionSize = 20;
         NSInteger itemCount = [self.collectionView numberOfItemsInSection:section];
         NSMutableArray *itemAttributes = [NSMutableArray arrayWithCapacity:itemCount];
         
-        CGFloat realitemWidth = floorf((width - (realcolumnCount - 1) * self.minimumColumnSpacing) /realcolumnCount);
+        CGFloat realitemWidth = floorf((width - (realcolumnCount - 1) * self.minimumColumnSpacing)/realcolumnCount);
         
         for (idx = 0; idx < itemCount; idx++)
         {
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:idx inSection:section];
             CGSize itemSize = [self.delegate collectionView:self.collectionView layout:self sizeForItemAtIndexPath:indexPath];
-            
             
             CGFloat itemHeight = floorf(itemSize.height * realitemWidth / itemSize.width);
             //关键语句 计算最小列所在的序号 从而讲下一列放进去

@@ -61,7 +61,7 @@ static NSString * key_cellstruct_hiddenView             = @"key_cellstruct_hidde
 static NSString * key_cellstruct_leftWidth             = @"key_cellstruct_leftWidth";
 static NSString * key_cellstruct_rightWidth             = @"key_cellstruct_rightWidth";
 static NSString * key_cellstruct_numberOfLines             = @"key_cellstruct_numberOfLines";
-
+static NSString * key_cellstruct_lbl_title_width      = @"key_cellstruct_lbl_title_width";
 static NSString * key_cellstruct_showtoplayer           = @"key_cellstruct_showtoplayer";
 static NSString * key_cellstruct_showbottomlayer           = @"key_cellstruct_showbottomlayer";
 

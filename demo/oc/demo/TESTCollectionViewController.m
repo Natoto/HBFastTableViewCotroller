@@ -34,6 +34,7 @@
         cellstruct.xibvalue = @"xib";
         cellstruct.cellheight = 10*(index%5) + 50;
         cellstruct.sectionheight = 50;
+        [cellstruct.dictionary setObject:[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1] forKey:key_cellstruct_background];
         [self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(0, index)];
     }
    
@@ -43,6 +44,7 @@
         cellstruct.xibvalue = @"xib";
         cellstruct.cellheight = 10*(index%5) + 50;
         cellstruct.sectionheight = 50;
+        [cellstruct.dictionary setObject:[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1] forKey:key_cellstruct_background];
         [self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(2, index)];
     }
     
@@ -51,7 +53,8 @@
         cellstruct.cellclass = @"TestCollectionViewCell";
         cellstruct.xibvalue = @"xib";
         cellstruct.cellheight = 200;
-        cellstruct.sectionheight = 50; 
+        cellstruct.sectionheight = 50;
+        [cellstruct.dictionary setObject:[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1] forKey:key_cellstruct_background];
         [self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(1, index)];
     }
     [self adjustContentOffSet:0 bottom:64.];
@@ -75,18 +78,24 @@
 
 -(UIEdgeInsets)configSectionInset
 {
-    return UIEdgeInsetsMake(5, 5, 5, 5);
+    return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 -(UIEdgeInsets)configInsetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(5, 5, 5, 5);
+    return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 -(CGFloat)configMinimumColumnSpacing
 {
     return 0;
 }
+
+-(CGFloat)configMinimumInteritemSpacing
+{
+    return 0;
+}
+
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
     if ([kind isEqualToString:@"TestSectionCollectionReusableView"])

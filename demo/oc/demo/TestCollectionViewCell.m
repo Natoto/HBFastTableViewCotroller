@@ -11,7 +11,7 @@
 @implementation TestCollectionViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    // Initialization code 
 }
 
 @end
