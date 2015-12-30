@@ -249,7 +249,11 @@
 {
     UIEdgeInsets edgeinset = [self configInsetForSectionAtIndex:indexPath.section];
      CELL_STRUCT * cellstruct = [self.dataDictionary objectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
-    CGFloat cellSideLength = (self.view.bounds.size.width - edgeinset.left * (self.configColumnCount + 1)) / self.configColumnCount;
+    NSInteger realcolumcount = self.configColumnCount;
+    if ([self respondsToSelector:@selector(collectionView:ColumnCountOfSection:)]) {
+        realcolumcount = [self collectionView:collectionView ColumnCountOfSection:indexPath.section];
+    }
+    CGFloat cellSideLength = (self.view.bounds.size.width - edgeinset.left * (realcolumcount + 1)) / realcolumcount;
     CGFloat itemheight = (cellstruct.cellheight>0) ? cellstruct.cellheight:cellSideLength;
     CGSize cellSize = CGSizeMake(cellSideLength, itemheight);
     return cellSize;

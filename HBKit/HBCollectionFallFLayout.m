@@ -200,18 +200,22 @@ const NSInteger unionSize = 20;
     [self.columnHeights removeAllObjects];
     [self.allItemAttributes removeAllObjects];
     [self.sectionItemAttributes removeAllObjects];
-    
+
+    //列高度集合统计 一竖看哪个最高就哪个 用于设定content的size
     for (idx = 0; idx < self.columnCount; idx++)
     {
         [self.columnHeights addObject:@(0)];
     }
-    
     // Create attributes
     CGFloat top = 10;
     UICollectionViewLayoutAttributes *attributes;
     
     for (NSInteger section = 0; section < numberOfSections; ++section)
     {
+        NSInteger realcolumnCount = self.columnCount;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(collectionView:ColumnCountOfSection:)]) {
+            realcolumnCount = [self.delegate collectionView:self.collectionView ColumnCountOfSection:section];
+        }
         /*
          * 1. Section header
          */
@@ -240,12 +244,9 @@ const NSInteger unionSize = 20;
             top = CGRectGetMaxY(attributes.frame);
         }
         
-        NSInteger realcolumnCount = self.columnCount;
-        if (self.delegate && [self.delegate respondsToSelector:@selector(collectionView:ColumnCountOfSection:)]) {
-                realcolumnCount = [self.delegate collectionView:self.collectionView ColumnCountOfSection:section];
-        }
         top += self.sectionInset.top;
-        for (idx = 0; idx < realcolumnCount; idx++)
+        //换了一个section了 就都回到正常的水平线
+        for (idx = 0; idx < self.columnCount; idx++)
         {
             self.columnHeights[idx] = @(top);
         }
@@ -265,7 +266,9 @@ const NSInteger unionSize = 20;
             
             
             CGFloat itemHeight = floorf(itemSize.height * realitemWidth / itemSize.width);
-            NSUInteger columnIndex = [self shortestColumnIndex];
+            //关键语句 计算最小列所在的序号 从而讲下一列放进去
+            NSUInteger columnIndex = [self shortestColumnIndex:[self.columnHeights subarrayWithRange:NSMakeRange(0, realcolumnCount)]];
+            
             CGFloat xOffset = self.sectionInset.left + (realitemWidth + self.minimumColumnSpacing) * columnIndex;
             CGFloat yOffset = [self.columnHeights[columnIndex] floatValue];
             
@@ -282,7 +285,7 @@ const NSInteger unionSize = 20;
          * Section footer
          */
         CGFloat footerHeight;
-        NSUInteger columnIndex = [self longestColumnIndex];
+        NSUInteger columnIndex = [self longestColumnIndex:self.columnHeights];
         top = [self.columnHeights[columnIndex] floatValue] - self.minimumInteritemSpacing + self.sectionInset.bottom;
         
         if ([self.delegate respondsToSelector:@selector(collectionView:layout:heightForFooterInSection:)])
@@ -309,7 +312,7 @@ const NSInteger unionSize = 20;
             top = CGRectGetMaxY(attributes.frame);
         }
         
-        for (idx = 0; idx < self.columnCount; idx++)
+        for (idx = 0; idx < realcolumnCount; idx++)
         {
             self.columnHeights[idx] = @(top);
         }
@@ -327,6 +330,7 @@ const NSInteger unionSize = 20;
         idx++;
     }
 }
+
 
 - (CGSize)collectionViewContentSize
 {
@@ -426,16 +430,16 @@ const NSInteger unionSize = 20;
 #pragma mark - Private Methods
 
 /**
- *  Find the shortest column.
+ *  Find the shortest column. 发现最短的一行的序列
  *
  *  @return index for the shortest column
  */
-- (NSUInteger)shortestColumnIndex
+- (NSUInteger)shortestColumnIndex:(NSArray *)columnHeights
 {
     __block NSUInteger index = 0;
     __block CGFloat shortestHeight = MAXFLOAT;
     
-    [self.columnHeights enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+    [columnHeights enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
     {
         CGFloat height = [obj floatValue];
         if (height < shortestHeight)
@@ -453,12 +457,12 @@ const NSInteger unionSize = 20;
  *
  *  @return index for the longest column
  */
-- (NSUInteger)longestColumnIndex
+- (NSUInteger)longestColumnIndex:(NSArray *)columnHeights
 {
     __block NSUInteger index = 0;
     __block CGFloat longestHeight = 0;
     
-    [self.columnHeights enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+    [columnHeights enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
      {
         CGFloat height = [obj floatValue];
         if (height > longestHeight)

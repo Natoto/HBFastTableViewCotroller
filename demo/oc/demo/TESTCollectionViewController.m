@@ -28,7 +28,7 @@
     [self.collectionView registerClass:[TEST2CollectionReusableView class] forSupplementaryViewOfKind:@"TEST2CollectionReusableView" withReuseIdentifier:@"TEST2CollectionReusableView"];
     
     COLLECTIONVIEW_REGISTER_XIB_CELLCLASS(self.collectionView, @"TestCollectionViewCell");
-    for (int index = 0; index < 20; index ++) {
+    for (int index = 0; index < 5; index ++) {
         CELL_STRUCT * cellstruct = [CELL_STRUCT cell_x_x_struct:@"" detailvalue:@"" target:self selectAction:DEFAULT_CELL_SELECT_ACTION];
         cellstruct.cellclass = @"TestCollectionViewCell";
         cellstruct.xibvalue = @"xib";

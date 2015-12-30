@@ -117,7 +117,7 @@ extern NSString *const HBWaterFallSectionFooter;
 @property (nonatomic, weak) id <HBWaterFLayoutDelegate> delegate;
 /**
  *  @brief How many columns for this layout.
- *  @discussion Default: 2
+ *  @discussion Default: 2 最大有多少行
  */
 @property (nonatomic, assign) NSInteger columnCount;
 
