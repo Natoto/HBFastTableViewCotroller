@@ -28,13 +28,22 @@
     [self.collectionView registerClass:[TEST2CollectionReusableView class] forSupplementaryViewOfKind:@"TEST2CollectionReusableView" withReuseIdentifier:@"TEST2CollectionReusableView"];
     
     COLLECTIONVIEW_REGISTER_XIB_CELLCLASS(self.collectionView, @"TestCollectionViewCell");
-    for (int index = 0; index < 5; index ++) {
+    for (int index = 0; index < 15; index ++) {
         CELL_STRUCT * cellstruct = [CELL_STRUCT cell_x_x_struct:@"" detailvalue:@"" target:self selectAction:DEFAULT_CELL_SELECT_ACTION];
         cellstruct.cellclass = @"TestCollectionViewCell";
         cellstruct.xibvalue = @"xib";
         cellstruct.cellheight = 10*(index%5) + 50;
         cellstruct.sectionheight = 50;
         [self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(0, index)];
+    }
+   
+    for (int index = 0; index < 5; index ++) {
+        CELL_STRUCT * cellstruct = [CELL_STRUCT cell_x_x_struct:@"" detailvalue:@"" target:self selectAction:DEFAULT_CELL_SELECT_ACTION];
+        cellstruct.cellclass = @"TestCollectionViewCell";
+        cellstruct.xibvalue = @"xib";
+        cellstruct.cellheight = 10*(index%5) + 50;
+        cellstruct.sectionheight = 50;
+        [self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(2, index)];
     }
     
     for (int index = 0; index < 20; index ++) {
@@ -48,10 +57,17 @@
     [self adjustContentOffSet:0 bottom:64.];
 }
 
+-(NSInteger)configColumnCount
+{
+    return 3;
+}
 -(NSInteger)collectionView:(UICollectionView *)collectionView ColumnCountOfSection:(NSInteger)section
 {
     if (section == 0) {
-        return 1;
+        return 3;
+    }
+    else if(section == 1)
+    {    return 1;
     }
     else
         return 2;
