@@ -37,6 +37,9 @@
 		339E0DE51C1E94AE00035B65 /* HBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339E0DD81C1E94AE00035B65 /* HBBaseViewController.m */; };
 		339E0DE61C1E94AE00035B65 /* HBCollectionFallFLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 339E0DDA1C1E94AE00035B65 /* HBCollectionFallFLayout.m */; };
 		339E0DE71C1E94AE00035B65 /* UIButton+PENG.m in Sources */ = {isa = PBXBuildFile; fileRef = 339E0DDD1C1E94AE00035B65 /* UIButton+PENG.m */; };
+		33B63B0F1C337AF400F1CF34 /* TestSectionCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B63B0D1C337AF400F1CF34 /* TestSectionCollectionReusableView.m */; };
+		33B63B101C337AF400F1CF34 /* TestSectionCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B63B0E1C337AF400F1CF34 /* TestSectionCollectionReusableView.xib */; };
+		33B63B131C33A54000F1CF34 /* TEST2CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B63B121C33A54000F1CF34 /* TEST2CollectionReusableView.m */; };
 		5154282E333DB6FB31B053AC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47243643C8635681725F3A66 /* libPods.a */; };
 		78EE98601C2AC6AB004C97A9 /* NormalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE985F1C2AC6AB004C97A9 /* NormalTableViewController.m */; };
 		78EE98631C2ACCCF004C97A9 /* NormalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE98621C2ACCCF004C97A9 /* NormalCollectionViewController.m */; };
@@ -109,6 +112,11 @@
 		339E0DDB1C1E94AE00035B65 /* HBKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBKit.h; sourceTree = "<group>"; };
 		339E0DDC1C1E94AE00035B65 /* UIButton+PENG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PENG.h"; sourceTree = "<group>"; };
 		339E0DDD1C1E94AE00035B65 /* UIButton+PENG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PENG.m"; sourceTree = "<group>"; };
+		33B63B0C1C337AF400F1CF34 /* TestSectionCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSectionCollectionReusableView.h; sourceTree = "<group>"; };
+		33B63B0D1C337AF400F1CF34 /* TestSectionCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSectionCollectionReusableView.m; sourceTree = "<group>"; };
+		33B63B0E1C337AF400F1CF34 /* TestSectionCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestSectionCollectionReusableView.xib; sourceTree = "<group>"; };
+		33B63B111C33A54000F1CF34 /* TEST2CollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEST2CollectionReusableView.h; sourceTree = "<group>"; };
+		33B63B121C33A54000F1CF34 /* TEST2CollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEST2CollectionReusableView.m; sourceTree = "<group>"; };
 		47243643C8635681725F3A66 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78EE985E1C2AC6AB004C97A9 /* NormalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalTableViewController.h; sourceTree = "<group>"; };
 		78EE985F1C2AC6AB004C97A9 /* NormalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalTableViewController.m; sourceTree = "<group>"; };
@@ -179,6 +187,11 @@
 				18678F621B7A115B0062A073 /* TESTRefreshViewController.m */,
 				339E0DB61C1E6F8F00035B65 /* TESTCollectionViewController.h */,
 				339E0DB71C1E6F8F00035B65 /* TESTCollectionViewController.m */,
+				33B63B111C33A54000F1CF34 /* TEST2CollectionReusableView.h */,
+				33B63B121C33A54000F1CF34 /* TEST2CollectionReusableView.m */,
+				33B63B0C1C337AF400F1CF34 /* TestSectionCollectionReusableView.h */,
+				33B63B0D1C337AF400F1CF34 /* TestSectionCollectionReusableView.m */,
+				33B63B0E1C337AF400F1CF34 /* TestSectionCollectionReusableView.xib */,
 				18678F521B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.h */,
 				18678F531B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.m */,
 				18678F541B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.xib */,
@@ -359,6 +372,7 @@
 				18678F5D1B79EF230062A073 /* beauty.png in Resources */,
 				184130B11B79DF4A002AB4C0 /* LaunchScreen.xib in Resources */,
 				18678F561B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.xib in Resources */,
+				33B63B101C337AF400F1CF34 /* TestSectionCollectionReusableView.xib in Resources */,
 				184130AE1B79DF4A002AB4C0 /* Images.xcassets in Resources */,
 				18678F491B79EABA0062A073 /* profile.png in Resources */,
 			);
@@ -429,9 +443,11 @@
 				78EE98601C2AC6AB004C97A9 /* NormalTableViewController.m in Sources */,
 				18678F601B7A09DD0062A073 /* TESTAutoHeightViewController.m in Sources */,
 				184130A61B79DF4A002AB4C0 /* AppDelegate.m in Sources */,
+				33B63B131C33A54000F1CF34 /* TEST2CollectionReusableView.m in Sources */,
 				18678F551B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.m in Sources */,
 				184130A31B79DF4A002AB4C0 /* main.m in Sources */,
 				339E0DE51C1E94AE00035B65 /* HBBaseViewController.m in Sources */,
+				33B63B0F1C337AF400F1CF34 /* TestSectionCollectionReusableView.m in Sources */,
 				339E0DDF1C1E94AE00035B65 /* CELL_STRUCT_Common.m in Sources */,
 				18678F471B79E8240062A073 /* TESTSystyleviewController.m in Sources */,
 			);

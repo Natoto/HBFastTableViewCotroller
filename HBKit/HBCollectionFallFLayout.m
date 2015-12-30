@@ -8,14 +8,12 @@
 
 #import "HBCollectionFallFLayout.h"
 
-NSString *const WaterFallSectionHeader = @"WaterFallSectionHeader";
-NSString *const WaterFallSectionFooter = @"WaterFallSectionFooter";
+NSString *const HBWaterFallSectionHeader = @"HBWaterFallSectionHeader";
+NSString *const HBWaterFallSectionFooter = @"HBWaterFallSectionFooter";
 
 
 @interface HBCollectionFallFLayout ()
 
-/// The delegate will point to collection view's delegate automatically.
-@property (nonatomic, weak) id <HBWaterFLayoutDelegate> delegate;
 /// Array to store height for each column
 @property (nonatomic, strong) NSMutableArray *columnHeights;
 /// Array of arrays. Each array stores item attributes for each section
@@ -185,8 +183,9 @@ const NSInteger unionSize = 20;
     {
         return;
     }
-    
-    self.delegate = (id <HBWaterFLayoutDelegate> )self.collectionView.delegate;
+    if (!self.delegate) {
+        self.delegate = (id <HBWaterFLayoutDelegate> )self.collectionView.delegate;
+    }
 //    NSAssert([self.delegate conformsToProtocol:@protocol(WaterFLayoutDelegate)], @"UICollectionView's delegate should conform to WaterFLayoutDelegate protocol");
 //    NSAssert(self.columnCount > 0, @"UICollectionViewWaterfallLayout's columnCount should be greater than 0");
     // Initialize variables
@@ -228,7 +227,11 @@ const NSInteger unionSize = 20;
         
         if (headerHeight > 0)
         {
-            attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:WaterFallSectionHeader withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
+            NSString * headerRuseIdentifier = HBWaterFallSectionHeader;
+            if (self.delegate && [self.delegate respondsToSelector:@selector(collectionView:HeaderReuseIdentifierWithSection:)]) {
+                headerRuseIdentifier = [self.delegate collectionView:self.collectionView HeaderReuseIdentifierWithSection:section];
+            }
+            attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:headerRuseIdentifier withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
             attributes.frame = CGRectMake(0, top, self.collectionView.frame.size.width, headerHeight);
             
             self.headersAttribute[@(section)] = attributes;
@@ -237,8 +240,12 @@ const NSInteger unionSize = 20;
             top = CGRectGetMaxY(attributes.frame);
         }
         
+        NSInteger realcolumnCount = self.columnCount;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(collectionView:ColumnCountOfSection:)]) {
+                realcolumnCount = [self.delegate collectionView:self.collectionView ColumnCountOfSection:section];
+        }
         top += self.sectionInset.top;
-        for (idx = 0; idx < self.columnCount; idx++)
+        for (idx = 0; idx < realcolumnCount; idx++)
         {
             self.columnHeights[idx] = @(top);
         }
@@ -249,18 +256,21 @@ const NSInteger unionSize = 20;
         NSInteger itemCount = [self.collectionView numberOfItemsInSection:section];
         NSMutableArray *itemAttributes = [NSMutableArray arrayWithCapacity:itemCount];
         
-        // Item will be put into shortest column.
+        CGFloat realitemWidth = floorf((width - (realcolumnCount - 1) * self.minimumColumnSpacing) /realcolumnCount);
+        
         for (idx = 0; idx < itemCount; idx++)
         {
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:idx inSection:section];
             CGSize itemSize = [self.delegate collectionView:self.collectionView layout:self sizeForItemAtIndexPath:indexPath];
-            CGFloat itemHeight = floorf(itemSize.height * self.itemWidth / itemSize.width);
+            
+            
+            CGFloat itemHeight = floorf(itemSize.height * realitemWidth / itemSize.width);
             NSUInteger columnIndex = [self shortestColumnIndex];
-            CGFloat xOffset = self.sectionInset.left + (self.itemWidth + self.minimumColumnSpacing) * columnIndex;
+            CGFloat xOffset = self.sectionInset.left + (realitemWidth + self.minimumColumnSpacing) * columnIndex;
             CGFloat yOffset = [self.columnHeights[columnIndex] floatValue];
             
             attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-            attributes.frame = CGRectMake(xOffset, yOffset, self.itemWidth, itemHeight);
+            attributes.frame = CGRectMake(xOffset, yOffset, realitemWidth, itemHeight);
             [itemAttributes addObject:attributes];
             [self.allItemAttributes addObject:attributes];
             self.columnHeights[columnIndex] = @(CGRectGetMaxY(attributes.frame) + self.minimumInteritemSpacing);
@@ -286,7 +296,11 @@ const NSInteger unionSize = 20;
         
         if (footerHeight > 0)
         {
-            attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:WaterFallSectionFooter withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
+            NSString * footerRuseIdentifier = HBWaterFallSectionFooter;
+            if (self.delegate && [self.delegate respondsToSelector:@selector(collectionView:FooterReuseIdentifierWithSection:)]) {
+                footerRuseIdentifier = [self.delegate collectionView:self.collectionView FooterReuseIdentifierWithSection:section];
+            }
+            attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:footerRuseIdentifier withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
             attributes.frame = CGRectMake(0, top, self.collectionView.frame.size.width, footerHeight);
             
             self.footersAttrubite[@(section)] = attributes;
@@ -343,10 +357,21 @@ const NSInteger unionSize = 20;
 - (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewLayoutAttributes *attribute = nil;
-    if ([kind isEqualToString:WaterFallSectionHeader])
+    NSString * headerRuseIdentifier = HBWaterFallSectionHeader;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(collectionView:HeaderReuseIdentifierWithSection:)]) {
+        headerRuseIdentifier = [self.delegate collectionView:self.collectionView HeaderReuseIdentifierWithSection:indexPath.section];
+    }
+    NSString * footerRuseIdentifier = HBWaterFallSectionFooter;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(collectionView:FooterReuseIdentifierWithSection:)]) {
+        footerRuseIdentifier = [self.delegate collectionView:self.collectionView FooterReuseIdentifierWithSection:indexPath.section];
+    }
+    
+    if ([kind isEqualToString:headerRuseIdentifier])
     {
         attribute = self.headersAttribute[@(indexPath.section)];
-    } else if ([kind isEqualToString:WaterFallSectionFooter])
+    }
+    
+    else if ([kind isEqualToString:footerRuseIdentifier])
     {
         attribute = self.footersAttrubite[@(indexPath.section)];
     }

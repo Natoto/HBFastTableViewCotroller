@@ -12,9 +12,9 @@
  */
 
 /// A supplementary view that identifies the header for a given section.
-extern NSString *const WaterFallSectionHeader;
+extern NSString *const HBWaterFallSectionHeader;
 /// A supplementary view that identifies the footer for a given section.
-extern NSString *const WaterFallSectionFooter;
+extern NSString *const HBWaterFallSectionFooter;
 
 
 #pragma mark WaterF
@@ -76,9 +76,45 @@ extern NSString *const WaterFallSectionFooter;
  *    footerHeight
  */
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout heightForFooterInSection:(NSInteger)section;
+
+/**
+ *  eache columncount of  section 如果没有设置此代理则读取变量columnCount的值
+ *
+ *  @param collectionView collectionview
+ *  @param section        section index
+ *
+ *  @return count
+ */
+-(NSInteger)collectionView:(UICollectionView *)collectionView  ColumnCountOfSection:(NSInteger)section;
+
+/**
+ *  返回 ReuseIdentifierWithSection 用于HEADER重用 如果没有设置则使用 HBWaterFallSectionHeader
+ *
+ *  @param collectionView collectionview
+ *  @param section        section
+ *
+ *  @return string ReuseIdentifier
+ */
+-(NSString *)collectionView:(UICollectionView *)collectionView HeaderReuseIdentifierWithSection:(NSInteger)section;
+
+
+/**
+ *  返回 ReuseIdentifierWithSection 用于Footer重用 如果没有设置则使用 HBWaterFallSectionFooter
+ *
+ *  @param collectionView collectionview
+ *  @param section        section
+ *
+ *  @return string  ReuseIdentifier
+ */
+-(NSString *)collectionView:(UICollectionView *)collectionView FooterReuseIdentifierWithSection:(NSInteger)section;
 @end
 
 @interface HBCollectionFallFLayout : UICollectionViewLayout
+
+/**
+ * The delegate will point to collection view's delegate automatically.
+ */
+@property (nonatomic, weak) id <HBWaterFLayoutDelegate> delegate;
 /**
  *  @brief How many columns for this layout.
  *  @discussion Default: 2

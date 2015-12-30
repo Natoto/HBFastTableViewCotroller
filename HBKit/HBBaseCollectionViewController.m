@@ -36,6 +36,22 @@
 {
     return UIEdgeInsetsZero;
 }
+
+-(UIEdgeInsets)configInsetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(5, 5, 5, 5);
+}
+
+-(CGFloat)configMinimumColumnSpacing
+{
+    return 5.;
+}
+
+-(CGFloat)configMinimumInteritemSpacing
+{
+    return 5.;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {//这个是需要的
@@ -89,8 +105,11 @@
                                                 self.view.bounds.size.height);
         
         HBCollectionFallFLayout *collectionViewFlowLayout = [[HBCollectionFallFLayout alloc] init];
-        collectionViewFlowLayout.minimumColumnSpacing = 5;
-        collectionViewFlowLayout.minimumInteritemSpacing = 5;
+        collectionViewFlowLayout.delegate = self;
+        
+        collectionViewFlowLayout.headerHeight = 50;
+        collectionViewFlowLayout.minimumColumnSpacing = self.configMinimumColumnSpacing;
+        collectionViewFlowLayout.minimumInteritemSpacing = self.configMinimumInteritemSpacing;
         collectionViewFlowLayout.sectionInset = self.configSectionInset;//UIEdgeInsetsMake(5, 5, 5, 5);
         collectionViewFlowLayout.columnCount = self.configColumnCount;
         self.collectionViewFlowLayout = collectionViewFlowLayout;
@@ -101,6 +120,7 @@
 //        _collectionView.allowsMultipleSelection = YES;
 //        _collectionView.allowsSelection = YES;
         _collectionView.alwaysBounceVertical = YES;
+        
         [self.view addSubview:_collectionView];
     }
     return _collectionView;
@@ -166,14 +186,29 @@
     NSString * sectionx = KEY_SECTION_MARK(section);
     
     //[NSString stringWithFormat:@"section%ld_",(long)section];
-    NSInteger sectioncount = 0;
+    NSInteger rowcount = 0;
     for (int index = 0; index < keys.count; index ++) {
         NSString * key =[keys objectAtIndex:index];
         if ([key rangeOfString:sectionx].location != NSNotFound) {
-            sectioncount ++;
+            rowcount ++;
         }
     }
-    return sectioncount;
+    return rowcount;
+}
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    NSArray * keys = self.dataDictionary.allKeys;
+    NSInteger maxsection = 1;
+    for (int index = 0; index < keys.count; index ++) {
+        NSString * key =[keys objectAtIndex:index];
+        
+        NSString * sectionstr = KEY_SECTION_INDEX_STR(key);
+        if ((sectionstr.integerValue +1) > maxsection) {
+            maxsection = (sectionstr.integerValue + 1);
+        }
+    }
+    return maxsection;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -203,16 +238,18 @@
     return cell;
 }
 
+
 -(CGFloat)itemWidth
 {
     return  (self.view.bounds.size.width - 5 * (self.configColumnCount + 1)) / self.configColumnCount;;
 }
 #pragma mark - UICollectionViewDelegateFlowLayout
-
+ 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    UIEdgeInsets edgeinset = [self configInsetForSectionAtIndex:indexPath.section];
      CELL_STRUCT * cellstruct = [self.dataDictionary objectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
-    CGFloat cellSideLength = (self.view.bounds.size.width - 5 * (self.configColumnCount + 1)) / self.configColumnCount;
+    CGFloat cellSideLength = (self.view.bounds.size.width - edgeinset.left * (self.configColumnCount + 1)) / self.configColumnCount;
     CGFloat itemheight = (cellstruct.cellheight>0) ? cellstruct.cellheight:cellSideLength;
     CGSize cellSize = CGSizeMake(cellSideLength, itemheight);
     return cellSize;
@@ -220,19 +257,25 @@
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(5, 5, 5, 5);
+    return [self configInsetForSectionAtIndex:section];//UIEdgeInsetsMake(5, 5, 5, 5);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 5;
+    return 0;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 5;
+    return 0;
 }
- 
+
+-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout heightForHeaderInSection:(NSInteger)section
+{
+    CELL_STRUCT *cell_struce = [self.dataDictionary objectForKey:KEY_INDEXPATH(section, 0)];
+    return cell_struce.sectionheight;
+}
+
 
 #pragma mark - 1
 
