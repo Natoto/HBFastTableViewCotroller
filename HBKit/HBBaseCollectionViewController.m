@@ -60,12 +60,12 @@
     //默认两行
     self.view.backgroundColor = [UIColor colorWithRed:239./255. green:239./255. blue:239./255. alpha:1];// UIColor(239,239,239);
     self.collectionView.backgroundColor = self.view.backgroundColor;
-    
+     self.showBackItem = YES;
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self userDefaultConfig];
+//    [self userDefaultConfig];
 }
 /**
  * 使用默认配置 供子类调用
@@ -106,7 +106,6 @@
         
         HBCollectionFallFLayout *collectionViewFlowLayout = [[HBCollectionFallFLayout alloc] init];
         collectionViewFlowLayout.delegate = self;
-        
         collectionViewFlowLayout.headerHeight = 50;
         collectionViewFlowLayout.minimumColumnSpacing = self.configMinimumColumnSpacing;
         collectionViewFlowLayout.minimumInteritemSpacing = self.configMinimumInteritemSpacing;
@@ -161,9 +160,6 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    BaseCollectionViewCell * cell = (BaseCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-//    cell.cellSelected = !cell.cellSelected;
-//    [self selectChange:cell.cellSelected indexPath:indexPath];
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
