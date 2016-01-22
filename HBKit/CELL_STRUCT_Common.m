@@ -15,128 +15,27 @@
 
 @implementation CELL_STRUCT(Common)
 
+//最常用的
 +(CELL_STRUCT *)cell_x_x_struct:(NSString *)title
                     detailvalue:(NSString *)detailvalue
                          target:(id)target
                    selectAction:(SEL)selectAction
 {
-    return [CELL_STRUCT cell_x_x_struct:title
-                            detailvalue:detailvalue
-                           footerheight:0
-                         selectionStyle:YES
-                              accessory:YES
-                                picture:nil
-                                 target:target
-                           selectAction:selectAction];
+    return  [CELL_STRUCT cell_x_x_struct:title
+                             detailvalue:detailvalue
+                            footerheight:0
+                          selectionStyle:YES
+                               accessory:YES
+                              cellheight:44.
+                              imageRight:NO
+                       imageCornerRadius:NO
+                                 picture:nil
+                                  target:target
+                            selectAction:selectAction
+                              background:[UIColor whiteColor]
+                              titlecolor:@"black" sectionheight:0];
 }
 
-+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title
-                    detailvalue:(NSString *)detailvalue
-                   footerheight:(CGFloat)footerheight
-                 selectionStyle:(BOOL)selectionStyle
-                      accessory:(BOOL)accessory
-                         target:(id)target
-                   selectAction:(SEL)selectAction
-{
-    return [CELL_STRUCT cell_x_x_struct:title
-                            detailvalue:detailvalue
-                           footerheight:footerheight
-                         selectionStyle:selectionStyle
-                              accessory:accessory
-                                picture:nil
-                                 target:target
-                           selectAction:selectAction ];
-}
-
-+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title
-                    detailvalue:(NSString *)detailvalue
-                   footerheight:(CGFloat)footerheight
-                 selectionStyle:(BOOL)selectionStyle
-                      accessory:(BOOL)accessory
-                        picture:(NSString *)picture
-                         target:(id)target
-                   selectAction:(SEL)selectAction
-{
-    return [CELL_STRUCT cell_x_x_struct:title
-                            detailvalue:detailvalue
-                           footerheight:footerheight
-                         selectionStyle:selectionStyle
-                              accessory:accessory
-                             cellheight:40
-                             imageRight:NO
-                      imageCornerRadius:NO
-                                picture:picture
-                                 target:target
-                           selectAction:selectAction
-                             background:[UIColor whiteColor]];
-}
-
-+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title
-                    detailvalue:(NSString *)detailvalue
-                   footerheight:(CGFloat)footerheight
-                 selectionStyle:(BOOL)selectionStyle
-                      accessory:(BOOL)accessory
-                        picture:(NSString *)picture
-                     background:(UIColor *)backgroundcolor
-                         target:(id)target
-                   selectAction:(SEL)selectAction
-{
-    return [CELL_STRUCT cell_x_x_struct:title
-                            detailvalue:detailvalue
-                           footerheight:footerheight
-                         selectionStyle:selectionStyle
-                              accessory:accessory
-                             cellheight:40
-                             imageRight:NO
-                      imageCornerRadius:NO
-                                picture:picture
-                                 target:target
-                           selectAction:selectAction background:backgroundcolor];
-}
-
-
-+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title
-                    detailvalue:(NSString *)detailvalue
-                   footerheight:(CGFloat)footerheight
-                 selectionStyle:(BOOL)selectionStyle
-                      accessory:(BOOL)accessory
-                     cellheight:(CGFloat)cellheight
-                     imageRight:(BOOL)imageRight
-              imageCornerRadius:(BOOL)imageCornerRadius
-                        picture:(NSString *)picture
-                         target:(id)target
-                   selectAction:(SEL)selectAction
-                     background:(UIColor *)backgroundcolor
-{
-    return [CELL_STRUCT cell_x_x_struct:title
-                            detailvalue:detailvalue
-                           footerheight:footerheight
-                         selectionStyle:selectionStyle
-                              accessory:accessory
-                             cellheight:cellheight
-                             imageRight:imageRight
-                      imageCornerRadius:imageCornerRadius
-                                picture:picture target:target
-                           selectAction:selectAction
-                             background:backgroundcolor titlecolor:@"black"];
-}
-
-+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title
-                    detailvalue:(NSString *)detailvalue
-                   footerheight:(CGFloat)footerheight
-                 selectionStyle:(BOOL)selectionStyle
-                      accessory:(BOOL)accessory
-                     cellheight:(CGFloat)cellheight
-                     imageRight:(BOOL)imageRight
-              imageCornerRadius:(BOOL)imageCornerRadius
-                        picture:(NSString *)picture
-                         target:(id)target
-                   selectAction:(SEL)selectAction
-                     background:(UIColor *)backgroundcolor
-                     titlecolor:(NSString *)titlecolor
-{
-    return [CELL_STRUCT cell_x_x_struct:title detailvalue:detailvalue footerheight:footerheight selectionStyle:selectionStyle accessory:accessory cellheight:cellheight imageRight:imageRight imageCornerRadius:imageCornerRadius picture:picture target:target selectAction:selectAction background:backgroundcolor titlecolor:titlecolor sectionheight:0];
-}
 
 +(CELL_STRUCT *)cell_x_x_struct:(NSString *)title
                     detailvalue:(NSString *)detailvalue
@@ -153,7 +52,7 @@
                      titlecolor:(NSString *)titlecolor
                   sectionheight:(CGFloat)sectionheight
 {
-    CELL_STRUCT * cell1_0 = [[CELL_STRUCT alloc] initWithtitle:title cellclass:NSStringFromClass([HBBaseTableViewCell class]) placeholder:@"" accessory:NO sel_selctor:selectAction delegate:target];
+    CELL_STRUCT * cell1_0 = [[CELL_STRUCT alloc] initWithtitle:title cellclass:NSStringFromClass([HBBaseTableViewCell class]) placeholder:@"" accessory:accessory sel_selctor:selectAction delegate:target];
     cell1_0.selectionStyle = selectionStyle;
     cell1_0.cellheight = cellheight;
     cell1_0.detailtitle = detailvalue?detailvalue:@"";
