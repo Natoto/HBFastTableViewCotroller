@@ -95,14 +95,18 @@
         [self clearTopLayer];
         [self drawToplinelayer];
     }
+    else
+    {
+        [self clearTopLayer];
+    }
     if (self.showBottomLine) {
         [self clearBottomLayer];
         [self drawBottomlinelayer];
+    }else
+    {
+        [self clearBottomLayer];
     }
-    //    if (self.showNewPoint) {
     self.redPoint.center = CGPointMake(self.contentView.frame.size.width - 20, self.contentView.frame.size.height/2);
-    //    }
-    //   [self.textLabel setFrame:CGRectMake(0, 0, self.contentView.bounds.size.width * 3 / 4, self.contentView.bounds.size.height / 2)];
 }
 
 -(void)setcellimageRight:(BOOL)imageRight
@@ -156,18 +160,18 @@
     self.showNewMsg = newmsgcount.boolValue;//是否显示红点
     self.redPoint.hidden = !self.showNewMsg;
     
-    NSNumber * footerheight = DIC_OBJ_KEY(dictionary, key_cellstruct_sectionfooterheight);
-    OBJ_NULL_DEFAULT(footerheight, @0)
-    NSNumber * accessory = [dictionary objectForKey:key_cellstruct_accessory];
-    OBJ_NULL_DEFAULT(accessory, @0)
-    NSNumber * imageRight = [dictionary objectForKey:key_cellstruct_imageRight];
-    OBJ_NULL_DEFAULT(imageRight, @0)
-    UIColor * cellcolor = DIC_OBJ_KEY(dictionary, key_cellstruct_background);
-    OBJ_NULL_DEFAULT(cellcolor, [UIColor whiteColor])
-    NSString * titlecolor = [dictionary objectForKey:key_cellstruct_titlecolor];
-    OBJ_NULL_DEFAULT(titlecolor, @"black")
-    NSNumber * sectionheight = [dictionary objectForKey:key_cellstruct_sectionheight];
-    OBJ_NULL_DEFAULT(sectionheight, @25)
+//    NSNumber * footerheight = DIC_OBJ_KEY(dictionary, key_cellstruct_sectionfooterheight);
+//    OBJ_NULL_DEFAULT(footerheight, @0)
+//    NSNumber * accessory = [dictionary objectForKey:key_cellstruct_accessory];
+//    OBJ_NULL_DEFAULT(accessory, @0)
+//    NSNumber * imageRight = [dictionary objectForKey:key_cellstruct_imageRight];
+//    OBJ_NULL_DEFAULT(imageRight, @0)
+//    UIColor * cellcolor = DIC_OBJ_KEY(dictionary, key_cellstruct_background);
+//    OBJ_NULL_DEFAULT(cellcolor, [UIColor whiteColor])
+//    NSString * titlecolor = [dictionary objectForKey:key_cellstruct_titlecolor];
+//    OBJ_NULL_DEFAULT(titlecolor, @"black")
+//    NSNumber * sectionheight = [dictionary objectForKey:key_cellstruct_sectionheight];
+//    OBJ_NULL_DEFAULT(sectionheight, @0)
     //    [self setcellTitleColor:titlecolor];
 };
 

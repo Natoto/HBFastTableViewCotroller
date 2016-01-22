@@ -17,8 +17,7 @@
         self.selectionStyle = YES;
         self.uploadobjcts = [NSMutableArray new];
         self.array = [NSMutableArray new];
-        self.cellheight = 50.0;
-        self.sectionheight = 0;
+        self.cellheight = 44.0;
         self.titlecolor = @"black";
         self.title = title;
         self.cellclass = cellclass;

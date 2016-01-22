@@ -84,40 +84,40 @@ return _cell_struct_##OBJ;\
                          target:(id)target
                    selectAction:(SEL)selectAction;
 
-+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title detailvalue:(NSString *)detailvalue footerheight:(CGFloat)footerheight selectionStyle:(BOOL)selectionStyle accessory:(BOOL)accessory target:(id)target selectAction:(SEL)selectAction;
-
-
-+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title detailvalue:(NSString *)detailvalue footerheight:(CGFloat)footerheight selectionStyle:(BOOL)selectionStyle accessory:(BOOL)accessory  picture:(NSString *)picture target:(id)target selectAction:(SEL)selectAction;
-
-
-+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title detailvalue:(NSString *)detailvalue footerheight:(CGFloat)footerheight selectionStyle:(BOOL)selectionStyle accessory:(BOOL)accessory  picture:(NSString *)picture background:(UIColor *)backgroundcolor target:(id)target selectAction:(SEL)selectAction;
-
-+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title
-                    detailvalue:(NSString *)detailvalue
-                   footerheight:(CGFloat)footerheight
-                 selectionStyle:(BOOL)selectionStyle
-                      accessory:(BOOL)accessory
-                     cellheight:(CGFloat)cellheight
-                     imageRight:(BOOL)imageRight
-              imageCornerRadius:(BOOL)imageCornerRadius
-                        picture:(NSString *)picture
-                         target:(id)target
-                   selectAction:(SEL)selectAction
-                     background:(UIColor *)backgroundcolor;
-
-+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title
-                    detailvalue:(NSString *)detailvalue
-                   footerheight:(CGFloat)footerheight
-                 selectionStyle:(BOOL)selectionStyle
-                      accessory:(BOOL)accessory
-                     cellheight:(CGFloat)cellheight
-                     imageRight:(BOOL)imageRight
-              imageCornerRadius:(BOOL)imageCornerRadius
-                        picture:(NSString *)picture
-                         target:(id)target
-                   selectAction:(SEL)selectAction
-                     background:(UIColor *)backgroundcolor
-                     titlecolor:(NSString *)titlecolor;
+//+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title detailvalue:(NSString *)detailvalue footerheight:(CGFloat)footerheight selectionStyle:(BOOL)selectionStyle accessory:(BOOL)accessory target:(id)target selectAction:(SEL)selectAction;
+//
+//
+//+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title detailvalue:(NSString *)detailvalue footerheight:(CGFloat)footerheight selectionStyle:(BOOL)selectionStyle accessory:(BOOL)accessory  picture:(NSString *)picture target:(id)target selectAction:(SEL)selectAction;
+//
+//
+//+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title detailvalue:(NSString *)detailvalue footerheight:(CGFloat)footerheight selectionStyle:(BOOL)selectionStyle accessory:(BOOL)accessory  picture:(NSString *)picture background:(UIColor *)backgroundcolor target:(id)target selectAction:(SEL)selectAction;
+//
+//+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title
+//                    detailvalue:(NSString *)detailvalue
+//                   footerheight:(CGFloat)footerheight
+//                 selectionStyle:(BOOL)selectionStyle
+//                      accessory:(BOOL)accessory
+//                     cellheight:(CGFloat)cellheight
+//                     imageRight:(BOOL)imageRight
+//              imageCornerRadius:(BOOL)imageCornerRadius
+//                        picture:(NSString *)picture
+//                         target:(id)target
+//                   selectAction:(SEL)selectAction
+//                     background:(UIColor *)backgroundcolor;
+//
+//+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title
+//                    detailvalue:(NSString *)detailvalue
+//                   footerheight:(CGFloat)footerheight
+//                 selectionStyle:(BOOL)selectionStyle
+//                      accessory:(BOOL)accessory
+//                     cellheight:(CGFloat)cellheight
+//                     imageRight:(BOOL)imageRight
+//              imageCornerRadius:(BOOL)imageCornerRadius
+//                        picture:(NSString *)picture
+//                         target:(id)target
+//                   selectAction:(SEL)selectAction
+//                     background:(UIColor *)backgroundcolor
+//                     titlecolor:(NSString *)titlecolor;
 
 +(CELL_STRUCT *)cell_x_x_structWithDictionary:(NSDictionary *)dictionary;
 
