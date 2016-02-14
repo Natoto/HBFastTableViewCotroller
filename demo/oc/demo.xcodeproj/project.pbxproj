@@ -24,6 +24,12 @@
 		18678F5D1B79EF230062A073 /* beauty.png in Resources */ = {isa = PBXBuildFile; fileRef = 18678F5C1B79EF230062A073 /* beauty.png */; };
 		18678F601B7A09DD0062A073 /* TESTAutoHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18678F5F1B7A09DD0062A073 /* TESTAutoHeightViewController.m */; };
 		18678F631B7A115B0062A073 /* TESTRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18678F621B7A115B0062A073 /* TESTRefreshViewController.m */; };
+		3354D9421C606891003C4255 /* TestDrawCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3354D9411C606891003C4255 /* TestDrawCellViewController.m */; };
+		3354D9451C6068D4003C4255 /* DrawCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3354D9441C6068D4003C4255 /* DrawCell.m */; };
+		336211221C5F10070065E1AB /* TESTKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336211211C5F10070065E1AB /* TESTKVOViewController.m */; };
+		336211271C5F103B0065E1AB /* NSObject+FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336211241C5F103B0065E1AB /* NSObject+FBKVOController.m */; };
+		336211281C5F103B0065E1AB /* FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336211261C5F103B0065E1AB /* FBKVOController.m */; };
+		3362112D1C5F10A60065E1AB /* TestKVODetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3362112C1C5F10A60065E1AB /* TestKVODetailViewController.m */; };
 		339E0DB81C1E6F8F00035B65 /* TESTCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339E0DB71C1E6F8F00035B65 /* TESTCollectionViewController.m */; };
 		339E0DC11C1E78FF00035B65 /* TestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 339E0DBF1C1E78FF00035B65 /* TestCollectionViewCell.m */; };
 		339E0DC21C1E78FF00035B65 /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339E0DC01C1E78FF00035B65 /* TestCollectionViewCell.xib */; };
@@ -85,6 +91,18 @@
 		18678F5F1B7A09DD0062A073 /* TESTAutoHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESTAutoHeightViewController.m; sourceTree = "<group>"; };
 		18678F611B7A115B0062A073 /* TESTRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TESTRefreshViewController.h; sourceTree = "<group>"; };
 		18678F621B7A115B0062A073 /* TESTRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESTRefreshViewController.m; sourceTree = "<group>"; };
+		3354D9401C606891003C4255 /* TestDrawCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDrawCellViewController.h; sourceTree = "<group>"; };
+		3354D9411C606891003C4255 /* TestDrawCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDrawCellViewController.m; sourceTree = "<group>"; };
+		3354D9431C6068D4003C4255 /* DrawCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCell.h; sourceTree = "<group>"; };
+		3354D9441C6068D4003C4255 /* DrawCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawCell.m; sourceTree = "<group>"; };
+		336211201C5F10070065E1AB /* TESTKVOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TESTKVOViewController.h; sourceTree = "<group>"; };
+		336211211C5F10070065E1AB /* TESTKVOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESTKVOViewController.m; sourceTree = "<group>"; };
+		336211231C5F103B0065E1AB /* NSObject+FBKVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FBKVOController.h"; sourceTree = "<group>"; };
+		336211241C5F103B0065E1AB /* NSObject+FBKVOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FBKVOController.m"; sourceTree = "<group>"; };
+		336211251C5F103B0065E1AB /* FBKVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBKVOController.h; sourceTree = "<group>"; };
+		336211261C5F103B0065E1AB /* FBKVOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBKVOController.m; sourceTree = "<group>"; };
+		3362112B1C5F10A60065E1AB /* TestKVODetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestKVODetailViewController.h; sourceTree = "<group>"; };
+		3362112C1C5F10A60065E1AB /* TestKVODetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestKVODetailViewController.m; sourceTree = "<group>"; };
 		339E0DB61C1E6F8F00035B65 /* TESTCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TESTCollectionViewController.h; sourceTree = "<group>"; };
 		339E0DB71C1E6F8F00035B65 /* TESTCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESTCollectionViewController.m; sourceTree = "<group>"; };
 		339E0DBE1C1E78FF00035B65 /* TestCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewCell.h; sourceTree = "<group>"; };
@@ -177,30 +195,10 @@
 				78EE985F1C2AC6AB004C97A9 /* NormalTableViewController.m */,
 				78EE98611C2ACCCF004C97A9 /* NormalCollectionViewController.h */,
 				78EE98621C2ACCCF004C97A9 /* NormalCollectionViewController.m */,
-				18678F451B79E8240062A073 /* TESTSystyleviewController.h */,
-				18678F461B79E8240062A073 /* TESTSystyleviewController.m */,
-				18678F4A1B79ED6A0062A073 /* TESTXIBViewController.h */,
-				18678F4B1B79ED6A0062A073 /* TESTXIBViewController.m */,
-				18678F5E1B7A09DD0062A073 /* TESTAutoHeightViewController.h */,
-				18678F5F1B7A09DD0062A073 /* TESTAutoHeightViewController.m */,
-				18678F611B7A115B0062A073 /* TESTRefreshViewController.h */,
-				18678F621B7A115B0062A073 /* TESTRefreshViewController.m */,
-				339E0DB61C1E6F8F00035B65 /* TESTCollectionViewController.h */,
-				339E0DB71C1E6F8F00035B65 /* TESTCollectionViewController.m */,
-				33B63B111C33A54000F1CF34 /* TEST2CollectionReusableView.h */,
-				33B63B121C33A54000F1CF34 /* TEST2CollectionReusableView.m */,
-				33B63B0C1C337AF400F1CF34 /* TestSectionCollectionReusableView.h */,
-				33B63B0D1C337AF400F1CF34 /* TestSectionCollectionReusableView.m */,
-				33B63B0E1C337AF400F1CF34 /* TestSectionCollectionReusableView.xib */,
-				18678F521B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.h */,
-				18678F531B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.m */,
-				18678F541B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.xib */,
-				18678F571B79EEF10062A073 /* CF_SupporterTableViewCell.h */,
-				18678F581B79EEF10062A073 /* CF_SupporterTableViewCell.m */,
-				18678F591B79EEF10062A073 /* CF_SupporterTableViewCell.xib */,
-				339E0DBE1C1E78FF00035B65 /* TestCollectionViewCell.h */,
-				339E0DBF1C1E78FF00035B65 /* TestCollectionViewCell.m */,
-				339E0DC01C1E78FF00035B65 /* TestCollectionViewCell.xib */,
+				3354D93F1C606844003C4255 /* 手动绘制Cell */,
+				3362111F1C5F0FCA0065E1AB /* KVO */,
+				336211291C5F104F0065E1AB /* TEST */,
+				3362112A1C5F106A0065E1AB /* CELL */,
 				184130AA1B79DF4A002AB4C0 /* Main.storyboard */,
 				184130AD1B79DF4A002AB4C0 /* Images.xcassets */,
 				184130AF1B79DF4A002AB4C0 /* LaunchScreen.xib */,
@@ -235,6 +233,70 @@
 				184130BB1B79DF4A002AB4C0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3354D93F1C606844003C4255 /* 手动绘制Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3354D9401C606891003C4255 /* TestDrawCellViewController.h */,
+				3354D9411C606891003C4255 /* TestDrawCellViewController.m */,
+			);
+			name = "手动绘制Cell";
+			sourceTree = "<group>";
+		};
+		3362111F1C5F0FCA0065E1AB /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				336211231C5F103B0065E1AB /* NSObject+FBKVOController.h */,
+				336211241C5F103B0065E1AB /* NSObject+FBKVOController.m */,
+				336211251C5F103B0065E1AB /* FBKVOController.h */,
+				336211261C5F103B0065E1AB /* FBKVOController.m */,
+				336211201C5F10070065E1AB /* TESTKVOViewController.h */,
+				336211211C5F10070065E1AB /* TESTKVOViewController.m */,
+				3362112B1C5F10A60065E1AB /* TestKVODetailViewController.h */,
+				3362112C1C5F10A60065E1AB /* TestKVODetailViewController.m */,
+			);
+			name = KVO;
+			sourceTree = "<group>";
+		};
+		336211291C5F104F0065E1AB /* TEST */ = {
+			isa = PBXGroup;
+			children = (
+				18678F451B79E8240062A073 /* TESTSystyleviewController.h */,
+				18678F461B79E8240062A073 /* TESTSystyleviewController.m */,
+				18678F4A1B79ED6A0062A073 /* TESTXIBViewController.h */,
+				18678F4B1B79ED6A0062A073 /* TESTXIBViewController.m */,
+				18678F5E1B7A09DD0062A073 /* TESTAutoHeightViewController.h */,
+				18678F5F1B7A09DD0062A073 /* TESTAutoHeightViewController.m */,
+				18678F611B7A115B0062A073 /* TESTRefreshViewController.h */,
+				18678F621B7A115B0062A073 /* TESTRefreshViewController.m */,
+				339E0DB61C1E6F8F00035B65 /* TESTCollectionViewController.h */,
+				339E0DB71C1E6F8F00035B65 /* TESTCollectionViewController.m */,
+				33B63B111C33A54000F1CF34 /* TEST2CollectionReusableView.h */,
+				33B63B121C33A54000F1CF34 /* TEST2CollectionReusableView.m */,
+				33B63B0C1C337AF400F1CF34 /* TestSectionCollectionReusableView.h */,
+				33B63B0D1C337AF400F1CF34 /* TestSectionCollectionReusableView.m */,
+				33B63B0E1C337AF400F1CF34 /* TestSectionCollectionReusableView.xib */,
+			);
+			name = TEST;
+			sourceTree = "<group>";
+		};
+		3362112A1C5F106A0065E1AB /* CELL */ = {
+			isa = PBXGroup;
+			children = (
+				18678F521B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.h */,
+				3354D9431C6068D4003C4255 /* DrawCell.h */,
+				3354D9441C6068D4003C4255 /* DrawCell.m */,
+				18678F531B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.m */,
+				18678F541B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.xib */,
+				18678F571B79EEF10062A073 /* CF_SupporterTableViewCell.h */,
+				18678F581B79EEF10062A073 /* CF_SupporterTableViewCell.m */,
+				18678F591B79EEF10062A073 /* CF_SupporterTableViewCell.xib */,
+				339E0DBE1C1E78FF00035B65 /* TestCollectionViewCell.h */,
+				339E0DBF1C1E78FF00035B65 /* TestCollectionViewCell.m */,
+				339E0DC01C1E78FF00035B65 /* TestCollectionViewCell.xib */,
+			);
+			name = CELL;
 			sourceTree = "<group>";
 		};
 		339E0DC71C1E94AE00035B65 /* HBKit */ = {
@@ -433,12 +495,18 @@
 				18678F4C1B79ED6A0062A073 /* TESTXIBViewController.m in Sources */,
 				339E0DE11C1E94AE00035B65 /* HBBaseCollectionViewCell.m in Sources */,
 				339E0DDE1C1E94AE00035B65 /* CELL_STRUCT.m in Sources */,
+				3354D9451C6068D4003C4255 /* DrawCell.m in Sources */,
+				3354D9421C606891003C4255 /* TestDrawCellViewController.m in Sources */,
 				339E0DE21C1E94AE00035B65 /* HBBaseCollectionViewController.m in Sources */,
+				3362112D1C5F10A60065E1AB /* TestKVODetailViewController.m in Sources */,
 				18678F5A1B79EEF10062A073 /* CF_SupporterTableViewCell.m in Sources */,
 				78EE98631C2ACCCF004C97A9 /* NormalCollectionViewController.m in Sources */,
+				336211221C5F10070065E1AB /* TESTKVOViewController.m in Sources */,
+				336211271C5F103B0065E1AB /* NSObject+FBKVOController.m in Sources */,
 				339E0DB81C1E6F8F00035B65 /* TESTCollectionViewController.m in Sources */,
 				339E0DE41C1E94AE00035B65 /* HBBaseTableViewController.m in Sources */,
 				339E0DE01C1E94AE00035B65 /* CELL_STRUCT_KVO.m in Sources */,
+				336211281C5F103B0065E1AB /* FBKVOController.m in Sources */,
 				339E0DE71C1E94AE00035B65 /* UIButton+PENG.m in Sources */,
 				78EE98601C2AC6AB004C97A9 /* NormalTableViewController.m in Sources */,
 				18678F601B7A09DD0062A073 /* TESTAutoHeightViewController.m in Sources */,

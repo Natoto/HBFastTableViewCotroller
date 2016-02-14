@@ -77,6 +77,8 @@ __MOTHOD\
  *  @return cell的size
  */
 -(CGSize)sizeThatFits:(CGSize)size;
+//protocol 自己定制化cell 不用里面的控件
+-(BOOL)customizedStyle;
 @end
 
 

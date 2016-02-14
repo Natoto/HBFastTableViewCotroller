@@ -29,12 +29,19 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.detailTextLabel.textColor = [UIColor grayColor];
-        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-        _redPoint = [[HBRedPoint alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
-        [self.contentView addSubview:_redPoint];
+        if (!self.customizedStyle) {
+            self.detailTextLabel.textColor = [UIColor grayColor];
+            self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+            _redPoint = [[HBRedPoint alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+            [self.contentView addSubview:_redPoint];
+        }
     }
     return self;
+}
+
+-(BOOL)customizedStyle
+{
+    return NO;
 }
 - (void)awakeFromNib {
     
@@ -44,7 +51,9 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    
+    if (self.customizedStyle) {
+        return;
+    }
     if (self.imageRight) {//重新排版imageview
         CGFloat orix = self.imageView.frame.origin.x;
         CGFloat x = self.contentView.bounds.size.width - self.contentView.bounds.size.height;
@@ -160,19 +169,6 @@
     self.showNewMsg = newmsgcount.boolValue;//是否显示红点
     self.redPoint.hidden = !self.showNewMsg;
     
-//    NSNumber * footerheight = DIC_OBJ_KEY(dictionary, key_cellstruct_sectionfooterheight);
-//    OBJ_NULL_DEFAULT(footerheight, @0)
-//    NSNumber * accessory = [dictionary objectForKey:key_cellstruct_accessory];
-//    OBJ_NULL_DEFAULT(accessory, @0)
-//    NSNumber * imageRight = [dictionary objectForKey:key_cellstruct_imageRight];
-//    OBJ_NULL_DEFAULT(imageRight, @0)
-//    UIColor * cellcolor = DIC_OBJ_KEY(dictionary, key_cellstruct_background);
-//    OBJ_NULL_DEFAULT(cellcolor, [UIColor whiteColor])
-//    NSString * titlecolor = [dictionary objectForKey:key_cellstruct_titlecolor];
-//    OBJ_NULL_DEFAULT(titlecolor, @"black")
-//    NSNumber * sectionheight = [dictionary objectForKey:key_cellstruct_sectionheight];
-//    OBJ_NULL_DEFAULT(sectionheight, @0)
-    //    [self setcellTitleColor:titlecolor];
 };
 
 

@@ -14,6 +14,9 @@
 #import "TESTCollectionViewController.h"
 #import "NormalTableViewController.h"
 #import "NormalCollectionViewController.h"
+#import "TESTKVOViewController.h"
+#import "TestDrawCellViewController.h"
+
 @interface ViewController ()
 //step 1
 AS_CELL_STRUCT_COMMON(normal)
@@ -23,6 +26,8 @@ AS_CELL_STRUCT_COMMON(autoheight)
 AS_CELL_STRUCT_COMMON(refresh)
 AS_CELL_STRUCT_COMMON(normalcollection)
 AS_CELL_STRUCT_COMMON(collection)
+AS_CELL_STRUCT_COMMON(kvo)
+AS_CELL_STRUCT_COMMON(drawcell)
 @end
 
 @implementation ViewController
@@ -34,19 +39,27 @@ GET_CELL_STRUCT_WITH(autoheight, HBTABLE-自动高度)
 GET_CELL_STRUCT_WITH(refresh, HBTABLE-上下拉)
 GET_CELL_STRUCT_WITH(normalcollection,普通COLLECTIONVIEW)
 GET_CELL_STRUCT_WITH(collection, COLLECTION-加载);
-
+GET_CELL_STRUCT_WITH(kvo, KVO)
+GET_CELL_STRUCT_WITH(drawcell, Drawcell)
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HBTABLE";
     NSInteger rowIndex = 0;
+    NSInteger sectionIndex = 0;
     
-    [self.dataDictionary setObject:self.cell_struct_normal forKey:KEY_INDEXPATH(0, rowIndex++)];
-    [self.dataDictionary setObject:self.cell_struct_sys forKey:KEY_INDEXPATH(0, rowIndex++)];
-    [self.dataDictionary setObject:self.cell_struct_xib forKey:KEY_INDEXPATH(0, rowIndex++)];
-    [self.dataDictionary setObject:self.cell_struct_autoheight forKey:KEY_INDEXPATH(0, rowIndex++)];
-    [self.dataDictionary setObject:self.cell_struct_refresh forKey:KEY_INDEXPATH(0, rowIndex++)];
-    [self.dataDictionary setObject:self.cell_struct_normalcollection forKey:KEY_INDEXPATH(0, rowIndex++)];
-   [self.dataDictionary setObject:self.cell_struct_collection forKey:KEY_INDEXPATH(0, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_normal forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_sys forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_xib forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_autoheight forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_refresh forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_normalcollection forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+   [self.dataDictionary setObject:self.cell_struct_collection forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    
+    sectionIndex++;
+    rowIndex = 0;
+    self.cell_struct_kvo.sectionheight = 20;
+   [self.dataDictionary setObject:self.cell_struct_kvo forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+   [self.dataDictionary setObject:self.cell_struct_drawcell forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
 
 }
 
@@ -89,6 +102,16 @@ GET_CELL_SELECT_ACTION(cellstruct)
     else if(cellstruct == self.cell_struct_normalcollection)
     {
         NormalCollectionViewController * ctr = [NormalCollectionViewController new];
+        [self.navigationController   pushViewController:ctr animated:YES];
+    }
+    else if (cellstruct == self.cell_struct_kvo)
+    {
+        TESTKVOViewController * ctr = [TESTKVOViewController new];
+        [self.navigationController   pushViewController:ctr animated:YES];
+    }
+    else if(cellstruct == self.cell_struct_drawcell)
+    {
+        TestDrawCellViewController * ctr = [TestDrawCellViewController new];
         [self.navigationController   pushViewController:ctr animated:YES];
     }
 }
