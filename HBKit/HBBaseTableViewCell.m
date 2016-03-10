@@ -92,10 +92,11 @@
             self.textLabel.center = CGPointMake(self.textLabel.bounds.size.width/2 ,self.textLabel.center.y);
         }
         else if ([textAlignment isEqualToString:value_cellstruct_textAlignment_center]) {
+            self.textLabel.textAlignment = NSTextAlignmentCenter;
             self.textLabel.center = CGPointMake(self.contentView.bounds.size.width/2,self.textLabel.center.y);
         }
         else if ([textAlignment isEqualToString:value_cellstruct_textAlignment_right]) {
-            //            self.textLabel.textAlignment = NSTextAlignmentRight;
+            self.textLabel.textAlignment = NSTextAlignmentRight;
             self.textLabel.center = CGPointMake(self.contentView.bounds.size.width - self.textLabel.bounds.size.width/2 ,self.textLabel.center.y);
         }
     }

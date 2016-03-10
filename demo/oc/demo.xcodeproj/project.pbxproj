@@ -91,6 +91,7 @@
 		18678F5F1B7A09DD0062A073 /* TESTAutoHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESTAutoHeightViewController.m; sourceTree = "<group>"; };
 		18678F611B7A115B0062A073 /* TESTRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TESTRefreshViewController.h; sourceTree = "<group>"; };
 		18678F621B7A115B0062A073 /* TESTRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESTRefreshViewController.m; sourceTree = "<group>"; };
+		333F78591C9179AE000B7638 /* HBKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = HBKit.podspec; path = ../../../HBKit.podspec; sourceTree = "<group>"; };
 		3354D9401C606891003C4255 /* TestDrawCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDrawCellViewController.h; sourceTree = "<group>"; };
 		3354D9411C606891003C4255 /* TestDrawCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDrawCellViewController.m; sourceTree = "<group>"; };
 		3354D9431C6068D4003C4255 /* DrawCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCell.h; sourceTree = "<group>"; };
@@ -210,6 +211,7 @@
 		184130A01B79DF4A002AB4C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				333F78591C9179AE000B7638 /* HBKit.podspec */,
 				18678F5C1B79EF230062A073 /* beauty.png */,
 				18678F481B79EABA0062A073 /* profile.png */,
 				184130A11B79DF4A002AB4C0 /* Info.plist */,
