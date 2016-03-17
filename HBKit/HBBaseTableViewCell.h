@@ -67,6 +67,7 @@ __MOTHOD\
 -(void)setcelldetailtitle:(NSString *)detailtitle;
 -(void)setcellimageCornerRadius:(BOOL)CornerRadius;
 -(void)setcellTitleLabelNumberOfLines:(NSInteger)numberOfLines;
+-(void)setcellTitleFontsize:(NSNumber *)titleFontsize;
 
 //-(void)setcellAction:(SEL)action;
 /**

@@ -173,6 +173,12 @@
 };
 
 
+-(void)setcellTitleFontsize:(NSNumber *)titleFontsize
+{
+    if (titleFontsize.floatValue > 8) {
+        self.textLabel.font = [UIFont systemFontOfSize:titleFontsize.floatValue];
+    }
+}
 
 -(void)setcellTitleFont:(UIFont *)titleFont
 {

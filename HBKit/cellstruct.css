@@ -1,0 +1,143 @@
+
+/* `CELLSTRUCT, Reset----------------------------------------------------------------------------------------------------*/
+showTopLine,
+showBottomLine,
+cellheight,
+sel_selector,
+key_indexpath,
+cellclass,
+sectiontitle,
+sectionfont,
+sectionfooter,
+sectioncolor,
+sectionheight,
+sectionfooterheight,
+title,
+attributeTitle,
+textAlignment,
+detailtitle,
+value,
+tempvalue,
+xibvalue,
+subvalue2,
+placeHolder,
+titleFont,
+titlecolor,
+cellctr,
+picture,
+picturecolor,
+rightComponts,
+rightValue,
+accessory,
+selectionStyle,
+imageRight,
+imageCornerRadius,
+CellStyleValue,
+titleLabelNumberOfLines,
+array,
+uploadobjcts,
+dictionary,
+uploadingIndex,
+delegate,
+object,
+object2,
+sectionHeaderView,
+inputAccessoryView,
+inputView
+
+/*--------------
+ 
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+ <plist version="1.0"> 
+ <dict>
+ <key>section0_0</key>
+	<dict>
+ <key>title</key>
+ <string>test2</string>
+ <key>picture</key>
+ <string>profile</string>
+ <key>detailtitle</key>
+ <string>~~~~~~~~~~~~~~~</string>
+ <key>xibvalue</key>
+ <string></string>
+ <key>accessory</key>
+ <true/>
+ <key>cellclass</key>
+ <string>HBBaseTableViewCell</string>
+ <key>titlefontsize</key>
+ <string></string>
+ <key>titlecolor</key>
+ <string></string>
+ <key>subvalue2</key>
+ <string></string>
+ <key>placeHolder</key>
+ <string></string>
+ <key>showTopLine</key>
+ <string></string>
+ <key>showBottomLine</key>
+ <string></string>
+ <key>cellheight</key>
+ <real>44</real>
+ <key>sel_selector_str</key>
+ <string></string>
+ <key>key_indexpath</key>
+ <string></string>
+ <key>sectiontitle</key>
+ <string></string>
+ <key>sectionfont</key>
+ <string></string>
+ <key>sectionfooter</key>
+ <string></string>
+ <key>sectioncolor</key>
+ <string></string>
+ <key>sectionheight</key>
+ <integer>20</integer>
+ <key>sectionfooterheight</key>
+ <string></string>
+ <key>attributeTitle</key>
+ <string></string>
+ <key>textAlignment</key>
+ <string></string>
+ <key>value</key>
+ <string></string>
+ <key>tempvalue</key>
+ <string></string>
+ <key>cellctr</key>
+ <string></string>
+ <key>picturecolor</key>
+ <string></string>
+ <key>rightComponts</key>
+ <string></string>
+ <key>rightValue</key>
+ <string></string>
+ <key>selectionStyle</key>
+ <true/>
+ <key>imageRight</key>
+ <string></string>
+ <key>imageCornerRadius</key>
+ <string></string>
+ <key>CellStyleValue</key>
+ <string></string>
+ <key>titleLabelNumberOfLines</key>
+ <string></string>
+ <key>array</key>
+ <string></string>
+ <key>uploadobjcts</key>
+ <string></string>
+ <key>dictionary</key>
+ <dict/>
+ <key>uploadingIndex</key>
+ <string></string>
+ <key>object2</key>
+ <string></string>
+ <key>sectionHeaderView</key>
+ <string></string>
+ <key>inputAccessoryView</key>
+ <string></string>
+ <key>inputView</key>
+ <string></string>
+	</dict>
+ </dict>
+ </plist>
+ */

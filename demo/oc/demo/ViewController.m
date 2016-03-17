@@ -16,18 +16,21 @@
 #import "NormalCollectionViewController.h"
 #import "TESTKVOViewController.h"
 #import "TestDrawCellViewController.h"
+#import "TestPlistViewController.h"
 
 @interface ViewController ()
 //step 1
 AS_CELL_STRUCT_COMMON(normal)
 AS_CELL_STRUCT_COMMON(sys)
 AS_CELL_STRUCT_COMMON(xib)
+AS_CELL_STRUCT_COMMON(plist)
 AS_CELL_STRUCT_COMMON(autoheight)
 AS_CELL_STRUCT_COMMON(refresh)
 AS_CELL_STRUCT_COMMON(normalcollection)
 AS_CELL_STRUCT_COMMON(collection)
 AS_CELL_STRUCT_COMMON(kvo)
 AS_CELL_STRUCT_COMMON(drawcell)
+
 @end
 
 @implementation ViewController
@@ -35,6 +38,7 @@ AS_CELL_STRUCT_COMMON(drawcell)
 GET_CELL_STRUCT_WITH(normal, 普通的列表写法)
 GET_CELL_STRUCT_WITH(sys, HBTABLE-系统控件)
 GET_CELL_STRUCT_WITH(xib, HBTABLE-加载XIB)
+GET_CELL_STRUCT_WITH(plist, load plist)
 GET_CELL_STRUCT_WITH(autoheight, HBTABLE-自动高度)
 GET_CELL_STRUCT_WITH(refresh, HBTABLE-上下拉)
 GET_CELL_STRUCT_WITH(normalcollection,普通COLLECTIONVIEW)
@@ -50,6 +54,7 @@ GET_CELL_STRUCT_WITH(drawcell, Drawcell)
     [self.dataDictionary setObject:self.cell_struct_normal forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_sys forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_xib forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_plist forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_autoheight forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_refresh forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_normalcollection forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
@@ -114,6 +119,12 @@ GET_CELL_SELECT_ACTION(cellstruct)
         TestDrawCellViewController * ctr = [TestDrawCellViewController new];
         [self.navigationController   pushViewController:ctr animated:YES];
     }
+    else if(cellstruct == self.cell_struct_plist)
+    {
+        TestPlistViewController * ctr = [TestPlistViewController new];
+        [self.navigationController   pushViewController:ctr animated:YES];
+    }
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

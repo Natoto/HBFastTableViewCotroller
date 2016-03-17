@@ -366,6 +366,7 @@
         [cell setcellplaceholder:cellstruct.placeHolder];
         [cell setcelldictionary:cellstruct.dictionary];
         [cell setcellTitle:cellstruct.title];
+        [cell setcellTitleFontsize:cellstruct.titlefontsize];
         [cell setcellTitleFont:cellstruct.titleFont];
         [cell setcellAttributeTitle:cellstruct.attributeTitle];
         [cell setcellValue2:cellstruct.subvalue2];
@@ -392,6 +393,14 @@
     if ( cellstruct.sel_selector && [self respondsToSelector:cellstruct.sel_selector])
     {
         [self performSelector:cellstruct.sel_selector withObject:cellstruct afterDelay:0];
+    }
+    else
+    {
+        NSString * sel_selector = cellstruct.sel_selector_str;
+        SEL selector = NSSelectorFromString(sel_selector);
+        if (sel_selector  && [self respondsToSelector:selector]) {
+            [self performSelector:selector withObject:cellstruct afterDelay:0];
+        }
     }
 }
 
