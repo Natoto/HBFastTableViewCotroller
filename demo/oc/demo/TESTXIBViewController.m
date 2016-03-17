@@ -27,12 +27,14 @@ GET_CELL_SELECT_ACTION(cellstruct)
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     TABLEVIEW_REGISTERXIBCELL_CLASS(self.tableView, @"CF_SupporterTableViewCell");
     TABLEVIEW_REGISTERXIBCELL_CLASS(self.tableView, @"CF_CrowdFoundHeaderCell");
     
     [self cellstructDataChange];
     [self.dataDictionary setObject:self.cell_struct_sub1 forKey:KEY_INDEXPATH(0, 0)];
     [self.dataDictionary setObject:self.cell_struct_sub2 forKey:KEY_INDEXPATH(0, 1)];
+    
     // Do any additional setup after loading the view.
 }
 

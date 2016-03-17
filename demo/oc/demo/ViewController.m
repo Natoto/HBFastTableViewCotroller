@@ -14,10 +14,14 @@
 #import "TESTCollectionViewController.h"
 #import "NormalTableViewController.h"
 #import "NormalCollectionViewController.h"
+<<<<<<< Updated upstream
 #import "TESTKVOViewController.h"
 #import "TestDrawCellViewController.h"
 #import "TestPlistViewController.h"
 
+=======
+#import "AppDelegate.h"
+>>>>>>> Stashed changes
 @interface ViewController ()
 //step 1
 AS_CELL_STRUCT_COMMON(normal)
@@ -49,6 +53,7 @@ GET_CELL_STRUCT_WITH(drawcell, Drawcell)
     [super viewDidLoad];
     self.title = @"HBTABLE";
     NSInteger rowIndex = 0;
+<<<<<<< Updated upstream
     NSInteger sectionIndex = 0;
     
     [self.cell_struct_normal.dictionary setObject:@"0x33ffee" forKey:key_cellstruct_background];
@@ -63,6 +68,10 @@ GET_CELL_STRUCT_WITH(drawcell, Drawcell)
     [self.dataDictionary setObject:self.cell_struct_refresh forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_normalcollection forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
    [self.dataDictionary setObject:self.cell_struct_collection forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+=======
+    self.view.backgroundColor =  [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
+    self.tableView.backgroundColor = self.view.backgroundColor;
+>>>>>>> Stashed changes
     
     sectionIndex++;
     rowIndex = 0;
@@ -80,12 +89,28 @@ GET_CELL_SELECT_ACTION(cellstruct)
 {
     if(cellstruct == self.cell_struct_sys)
     {
+        
+//        CATransition *transition = [CATransition animation];
+//        transition.duration = 1;
+//        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+//        transition.type = @"oglFlip";
+//        transition.subtype = kCATransitionFromTop;
+//        transition.delegate = self;
+//        [self.navigationController.view.layer addAnimation:transition forKey:nil];
         TESTSystyleviewController * ctr = [[TESTSystyleviewController alloc] init];
-        [self.navigationController pushViewController:ctr animated:YES];
+        
+        ctr.modalPresentationStyle= UIModalPresentationOverCurrentContext|UIModalPresentationFullScreen;//if the controller has container like navigationcontroller or tababr controlelr,if you don`t use the UIModalPresentationFullScreen the bar will cover the viewcontroller
+        UINavigationController * navictr = [[UINavigationController alloc] initWithRootViewController:ctr];
+         navictr.modalPresentationStyle= UIModalPresentationOverCurrentContext|UIModalPresentationFullScreen;
+        [self presentViewController:navictr animated:NO completion:^{
+        }];
+//        [self.navigationController pushViewController:ctr animated:YES];
     }
     else if(cellstruct == self.cell_struct_xib)
     {
         TESTXIBViewController * ctr = [[TESTXIBViewController alloc] init];
+
+        
         [self.navigationController pushViewController:ctr animated:YES];
     }
     else if(cellstruct == self.cell_struct_autoheight)
