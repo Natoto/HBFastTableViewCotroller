@@ -143,7 +143,7 @@
 
 +(UIColor *)colorWithStructKey:(NSString *)key
 {
-    if (!key) return [UIColor whiteColor];
+    if (!key) return nil;
     if ([key rangeOfString:@"0x"].location!= NSNotFound || [key rangeOfString:@"0X"].location!= NSNotFound) {
         //先以16为参数告诉strtoul字符串参数表示16进制数字，然后使用0x%X转为数字类型
         unsigned long red = strtoul([key UTF8String],0,16);
