@@ -191,6 +191,14 @@
     {
         [self performSelector:cellstruct.sel_selector withObject:cellstruct afterDelay:0];
     }
+    else
+    {
+        NSString * sel_selector = cellstruct.sel_selector_str;
+        SEL selector = NSSelectorFromString(sel_selector);
+        if (sel_selector  && [self respondsToSelector:selector]) {
+            [self performSelector:selector withObject:cellstruct afterDelay:0];
+        }
+    }
 }
 #pragma mark - UICollectionViewDataSource
 
