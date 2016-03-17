@@ -62,6 +62,25 @@
     self.collectionView.backgroundColor = self.view.backgroundColor;
      self.showBackItem = YES;
 }
+
+/**
+ *  从PLIST 文件中加载配置信息
+ *
+ *  @param plistname plist文件的名字
+ */
+-(void)loadplistConfig:(NSString *)plistname
+{
+    NSString * filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
+    NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
+    
+    for (NSString * key in dic.allKeys) {
+        NSDictionary * adic = dic[key];
+        CELL_STRUCT * cellstruct = [[CELL_STRUCT alloc] initWithPlistDictionary:adic];
+        [self.dataDictionary setObject:cellstruct forKey:key];
+    }
+    NSLog(@"dic:%@",dic);
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

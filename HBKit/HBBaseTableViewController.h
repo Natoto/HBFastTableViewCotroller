@@ -69,7 +69,12 @@ static NSString * notify_basetableview_sender = @"BaseViewController";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-
+/**
+ *  从PLIST 文件中加载配置信息
+ *
+ *  @param plistname plist文件的名字
+ */
+-(void)loadplistConfig:(NSString *)plistname;
 @end
 
 

@@ -45,99 +45,99 @@ sectionHeaderView,
 inputAccessoryView,
 inputView
 
-/*--------------
- 
+/*-------------- demo
  <?xml version="1.0" encoding="UTF-8"?>
  <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
- <plist version="1.0"> 
+ <plist version="1.0">
  <dict>
- <key>section0_0</key>
+	<key>section0_0</key>
 	<dict>
- <key>title</key>
- <string>test2</string>
- <key>picture</key>
- <string>profile</string>
  <key>detailtitle</key>
- <string>~~~~~~~~~~~~~~~</string>
- <key>xibvalue</key>
  <string></string>
- <key>accessory</key>
- <true/>
+ <key>tempvalue</key>
+ <string></string>
+ <key>titleLabelNumberOfLines</key>
+ <string></string>
+ <key>inputAccessoryView</key>
+ <string></string>
+ <key>sectionfooter</key>
+ <string></string>
+ <key>rightComponts</key>
+ <string></string>
+ <key>imageCornerRadius</key>
+ <false/>
+ <key>sectionHeaderView</key>
+ <string></string>
+ <key>sectioncolor</key>
+ <string></string>
  <key>cellclass</key>
  <string>HBBaseTableViewCell</string>
- <key>titlefontsize</key>
- <string></string>
+ <key>imageRight</key>
+ <false/>
  <key>titlecolor</key>
+ <string></string>
+ <key>sectionfont</key>
+ <string></string>
+ <key>picture</key>
+ <string>profile</string>
+ <key>sel_selector_str</key>
+ <string></string>
+ <key>value</key>
  <string></string>
  <key>subvalue2</key>
  <string></string>
- <key>placeHolder</key>
+ <key>dictionary</key>
+ <dict/>
+ <key>CellStyleValue</key>
  <string></string>
- <key>showTopLine</key>
+ <key>selectionStyle</key>
+ <true/>
+ <key>sectionheight</key>
+ <integer>20</integer>
+ <key>xibvalue</key>
  <string></string>
- <key>showBottomLine</key>
+ <key>attributeTitle</key>
+ <string></string>
+ <key>titlefontsize</key>
+ <string></string>
+ <key>array</key>
  <string></string>
  <key>cellheight</key>
  <real>44</real>
- <key>sel_selector_str</key>
+ <key>picturecolor</key>
  <string></string>
+ <key>textAlignment</key>
+ <string></string>
+ <key>placeHolder</key>
+ <string></string>
+ <key>accessory</key>
+ <true/>
  <key>key_indexpath</key>
  <string></string>
  <key>sectiontitle</key>
  <string></string>
- <key>sectionfont</key>
- <string></string>
- <key>sectionfooter</key>
- <string></string>
- <key>sectioncolor</key>
- <string></string>
- <key>sectionheight</key>
- <integer>20</integer>
- <key>sectionfooterheight</key>
- <string></string>
- <key>attributeTitle</key>
- <string></string>
- <key>textAlignment</key>
- <string></string>
- <key>value</key>
- <string></string>
- <key>tempvalue</key>
- <string></string>
  <key>cellctr</key>
  <string></string>
- <key>picturecolor</key>
+ <key>sectionfooterheight</key>
  <string></string>
- <key>rightComponts</key>
- <string></string>
- <key>rightValue</key>
- <string></string>
- <key>selectionStyle</key>
- <true/>
- <key>imageRight</key>
- <string></string>
- <key>imageCornerRadius</key>
- <string></string>
- <key>CellStyleValue</key>
- <string></string>
- <key>titleLabelNumberOfLines</key>
- <string></string>
- <key>array</key>
- <string></string>
- <key>uploadobjcts</key>
- <string></string>
- <key>dictionary</key>
- <dict/>
+ <key>showTopLine</key>
+ <false/>
+ <key>showBottomLine</key>
+ <false/>
  <key>uploadingIndex</key>
+ <string></string>
+ <key>title</key>
+ <string>test2</string>
+ <key>uploadobjcts</key>
  <string></string>
  <key>object2</key>
  <string></string>
- <key>sectionHeaderView</key>
- <string></string>
- <key>inputAccessoryView</key>
- <string></string>
  <key>inputView</key>
+ <string></string>
+ <key>rightValue</key>
  <string></string>
 	</dict>
  </dict>
  </plist>
+
  */

@@ -26,7 +26,6 @@
 		18678F631B7A115B0062A073 /* TESTRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18678F621B7A115B0062A073 /* TESTRefreshViewController.m */; };
 		331B92DA1C9A3B3900395A72 /* TestPlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331B92D91C9A3B3900395A72 /* TestPlistViewController.m */; };
 		331B92DC1C9A3B5B00395A72 /* TestPlistViewController.plist in Resources */ = {isa = PBXBuildFile; fileRef = 331B92DB1C9A3B5B00395A72 /* TestPlistViewController.plist */; };
-		331B92E41C9A538600395A72 /* cellstruct.css in Resources */ = {isa = PBXBuildFile; fileRef = 331B92E31C9A538600395A72 /* cellstruct.css */; };
 		331B92E61C9A544800395A72 /* cellstruct.plist in Resources */ = {isa = PBXBuildFile; fileRef = 331B92E51C9A544800395A72 /* cellstruct.plist */; };
 		3354D9421C606891003C4255 /* TestDrawCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3354D9411C606891003C4255 /* TestDrawCellViewController.m */; };
 		3354D9451C6068D4003C4255 /* DrawCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3354D9441C6068D4003C4255 /* DrawCell.m */; };
@@ -98,7 +97,6 @@
 		331B92D81C9A3B3900395A72 /* TestPlistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPlistViewController.h; sourceTree = "<group>"; };
 		331B92D91C9A3B3900395A72 /* TestPlistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPlistViewController.m; sourceTree = "<group>"; };
 		331B92DB1C9A3B5B00395A72 /* TestPlistViewController.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestPlistViewController.plist; sourceTree = "<group>"; };
-		331B92E31C9A538600395A72 /* cellstruct.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = cellstruct.css; sourceTree = "<group>"; };
 		331B92E51C9A544800395A72 /* cellstruct.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cellstruct.plist; sourceTree = "<group>"; };
 		333F78591C9179AE000B7638 /* HBKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = HBKit.podspec; path = ../../../HBKit.podspec; sourceTree = "<group>"; };
 		3354D9401C606891003C4255 /* TestDrawCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDrawCellViewController.h; sourceTree = "<group>"; };
@@ -316,7 +314,6 @@
 		339E0DC71C1E94AE00035B65 /* HBKit */ = {
 			isa = PBXGroup;
 			children = (
-				331B92E31C9A538600395A72 /* cellstruct.css */,
 				331B92E51C9A544800395A72 /* cellstruct.plist */,
 				339E0DC81C1E94AE00035B65 /* CELL_STRUCT.h */,
 				339E0DC91C1E94AE00035B65 /* CELL_STRUCT.m */,
@@ -449,7 +446,6 @@
 				184130AC1B79DF4A002AB4C0 /* Main.storyboard in Resources */,
 				339E0DC21C1E78FF00035B65 /* TestCollectionViewCell.xib in Resources */,
 				18678F5D1B79EF230062A073 /* beauty.png in Resources */,
-				331B92E41C9A538600395A72 /* cellstruct.css in Resources */,
 				184130B11B79DF4A002AB4C0 /* LaunchScreen.xib in Resources */,
 				18678F561B79EEDE0062A073 /* CF_CrowdFoundHeaderCell.xib in Resources */,
 				33B63B101C337AF400F1CF34 /* TestSectionCollectionReusableView.xib in Resources */,
