@@ -16,6 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    NSString * str = @"eef33";
+    NSInteger value = str.integerValue;
+    NSLog(@"%ld",value);
     // Override point for customization after application launch.
 //    self.mainImageView = [UIImageView new];
 //    self.mainImageView.frame = [UIScreen mainScreen].bounds;

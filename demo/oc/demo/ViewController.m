@@ -51,6 +51,10 @@ GET_CELL_STRUCT_WITH(drawcell, Drawcell)
     NSInteger rowIndex = 0;
     NSInteger sectionIndex = 0;
     
+    [self.cell_struct_normal.dictionary setObject:@"0x33ffee" forKey:key_cellstruct_background];
+    [self.cell_struct_sys.dictionary setObject:@"0XDABF4A" forKey:key_cellstruct_background];
+    
+    
     [self.dataDictionary setObject:self.cell_struct_normal forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_sys forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_xib forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];

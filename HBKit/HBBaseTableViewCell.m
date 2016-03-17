@@ -33,6 +33,7 @@
             self.detailTextLabel.textColor = [UIColor grayColor];
             self.imageView.contentMode = UIViewContentModeScaleAspectFit;
             _redPoint = [[HBRedPoint alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+            _redPoint.hidden = YES;
             [self.contentView addSubview:_redPoint];
         }
     }
