@@ -270,7 +270,7 @@
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, view.bounds.size.width - 20, cell_struce.sectionheight)];
         label.center = CGPointMake(view.frame.origin.x + view.frame.size.width/2, view.frame.origin.y + view.frame.size.height/2);
         label.text = cell_struce.sectiontitle;
-        CGFloat sectionfont = cell_struce.sectionfont > 0 ?cell_struce.sectionfont:12;
+        CGFloat sectionfont = (cell_struce.sectionfont > 0)?cell_struce.sectionfont:12;
         label.font = [UIFont systemFontOfSize:sectionfont];
         label.textColor = [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectioncolor];
         label.textAlignment = NSTextAlignmentLeft;
@@ -289,7 +289,7 @@
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, view.bounds.size.width - 20, cell_struce.sectionfooterheight)];
         label.center = CGPointMake(view.frame.origin.x + view.frame.size.width/2, view.frame.origin.y + view.frame.size.height/2);
         label.text = cell_struce.sectionfooter;
-        CGFloat sectionfont = cell_struce.sectionfooterfont > 0 ?cell_struce.sectionfooterfont:12;
+        CGFloat sectionfont = (cell_struce.sectionfooterfont >0)?cell_struce.sectionfooterfont:12;
         label.font = [UIFont systemFontOfSize:sectionfont];
         label.textColor = [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectionfootercolor];
         label.textAlignment = NSTextAlignmentLeft;
