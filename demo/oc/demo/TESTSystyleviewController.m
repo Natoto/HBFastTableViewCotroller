@@ -36,7 +36,10 @@
         cellstruct.sectiontitle = [NSString stringWithFormat:@"SECTION 1"];
         [self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(1, index)];
     }
+    self.showBackItem = YES;
     
+    self.view.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundColor = self.view.backgroundColor;
     // Do any additional setup after loading the view.
 }
 
@@ -63,7 +66,14 @@
 
 -(void)cellselect:(CELL_STRUCT *)cellstruct
 {
-    
+   
+//    TESTSystyleviewController * ctr = [[TESTSystyleviewController alloc] init];
+//    ctr.modalPresentationStyle= UIModalPresentationOverCurrentContext|UIModalPresentationFullScreen;//if the controller has container like navigationcontroller or tababr controlelr,if you don`t use the UIModalPresentationFullScreen the bar will cover the viewcontroller
+//    UINavigationController * navictr = [[UINavigationController alloc] initWithRootViewController:ctr];
+//    navictr.modalPresentationStyle= UIModalPresentationOverCurrentContext|UIModalPresentationFullScreen;
+//    
+//    [self presentViewController:navictr animated:NO completion:^{
+//    }];
 }
 
 @end
