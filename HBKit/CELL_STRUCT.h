@@ -28,8 +28,9 @@
 @property (nonatomic,assign) CGFloat   cellheight;
 @property (nonatomic,assign) CGFloat   sectionfont;
 @property (nonatomic,assign) CGFloat   sectionheight;
-@property (nonatomic,assign) NSInteger uploadingIndex;
 @property (nonatomic,assign) CGFloat   sectionfooterheight;
+@property (nonatomic,assign) CGFloat   sectionfooterfont;
+@property (nonatomic,assign) NSInteger uploadingIndex;
 @property (nonatomic,retain) NSNumber *  titlefontsize;
 
 @property (nonatomic,retain) NSString *  title;
@@ -41,6 +42,7 @@
 @property (nonatomic,retain) NSString *  sectiontitle;
 @property (nonatomic,retain) NSString *  sectionfooter;
 @property (nonatomic,retain) NSString *  sectioncolor;
+@property (nonatomic,retain) NSString *  sectionfootercolor;
 @property (nonatomic,retain) NSString *  placeHolder;
 @property (nonatomic,retain) NSString *  value;
 @property (nonatomic,retain) NSString *  tempvalue;

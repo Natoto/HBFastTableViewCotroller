@@ -5,6 +5,7 @@
 //  Created by nonato on 14-11-25.
 //  Copyright (c) 2014年 Nonato. All rights reserved.
 //
+#import "CELL_STRUCT_Common.h"
 #import "CELL_STRUCT.h"
 #import "HBBaseTableViewController.h"
 #import <objc/runtime.h>
@@ -269,8 +270,9 @@
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, view.bounds.size.width - 20, cell_struce.sectionheight)];
         label.center = CGPointMake(view.frame.origin.x + view.frame.size.width/2, view.frame.origin.y + view.frame.size.height/2);
         label.text = cell_struce.sectiontitle;
-        label.font = [UIFont systemFontOfSize:cell_struce.sectionfont];
-        label.textColor = [self colorWithStructKey:cell_struce.sectioncolor];
+        CGFloat sectionfont = cell_struce.sectionfont > 0 ?cell_struce.sectionfont:12;
+        label.font = [UIFont systemFontOfSize:sectionfont];
+        label.textColor = [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectioncolor];
         label.textAlignment = NSTextAlignmentLeft;
         view.backgroundColor = self.tableView.backgroundColor;
         [view addSubview:label];
@@ -287,6 +289,9 @@
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, view.bounds.size.width - 20, cell_struce.sectionfooterheight)];
         label.center = CGPointMake(view.frame.origin.x + view.frame.size.width/2, view.frame.origin.y + view.frame.size.height/2);
         label.text = cell_struce.sectionfooter;
+        CGFloat sectionfont = cell_struce.sectionfooterfont > 0 ?cell_struce.sectionfooterfont:12;
+        label.font = [UIFont systemFontOfSize:sectionfont];
+        label.textColor = [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectionfootercolor];
         label.textAlignment = NSTextAlignmentLeft;
         view.backgroundColor = self.tableView.backgroundColor;
         [view addSubview:label];
@@ -428,30 +433,30 @@
     return cellstruct.cellheight;
 }
 
--(UIColor *)colorWithStructKey:(NSString *)key
-{
-    if ([key isEqualToString:value_cellstruct_blue]) {
-        return  CELL_STRUCT_COLOR(blue);
-    }
-    else if([key isEqualToString:value_cellstruct_red])
-    {
-        return CELL_STRUCT_COLOR(red);
-    }
-    else if([key isEqualToString:value_cellstruct_clear])
-    {
-        return CELL_STRUCT_COLOR(clear);
-    }
-    else if([key isEqualToString:value_cellstruct_white])
-    {
-        return CELL_STRUCT_COLOR(white);
-    }
-    else if([key isEqualToString:value_cellstruct_gray])
-    {
-        return CELL_STRUCT_COLOR(gray);
-    }
-    
-    return nil;
-}
+//-(UIColor *)colorWithStructKey:(NSString *)key
+//{
+//    if ([key isEqualToString:value_cellstruct_blue]) {
+//        return  CELL_STRUCT_COLOR(blue);
+//    }
+//    else if([key isEqualToString:value_cellstruct_red])
+//    {
+//        return CELL_STRUCT_COLOR(red);
+//    }
+//    else if([key isEqualToString:value_cellstruct_clear])
+//    {
+//        return CELL_STRUCT_COLOR(clear);
+//    }
+//    else if([key isEqualToString:value_cellstruct_white])
+//    {
+//        return CELL_STRUCT_COLOR(white);
+//    }
+//    else if([key isEqualToString:value_cellstruct_gray])
+//    {
+//        return CELL_STRUCT_COLOR(gray);
+//    }
+//    
+//    return nil;
+//}
 @end
 
 

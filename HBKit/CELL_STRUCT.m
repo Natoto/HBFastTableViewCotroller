@@ -58,10 +58,21 @@
                 NSString *		propertyName = [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
                 if([propertyName description])
                 {
-                    NSObject * object = plistdic[propertyName];
+                    id object = [plistdic valueForKey:propertyName];
                     if (object) {
-                        [self setValue:object forKey:propertyName];
-                    }
+                        NSError * error ;
+//                        BOOL valiate = [self validateValue:&object forKey:propertyName error:&error] ;
+                        if (!error) {
+                            @try {
+                                // 1 对其赋值 类型错误不挂掉
+                                [self setValue:object forKey:propertyName];
+                            }
+                            @catch (NSException *exception) {
+                                // 2 捕获类型不匹配 赋值异常
+                                NSLog(@"😢-->%@ 类型不匹配 %s\n%@",propertyName, __FUNCTION__, exception);
+                            }
+                        }
+                    } 
                 }
             }
             free( properties );
