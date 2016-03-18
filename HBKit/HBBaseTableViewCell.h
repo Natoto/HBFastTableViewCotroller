@@ -30,21 +30,21 @@ __MOTHOD\
 @interface HBBaseTableViewCell : UITableViewCell
 
 
-@property (nonatomic,assign) BOOL        showNewMsg;
-@property (nonatomic,assign) BOOL        showTopLine;
-@property (nonatomic,assign) BOOL        showBottomLine;
-@property (nonatomic,assign) BOOL        canAnimate;
-@property (nonatomic,assign) BOOL        RoundCircleType;
-@property (nonatomic,assign) SEL         selector;
-@property (nonatomic,assign) id          delegate;
-@property (nonatomic,weak  ) id          object;
-@property (nonatomic,weak  ) id          object2;
-@property (nonatomic,assign) BOOL        imageRight;
-@property (nonatomic,assign) BOOL        CornerRadius;
+@property (nonatomic,assign ) BOOL showNewMsg;
+@property (nonatomic,assign ) BOOL showTopLine;
+@property (nonatomic,assign ) BOOL showBottomLine;
+@property (nonatomic,assign ) BOOL canAnimate;
+@property (nonatomic,assign ) BOOL RoundCircleType;
+@property (nonatomic,assign ) BOOL imageRight;
+@property (nonatomic,assign ) BOOL CornerRadius;
+@property (nonatomic,assign ) SEL  selector;
+@property (nonatomic,weak   ) id   delegate;
+@property (nonatomic,strong ) id   object;
+@property (nonatomic,strong ) id   object2;
 @property (nonatomic,assign) NSInteger           numberOfLines;
 @property (nonatomic,strong) NSIndexPath         * indexPath;
-@property (nonatomic,retain) NSString            * subvalue2;
-@property (nonatomic,retain) NSMutableDictionary * dictionary;
+@property (nonatomic,strong) NSString            * subvalue2;
+@property (nonatomic,strong) NSMutableDictionary * dictionary;
 
 -(void)setcelldictionary:(NSMutableDictionary *)dictionary;
 -(void)setcellimageRight:(BOOL)imageRight;

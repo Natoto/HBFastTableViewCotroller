@@ -69,7 +69,7 @@
 @end
 
 
-@protocol BaseViewControllerDelegate
+@protocol HBBaseViewControllerDelegate
 
 @optional
 -(void)BaseViewController:(HBBaseViewController *)ViewController left:(BOOL)left navigationItem:(id)sender;
