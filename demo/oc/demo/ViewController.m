@@ -14,14 +14,11 @@
 #import "TESTCollectionViewController.h"
 #import "NormalTableViewController.h"
 #import "NormalCollectionViewController.h"
-<<<<<<< Updated upstream
 #import "TESTKVOViewController.h"
 #import "TestDrawCellViewController.h"
 #import "TestPlistViewController.h"
 
-=======
 #import "AppDelegate.h"
->>>>>>> Stashed changes
 @interface ViewController ()
 //step 1
 AS_CELL_STRUCT_COMMON(normal)
