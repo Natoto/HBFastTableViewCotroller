@@ -35,6 +35,34 @@
     return self;
 }
 
+#pragma mark - copy
+- (instancetype)copyWithZone:(NSZone *)zone
+{
+    CELL_STRUCT *copy = [[[self class] allocWithZone:zone] init];
+    unsigned int outCount = 0;
+    objc_property_t *properties = class_copyPropertyList([self class], &outCount);
+    @try {
+        for (int i = 0; i < outCount; i++) {
+            objc_property_t property = properties[i];
+            NSString *key=[[NSString alloc] initWithCString:property_getName(property)
+                                                   encoding:NSUTF8StringEncoding];
+            id value = [self valueForKey:key];
+            if (value) {
+                [copy setValue:value forKey:key];                
+            }
+        }
+    }
+    @catch (NSException *exception) {
+        NSLog(@"😢-->error:copywithzone  %@", exception);
+    }
+    @finally {        
+    }
+    free(properties);
+    copy.sel_selector = self.sel_selector;
+    return copy;
+}
+
+
 -(id)initWithDictionary:(NSDictionary *)dictionary
 {
     self = [super init];
@@ -43,7 +71,8 @@
     }
     return self;
 }
- 
+
+#pragma mark -
 -(id)initWithPlistDictionary:(NSDictionary *)plistdic
 {
     self = [super init];
@@ -61,7 +90,6 @@
                     id object = [plistdic valueForKey:propertyName];
                     if (object) {
                         NSError * error ;
-//                        BOOL valiate = [self validateValue:&object forKey:propertyName error:&error] ;
                         if (!error) {
                             @try {
                                 // 1 对其赋值 类型错误不挂掉

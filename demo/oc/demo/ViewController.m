@@ -32,6 +32,7 @@ AS_CELL_STRUCT_COMMON(collection)
 AS_CELL_STRUCT_COMMON(kvo)
 AS_CELL_STRUCT_COMMON(drawcell)
 
+AS_CELL_STRUCT_COMMON(copy)
 @end
 
 @implementation ViewController
@@ -46,6 +47,7 @@ GET_CELL_STRUCT_WITH(normalcollection,普通COLLECTIONVIEW)
 GET_CELL_STRUCT_WITH(collection, COLLECTION-加载);
 GET_CELL_STRUCT_WITH(kvo, KVO)
 GET_CELL_STRUCT_WITH(drawcell, Drawcell)
+GET_CELL_STRUCT_WITH(copy, copy cellstruct)
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HBTABLE";
@@ -64,17 +66,22 @@ GET_CELL_STRUCT_WITH(drawcell, Drawcell)
     [self.dataDictionary setObject:self.cell_struct_refresh forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_normalcollection forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
    [self.dataDictionary setObject:self.cell_struct_collection forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
- 
-    self.view.backgroundColor =  [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
-    self.tableView.backgroundColor = self.view.backgroundColor;
- 
+
     
     sectionIndex++;
     rowIndex = 0;
     self.cell_struct_kvo.sectionheight = 20;
    [self.dataDictionary setObject:self.cell_struct_kvo forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
    [self.dataDictionary setObject:self.cell_struct_drawcell forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
-
+    
+    sectionIndex++;
+    rowIndex = 0;
+    [self.dataDictionary setObject:self.cell_struct_copy forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    
+    
+    self.view.backgroundColor =  [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
+    self.tableView.backgroundColor = self.view.backgroundColor;
+    
 }
 
 /**
@@ -149,7 +156,11 @@ GET_CELL_SELECT_ACTION(cellstruct)
         TestPlistViewController * ctr = [TestPlistViewController new];
         [self.navigationController   pushViewController:ctr animated:YES];
     }
-    
+    else if (cellstruct == self.cell_struct_copy)
+    {
+        CELL_STRUCT * astruct = [self.cell_struct_copy deepcopy];
+        NSLog(@"%@",astruct);
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

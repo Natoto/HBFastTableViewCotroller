@@ -12,7 +12,7 @@
 
 #define KEY_INDEXPATH(SECTION,ROW) [NSString stringWithFormat:@"section%u_%u",(int)SECTION,(int)ROW]
 #define KEY_SECTION(SECTION) [NSString stringWithFormat:@"section%d",(int)SECTION]
-@interface CELL_STRUCT : NSObject
+@interface CELL_STRUCT : NSObject<NSCopying>
 /*
  * 表示TableViewCELL的高度 或者  CollectionCell的size的高度
  */
@@ -56,9 +56,9 @@
 @property (nonatomic,retain) NSString *  inputView;
 @property (nonatomic,retain) NSString *  key_indexpath;
 
-@property (nonatomic,retain) NSMutableArray      *  array;
-@property (nonatomic,retain) NSMutableArray      *  uploadobjcts;
-@property (nonatomic,retain) NSMutableDictionary *  dictionary;
+@property (nonatomic,strong) NSMutableArray      *  array;
+@property (nonatomic,strong) NSMutableArray      *  uploadobjcts;
+@property (nonatomic,strong) NSMutableDictionary *  dictionary;
 
 //------------ 注意：以下变量不可放入plist中赋值
 @property (nonatomic,retain) UIFont *  titleFont;
@@ -71,8 +71,14 @@
 
 -(id)initWithtitle:(NSString *)title cellclass:(NSString *)cellclass placeholder:(NSString *)placehoder accessory:(BOOL)accessory sel_selctor:(SEL)selector delegate:(id)delegate;
 
-
+/**
+ * 已废弃
+ */
 -(id)initWithDictionary:(NSDictionary    *)dictionary;
- 
+
+
+/**
+  *  根据plist的键值对字典得到CELLSTRUCT对象
+  */
 -(id)initWithPlistDictionary:(NSDictionary *)plistdic;
 @end
