@@ -53,7 +53,6 @@ GET_CELL_STRUCT_WITH(drawcell, Drawcell)
     [super viewDidLoad];
     self.title = @"HBTABLE";
     NSInteger rowIndex = 0;
-<<<<<<< Updated upstream
     NSInteger sectionIndex = 0;
     
     [self.cell_struct_normal.dictionary setObject:@"0x33ffee" forKey:key_cellstruct_background];
@@ -68,10 +67,10 @@ GET_CELL_STRUCT_WITH(drawcell, Drawcell)
     [self.dataDictionary setObject:self.cell_struct_refresh forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_normalcollection forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
    [self.dataDictionary setObject:self.cell_struct_collection forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
-=======
+ 
     self.view.backgroundColor =  [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
     self.tableView.backgroundColor = self.view.backgroundColor;
->>>>>>> Stashed changes
+ 
     
     sectionIndex++;
     rowIndex = 0;
