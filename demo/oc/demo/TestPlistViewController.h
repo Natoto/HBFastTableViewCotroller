@@ -8,6 +8,6 @@
 
 #import "HBBaseTableViewController.h"
 #import "HBBaseCollectionViewController.h"
-@interface TestPlistViewController : HBBaseCollectionViewController
+@interface TestPlistViewController : HBBaseTableViewController
 
 @end

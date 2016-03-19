@@ -1152,7 +1152,7 @@
 	</dict>
 	<key>title</key>
 	<string>test</string>
-	<key>background</key>
+	<key>backgroundcolor</key>
 	<string>0x3322</string>
 	<key>backitem</key>
 	<false/>

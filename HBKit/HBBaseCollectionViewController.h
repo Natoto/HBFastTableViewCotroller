@@ -94,11 +94,5 @@ UICollectionViewDelegateFlowLayout,HBCollectionViewControllerConfig,HBWaterFLayo
 #endif
 
 -(void)viewDidCurrentView;
--(CGRect)adjustContentOffSet:(CGFloat)top bottom:(CGFloat)bottom;
-/**
- *  从PLIST 文件中加载配置信息
- *
- *  @param plistname plist文件的名字
- */
--(void)loadplistConfig:(NSString *)plistname;
+-(CGRect)adjustContentOffSet:(CGFloat)top bottom:(CGFloat)bottom; 
 @end

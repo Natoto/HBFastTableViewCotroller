@@ -7,6 +7,7 @@
 //
 #import "HBBaseViewController.h"
 #import "UIButton+PENG.h"
+#import "CELL_STRUCT_Common.h"
 
 #define HB_UIColorWithRGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 
@@ -43,7 +44,7 @@
 {
     NSString * filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
     NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
-    
+    [self loadplistviewConfig:dic];
     for (NSString * key in dic.allKeys) {
         NSDictionary * adic = dic[key];
         if ([key containsString:@"section"] && adic) {
@@ -53,9 +54,24 @@
             }
         }
     }
-    NSLog(@"dic:%@",dic);
 }
 
+-(void)loadplistviewConfig:(NSDictionary *)dic
+{
+    NSString * title = [dic objectForKey:@"title"];
+    if (title && [[title class] isSubclassOfClass:[NSString class]]) {
+        self.title = title;
+    }
+    NSString * backgroundcolor = [dic objectForKey:@"backgroundcolor"];
+    if (backgroundcolor && [[backgroundcolor class] isSubclassOfClass:[NSString class]]) {
+       self.view.backgroundColor = [CELL_STRUCT_Common colorWithStructKey:backgroundcolor];
+    }
+    NSString * backgroundimage  = [dic objectForKey:@"backgroundimage"];
+    if (backgroundimage && [[backgroundimage class] isSubclassOfClass:[NSString class]]) {
+        [self changeBackGroundWithBackImage:[UIImage imageNamed:backgroundimage]];
+    }
+    
+}
 
 
 -(void)setShowBackItem:(BOOL)showBackItem
@@ -81,9 +97,10 @@
 }
 -(void)viewDidLoad
 {
-    [super viewDidLoad];
-    self.view.backgroundColor = HB_UIColorWithRGB(245, 245, 245);
+    [super viewDidLoad]; //默认两行
+    self.view.backgroundColor = [UIColor colorWithRed:239./255. green:239./255. blue:239./255. alpha:1];
 }
+
 -(IBAction)hbNavigationbartitleTap:(id)sender
 {
     

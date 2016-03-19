@@ -16,17 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString * filepath = [[NSBundle mainBundle] pathForResource:@"TestPlistViewCollection" ofType:@"plist"];
-    NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
-//    self.tableView.separatorStyle   = UITableViewCellSeparatorStyleNone;
-    for (NSString * key in dic.allKeys) {
-         NSDictionary * adic = dic[key];
-        CELL_STRUCT * cellstruct = [[CELL_STRUCT alloc] initWithPlistDictionary:adic];
-        [self.dataDictionary setObject:cellstruct forKey:key];
-//        KEY_INDEXPATH(0, 0)
-    }
-    
-    NSLog(@"%@",dic);
+    [self loadplistConfig:@"TestPlistViewCollection"];
+    NSLog(@"%@",self.dataDictionary);
     
     // Do any additional setup after loading the view.
 }

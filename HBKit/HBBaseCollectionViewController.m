@@ -59,30 +59,10 @@
 //        self.edgesForExtendedLayout = UIRectEdgeNone;
 //    }
     COLLECTIONVIEW_REGISTER_XIB_CELLCLASS(self.collectionView, NSStringFromClass([HBBaseCollectionViewCell class]));
-    //默认两行
-    self.view.backgroundColor = [UIColor colorWithRed:239./255. green:239./255. blue:239./255. alpha:1];// UIColor(239,239,239);
-    self.collectionView.backgroundColor = self.view.backgroundColor;
+     self.collectionView.backgroundColor = [UIColor clearColor];
      self.showBackItem = YES;
 }
-
-/**
- *  从PLIST 文件中加载配置信息
- *
- *  @param plistname plist文件的名字
- */
--(void)loadplistConfig:(NSString *)plistname
-{
-    NSString * filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
-    NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
-    
-    for (NSString * key in dic.allKeys) {
-        NSDictionary * adic = dic[key];
-        CELL_STRUCT * cellstruct = [[CELL_STRUCT alloc] initWithPlistDictionary:adic];
-        [self.dataDictionary setObject:cellstruct forKey:key];
-    }
-    NSLog(@"dic:%@",dic);
-}
-
+ 
 
 -(void)viewWillAppear:(BOOL)animated
 {

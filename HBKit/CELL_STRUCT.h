@@ -42,6 +42,7 @@
 @property (nonatomic,retain) NSString *  sectiontitle;
 @property (nonatomic,retain) NSString *  sectionfooter;
 @property (nonatomic,retain) NSString *  sectioncolor;
+@property (nonatomic,retain) NSString *  sectionbgcolor;
 @property (nonatomic,retain) NSString *  sectionfootercolor;
 @property (nonatomic,retain) NSString *  placeHolder;
 @property (nonatomic,retain) NSString *  value;

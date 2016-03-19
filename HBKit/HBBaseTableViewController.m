@@ -29,7 +29,6 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {//这个是需要的
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
@@ -92,7 +91,7 @@
 {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
-        _tableView.backgroundColor = self.view.backgroundColor;  
+        _tableView.backgroundColor = [UIColor clearColor];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _tableView.delegate = self;
         _tableView.dataSource = self;
@@ -245,7 +244,8 @@
         label.font = [UIFont systemFontOfSize:sectionfont];
         label.textColor = [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectioncolor];
         label.textAlignment = NSTextAlignmentLeft;
-        view.backgroundColor = self.tableView.backgroundColor;
+        UIColor * bgcolor =  [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectionbgcolor];
+        view.backgroundColor = bgcolor?bgcolor:self.tableView.backgroundColor;
         [view addSubview:label];
         return view;
     }

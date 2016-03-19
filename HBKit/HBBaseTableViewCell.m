@@ -156,6 +156,7 @@
     }
     if ([[bgcolor class] isSubclassOfClass:[NSString class]]) {
         NSString * bgcolorstring= [dictionary objectForKey:key_cellstruct_background];
+        bgcolorstring = (bgcolorstring && bgcolorstring.length)?bgcolorstring:@"white";
         self.contentView.backgroundColor = [CELL_STRUCT colorWithStructKey:bgcolorstring];
         self.backgroundColor = self.contentView.backgroundColor;
     }
