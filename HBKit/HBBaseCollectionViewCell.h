@@ -15,7 +15,7 @@
 @property (nonatomic,weak  ) id                  object;
 @property (nonatomic,retain) NSMutableDictionary * dictionary;
 -(void)setcelldictionary:(NSMutableDictionary *)dictionary;
--(void)setcellimageRight:(BOOL)imageRight;
+//-(void)setcellimageRight:(BOOL)imageRight;
 -(void)setcellpicturecolor:(NSString *)picturecolor;
 -(void)setcellobject:(id)object;
 -(void)setcellobject2:(id)object;

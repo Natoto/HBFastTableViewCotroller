@@ -9,6 +9,7 @@
 #import "HBBaseCollectionViewController.h"
 #import "HBBaseCollectionViewCell.h"
 #import "HBCollectionFallFLayout.h"
+#import "CELL_STRUCT_Common.h"
 
 #if 1 //是否需要用到MJRefresh
 #import <MJRefresh/MJRefresh.h>
@@ -54,9 +55,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {//这个是需要的
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    }
+//    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {//这个是需要的
+//        self.edgesForExtendedLayout = UIRectEdgeNone;
+//    }
+    COLLECTIONVIEW_REGISTER_XIB_CELLCLASS(self.collectionView, NSStringFromClass([HBBaseCollectionViewCell class]));
     //默认两行
     self.view.backgroundColor = [UIColor colorWithRed:239./255. green:239./255. blue:239./255. alpha:1];// UIColor(239,239,239);
     self.collectionView.backgroundColor = self.view.backgroundColor;
@@ -81,6 +83,7 @@
     NSLog(@"dic:%@",dic);
 }
 
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -100,17 +103,7 @@
     if (self.navigationController.childViewControllers.count > 1 && self.navigationController.topViewController == self) {
         self.showBackItem = YES;
     }
-//    [self.navigationbar setBackgroundColor:PENG_COLOR_NAVIGATIONBAR];
-//    [self adjustContentOffSet:HEIGHT_NAVIGATIONBAR bottom:0];
     
-}
-
--(NSMutableDictionary *)dataDictionary
-{
-    if (!_dataDictionary) {
-        _dataDictionary =  [NSMutableDictionary new];
-    }
-    return _dataDictionary;
 }
 
 #define UISCREEN_BOUNDS [UIScreen mainScreen].bounds
@@ -186,7 +179,7 @@
     if (!self.nodeselectRow) {
         [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     }
-    CELL_STRUCT * cellstruct = [self.dataDictionary  objectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
+    CELL_STRUCT * cellstruct = [self.dataDictionary  cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
     if ( cellstruct.sel_selector && [self respondsToSelector:cellstruct.sel_selector])
     {
         [self performSelector:cellstruct.sel_selector withObject:cellstruct afterDelay:0];
@@ -234,19 +227,35 @@
     return maxsection;
 }
 
+-(NSString *)valiateCellClass:(NSString *)cellclass
+{
+    if ([cellclass isEqualToString:@"HBBaseTableViewCell"]) {
+            return @"HBBaseCollectionViewCell";
+    }
+    return cellclass;
+}
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CELL_STRUCT * cellstruct = [self.dataDictionary objectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
-    NSString * identifier01 = cellstruct.cellclass;
+    CELL_STRUCT * cellstruct = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
+    NSString * identifier01 =  [self valiateCellClass:cellstruct.cellclass];
     HBBaseCollectionViewCell *cell ;
-    cell =  [collectionView dequeueReusableCellWithReuseIdentifier:identifier01 forIndexPath:indexPath];
+    @try {
+        cell =  [collectionView dequeueReusableCellWithReuseIdentifier:identifier01 forIndexPath:indexPath];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"😫--> 重用的cell %@找不到\n%@",identifier01,exception);
+        identifier01 = NSStringFromClass([HBBaseCollectionViewCell class]);
+        cell =  [collectionView dequeueReusableCellWithReuseIdentifier:identifier01 forIndexPath:indexPath];
+    }
+    @finally {
+    }
     if (!cell) {
         cell = [[HBBaseCollectionViewCell alloc] init];
     }
     if ([[cell class] isSubclassOfClass:[HBBaseCollectionViewCell class]]) {
         cell.delegate = self;
         cell.indexPath = indexPath;
-        [cell setcellimageRight:cellstruct.imageRight];
+//        [cell setcellimageRight:cellstruct.imageRight];
         [cell setcelldetailtitle:cellstruct.detailtitle];
         [cell setcelldictionary:cellstruct.dictionary];
         [cell setcellTitle:cellstruct.title];
@@ -271,7 +280,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UIEdgeInsets edgeinset = [self configInsetForSectionAtIndex:indexPath.section];
-     CELL_STRUCT * cellstruct = [self.dataDictionary objectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
+     CELL_STRUCT * cellstruct = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
     NSInteger realcolumcount = self.configColumnCount;
     if ([self respondsToSelector:@selector(collectionView:ColumnCountOfSection:)]) {
         realcolumcount = [self collectionView:collectionView ColumnCountOfSection:indexPath.section];
@@ -299,7 +308,7 @@
 
 -(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout heightForHeaderInSection:(NSInteger)section
 {
-    CELL_STRUCT *cell_struce = [self.dataDictionary objectForKey:KEY_INDEXPATH(section, 0)];
+    CELL_STRUCT *cell_struce = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(section, 0)];
     return cell_struce.sectionheight;
 }
 

@@ -27,6 +27,37 @@
 @implementation HBBaseViewController
 
 
+-(NSMutableDictionary *)dataDictionary
+{
+    if (!_dataDictionary) {
+        _dataDictionary = [NSMutableDictionary new];
+    }
+    return _dataDictionary;
+}
+/**
+ *  从PLIST 文件中加载配置信息
+ *
+ *  @param plistname plist文件的名字
+ */
+-(void)loadplistConfig:(NSString *)plistname
+{
+    NSString * filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
+    NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
+    
+    for (NSString * key in dic.allKeys) {
+        NSDictionary * adic = dic[key];
+        if ([key containsString:@"section"] && adic) {
+            CELL_STRUCT * cellstruct = [[CELL_STRUCT alloc] initWithPlistDictionary:adic];
+            if (cellstruct) {
+                [self.dataDictionary setObject:cellstruct forKey:key];
+            }
+        }
+    }
+    NSLog(@"dic:%@",dic);
+}
+
+
+
 -(void)setShowBackItem:(BOOL)showBackItem
 {
     _showBackItem = showBackItem;

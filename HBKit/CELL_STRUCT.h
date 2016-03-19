@@ -10,28 +10,28 @@
 #import "CELL_STRUCT_KEY.h"
 
 
-#define KEY_INDEXPATH(SECTION,ROW) [NSString stringWithFormat:@"section%u_%u",(int)SECTION,(int)ROW]
-#define KEY_SECTION(SECTION) [NSString stringWithFormat:@"section%d",(int)SECTION]
+#define KEY_INDEXPATH(SECTION,ROW) [NSString stringWithFormat:@"section%u_%u",(int)(SECTION),(int)(ROW)]
+#define KEY_SECTION(SECTION) [NSString stringWithFormat:@"section%d",(int)(SECTION)]
 @interface CELL_STRUCT : NSObject<NSCopying>
 /*
  * 表示TableViewCELL的高度 或者  CollectionCell的size的高度
  */
 @property (nonatomic,assign) BOOL showTopLine;//显示顶部分割线
 @property (nonatomic,assign) BOOL showBottomLine;//显示底部分割线
-@property (nonatomic,assign) BOOL accessory;
-@property (nonatomic,assign) BOOL selectionStyle;
-@property (nonatomic,assign) BOOL imageRight;
+@property (nonatomic,assign) BOOL accessory;//是否显示右边小箭头
+@property (nonatomic,assign) BOOL selectionStyle;//是否显示按下效果
+@property (nonatomic,assign) BOOL Ø;
 @property (nonatomic,assign) BOOL imageCornerRadius;
 @property (nonatomic,assign) int  CellStyleValue;//修改cell默认的样式 0 1 2
 @property (nonatomic,assign) int  titleLabelNumberOfLines;//title的换行
 
-@property (nonatomic,assign) CGFloat   cellheight;
-@property (nonatomic,assign) CGFloat   sectionfont;
-@property (nonatomic,assign) CGFloat   sectionheight;
+@property (nonatomic,assign) CGFloat   cellheight;//cell的高度
+@property (nonatomic,assign) CGFloat   sectionfont;//section header的字体 只在row为0的时候生效
+@property (nonatomic,assign) CGFloat   sectionheight;//section header的高度 只在row为0的时候生效
 @property (nonatomic,assign) CGFloat   sectionfooterheight;
 @property (nonatomic,assign) CGFloat   sectionfooterfont;
-@property (nonatomic,assign) NSInteger uploadingIndex;
-@property (nonatomic,retain) NSNumber *  titlefontsize;
+//@property (nonatomic,assign) NSInteger uploadingIndex;
+@property (nonatomic,retain) NSNumber *  titlefontsize;//字体
 
 @property (nonatomic,retain) NSString *  title;
 @property (nonatomic,retain) NSString *  detailtitle;
@@ -45,12 +45,12 @@
 @property (nonatomic,retain) NSString *  sectionfootercolor;
 @property (nonatomic,retain) NSString *  placeHolder;
 @property (nonatomic,retain) NSString *  value;
-@property (nonatomic,retain) NSString *  tempvalue;
+//@property (nonatomic,retain) NSString *  tempvalue;
 @property (nonatomic,retain) NSString *  subvalue2;
 @property (nonatomic,retain) NSString *  titlecolor;//title 颜色
 @property (nonatomic,retain) NSString *  cellctr;
 @property (nonatomic,retain) NSString *  picturecolor;
-@property (nonatomic,retain) NSString *  rightComponts;
+//@property (nonatomic,retain) NSString *  rightComponts;
 @property (nonatomic,retain) NSString *  rightValue;
 @property (nonatomic,retain) NSString *  inputAccessoryView;
 @property (nonatomic,retain) NSString *  inputView;

@@ -10,11 +10,30 @@
 #import <objc/runtime.h>
 
 @implementation CELL_STRUCT
--(id)initWithtitle:(NSString *)title cellclass:(NSString *)cellclass placeholder:(NSString *)placehoder accessory:(BOOL)accessory sel_selctor:(SEL)selector delegate:(id)delegate
+
+@class HBBaseTableViewCell;
+@class HBBaseCollectionViewCell;
+
+-(instancetype)init
 {
     self = [super init];
     if (self) {
-        self.uploadingIndex = 0;
+        self.cellclass = @"HBBaseTableViewCell";
+        self.cellheight = 0;
+        self.dictionary = [NSMutableDictionary new];
+    }
+    return self;
+}
+-(instancetype)initWithtitle:(NSString *)title
+                   cellclass:(NSString *)cellclass
+                 placeholder:(NSString *)placehoder
+                   accessory:(BOOL)accessory
+                 sel_selctor:(SEL)selector
+                    delegate:(id)delegate
+{
+    self = [super init];
+    if (self) {
+//        self.uploadingIndex = 0;
         self.selectionStyle = YES;
         self.uploadobjcts = [NSMutableArray new];
         self.array = [NSMutableArray new];
@@ -77,7 +96,7 @@
 {
     self = [super init];
     if (self) {
-        for ( Class clazzType = [self class];; )
+        for ( Class clazzType = [CELL_STRUCT class];; )
         { 
             unsigned int		propertyCount = 0;
             objc_property_t *	properties = class_copyPropertyList( clazzType, &propertyCount);            
@@ -87,20 +106,17 @@
                 NSString *		propertyName = [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
                 if([propertyName description])
                 {
-                    id object = [plistdic valueForKey:propertyName];
-                    if (object) {
-                        NSError * error ;
-                        if (!error) {
-                            @try {
-                                // 1 对其赋值 类型错误不挂掉
-                                [self setValue:object forKey:propertyName];
-                            }
-                            @catch (NSException *exception) {
-                                // 2 捕获类型不匹配 赋值异常
-                                NSLog(@"😢-->%@ 类型不匹配 %s\n%@",propertyName, __FUNCTION__, exception);
-                            }
+                    @try {
+                        id object = [plistdic valueForKey:propertyName];
+                        if (object) {
+                        // 1 对其赋值 类型错误不挂掉
+                            [self setValue:object forKey:propertyName];
                         }
-                    } 
+                    }
+                    @catch (NSException *exception) {
+                        // 2 捕获类型不匹配 赋值异常
+                        NSLog(@"😢-->%@ 类型不匹配 %s\n%@",propertyName, __FUNCTION__, exception);
+                    }
                 }
             }
             free( properties );

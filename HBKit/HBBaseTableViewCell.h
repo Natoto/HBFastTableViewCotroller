@@ -85,8 +85,8 @@ __MOTHOD\
 
 
 @interface UIView(HBBASECELL)
-@property(nonatomic,retain) CALayer * toplayer;
-@property(nonatomic,retain) CALayer * bottomlayer;
+@property(nonatomic,retain) UIView * toplayer;
+@property(nonatomic,retain) UIView * bottomlayer;
 
 -(void)clearTopLayer;
 -(void)clearBottomLayer;

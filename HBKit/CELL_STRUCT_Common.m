@@ -61,7 +61,7 @@
     cell1_0.sectionfooterheight = footerheight;
     cell1_0.accessory = accessory;
     cell1_0.picture = picture;
-    cell1_0.imageRight = imageRight;
+//    cell1_0.imageRight = imageRight;
     cell1_0.titlecolor = titlecolor;
     cell1_0.sectionheight = sectionheight;
     cell1_0.dictionary =[NSMutableDictionary dictionaryWithDictionary: @{key_cellstruct_background:backgroundcolor}];
@@ -108,8 +108,8 @@
     cell1_0.imageCornerRadius = imageCornerRadius.boolValue;
     cell1_0.sectionfooterheight = footerheight.floatValue;
     cell1_0.accessory = accessory.boolValue;
-    cell1_0.imageRight = imageRight.boolValue;
-    cell1_0.titlecolor = titlecolor;    
+//    cell1_0.imageRight = imageRight.boolValue;
+    cell1_0.titlecolor = titlecolor;
     cell1_0.dictionary = [NSMutableDictionary dictionaryWithDictionary:dictionary];
     [cell1_0.dictionary setObject:textAlignment forKey:key_cellstruct_textAlignment];
     return cell1_0;
@@ -217,6 +217,19 @@
     return nil;
 }
 
+@end
+
+@implementation NSDictionary(cellstruct)
+
+-(CELL_STRUCT *)cellstructobjectForKey:(id)aKey
+{
+    CELL_STRUCT * cellstruct = [self objectForKey:aKey];
+    if (!cellstruct) {
+        cellstruct = [[CELL_STRUCT alloc] init];
+        [self setValue:cellstruct forKey:aKey];
+    }
+    return cellstruct;
+}
 @end
 
 

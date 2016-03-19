@@ -50,6 +50,8 @@
 		33B63B101C337AF400F1CF34 /* TestSectionCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B63B0E1C337AF400F1CF34 /* TestSectionCollectionReusableView.xib */; };
 		33B63B131C33A54000F1CF34 /* TEST2CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B63B121C33A54000F1CF34 /* TEST2CollectionReusableView.m */; };
 		5154282E333DB6FB31B053AC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47243643C8635681725F3A66 /* libPods.a */; };
+		78EC3DCF1C9CFC2C00CD6C7A /* HBBaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78EC3DCD1C9CFC2C00CD6C7A /* HBBaseCollectionViewCell.xib */; };
+		78EC3DD11C9CFE6400CD6C7A /* TestPlistViewCollection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78EC3DD01C9CFE6400CD6C7A /* TestPlistViewCollection.plist */; };
 		78EE98601C2AC6AB004C97A9 /* NormalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE985F1C2AC6AB004C97A9 /* NormalTableViewController.m */; };
 		78EE98631C2ACCCF004C97A9 /* NormalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE98621C2ACCCF004C97A9 /* NormalCollectionViewController.m */; };
 /* End PBXBuildFile section */
@@ -144,6 +146,8 @@
 		33B63B111C33A54000F1CF34 /* TEST2CollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEST2CollectionReusableView.h; sourceTree = "<group>"; };
 		33B63B121C33A54000F1CF34 /* TEST2CollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEST2CollectionReusableView.m; sourceTree = "<group>"; };
 		47243643C8635681725F3A66 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		78EC3DCD1C9CFC2C00CD6C7A /* HBBaseCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBBaseCollectionViewCell.xib; sourceTree = "<group>"; };
+		78EC3DD01C9CFE6400CD6C7A /* TestPlistViewCollection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestPlistViewCollection.plist; sourceTree = "<group>"; };
 		78EE985E1C2AC6AB004C97A9 /* NormalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalTableViewController.h; sourceTree = "<group>"; };
 		78EE985F1C2AC6AB004C97A9 /* NormalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalTableViewController.m; sourceTree = "<group>"; };
 		78EE98611C2ACCCF004C97A9 /* NormalCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalCollectionViewController.h; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 				18678F621B7A115B0062A073 /* TESTRefreshViewController.m */,
 				331B92D81C9A3B3900395A72 /* TestPlistViewController.h */,
 				331B92D91C9A3B3900395A72 /* TestPlistViewController.m */,
+				78EC3DD01C9CFE6400CD6C7A /* TestPlistViewCollection.plist */,
 				331B92DB1C9A3B5B00395A72 /* TestPlistViewController.plist */,
 				339E0DB61C1E6F8F00035B65 /* TESTCollectionViewController.h */,
 				339E0DB71C1E6F8F00035B65 /* TESTCollectionViewController.m */,
@@ -324,14 +329,15 @@
 				339E0DCE1C1E94AE00035B65 /* CELL_STRUCT_KVO.m */,
 				339E0DCF1C1E94AE00035B65 /* HBBaseCollectionViewCell.h */,
 				339E0DD01C1E94AE00035B65 /* HBBaseCollectionViewCell.m */,
+				78EC3DCD1C9CFC2C00CD6C7A /* HBBaseCollectionViewCell.xib */,
 				339E0DD11C1E94AE00035B65 /* HBBaseCollectionViewController.h */,
 				339E0DD21C1E94AE00035B65 /* HBBaseCollectionViewController.m */,
 				339E0DD31C1E94AE00035B65 /* HBBaseTableViewCell.h */,
 				339E0DD41C1E94AE00035B65 /* HBBaseTableViewCell.m */,
-				339E0DD51C1E94AE00035B65 /* HBBaseTableViewController.h */,
-				339E0DD61C1E94AE00035B65 /* HBBaseTableViewController.m */,
 				339E0DD71C1E94AE00035B65 /* HBBaseViewController.h */,
 				339E0DD81C1E94AE00035B65 /* HBBaseViewController.m */,
+				339E0DD51C1E94AE00035B65 /* HBBaseTableViewController.h */,
+				339E0DD61C1E94AE00035B65 /* HBBaseTableViewController.m */,
 				339E0DD91C1E94AE00035B65 /* HBCollectionFallFLayout.h */,
 				339E0DDA1C1E94AE00035B65 /* HBCollectionFallFLayout.m */,
 				339E0DDB1C1E94AE00035B65 /* HBKit.h */,
@@ -441,8 +447,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78EC3DD11C9CFE6400CD6C7A /* TestPlistViewCollection.plist in Resources */,
 				331B92DC1C9A3B5B00395A72 /* TestPlistViewController.plist in Resources */,
 				18678F5B1B79EEF10062A073 /* CF_SupporterTableViewCell.xib in Resources */,
+				78EC3DCF1C9CFC2C00CD6C7A /* HBBaseCollectionViewCell.xib in Resources */,
 				184130AC1B79DF4A002AB4C0 /* Main.storyboard in Resources */,
 				339E0DC21C1E78FF00035B65 /* TestCollectionViewCell.xib in Resources */,
 				331B92EB1C9A75A100395A72 /* cellstruct.plist in Resources */,

@@ -65,6 +65,10 @@
 
 @end
 
+@interface NSDictionary(cellstruct)
+-(CELL_STRUCT *)cellstructobjectForKey:(id)aKey;
+@end
+
 @interface UIViewController(KEYINDEXPATH)
 -(NSString *)KEY_INDEXPATH:(NSInteger )SECTION ROW:(NSInteger)ROW;
 -(NSString *)KEY_SECTION:(NSInteger)SECTION;

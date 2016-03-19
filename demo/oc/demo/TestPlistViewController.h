@@ -7,7 +7,7 @@
 //
 
 #import "HBBaseTableViewController.h"
-
-@interface TestPlistViewController : HBBaseTableViewController
+#import "HBBaseCollectionViewController.h"
+@interface TestPlistViewController : HBBaseCollectionViewController
 
 @end

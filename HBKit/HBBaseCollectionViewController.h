@@ -76,7 +76,6 @@ UICollectionViewDataSource,
 UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout,HBCollectionViewControllerConfig,HBWaterFLayoutDelegate>
 
-@property (nonatomic,strong ) NSMutableDictionary       * dataDictionary;
 @property (nonatomic, strong) UICollectionView          *collectionView;
 @property (nonatomic, strong) HBCollectionFallFLayout   *collectionViewFlowLayout;
 

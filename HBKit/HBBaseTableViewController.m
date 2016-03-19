@@ -33,29 +33,9 @@
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {//这个是需要的
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
-    //    self.dataDictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
-    //[self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     if (!self.noAutoConfigTableView) {
         [self configTableView];
     }
-}
-
-/**
- *  从PLIST 文件中加载配置信息
- *
- *  @param plistname plist文件的名字
- */
--(void)loadplistConfig:(NSString *)plistname
-{
-    NSString * filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
-    NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
-    
-    for (NSString * key in dic.allKeys) {
-        NSDictionary * adic = dic[key];
-        CELL_STRUCT * cellstruct = [[CELL_STRUCT alloc] initWithPlistDictionary:adic];
-        [self.dataDictionary setObject:cellstruct forKey:key];
-    }
-    NSLog(@"dic:%@",dic);
 }
 
 //注册
@@ -64,11 +44,11 @@
     if ([self tableView]) {
         [self setExtraCellLineHidden:self.tableView];
         //注册CELL 目前只考虑到两种情况 2个 section不同的时候 注册 其他的自己添加
-        CELL_STRUCT * cell0struct= [self.dataDictionary objectForKey:KEY_INDEXPATH(0, 0)];
+        CELL_STRUCT * cell0struct= [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(0, 0)];
         if ([cell0struct.xibvalue isEqualToString:@"xib"]) {
             TABLEVIEW_REGISTERXIBCELL_CLASS(self.tableView, cell0struct.cellclass)
         }
-        CELL_STRUCT * cellstruct1 = [self.dataDictionary objectForKey:KEY_INDEXPATH(1, 0)];
+        CELL_STRUCT * cellstruct1 = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(1, 0)];
         if (cellstruct1) {
             if ([cellstruct1.xibvalue isEqualToString:@"xib"]) {
                 TABLEVIEW_REGISTERXIBCELL_CLASS(self.tableView, cellstruct1.cellclass)
@@ -234,15 +214,6 @@
  
 }
 
--(NSMutableDictionary *)dataDictionary
-{
-    if (!_dataDictionary) {
-        _dataDictionary = [NSMutableDictionary new];
-    }
-    return _dataDictionary;
-}
-
-
 -(CGRect)adjustContentOffSet:(CGFloat)top bottom:(CGFloat)bottom
 {
     self.tableView.frame = CGRectMake(0, top, [UIScreen mainScreen].bounds.size.width ,[UIScreen mainScreen].bounds.size.height - top - bottom);
@@ -252,19 +223,19 @@
  
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    CELL_STRUCT *cell_struce = [self.dataDictionary objectForKey:KEY_INDEXPATH(section, 0)];
+    CELL_STRUCT *cell_struce = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(section, 0)];
     return cell_struce.sectionheight;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    CELL_STRUCT *cell_struce = [self.dataDictionary objectForKey:KEY_INDEXPATH(section, 0)];
+    CELL_STRUCT *cell_struce = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(section, 0)];
     return cell_struce.sectionfooterheight;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-     CELL_STRUCT *cell_struce = [self.dataDictionary objectForKey:KEY_INDEXPATH(section, 0)];
+     CELL_STRUCT *cell_struce = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(section, 0)];
     if (cell_struce.sectiontitle.length) {
         UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, cell_struce.sectionheight)];
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, view.bounds.size.width - 20, cell_struce.sectionheight)];
@@ -283,7 +254,7 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    CELL_STRUCT *cell_struce = [self.dataDictionary objectForKey:KEY_INDEXPATH(section, 0)];
+    CELL_STRUCT *cell_struce = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(section, 0)];
     if (cell_struce.sectionfooter.length) {
         UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, cell_struce.sectionfooterheight)];
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, view.bounds.size.width - 20, cell_struce.sectionfooterheight)];
@@ -334,7 +305,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    CELL_STRUCT * cellstruct = [self.dataDictionary objectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
+    CELL_STRUCT * cellstruct = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
     NSString * identifier01 = cellstruct.cellclass;
     HBBaseTableViewCell *cell ;
     if(cellstruct.xibvalue && [cellstruct.xibvalue isEqualToString:@"xib"])
@@ -384,7 +355,7 @@
         cell.selectionStyle = cellstruct.selectionStyle?UITableViewCellSelectionStyleDefault:UITableViewCellSelectionStyleNone;
         cell.accessoryType = cellstruct.accessory?UITableViewCellAccessoryDisclosureIndicator:UITableViewCellAccessoryNone;
         [cell setcellTitleLabelNumberOfLines:cellstruct.titleLabelNumberOfLines];
-        [cell setcellimageRight:cellstruct.imageRight];
+//        [cell setcellimageRight:cellstruct.imageRight];
         [cell setcelldetailtitle:cellstruct.detailtitle];
         [cell setcellplaceholder:cellstruct.placeHolder];
         [cell setcelldictionary:cellstruct.dictionary];
@@ -412,7 +383,7 @@
     if (!self.nodeselectRow) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
-    CELL_STRUCT * cellstruct = [self.dataDictionary  objectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
+    CELL_STRUCT * cellstruct = [self.dataDictionary  cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
     if ( cellstruct.sel_selector && [self respondsToSelector:cellstruct.sel_selector])
     {
         [self performSelector:cellstruct.sel_selector withObject:cellstruct afterDelay:0];
@@ -429,7 +400,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CELL_STRUCT * cellstruct = [self.dataDictionary  objectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
+    CELL_STRUCT * cellstruct = [self.dataDictionary  cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
     return cellstruct.cellheight;
 }
 

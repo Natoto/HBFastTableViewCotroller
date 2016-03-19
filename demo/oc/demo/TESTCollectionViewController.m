@@ -57,7 +57,7 @@
         [cellstruct.dictionary setObject:[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1] forKey:key_cellstruct_background];
         [self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(1, index)];
     }
-    [self adjustContentOffSet:0 bottom:64.];
+    [self adjustContentOffSet:0 bottom:0];
 }
 
 -(NSInteger)configColumnCount

@@ -158,7 +158,7 @@ GET_CELL_SELECT_ACTION(cellstruct)
     }
     else if (cellstruct == self.cell_struct_copy)
     {
-        CELL_STRUCT * astruct = [self.cell_struct_copy deepcopy];
+        CELL_STRUCT * astruct = [self.cell_struct_copy copy];
         NSLog(@"%@",astruct);
     }
 }

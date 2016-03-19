@@ -103,7 +103,6 @@
     }
     
     if (self.showTopLine) {
-        [self clearTopLayer];
         [self drawToplinelayer];
     }
     else
@@ -111,7 +110,6 @@
         [self clearTopLayer];
     }
     if (self.showBottomLine) {
-        [self clearBottomLayer];
         [self drawBottomlinelayer];
     }else
     {
@@ -287,11 +285,12 @@
  */
 -(void)clearTopLayer
 {
-    CALayer *imageLayer = self.toplayer;
+    UIView *imageLayer = self.toplayer;
     if (imageLayer) {
-        imageLayer = [self createLayer:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0.5) color:[UIColor clearColor]];
-        [self.layer replaceSublayer:self.toplayer with:imageLayer];
-        self.toplayer = nil;
+//        imageLayer = [self createLayer:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0.5) color:[UIColor clearColor]];
+//        [self.layer replaceSublayer:self.toplayer with:imageLayer];
+//        self.toplayer = nil;
+        imageLayer.hidden = YES;
     }
 }
 
@@ -300,65 +299,73 @@
  */
 -(void)clearBottomLayer
 {
-    CALayer *imageLayer = self.bottomlayer;
+    UIView *imageLayer = self.bottomlayer;
     if (imageLayer) {
-        imageLayer =  [self createLayer:CGRectMake(0, self.frame.size.height - 0.5, [UIScreen mainScreen].bounds.size.width, 0.5) color:[UIColor clearColor]];
-        [self.layer replaceSublayer:self.bottomlayer with:imageLayer];
-        self.bottomlayer = nil;
+        imageLayer.hidden = YES;
     }
 }
 
 -(void)drawBottomlinelayer
 {
-    CALayer *imageLayer = self.bottomlayer;
+    UIView *imageLayer = self.bottomlayer;
+    CGRect layerframe =  CGRectMake(0, self.frame.size.height - 0.5, [UIScreen mainScreen].bounds.size.width, 0.5);
     if (!imageLayer) {
-        imageLayer =  [self createLayer:CGRectMake(0, self.frame.size.height - 0.5, [UIScreen mainScreen].bounds.size.width, 0.5) color:PENG_COLOR_LINE];
-        [self.layer addSublayer:imageLayer];
+        imageLayer =  [self createLayer:layerframe color:PENG_COLOR_LINE];
+        [self addSubview:imageLayer];
         self.bottomlayer = imageLayer;
+    }else
+    {
+        imageLayer.frame = layerframe;
     }
+    imageLayer.hidden = NO;
 }
 
 -(void)drawToplinelayer
 {
-    CALayer *imageLayer = self.toplayer;
+    UIView *imageLayer = self.toplayer;
+    CGRect  layerframe = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0.5);
     if (!imageLayer) {
-        imageLayer =  [self createLayer:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0.5) color:PENG_COLOR_LINE];
-        [self.layer addSublayer:imageLayer];
+        imageLayer =  [self createLayer:layerframe color:PENG_COLOR_LINE];
+        [self addSubview:imageLayer];
         self.toplayer = imageLayer;
+    }else
+    {
+        imageLayer.frame = layerframe;
     }
+    imageLayer.hidden = NO;
 }
 
--(CALayer *)createLayer:(CGRect)frame color:(UIColor *)color
+-(UIView *)createLayer:(CGRect)frame color:(UIColor *)color
 {
-    CALayer *imageLayer = [CALayer layer];
+    UIView *imageLayer = [UIView new];
     imageLayer.frame = frame; //CGRectMake(0, 0, UISCREEN_WIDTH, 0.5);
-    imageLayer.cornerRadius = 0;  //设置layer圆角半径
-    imageLayer.masksToBounds = YES;  //隐藏边界
-    imageLayer.borderColor = color.CGColor;//[UIColor colorWithWhite:0.6 alpha:0.8].CGColor;  //边框颜色
-    imageLayer.borderWidth = 0.5;
+//    imageLayer.cornerRadius = 0;  //设置layer圆角半径
+//    imageLayer.masksToBounds = YES;  //隐藏边界
+    imageLayer.backgroundColor = color;//[UIColor colorWithWhite:0.6 alpha:0.8].CGColor;  //边框颜色
+//    imageLayer.borderWidth = 0.5;
     return imageLayer;
 }
 
 static char  key_toplayer;
 static char  key_bottomlayer;
 
--(CALayer *)toplayer
+-(UIView *)toplayer
 {
-    CALayer * layer = (CALayer *)objc_getAssociatedObject(self, &key_toplayer);
+    UIView * layer = (UIView *)objc_getAssociatedObject(self, &key_toplayer);
     return layer;
 }
 
--(void)setToplayer:(CALayer *)toplayer
+-(void)setToplayer:(UIView *)toplayer
 {
     objc_setAssociatedObject(self, &key_toplayer, toplayer, OBJC_ASSOCIATION_RETAIN);
 }
--(CALayer *)bottomlayer
+-(UIView *)bottomlayer
 {
-    CALayer * layer = (CALayer *)objc_getAssociatedObject(self, &key_bottomlayer);
+    UIView * layer = (UIView *)objc_getAssociatedObject(self, &key_bottomlayer);
     return layer;
 }
 
--(void)setBottomlayer:(CALayer *)bottomlayer
+-(void)setBottomlayer:(UIView *)bottomlayer
 {
     objc_setAssociatedObject(self, &key_bottomlayer, bottomlayer, OBJC_ASSOCIATION_RETAIN);
 }

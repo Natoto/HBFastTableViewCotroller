@@ -30,7 +30,9 @@
 @interface HBBaseViewController : UIViewController
 {
     BOOL statusbarhidden;
-}
+} 
+@property(nonatomic,strong) NSMutableDictionary * dataDictionary;
+
 @property(nonatomic,assign) BOOL useStatusBar;//本界面配置statusbar 本界面消失后回归正常
 @property(nonatomic,assign) BOOL showBackItem;
 @property(nonatomic,assign) NSObject<BaseViewControllerDelegate> * basedelegate;
@@ -66,6 +68,14 @@
 
 -(IBAction)backtoparent:(id)sender;
 -(IBAction)hbNavigationbartitleTap:(id)sender;
+
+
+/**
+ *  从PLIST 文件中加载配置信息
+ *
+ *  @param plistname plist文件的名字
+ */
+-(void)loadplistConfig:(NSString *)plistname;
 @end
 
 
