@@ -65,7 +65,7 @@ GET_CELL_STRUCT_WITH(copy, copy cellstruct)
     [self.dataDictionary setObject:self.cell_struct_autoheight forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_refresh forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_normalcollection forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
-   [self.dataDictionary setObject:self.cell_struct_collection forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_collection forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
 
     
     sectionIndex++;
@@ -93,21 +93,14 @@ GET_CELL_SELECT_ACTION(cellstruct)
     if(cellstruct == self.cell_struct_sys)
     {
         
-//        CATransition *transition = [CATransition animation];
-//        transition.duration = 1;
-//        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-//        transition.type = @"oglFlip";
-//        transition.subtype = kCATransitionFromTop;
-//        transition.delegate = self;
-//        [self.navigationController.view.layer addAnimation:transition forKey:nil];
         TESTSystyleviewController * ctr = [[TESTSystyleviewController alloc] init];
+        [self.navigationController pushViewController:ctr animated:YES];
         
-        ctr.modalPresentationStyle= UIModalPresentationOverCurrentContext|UIModalPresentationFullScreen;//if the controller has container like navigationcontroller or tababr controlelr,if you don`t use the UIModalPresentationFullScreen the bar will cover the viewcontroller
-        UINavigationController * navictr = [[UINavigationController alloc] initWithRootViewController:ctr];
-         navictr.modalPresentationStyle= UIModalPresentationOverCurrentContext|UIModalPresentationFullScreen;
-        [self presentViewController:navictr animated:NO completion:^{
-        }];
-//        [self.navigationController pushViewController:ctr animated:YES];
+//        ctr.modalPresentationStyle= UIModalPresentationOverCurrentContext|UIModalPresentationFullScreen; 
+//        UINavigationController * navictr = [[UINavigationController alloc] initWithRootViewController:ctr];
+//         navictr.modalPresentationStyle= UIModalPresentationOverCurrentContext|UIModalPresentationFullScreen;
+//        [self presentViewController:navictr animated:NO completion:^{
+//        }];
     }
     else if(cellstruct == self.cell_struct_xib)
     {

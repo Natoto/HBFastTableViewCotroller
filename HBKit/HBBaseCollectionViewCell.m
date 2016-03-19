@@ -71,9 +71,9 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    if (_btn_title) {
-        [self.btn_title hbbase_setLayout:HBBaseImageTopTitleBootomStyle spacing:5];
-    }
+//    if (_btn_title) {
+//        [self.btn_title hbbase_setLayout:HBBaseImageTopTitleBootomStyle spacing:5];
+//    }
 }
 //-(void)setcellimageRight:(BOOL)imageRight{}
 -(void)setcellpicturecolor:(NSString *)picturecolor{}

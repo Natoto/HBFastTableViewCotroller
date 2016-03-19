@@ -20,10 +20,11 @@
 @property (nonatomic,assign) BOOL showBottomLine;//显示底部分割线
 @property (nonatomic,assign) BOOL accessory;//是否显示右边小箭头
 @property (nonatomic,assign) BOOL selectionStyle;//是否显示按下效果
-@property (nonatomic,assign) BOOL Ø;
+//@property (nonatomic,assign) BOOL Ø;
 @property (nonatomic,assign) BOOL imageCornerRadius;
 @property (nonatomic,assign) int  CellStyleValue;//修改cell默认的样式 0 1 2
 @property (nonatomic,assign) int  titleLabelNumberOfLines;//title的换行
+@property (nonatomic,assign) NSInteger columncount;//collectionview 一行几个 只在row0生效
 
 @property (nonatomic,assign) CGFloat   cellheight;//cell的高度
 @property (nonatomic,assign) CGFloat   sectionfont;//section header的字体 只在row为0的时候生效
