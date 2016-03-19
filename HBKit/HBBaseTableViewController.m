@@ -245,7 +245,7 @@
         label.textColor = [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectioncolor];
         label.textAlignment = NSTextAlignmentLeft;
         UIColor * bgcolor =  [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectionbgcolor];
-        view.backgroundColor = bgcolor?bgcolor:self.tableView.backgroundColor;
+        view.backgroundColor = bgcolor?bgcolor:self.view.backgroundColor;
         [view addSubview:label];
         return view;
     }

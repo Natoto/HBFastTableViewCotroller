@@ -814,6 +814,96 @@
 		<key>rightValue</key>
 		<string></string>
 	</dict>
+	<key>section2_0</key>
+	<dict>
+		<key>detailtitle</key>
+		<string>~~~~~~~~~~~~~~~</string>
+		<key>tempvalue</key>
+		<string></string>
+		<key>titleLabelNumberOfLines</key>
+		<string></string>
+		<key>sectiontitle</key>
+		<string>SECTION2</string>
+		<key>inputAccessoryView</key>
+		<string></string>
+		<key>sectionheight</key>
+		<string>40</string>
+		<key>sectionfooter</key>
+		<string></string>
+		<key>rightComponts</key>
+		<string></string>
+		<key>imageCornerRadius</key>
+		<false/>
+		<key>sectionHeaderView</key>
+		<string></string>
+		<key>sectioncolor</key>
+		<string>black</string>
+		<key>cellclass</key>
+		<string>HBBaseTableViewCell</string>
+		<key>cellheight</key>
+		<integer>500</integer>
+		<key>picture</key>
+		<string>profile</string>
+		<key>sectionfont</key>
+		<string>11</string>
+		<key>imageRight</key>
+		<false/>
+		<key>titlecolor</key>
+		<string></string>
+		<key>sel_selector_str</key>
+		<string></string>
+		<key>value</key>
+		<string></string>
+		<key>subvalue2</key>
+		<string></string>
+		<key>dictionary</key>
+		<dict>
+			<key>key_cellstruct_background</key>
+			<string>white</string>
+		</dict>
+		<key>CellStyleValue</key>
+		<string></string>
+		<key>selectionStyle</key>
+		<false/>
+		<key>xibvalue</key>
+		<string></string>
+		<key>attributeTitle</key>
+		<string></string>
+		<key>titlefontsize</key>
+		<string></string>
+		<key>array</key>
+		<string></string>
+		<key>picturecolor</key>
+		<string></string>
+		<key>textAlignment</key>
+		<string></string>
+		<key>placeHolder</key>
+		<string></string>
+		<key>accessory</key>
+		<false/>
+		<key>key_indexpath</key>
+		<string></string>
+		<key>cellctr</key>
+		<string></string>
+		<key>sectionfooterheight</key>
+		<string></string>
+		<key>showTopLine</key>
+		<true/>
+		<key>showBottomLine</key>
+		<true/>
+		<key>uploadingIndex</key>
+		<string></string>
+		<key>title</key>
+		<string>test2</string>
+		<key>uploadobjcts</key>
+		<string></string>
+		<key>object2</key>
+		<string></string>
+		<key>inputView</key>
+		<string></string>
+		<key>rightValue</key>
+		<string></string>
+	</dict>
 	<key>section1_1</key>
 	<dict>
 		<key>detailtitle</key>
@@ -905,10 +995,10 @@
 		<string></string>
 	</dict>
 	<key>backgroundcolor</key>
-	<string>0xffdd2</string>
+	<string>orange</string>
 	<key>title</key>
 	<string>test plist</string>
 	<key>backgroundimage</key>
-	<string>profile</string>
+	<string>beauty</string>
 </dict>
 </plist>
