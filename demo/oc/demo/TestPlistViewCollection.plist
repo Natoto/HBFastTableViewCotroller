@@ -31,7 +31,7 @@
 		<key>sectionbgcolor</key>
 		<string>0xaaaa</string>
 		<key>cellclass</key>
-		<string>HBBaseTableViewCell</string>
+		<string>BaseXIBCollectionViewCell</string>
 		<key>cellheight</key>
 		<integer>100</integer>
 		<key>picture</key>
@@ -127,7 +127,7 @@
 		<key>sectioncolor</key>
 		<string>0xddaa</string>
 		<key>cellclass</key>
-		<string>HBBaseTableViewCell</string>
+		<string>BaseXIBCollectionViewCell</string>
 		<key>cellheight</key>
 		<integer>100</integer>
 		<key>picture</key>
@@ -221,7 +221,7 @@
 		<key>sectioncolor</key>
 		<string>0xddaa</string>
 		<key>cellclass</key>
-		<string>HBBaseTableViewCell</string>
+		<string>BaseXIBCollectionViewCell</string>
 		<key>cellheight</key>
 		<integer>100</integer>
 		<key>picture</key>
@@ -315,7 +315,7 @@
 		<key>sectioncolor</key>
 		<string>0xddaa</string>
 		<key>cellclass</key>
-		<string>HBBaseTableViewCell</string>
+		<string>BaseXIBCollectionViewCell</string>
 		<key>cellheight</key>
 		<integer>100</integer>
 		<key>picture</key>
@@ -409,7 +409,7 @@
 		<key>sectioncolor</key>
 		<string>0xddaa</string>
 		<key>cellclass</key>
-		<string>HBBaseTableViewCell</string>
+		<string>BaseXIBCollectionViewCell</string>
 		<key>cellheight</key>
 		<integer>100</integer>
 		<key>picture</key>
@@ -503,7 +503,7 @@
 		<key>sectioncolor</key>
 		<string>0xddaa</string>
 		<key>cellclass</key>
-		<string>HBBaseTableViewCell</string>
+		<string>BaseXIBCollectionViewCell</string>
 		<key>cellheight</key>
 		<integer>100</integer>
 		<key>picture</key>
@@ -597,7 +597,7 @@
 		<key>sectioncolor</key>
 		<string>0xddaa</string>
 		<key>cellclass</key>
-		<string>HBBaseTableViewCell</string>
+		<string>BaseXIBCollectionViewCell</string>
 		<key>cellheight</key>
 		<integer>100</integer>
 		<key>picture</key>
@@ -691,7 +691,7 @@
 		<key>sectioncolor</key>
 		<string>0xddaa</string>
 		<key>cellclass</key>
-		<string>HBBaseTableViewCell</string>
+		<string>BaseXIBCollectionViewCell</string>
 		<key>cellheight</key>
 		<integer>100</integer>
 		<key>picture</key>
@@ -785,7 +785,7 @@
 		<key>sectioncolor</key>
 		<string>0xddaa</string>
 		<key>cellclass</key>
-		<string>HBBaseTableViewCell</string>
+		<string>BaseXIBCollectionViewCell</string>
 		<key>cellheight</key>
 		<integer>100</integer>
 		<key>picture</key>
@@ -881,7 +881,7 @@
 		<key>sectioncolor</key>
 		<string>0xddaa</string>
 		<key>cellclass</key>
-		<string>HBBaseTableViewCell</string>
+		<string>BaseXIBCollectionViewCell</string>
 		<key>cellheight</key>
 		<integer>100</integer>
 		<key>picture</key>

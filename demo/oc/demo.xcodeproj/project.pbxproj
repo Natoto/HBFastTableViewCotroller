@@ -50,12 +50,13 @@
 		33B63B101C337AF400F1CF34 /* TestSectionCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B63B0E1C337AF400F1CF34 /* TestSectionCollectionReusableView.xib */; };
 		33B63B131C33A54000F1CF34 /* TEST2CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B63B121C33A54000F1CF34 /* TEST2CollectionReusableView.m */; };
 		5154282E333DB6FB31B053AC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47243643C8635681725F3A66 /* libPods.a */; };
-		78EC3DCF1C9CFC2C00CD6C7A /* HBBaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78EC3DCD1C9CFC2C00CD6C7A /* HBBaseCollectionViewCell.xib */; };
 		78EC3DD11C9CFE6400CD6C7A /* TestPlistViewCollection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78EC3DD01C9CFE6400CD6C7A /* TestPlistViewCollection.plist */; };
 		78EC3DD41C9D1F2800CD6C7A /* TestPlistCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EC3DD31C9D1F2800CD6C7A /* TestPlistCollectionViewController.m */; };
 		78EC3DD71C9D26C300CD6C7A /* HBBaseSectionCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EC3DD61C9D26C300CD6C7A /* HBBaseSectionCollectionReusableView.m */; };
 		78EE98601C2AC6AB004C97A9 /* NormalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE985F1C2AC6AB004C97A9 /* NormalTableViewController.m */; };
 		78EE98631C2ACCCF004C97A9 /* NormalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE98621C2ACCCF004C97A9 /* NormalCollectionViewController.m */; };
+		F8B125AD1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B125AB1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.m */; };
+		F8B125AE1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B125AC1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,7 +149,6 @@
 		33B63B111C33A54000F1CF34 /* TEST2CollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEST2CollectionReusableView.h; sourceTree = "<group>"; };
 		33B63B121C33A54000F1CF34 /* TEST2CollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEST2CollectionReusableView.m; sourceTree = "<group>"; };
 		47243643C8635681725F3A66 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		78EC3DCD1C9CFC2C00CD6C7A /* HBBaseCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBBaseCollectionViewCell.xib; sourceTree = "<group>"; };
 		78EC3DD01C9CFE6400CD6C7A /* TestPlistViewCollection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestPlistViewCollection.plist; sourceTree = "<group>"; };
 		78EC3DD21C9D1F2800CD6C7A /* TestPlistCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPlistCollectionViewController.h; sourceTree = "<group>"; };
 		78EC3DD31C9D1F2800CD6C7A /* TestPlistCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPlistCollectionViewController.m; sourceTree = "<group>"; };
@@ -160,6 +160,9 @@
 		78EE98621C2ACCCF004C97A9 /* NormalCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalCollectionViewController.m; sourceTree = "<group>"; };
 		AA8C334F8F9913F1207427FD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BAD90533045FAC1328C1175F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F8B125AA1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseXIBCollectionViewCell.h; sourceTree = "<group>"; };
+		F8B125AB1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseXIBCollectionViewCell.m; sourceTree = "<group>"; };
+		F8B125AC1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseXIBCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +284,9 @@
 		336211291C5F104F0065E1AB /* TEST */ = {
 			isa = PBXGroup;
 			children = (
+				F8B125AA1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.h */,
+				F8B125AB1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.m */,
+				F8B125AC1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.xib */,
 				18678F451B79E8240062A073 /* TESTSystyleviewController.h */,
 				18678F461B79E8240062A073 /* TESTSystyleviewController.m */,
 				18678F4A1B79ED6A0062A073 /* TESTXIBViewController.h */,
@@ -337,7 +343,6 @@
 				339E0DCE1C1E94AE00035B65 /* CELL_STRUCT_KVO.m */,
 				339E0DCF1C1E94AE00035B65 /* HBBaseCollectionViewCell.h */,
 				339E0DD01C1E94AE00035B65 /* HBBaseCollectionViewCell.m */,
-				78EC3DCD1C9CFC2C00CD6C7A /* HBBaseCollectionViewCell.xib */,
 				339E0DD11C1E94AE00035B65 /* HBBaseCollectionViewController.h */,
 				339E0DD21C1E94AE00035B65 /* HBBaseCollectionViewController.m */,
 				78EC3DD51C9D26C300CD6C7A /* HBBaseSectionCollectionReusableView.h */,
@@ -387,6 +392,7 @@
 				1841309A1B79DF4A002AB4C0 /* Frameworks */,
 				1841309B1B79DF4A002AB4C0 /* Resources */,
 				4DC490534AA93E50438CEE32 /* Copy Pods Resources */,
+				E7A92FE8FB002A4C6B92E87C /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -460,8 +466,8 @@
 				78EC3DD11C9CFE6400CD6C7A /* TestPlistViewCollection.plist in Resources */,
 				331B92DC1C9A3B5B00395A72 /* TestPlistViewController.plist in Resources */,
 				18678F5B1B79EEF10062A073 /* CF_SupporterTableViewCell.xib in Resources */,
-				78EC3DCF1C9CFC2C00CD6C7A /* HBBaseCollectionViewCell.xib in Resources */,
 				184130AC1B79DF4A002AB4C0 /* Main.storyboard in Resources */,
+				F8B125AE1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.xib in Resources */,
 				339E0DC21C1E78FF00035B65 /* TestCollectionViewCell.xib in Resources */,
 				331B92EB1C9A75A100395A72 /* cellstruct.plist in Resources */,
 				18678F5D1B79EF230062A073 /* beauty.png in Resources */,
@@ -513,6 +519,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		E7A92FE8FB002A4C6B92E87C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -533,6 +554,7 @@
 				78EC3DD41C9D1F2800CD6C7A /* TestPlistCollectionViewController.m in Sources */,
 				78EC3DD71C9D26C300CD6C7A /* HBBaseSectionCollectionReusableView.m in Sources */,
 				339E0DE21C1E94AE00035B65 /* HBBaseCollectionViewController.m in Sources */,
+				F8B125AD1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.m in Sources */,
 				3362112D1C5F10A60065E1AB /* TestKVODetailViewController.m in Sources */,
 				18678F5A1B79EEF10062A073 /* CF_SupporterTableViewCell.m in Sources */,
 				78EE98631C2ACCCF004C97A9 /* NormalCollectionViewController.m in Sources */,

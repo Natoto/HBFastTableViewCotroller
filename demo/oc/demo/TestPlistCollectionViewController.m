@@ -14,7 +14,9 @@
 @implementation TestPlistCollectionViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad]; 
+    [super viewDidLoad];
+    COLLECTIONVIEW_REGISTER_XIB_CELLCLASS(self.collectionView, @"BaseXIBCollectionViewCell");
+//     [self.collectionView registerNib:[UINib nibWithNibName:@"BaseXIBCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"BaseXIBCollectionViewCell"];
     [self loadplistConfig:@"TestPlistViewCollection"];
 }
 

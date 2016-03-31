@@ -99,7 +99,7 @@
         _collectionView.alwaysBounceVertical = YES;
         _collectionView.contentInset = UIEdgeInsetsMake(64., 0, 0, 0);
         [_collectionView registerClass:[HBBaseSectionCollectionReusableView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withReuseIdentifier:@"HBBaseSectionCollectionReusableView"];
-        [_collectionView registerNib:[UINib nibWithNibName:@"HBBaseCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"HBBaseCollectionViewCell"];
+//        [_collectionView registerNib:[UINib nibWithNibName:@"HBBaseCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"HBBaseCollectionViewCell"];
         [self.view addSubview:_collectionView];
     }
     return _collectionView;
@@ -211,8 +211,8 @@
     }
     @catch (NSException *exception) {
         NSLog(@"😫--> 重用的cell %@找不到\n%@",identifier01,exception);
-        identifier01 = NSStringFromClass([HBBaseCollectionViewCell class]);
-        cell =  [collectionView dequeueReusableCellWithReuseIdentifier:identifier01 forIndexPath:indexPath];
+//        identifier01 = NSStringFromClass([HBBaseCollectionViewCell class]);
+//        cell =  [[HBBaseCollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];//[collectionView dequeueReusableCellWithReuseIdentifier:identifier01 forIndexPath:indexPath];
     }
     @finally {
     }

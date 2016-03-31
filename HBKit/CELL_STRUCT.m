@@ -124,6 +124,9 @@
             if ( nil == clazzType )
                 break;
         }
+        if ([plistdic objectForKey:@"dictionary"]) {
+            self.dictionary = [NSMutableDictionary dictionaryWithDictionary:[plistdic objectForKey:@"dictionary"]];
+        }
     }
     return self;
 }

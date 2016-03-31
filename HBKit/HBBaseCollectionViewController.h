@@ -11,8 +11,9 @@
 #warning 使用之前注册collection cell
 /*
 注册collection NIB CELL
+     [self.collectionView registerNib:[UINib nibWithNibName:@"BaseXIBCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"BaseXIBCollectionViewCell"];
  */
-#define COLLECTIONVIEW_REGISTER_XIB_CELLCLASS(COLLECTIONVIEW,CELLCLSSTR)  [COLLECTIONVIEW registerNib:[UINib nibWithNibName:CELLCLSSTR bundle:nil] forCellWithReuseIdentifier:CELLCLSSTR];
+#define COLLECTIONVIEW_REGISTER_XIB_CELLCLASS( COLLECTIONVIEW , CELLCLSSTR )  [ COLLECTIONVIEW registerNib:[UINib nibWithNibName: CELLCLSSTR bundle:nil] forCellWithReuseIdentifier: CELLCLSSTR ];
 
 /*
  注册SECTION header 或者 footer xib
