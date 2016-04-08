@@ -65,6 +65,9 @@
             objc_property_t property = properties[i];
             NSString *key=[[NSString alloc] initWithCString:property_getName(property)
                                                    encoding:NSUTF8StringEncoding];
+            if ([key isEqualToString:@"sel_selector"]) {
+                continue;
+            }
             id value = [self valueForKey:key];
             if (value) {
                 [copy setValue:value forKey:key];                
