@@ -81,6 +81,7 @@
     }
     free(properties);
     copy.sel_selector = self.sel_selector;
+    copy.dictionary = [NSMutableDictionary dictionaryWithDictionary:copy.dictionary];
     return copy;
 }
 

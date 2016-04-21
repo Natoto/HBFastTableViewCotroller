@@ -16,7 +16,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     COLLECTIONVIEW_REGISTER_XIB_CELLCLASS(self.collectionView, @"BaseXIBCollectionViewCell");
-//     [self.collectionView registerNib:[UINib nibWithNibName:@"BaseXIBCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"BaseXIBCollectionViewCell"];
     [self loadplistConfig:@"TestPlistViewCollection"];
 }
 
@@ -24,22 +23,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//-(NSInteger)collectionView:(UICollectionView *)collectionView ColumnCountOfSection:(NSInteger)section
-//{
-//    if (section == 0) {
-//        return 1;
-//    }
-//    return 2;
-//}
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
