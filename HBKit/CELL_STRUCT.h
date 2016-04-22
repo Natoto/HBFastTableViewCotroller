@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "CELL_STRUCT_KEY.h"
 
-
+#undef KEY_INDEXPATH
 #define KEY_INDEXPATH(SECTION,ROW) [NSString stringWithFormat:@"section%u_%u",(int)(SECTION),(int)(ROW)]
+
+#undef  KEY_SECTION
 #define KEY_SECTION(SECTION) [NSString stringWithFormat:@"section%d",(int)(SECTION)]
 @interface CELL_STRUCT : NSObject<NSCopying>
 /*

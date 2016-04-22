@@ -55,6 +55,7 @@
 		78EC3DD71C9D26C300CD6C7A /* HBBaseSectionCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EC3DD61C9D26C300CD6C7A /* HBBaseSectionCollectionReusableView.m */; };
 		78EE98601C2AC6AB004C97A9 /* NormalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE985F1C2AC6AB004C97A9 /* NormalTableViewController.m */; };
 		78EE98631C2ACCCF004C97A9 /* NormalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE98621C2ACCCF004C97A9 /* NormalCollectionViewController.m */; };
+		F888DBCA1CCA0A1E00A5AC9B /* testhb.m in Sources */ = {isa = PBXBuildFile; fileRef = F888DBC91CCA0A1E00A5AC9B /* testhb.m */; };
 		F8B125AD1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B125AB1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.m */; };
 		F8B125AE1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B125AC1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -160,6 +161,8 @@
 		78EE98621C2ACCCF004C97A9 /* NormalCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalCollectionViewController.m; sourceTree = "<group>"; };
 		AA8C334F8F9913F1207427FD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BAD90533045FAC1328C1175F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F888DBC81CCA0A1E00A5AC9B /* testhb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testhb.h; sourceTree = "<group>"; };
+		F888DBC91CCA0A1E00A5AC9B /* testhb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testhb.m; sourceTree = "<group>"; };
 		F8B125AA1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseXIBCollectionViewCell.h; sourceTree = "<group>"; };
 		F8B125AB1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseXIBCollectionViewCell.m; sourceTree = "<group>"; };
 		F8B125AC1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseXIBCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -291,6 +294,8 @@
 				18678F461B79E8240062A073 /* TESTSystyleviewController.m */,
 				18678F4A1B79ED6A0062A073 /* TESTXIBViewController.h */,
 				18678F4B1B79ED6A0062A073 /* TESTXIBViewController.m */,
+				F888DBC81CCA0A1E00A5AC9B /* testhb.h */,
+				F888DBC91CCA0A1E00A5AC9B /* testhb.m */,
 				18678F5E1B7A09DD0062A073 /* TESTAutoHeightViewController.h */,
 				18678F5F1B7A09DD0062A073 /* TESTAutoHeightViewController.m */,
 				18678F611B7A115B0062A073 /* TESTRefreshViewController.h */,
@@ -542,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				184130A91B79DF4A002AB4C0 /* ViewController.m in Sources */,
+				F888DBCA1CCA0A1E00A5AC9B /* testhb.m in Sources */,
 				339E0DE61C1E94AE00035B65 /* HBCollectionFallFLayout.m in Sources */,
 				339E0DC11C1E78FF00035B65 /* TestCollectionViewCell.m in Sources */,
 				339E0DE31C1E94AE00035B65 /* HBBaseTableViewCell.m in Sources */,

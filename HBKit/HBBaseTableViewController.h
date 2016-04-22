@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "HBBaseTableViewCell.h" 
-#import "HBBaseViewController.h"
-
+#import "HBBaseViewController.h" 
+#import "CELL_STRUCT_Common.h"
 
 static NSString * notify_basetableview_tap = @"basetableview_tap";
 static NSString * notify_basetableview_sender = @"BaseViewController";

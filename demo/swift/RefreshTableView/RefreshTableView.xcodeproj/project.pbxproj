@@ -13,13 +13,6 @@
 		337E222E1BA114D80049E4A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 337E222D1BA114D80049E4A0 /* Images.xcassets */; };
 		337E22311BA114D80049E4A0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337E222F1BA114D80049E4A0 /* LaunchScreen.xib */; };
 		337E223D1BA114D90049E4A0 /* RefreshTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337E223C1BA114D90049E4A0 /* RefreshTableViewTests.swift */; };
-		33E933151BA2B0A900364A35 /* CELL_STRUCT.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E933061BA2B0A900364A35 /* CELL_STRUCT.m */; };
-		33E933161BA2B0A900364A35 /* CELL_STRUCT_Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E933081BA2B0A900364A35 /* CELL_STRUCT_Common.m */; };
-		33E933171BA2B0A900364A35 /* CELL_STRUCT_KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E9330B1BA2B0A900364A35 /* CELL_STRUCT_KVO.m */; };
-		33E933181BA2B0A900364A35 /* HB_BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E9330D1BA2B0A900364A35 /* HB_BaseTableViewCell.m */; };
-		33E933191BA2B0A900364A35 /* HB_BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E9330F1BA2B0A900364A35 /* HB_BaseTableViewController.m */; };
-		33E9331A1BA2B0A900364A35 /* HB_BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E933111BA2B0A900364A35 /* HB_BaseViewController.m */; };
-		33E9331B1BA2B0A900364A35 /* UIButton+PENG.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E933141BA2B0A900364A35 /* UIButton+PENG.m */; };
 		33E9331F1BA2B56800364A35 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E9331D1BA2B56800364A35 /* LoginViewController.swift */; };
 		33E933201BA2B56800364A35 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E9331E1BA2B56800364A35 /* LoginViewController.xib */; };
 		33E933231BA2B90900364A35 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E933221BA2B90900364A35 /* RootViewController.swift */; };
@@ -57,22 +50,6 @@
 		337E223B1BA114D90049E4A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		337E223C1BA114D90049E4A0 /* RefreshTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTableViewTests.swift; sourceTree = "<group>"; };
 		337E22461BA136350049E4A0 /* swift-bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "swift-bridge.h"; sourceTree = "<group>"; };
-		33E933051BA2B0A900364A35 /* CELL_STRUCT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT.h; sourceTree = "<group>"; };
-		33E933061BA2B0A900364A35 /* CELL_STRUCT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CELL_STRUCT.m; sourceTree = "<group>"; };
-		33E933071BA2B0A900364A35 /* CELL_STRUCT_Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT_Common.h; sourceTree = "<group>"; };
-		33E933081BA2B0A900364A35 /* CELL_STRUCT_Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CELL_STRUCT_Common.m; sourceTree = "<group>"; };
-		33E933091BA2B0A900364A35 /* CELL_STRUCT_KEY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT_KEY.h; sourceTree = "<group>"; };
-		33E9330A1BA2B0A900364A35 /* CELL_STRUCT_KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT_KVO.h; sourceTree = "<group>"; };
-		33E9330B1BA2B0A900364A35 /* CELL_STRUCT_KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CELL_STRUCT_KVO.m; sourceTree = "<group>"; };
-		33E9330C1BA2B0A900364A35 /* HB_BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HB_BaseTableViewCell.h; sourceTree = "<group>"; };
-		33E9330D1BA2B0A900364A35 /* HB_BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB_BaseTableViewCell.m; sourceTree = "<group>"; };
-		33E9330E1BA2B0A900364A35 /* HB_BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HB_BaseTableViewController.h; sourceTree = "<group>"; };
-		33E9330F1BA2B0A900364A35 /* HB_BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB_BaseTableViewController.m; sourceTree = "<group>"; };
-		33E933101BA2B0A900364A35 /* HB_BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HB_BaseViewController.h; sourceTree = "<group>"; };
-		33E933111BA2B0A900364A35 /* HB_BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HB_BaseViewController.m; sourceTree = "<group>"; };
-		33E933121BA2B0A900364A35 /* HBTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTable.h; sourceTree = "<group>"; };
-		33E933131BA2B0A900364A35 /* UIButton+PENG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PENG.h"; sourceTree = "<group>"; };
-		33E933141BA2B0A900364A35 /* UIButton+PENG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PENG.m"; sourceTree = "<group>"; };
 		33E9331D1BA2B56800364A35 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		33E9331E1BA2B56800364A35 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		33E933221BA2B90900364A35 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -120,7 +97,6 @@
 		337E22181BA114D60049E4A0 = {
 			isa = PBXGroup;
 			children = (
-				33E933041BA2B0A900364A35 /* HBFastTableViewController */,
 				337E22231BA114D60049E4A0 /* RefreshTableView */,
 				337E22391BA114D90049E4A0 /* RefreshTableViewTests */,
 				337E22221BA114D60049E4A0 /* Products */,
@@ -182,30 +158,6 @@
 				337E223B1BA114D90049E4A0 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		33E933041BA2B0A900364A35 /* HBFastTableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				33E933051BA2B0A900364A35 /* CELL_STRUCT.h */,
-				33E933061BA2B0A900364A35 /* CELL_STRUCT.m */,
-				33E933071BA2B0A900364A35 /* CELL_STRUCT_Common.h */,
-				33E933081BA2B0A900364A35 /* CELL_STRUCT_Common.m */,
-				33E933091BA2B0A900364A35 /* CELL_STRUCT_KEY.h */,
-				33E9330A1BA2B0A900364A35 /* CELL_STRUCT_KVO.h */,
-				33E9330B1BA2B0A900364A35 /* CELL_STRUCT_KVO.m */,
-				33E9330C1BA2B0A900364A35 /* HB_BaseTableViewCell.h */,
-				33E9330D1BA2B0A900364A35 /* HB_BaseTableViewCell.m */,
-				33E9330E1BA2B0A900364A35 /* HB_BaseTableViewController.h */,
-				33E9330F1BA2B0A900364A35 /* HB_BaseTableViewController.m */,
-				33E933101BA2B0A900364A35 /* HB_BaseViewController.h */,
-				33E933111BA2B0A900364A35 /* HB_BaseViewController.m */,
-				33E933121BA2B0A900364A35 /* HBTable.h */,
-				33E933131BA2B0A900364A35 /* UIButton+PENG.h */,
-				33E933141BA2B0A900364A35 /* UIButton+PENG.m */,
-			);
-			name = HBFastTableViewController;
-			path = ../../../HBFastTableViewController;
 			sourceTree = "<group>";
 		};
 		33E9331C1BA2B54F00364A35 /* Login */ = {
@@ -387,9 +339,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				33E9331F1BA2B56800364A35 /* LoginViewController.swift in Sources */,
-				33E933181BA2B0A900364A35 /* HB_BaseTableViewCell.m in Sources */,
-				33E933171BA2B0A900364A35 /* CELL_STRUCT_KVO.m in Sources */,
-				33E933151BA2B0A900364A35 /* CELL_STRUCT.m in Sources */,
 				33E933231BA2B90900364A35 /* RootViewController.swift in Sources */,
 				33F342CC1BA273DD002FF34C /* DetailViewController.swift in Sources */,
 				33E933331BA2E3F300364A35 /* UIView+TopBorder.swift in Sources */,
@@ -398,11 +347,7 @@
 				33E933301BA2E3F300364A35 /* UILabel+Builder.swift in Sources */,
 				337E22271BA114D70049E4A0 /* AppDelegate.swift in Sources */,
 				33F342D11BA27735002FF34C /* A2ViewController.swift in Sources */,
-				33E9331B1BA2B0A900364A35 /* UIButton+PENG.m in Sources */,
-				33E9331A1BA2B0A900364A35 /* HB_BaseViewController.m in Sources */,
-				33E933191BA2B0A900364A35 /* HB_BaseTableViewController.m in Sources */,
 				33E9332F1BA2E3F300364A35 /* UITextField+Builder.swift in Sources */,
-				33E933161BA2B0A900364A35 /* CELL_STRUCT_Common.m in Sources */,
 				33E933321BA2E3F300364A35 /* UIView+NoMask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

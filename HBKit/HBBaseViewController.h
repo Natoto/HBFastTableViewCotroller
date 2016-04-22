@@ -8,14 +8,25 @@
  
 #import <UIKit/UIKit.h>
 #import "CELL_STRUCT.h"
+#import "CELL_STRUCT_Common.h"
+
+#undef KEY_INDEXPATH
 #define KEY_INDEXPATH(SECTION,ROW) [NSString stringWithFormat:@"section%u_%u",(int)SECTION,(int)ROW]
+
+#undef  KEY_SECTION
 #define KEY_SECTION(SECTION) [NSString stringWithFormat:@"section%d",(int)SECTION]
+
+#undef KEY_SECTION_MARK
 #define KEY_SECTION_MARK(SECTION) [NSString stringWithFormat:@"section%d_",(int)SECTION]
+
+#undef KEY_SECTION_INDEX_STR
 #define KEY_SECTION_INDEX_STR(INDEXPATHKEY)  ((INDEXPATHKEY.length >9)?[INDEXPATHKEY substringWithRange:NSMakeRange(7, 1)]:nil)
 
 //SECTION
+#undef KEY_INDEXPATH_SECTION_STR
 #define KEY_INDEXPATH_SECTION_STR(INDEXPATHKEY)  ((INDEXPATHKEY.length >9)?[INDEXPATHKEY substringWithRange:NSMakeRange(7, 1)]:nil)
 //ROW
+#undef  KEY_INDEXPATH_ROW_STR
 #define KEY_INDEXPATH_ROW_STR(INDEXPATHKEY)  [INDEXPATHKEY substringFromIndex:(([INDEXPATHKEY rangeOfString:@"_"]).location + ([INDEXPATHKEY rangeOfString:@"_"]).length)]
 
 
