@@ -207,7 +207,7 @@ const NSInteger unionSize = 20;
         [self.columnHeights addObject:@(0)];
     }
     // Create attributes
-    CGFloat top = 10;
+    CGFloat top = 0;
     UICollectionViewLayoutAttributes *attributes;
     
     for (NSInteger section = 0; section < numberOfSections; ++section)
