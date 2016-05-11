@@ -223,7 +223,7 @@
         cell.delegate = self;
         cell.indexPath = indexPath;
 //        [cell setcellimageRight:cellstruct.imageRight];
-        [cell setcelldetailtitle:cellstruct.detailtitle]; 
+        [cell setcelldetailtitle:cellstruct.detailtitle];
         [cell setcellTitle:cellstruct.title];
         [cell setcellProfile:cellstruct.picture];
         [cell setcellpicturecolor:cellstruct.picturecolor];

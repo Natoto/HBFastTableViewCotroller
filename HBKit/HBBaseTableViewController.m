@@ -381,7 +381,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (!self.nodeselectRow) {
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [tableView deselectRowAtIndexPath:indexPath animated:NO];
     }
     CELL_STRUCT * cellstruct = [self.dataDictionary  cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
     if ( cellstruct.sel_selector && [self respondsToSelector:cellstruct.sel_selector])
