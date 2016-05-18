@@ -237,6 +237,7 @@
      CELL_STRUCT *cell_struce = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(section, 0)];
     if (cell_struce.sectiontitle.length) {
         UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, cell_struce.sectionheight)];
+        view.userInteractionEnabled = NO;
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, view.bounds.size.width - 20, cell_struce.sectionheight)];
         label.center = CGPointMake(view.frame.origin.x + view.frame.size.width/2, view.frame.origin.y + view.frame.size.height/2);
         label.text = cell_struce.sectiontitle;
@@ -248,8 +249,11 @@
         view.backgroundColor = bgcolor?bgcolor:self.view.backgroundColor;
         [view addSubview:label];
         return view;
+    }else {
+        UIView * view = [UIView new];
+        view.userInteractionEnabled = NO;
+        return view;
     }
-    return [UIView new];
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
@@ -257,6 +261,7 @@
     CELL_STRUCT *cell_struce = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(section, 0)];
     if (cell_struce.sectionfooter.length) {
         UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, cell_struce.sectionfooterheight)];
+        view.userInteractionEnabled = NO;
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, view.bounds.size.width - 20, cell_struce.sectionfooterheight)];
         label.center = CGPointMake(view.frame.origin.x + view.frame.size.width/2, view.frame.origin.y + view.frame.size.height/2);
         label.text = cell_struce.sectionfooter;
@@ -267,8 +272,11 @@
         view.backgroundColor = self.tableView.backgroundColor;
         [view addSubview:label];
         return view;
+    }else {
+        UIView * view = [UIView new];
+        view.userInteractionEnabled = NO;
+        return view;
     }
-    return [UIView new];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -358,7 +366,7 @@
 //        [cell setcellimageRight:cellstruct.imageRight];
         [cell setcelldetailtitle:cellstruct.detailtitle];
         [cell setcellplaceholder:cellstruct.placeHolder];
-        [cell setcelldictionary:cellstruct.dictionary];
+//        [cell setcelldictionary:cellstruct.dictionary];
         [cell setcellTitle:cellstruct.title];
         [cell setcellTitleFontsize:cellstruct.titlefontsize];
         [cell setcellTitleFont:cellstruct.titleFont];
