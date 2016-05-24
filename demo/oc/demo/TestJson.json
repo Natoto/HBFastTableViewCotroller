@@ -1,0 +1,70 @@
+{
+    "array": [
+              {
+              "key_indexpath":"section0_0",
+              "rightValue": "",
+              "title": "充值卡类型:",
+              "sectiontitle": "",
+              "imageCornerRadius": false,
+              "picture": "",
+              "sel_selector_str": "selectAction:",
+              "cellclass": "HBBaseTableViewCell",
+              "imageRight": false,
+              "dictionary": {
+              "key_cellstruct_background": "white",
+              "key_cellstruct_txtkeyboardtype": "default",
+              "key_cellstruct_lbltxtsecureTextEntry": 0,
+              "key_cellstruct_editabled": 0
+              },
+              "detailtitle": "0",
+              "xibvalue": "",
+              "sectionheight": 0,
+              "CellStyleValue": 0,
+              "tempvalue": "",
+              "cellheight": 44,
+              "titleLabelNumberOfLines": "",
+              "placeHolder": "",
+              "titlecolor": "gray",
+              "accessory": false,
+              "titlefontsize": 13,
+              "value": "移动充值卡",
+              "showTopLine": false,
+              "textaligment": "center",
+              "selectionStyle": false,
+              "showBottomLine": true
+              },
+              {
+              "key_indexpath":"section0_1",
+              "rightValue": "",
+              "title": "充值卡类型:",
+              "sectiontitle": "",
+              "imageCornerRadius": false,
+              "picture": "",
+              "sel_selector_str": "selectAction:",
+              "cellclass": "HBBaseTableViewCell",
+              "imageRight": false,
+              "dictionary": {
+              "key_cellstruct_background": "white",
+              "key_cellstruct_txtkeyboardtype": "default",
+              "key_cellstruct_lbltxtsecureTextEntry": 0,
+              "key_cellstruct_editabled": 0
+              },
+              "detailtitle": "0",
+              "xibvalue": "",
+              "sectionheight": 0,
+              "CellStyleValue": 0,
+              "tempvalue": "",
+              "cellheight": 44,
+              "titleLabelNumberOfLines": "",
+              "placeHolder": "",
+              "titlecolor": "gray",
+              "accessory": false,
+              "titlefontsize": 13,
+              "value": "移动充值卡",
+              "showTopLine": false,
+              "textaligment": "center",
+              "selectionStyle": false, 
+              "showBottomLine": true
+              }
+              ]
+}

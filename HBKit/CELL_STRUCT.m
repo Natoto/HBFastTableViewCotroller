@@ -135,9 +135,26 @@
     return self;
 }
 
+-(id)initWithJsonString:(NSString *)jsonstring
+{
+    CELL_STRUCT * cellstruct = [[CELL_STRUCT alloc] hb_initWithJSONData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
+    return cellstruct;
+}
+
+
 @end
 
+@implementation CELL_STRUCT_ARRAY
 
+-(id)init{
+    self = [super init];
+    if (self) {
+        [self setValue:@"CELL_STRUCT" forKeyPath:[NSString stringWithFormat:@"propertyArrayMap.%@",@"array"]];
+    }
+    return self;
+}
+
+@end
 /*-------------- plist demo
  
  <?xml version="1.0" encoding="UTF-8"?>

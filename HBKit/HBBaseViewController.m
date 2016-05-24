@@ -56,6 +56,48 @@
     }
 }
 
+
+/**
+ *  从json文件中配置信息
+ *
+ *  @param jsonfilepath  json文件存放的路径名
+ */
+-(void)loadjsonfileConfig:(NSString *)jsonfilename
+{
+    NSString * filepath = [[NSBundle mainBundle] pathForResource:jsonfilename ofType:@"json"];
+    NSError * error;
+    NSString * jsonstring = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
+    if(error) { // If error object was instantiated, handle it.
+        NSLog(@"ERROR while loading from file: %@", error);
+        // …
+    }
+    else{
+        CELL_STRUCT_ARRAY * vclist = [[CELL_STRUCT_ARRAY alloc] hb_initWithJSONData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
+        NSString * title = vclist.title;
+        if (title && [[title class] isSubclassOfClass:[NSString class]]) {
+            self.title = title;
+        }
+        NSString * backgroundcolor = vclist.backgroundcolor;
+        if (backgroundcolor && [[backgroundcolor class] isSubclassOfClass:[NSString class]]) {
+            self.view.backgroundColor = [CELL_STRUCT_Common colorWithStructKey:backgroundcolor];
+        }
+        NSString * backgroundimage  = vclist.backgroundimage;
+        if (backgroundimage && [[backgroundimage class] isSubclassOfClass:[NSString class]]) {
+            [self changeBackGroundWithBackImage:[UIImage imageNamed:backgroundimage]];
+        }
+        
+        [vclist.array enumerateObjectsUsingBlock:^(CELL_STRUCT * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (obj && [obj.key_indexpath containsString:@"section"] ) {
+                [self.dataDictionary setObject:obj forKey:obj.key_indexpath];
+            }
+        }];
+    }
+    
+//    NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
+//    [self loadplistviewConfig:dic];
+    
+}
+
 -(void)loadplistviewConfig:(NSDictionary *)dic
 {
     NSString * title = [dic objectForKey:@"title"];

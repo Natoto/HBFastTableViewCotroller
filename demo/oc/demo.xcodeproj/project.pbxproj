@@ -55,7 +55,10 @@
 		78EC3DD71C9D26C300CD6C7A /* HBBaseSectionCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EC3DD61C9D26C300CD6C7A /* HBBaseSectionCollectionReusableView.m */; };
 		78EE98601C2AC6AB004C97A9 /* NormalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE985F1C2AC6AB004C97A9 /* NormalTableViewController.m */; };
 		78EE98631C2ACCCF004C97A9 /* NormalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE98621C2ACCCF004C97A9 /* NormalCollectionViewController.m */; };
+		F855E20F1CF4B5200056D104 /* NSObject+HBObjectMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F855E20E1CF4B5200056D104 /* NSObject+HBObjectMap.m */; };
 		F888DBCA1CCA0A1E00A5AC9B /* testhb.m in Sources */ = {isa = PBXBuildFile; fileRef = F888DBC91CCA0A1E00A5AC9B /* testhb.m */; };
+		F8AE66981CF4880B0097692D /* TestJsonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AE66971CF4880B0097692D /* TestJsonViewController.m */; };
+		F8AE669C1CF488970097692D /* TestJson.json in Resources */ = {isa = PBXBuildFile; fileRef = F8AE669B1CF488970097692D /* TestJson.json */; };
 		F8B125AD1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B125AB1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.m */; };
 		F8B125AE1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B125AC1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -161,8 +164,13 @@
 		78EE98621C2ACCCF004C97A9 /* NormalCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalCollectionViewController.m; sourceTree = "<group>"; };
 		AA8C334F8F9913F1207427FD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BAD90533045FAC1328C1175F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F855E20D1CF4B5200056D104 /* NSObject+HBObjectMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HBObjectMap.h"; sourceTree = "<group>"; };
+		F855E20E1CF4B5200056D104 /* NSObject+HBObjectMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HBObjectMap.m"; sourceTree = "<group>"; };
 		F888DBC81CCA0A1E00A5AC9B /* testhb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testhb.h; sourceTree = "<group>"; };
 		F888DBC91CCA0A1E00A5AC9B /* testhb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testhb.m; sourceTree = "<group>"; };
+		F8AE66961CF4880B0097692D /* TestJsonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestJsonViewController.h; sourceTree = "<group>"; };
+		F8AE66971CF4880B0097692D /* TestJsonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestJsonViewController.m; sourceTree = "<group>"; };
+		F8AE669B1CF488970097692D /* TestJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJson.json; sourceTree = "<group>"; };
 		F8B125AA1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseXIBCollectionViewCell.h; sourceTree = "<group>"; };
 		F8B125AB1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseXIBCollectionViewCell.m; sourceTree = "<group>"; };
 		F8B125AC1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseXIBCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -292,6 +300,9 @@
 				F8B125AC1CAD6F6B00BE895F /* BaseXIBCollectionViewCell.xib */,
 				18678F451B79E8240062A073 /* TESTSystyleviewController.h */,
 				18678F461B79E8240062A073 /* TESTSystyleviewController.m */,
+				F8AE66961CF4880B0097692D /* TestJsonViewController.h */,
+				F8AE66971CF4880B0097692D /* TestJsonViewController.m */,
+				F8AE669B1CF488970097692D /* TestJson.json */,
 				18678F4A1B79ED6A0062A073 /* TESTXIBViewController.h */,
 				18678F4B1B79ED6A0062A073 /* TESTXIBViewController.m */,
 				F888DBC81CCA0A1E00A5AC9B /* testhb.h */,
@@ -339,6 +350,8 @@
 			isa = PBXGroup;
 			children = (
 				331B92EA1C9A75A100395A72 /* cellstruct.plist */,
+				F855E20D1CF4B5200056D104 /* NSObject+HBObjectMap.h */,
+				F855E20E1CF4B5200056D104 /* NSObject+HBObjectMap.m */,
 				339E0DC81C1E94AE00035B65 /* CELL_STRUCT.h */,
 				339E0DC91C1E94AE00035B65 /* CELL_STRUCT.m */,
 				339E0DCA1C1E94AE00035B65 /* CELL_STRUCT_Common.h */,
@@ -481,6 +494,7 @@
 				33B63B101C337AF400F1CF34 /* TestSectionCollectionReusableView.xib in Resources */,
 				184130AE1B79DF4A002AB4C0 /* Images.xcassets in Resources */,
 				18678F491B79EABA0062A073 /* profile.png in Resources */,
+				F8AE669C1CF488970097692D /* TestJson.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,9 +561,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				184130A91B79DF4A002AB4C0 /* ViewController.m in Sources */,
+				F855E20F1CF4B5200056D104 /* NSObject+HBObjectMap.m in Sources */,
 				F888DBCA1CCA0A1E00A5AC9B /* testhb.m in Sources */,
 				339E0DE61C1E94AE00035B65 /* HBCollectionFallFLayout.m in Sources */,
 				339E0DC11C1E78FF00035B65 /* TestCollectionViewCell.m in Sources */,
+				F8AE66981CF4880B0097692D /* TestJsonViewController.m in Sources */,
 				339E0DE31C1E94AE00035B65 /* HBBaseTableViewCell.m in Sources */,
 				18678F631B7A115B0062A073 /* TESTRefreshViewController.m in Sources */,
 				18678F4C1B79ED6A0062A073 /* TESTXIBViewController.m in Sources */,

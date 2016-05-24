@@ -87,6 +87,14 @@
  *  @param plistname plist文件的名字
  */
 -(void)loadplistConfig:(NSString *)plistname;
+
+
+/**
+ *  从json文件中配置信息
+ *
+ *  @param jsonfilepath  json文件存放的路径名
+ */
+-(void)loadjsonfileConfig:(NSString *)jsonfilename;
 @end
 
 

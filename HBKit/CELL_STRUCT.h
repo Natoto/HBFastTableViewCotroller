@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "CELL_STRUCT_KEY.h"
+#import "NSObject+HBObjectMap.h"
 
 #undef KEY_INDEXPATH
 #define KEY_INDEXPATH(SECTION,ROW) [NSString stringWithFormat:@"section%u_%u",(int)(SECTION),(int)(ROW)]
@@ -85,4 +86,22 @@
   *  根据plist的键值对字典得到CELLSTRUCT对象
   */
 -(id)initWithPlistDictionary:(NSDictionary *)plistdic;
+
+/**
+ *  把json转换成对象
+ *
+ *
+ *  @return CELLSTRUCT
+ */
+-(id)initWithJsonString:(NSString *)jsonstring;
+@end
+
+
+@interface CELL_STRUCT_ARRAY : NSObject
+
+@property (nonatomic, strong) NSString *  title;
+@property (nonatomic, strong) NSString *  backgroundcolor;
+@property (nonatomic, strong) NSString *  backgroundimage;
+
+@property (nonatomic, strong) NSMutableArray<CELL_STRUCT *> * array;
 @end

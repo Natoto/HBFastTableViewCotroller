@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[HBBaseViewController loadjsonfileConfig:]:HBBaseViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__43-[HBBaseViewController loadjsonfileConfig:]_block_invoke:HBBaseViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.dataDictionary">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TestJsonViewController viewDidLoad]:TestJsonViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "HBXMLScan">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

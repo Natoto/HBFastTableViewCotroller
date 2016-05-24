@@ -17,6 +17,7 @@
 #import "TESTKVOViewController.h"
 #import "TestDrawCellViewController.h"
 #import "TestPlistViewController.h"
+#import "TestJsonViewController.h"
 
 #import "AppDelegate.h"
 @interface ViewController ()
@@ -33,6 +34,7 @@ AS_CELL_STRUCT_COMMON(kvo)
 AS_CELL_STRUCT_COMMON(drawcell)
 
 AS_CELL_STRUCT_COMMON(copy)
+AS_CELL_STRUCT_COMMON(testjson)
 @end
 
 @implementation ViewController
@@ -48,6 +50,7 @@ GET_CELL_STRUCT_WITH(collection, COLLECTION-加载);
 GET_CELL_STRUCT_WITH(kvo, KVO)
 GET_CELL_STRUCT_WITH(drawcell, Drawcell)
 GET_CELL_STRUCT_WITH(copy, copy cellstruct)
+GET_CELL_STRUCT_WITH(testjson, testjson)
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HBTABLE";
@@ -77,6 +80,7 @@ GET_CELL_STRUCT_WITH(copy, copy cellstruct)
     sectionIndex++;
     rowIndex = 0;
     [self.dataDictionary setObject:self.cell_struct_copy forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_testjson forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     
     
     self.view.backgroundColor =  [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
@@ -153,6 +157,9 @@ GET_CELL_SELECT_ACTION(cellstruct)
     {
         CELL_STRUCT * astruct = [self.cell_struct_copy copy];
         NSLog(@"%@",astruct);
+    }else if(cellstruct == self.cell_struct_testjson){
+        TestJsonViewController * ctr = [TestJsonViewController new]; 
+        [self.navigationController   pushViewController:ctr animated:YES];
     }
 }
 - (void)didReceiveMemoryWarning {
