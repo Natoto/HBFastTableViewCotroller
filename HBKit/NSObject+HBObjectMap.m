@@ -554,17 +554,17 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
 }
 
 -(NSData *)hb_JSONData{
-    id dict = [NSObject jsonDataObjects:self];
+    id dict = [NSObject hb_jsonDataObjects:self];
     return [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
 }
 
 -(NSString *)hb_JSONString{
-    id dict = [NSObject jsonDataObjects:self];
+    id dict = [NSObject hb_jsonDataObjects:self];
     NSData *JSONData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
     return [[NSString alloc] initWithData:JSONData encoding:NSUTF8StringEncoding];
 }
 
-+ (id)jsonDataObjects:(id)obj {
++ (id)hb_jsonDataObjects:(id)obj {
     id returnProperties = nil;
     if([self hb_isArray:obj]) {
         NSInteger length =[(NSArray*)obj count];
