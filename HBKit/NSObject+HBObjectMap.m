@@ -35,7 +35,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
 
 @implementation NSScanner (HBXMLScan)
 
--(BOOL)isAtEndOfTag:(NSString *)tag {
+-(BOOL)hb_isAtEndOfTag:(NSString *)tag {
     NSInteger scanPos = [self scanLocation];
     NSString *trash = @"";
     [self scanUpToString:[NSString stringWithFormat:@"</%@", tag] intoString:&trash];
@@ -49,12 +49,12 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     }
 }
 
--(NSString *)nextXMLTag {
+-(NSString *)hb_nextXMLTag {
     NSString *trash = @"", *tag = @"";
     NSInteger scanPos = [self scanLocation];
     [self scanUpToString:@"<" intoString:&trash];
     [self scanString:@"<" intoString:&trash];
-    if ([[self nextCharacter] isEqualToString:@"/"]) {
+    if ([[self hb_nextCharacter] isEqualToString:@"/"]) {
         [self scanUpToString:@">" intoString:&trash];
         scanPos = [self scanLocation];
         [self scanUpToString:@"<" intoString:&trash];
@@ -66,7 +66,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     return tag;
 }
 
--(NSString *)nextCharacter {
+-(NSString *)hb_nextCharacter {
     NSInteger scanPos = [self scanLocation];
     if (scanPos < [self string].length - 1) {
         return [[self string] substringWithRange:NSMakeRange(scanPos+1, 1)];
@@ -74,7 +74,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     return nil;
 }
 
--(void)skipTag:(NSString *)tag {
+-(void)hb_skipTag:(NSString *)tag {
     NSString *trash = @"";
     if ([tag rangeOfString:@" "].location != NSNotFound) {
         [self scanUpToString:@">" intoString:&trash];
@@ -93,7 +93,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     }
 }
 
--(NSString *)getNextValue {
+-(NSString *)hb_getNextValue {
     NSString *trash = @"", *value = @"";
     [self scanUpToString:@">" intoString:&trash];
     [self scanString:@">" intoString:&trash];
@@ -124,13 +124,13 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
 - (instancetype)hb_initWithObjectData:(NSData *)data type:(HBCAPSDataType)type {
     switch (type) {
         case HBCAPSDataTypeJSON:
-            return [NSObject objectOfClass:[self class] fromJSONData:data];
+            return [NSObject hb_objectOfClass:[self class] fromJSONData:data];
             break;
         case HBCAPSDataTypeXML:
-            return [NSObject objectOfClass:NSStringFromClass([self class]) fromXML:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
+            return [NSObject hb_objectOfClass:NSStringFromClass([self class]) fromXML:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
             break;
         case HBCAPSDataTypeSOAP:
-            return [NSObject objectOfClass:NSStringFromClass([self class]) fromXML:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
+            return [NSObject hb_objectOfClass:NSStringFromClass([self class]) fromXML:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
             break;
         default:
             return nil;
@@ -139,12 +139,12 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
 }
 
 + (NSArray *)hb_arrayOfType:(Class)objectClass FromJSONData:(NSData *)data {
-    return [NSObject objectOfClass:objectClass fromJSONData:data];
+    return [NSObject hb_objectOfClass:objectClass fromJSONData:data];
 }
 
 
 #pragma mark - XML to Object
-+(id)objectOfClass:(NSString *)object fromXML:(NSString *)xml {
++(id)hb_objectOfClass:(NSString *)object fromXML:(NSString *)xml {
     // Create your object
     id newObject = [[NSClassFromString(object) alloc] init];
     
@@ -157,43 +157,43 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     [scanner scanString:@">" intoString:&trash];
     
     // Create your object from the XML using the scanner
-    newObject = [newObject newObjectFromXMLScanner:scanner];
+    newObject = [newObject hb_newObjectFromXMLScanner:scanner];
     
     // Return the object
     return newObject;
 }
 
--(id)newObjectFromXMLScanner:(NSScanner *)scanner {
+-(id)hb_newObjectFromXMLScanner:(NSScanner *)scanner {
     // Scan the object and create properties of the object
     // until the scanner has reached the end tag
-    while (![scanner isAtEndOfTag:[self hb_nameOfClass]]) {
+    while (![scanner hb_isAtEndOfTag:[self hb_nameOfClass]]) {
         NSDictionary *mapDictionary = [self hb_propertyDictionary];
-        NSString *nextTag = [scanner nextXMLTag];
+        NSString *nextTag = [scanner hb_nextXMLTag];
         
         // If the upcoming tag is a property of the object: create it.
         // Else: Skip it.
         if (mapDictionary[nextTag]) {
             if ([nextTag rangeOfString:@" /"].location != NSNotFound) {
-                [scanner skipTag:nextTag];
+                [scanner hb_skipTag:nextTag];
                 continue;
             }
-            [self setValue:[self nextXMLValueForTag:nextTag withScanner:scanner] forKey:nextTag];
+            [self setValue:[self hb_nextXMLValueForTag:nextTag withScanner:scanner] forKey:nextTag];
         }
         else {
-            [scanner skipTag:nextTag];
+            [scanner hb_skipTag:nextTag];
         }
     }
     
     return self;
 }
 
--(id)nextXMLValueForTag:(NSString *)tag withScanner:(NSScanner *)scanner {
+-(id)hb_nextXMLValueForTag:(NSString *)tag withScanner:(NSScanner *)scanner {
     // Get the name of the class to check type
     objc_property_t property = class_getProperty([self class], [tag UTF8String]);
-    NSString *className = [[self typeFromProperty:property] substringWithRange:NSMakeRange(3, [self typeFromProperty:property].length - 4)];
+    NSString *className = [[self hb_typeFromProperty:property] substringWithRange:NSMakeRange(3, [self hb_typeFromProperty:property].length - 4)];
     
     // Get the value from the Scanner
-    NSString *value = [scanner getNextValue];
+    NSString *value = [scanner hb_getNextValue];
     
     // Create your object
     id objForKey;
@@ -221,9 +221,9 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     }
     else if ([className isEqualToString:@"NSArray"]) {
         NSMutableArray *oArray = [@[] mutableCopy];
-        NSString *nextTag = [scanner nextXMLTag];
-        while (![scanner isAtEndOfTag:tag]) {
-            [oArray addObject:[self nextArrayValueForTag:nextTag fromScanner:scanner]];
+        NSString *nextTag = [scanner hb_nextXMLTag];
+        while (![scanner hb_isAtEndOfTag:tag]) {
+            [oArray addObject:[self hb_nextArrayValueForTag:nextTag fromScanner:scanner]];
         }
         objForKey = oArray;
     }
@@ -232,20 +232,20 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     }
     else {
         objForKey = [[NSClassFromString(className) alloc] init];
-        objForKey = [objForKey newObjectFromXMLScanner:scanner];
+        objForKey = [objForKey hb_newObjectFromXMLScanner:scanner];
     }
     
     
     // Scan until start of next Tag
-    [scanner skipTag:tag];
+    [scanner hb_skipTag:tag];
     
     // Return the object
     return objForKey;
 }
 
--(id)nextArrayValueForTag:(NSString *)tag fromScanner:(NSScanner *)scanner {
+-(id)hb_nextArrayValueForTag:(NSString *)tag fromScanner:(NSScanner *)scanner {
     // Get the value from the Scanner
-    NSString *value = [scanner getNextValue];
+    NSString *value = [scanner hb_getNextValue];
     
     // Create the object
     id returnObj;
@@ -267,11 +267,11 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     }
     else {
         returnObj = [[NSClassFromString(tag) alloc] init];
-        returnObj = [returnObj newObjectFromXMLScanner:scanner];
+        returnObj = [returnObj hb_newObjectFromXMLScanner:scanner];
     }
     
     // Scan until start of next Tag
-    [scanner skipTag:tag];
+    [scanner hb_skipTag:tag];
     
     // Return the object
     return returnObj;
@@ -279,21 +279,21 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
 
 
 #pragma mark - JSONData to Object
-+ (id)objectOfClass:(Class)objectClass fromJSONData:(NSData *)jsonData {
++ (id)hb_objectOfClass:(Class)objectClass fromJSONData:(NSData *)jsonData {
     NSError *error;
     id newObject = nil;
     id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
     
     // If jsonObject is a top-level object already
     if([jsonObject isKindOfClass:[NSDictionary class]]) {
-        newObject = [NSObject objectOfClass:objectClass fromJSON:jsonObject];
+        newObject = [NSObject hb_objectOfClass:objectClass fromJSON:jsonObject];
     }
     // Else it is an array of objects
     else if([jsonObject isKindOfClass:[NSArray class]]){
         NSInteger length = [((NSArray*) jsonObject) count];
         NSMutableArray *resultArray = [NSMutableArray arrayWithCapacity:length];
         for(NSInteger i = 0; i < length; i++){
-            [resultArray addObject:[NSObject objectOfClass:objectClass fromJSON:[(NSArray*)jsonObject objectAtIndex:i]]];
+            [resultArray addObject:[NSObject hb_objectOfClass:objectClass fromJSON:[(NSArray*)jsonObject objectAtIndex:i]]];
         }
         newObject = [[NSArray alloc] initWithArray:resultArray];
     }
@@ -303,7 +303,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
 
 
 #pragma mark - Dictionary to Object
-+(id)objectOfClass:(Class)objectClass fromJSON:(NSDictionary *)dict {
++(id)hb_objectOfClass:(Class)objectClass fromJSON:(NSDictionary *)dict {
     if([NSStringFromClass(objectClass) isEqualToString:@"NSDictionary"]){
         return dict;
     }
@@ -327,8 +327,8 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
         // If it's a Dictionary, make into object
         if ([[dict objectForKey:key] isKindOfClass:[NSDictionary class]]) {
             //id newObjectProperty = [newObject valueForKey:propertyName];
-            NSString *propertyType = [newObject classOfPropertyNamed:propertyName];
-            id nestedObj = [NSObject objectOfClass:NSClassFromString(propertyType) fromJSON:[dict objectForKey:key]];
+            NSString *propertyType = [newObject hb_classOfPropertyNamed:propertyName];
+            id nestedObj = [NSObject hb_objectOfClass:NSClassFromString(propertyType) fromJSON:[dict objectForKey:key]];
             [newObject setValue:nestedObj forKey:propertyName];
         }
         
@@ -336,7 +336,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
         else if ([[dict objectForKey:key] isKindOfClass:[NSArray class]]) {
             NSArray *nestedArray = [dict objectForKey:key];
             NSString *propertyType = [newObject valueForKeyPath:[NSString stringWithFormat:@"propertyArrayMap.%@", key]];
-            [newObject setValue:[NSObject arrayMapFromArray:nestedArray forPropertyName:propertyType] forKey:propertyName];
+            [newObject setValue:[NSObject hb_arrayMapFromArray:nestedArray forPropertyName:propertyType] forKey:propertyName];
         }
         
         // Add to property name, because it is a type already
@@ -344,7 +344,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
             objc_property_t property = class_getProperty([newObject class], [propertyName UTF8String]);
             
             if (property) {
-                NSString *classType = [newObject typeFromProperty:property];
+                NSString *classType = [newObject hb_typeFromProperty:property];
                 
                 // check if NSDate or not
                 if ([classType isEqualToString:@"T@\"NSDate\""]) {
@@ -363,7 +363,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     return newObject;
 }
 
--(NSString *)classOfPropertyNamed:(NSString *)propName {
+-(NSString *)hb_classOfPropertyNamed:(NSString *)propName {
     objc_property_t theProperty = class_getProperty([self class], [propName UTF8String]);
     
     const char *attributes = property_getAttributes(theProperty);
@@ -395,16 +395,16 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     return @"";
 }
 
-+(NSArray *)arrayFromJSON:(NSArray *)jsonArray ofObjects:(NSString *)obj {
++(NSArray *)hb_arrayFromJSON:(NSArray *)jsonArray ofObjects:(NSString *)obj {
     //NSString *filteredObject = [NSString stringWithFormat:@"%@s",obj];
-    return [NSObject arrayMapFromArray:jsonArray forPropertyName:obj];
+    return [NSObject hb_arrayMapFromArray:jsonArray forPropertyName:obj];
 }
 
 -(NSString *)hb_nameOfClass {
     return [NSString stringWithUTF8String:class_getName([self class])];
 }
 
-+(NSArray *)arrayMapFromArray:(NSArray *)nestedArray forPropertyName:(NSString *)propertyName {
++(NSArray *)hb_arrayMapFromArray:(NSArray *)nestedArray forPropertyName:(NSString *)propertyName {
     // Set Up
     NSMutableArray *objectsArray = [@[] mutableCopy];
     
@@ -428,13 +428,13 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
                     NSString *propertyType = [nestedObj valueForKeyPath:[NSString stringWithFormat:@"propertyArrayMap.%@", newKey]];
                     
                     if (propertyType) {
-                        [nestedObj setValue:[NSObject arrayMapFromArray:[nestedArray[xx] objectForKey:newKey]  forPropertyName:propertyType] forKey:newKey];
+                        [nestedObj setValue:[NSObject hb_arrayMapFromArray:[nestedArray[xx] objectForKey:newKey]  forPropertyName:propertyType] forKey:newKey];
                     }
                 }
                 // If it's a Dictionary, create an object, and send to [self objectFromJSON]
                 else if ([[nestedArray[xx] objectForKey:newKey] isKindOfClass:[NSDictionary class]]) {
-                    NSString *type = [nestedObj classOfPropertyNamed:newKey];
-                    id nestedDictObj = [NSObject objectOfClass:NSClassFromString(type) fromJSON:[nestedArray[xx] objectForKey:newKey]];
+                    NSString *type = [nestedObj hb_classOfPropertyNamed:newKey];
+                    id nestedDictObj = [NSObject hb_objectOfClass:NSClassFromString(type) fromJSON:[nestedArray[xx] objectForKey:newKey]];
                     [nestedObj setValue:nestedDictObj forKey:newKey];
                 }
                 // Else, it is an object
@@ -442,7 +442,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
                     objc_property_t property = class_getProperty([NSClassFromString(propertyName) class], [newKey UTF8String]);
                     
                     if (property) {
-                        NSString *classType = [self typeFromProperty:property];
+                        NSString *classType = [self hb_typeFromProperty:property];
                         // check if NSDate or not
                         if ([classType isEqualToString:@"T@\"NSDate\""]) {
                             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -464,7 +464,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
         
         // If it's an NSArray, recur
         else if ([nestedArray[xx] isKindOfClass:[NSArray class]]) {
-            [objectsArray addObject:[NSObject arrayMapFromArray:nestedArray[xx] forPropertyName:propertyName]];
+            [objectsArray addObject:[NSObject hb_arrayMapFromArray:nestedArray[xx] forPropertyName:propertyName]];
         }
         
         // Else, add object directly
@@ -501,7 +501,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     return dict;
 }
 
--(NSString *)typeFromProperty:(objc_property_t)property {
+-(NSString *)hb_typeFromProperty:(objc_property_t)property {
     return [[NSString stringWithUTF8String:property_getAttributes(property)] componentsSeparatedByString:@","][0];
 }
 
@@ -517,7 +517,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
 //
 // [myObject setValue:@"TypeOfObjectYouWantInArray" forKeyPath:@"propertyArrayMap.arrayPropertyName"]
 //
--(NSMutableDictionary *)getPropertyArrayMap {
+-(NSMutableDictionary *)hb_getPropertyArrayMap {
     if (objc_getAssociatedObject(self, @"propertyArrayMap")==nil) {
         objc_setAssociatedObject(self,@"propertyArrayMap",[[NSMutableDictionary alloc] init],OBJC_ASSOCIATION_RETAIN);
     }
@@ -566,26 +566,26 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
 
 + (id)jsonDataObjects:(id)obj {
     id returnProperties = nil;
-    if([self isArray:obj]) {
+    if([self hb_isArray:obj]) {
         NSInteger length =[(NSArray*)obj count];
         returnProperties = [NSMutableArray arrayWithCapacity:length];
         for(NSInteger i = 0; i < length; i++){
-            [returnProperties addObject:[NSObject dictionaryWithPropertiesOfObject:[(NSArray*)obj objectAtIndex:i]]];
+            [returnProperties addObject:[NSObject hb_dictionaryWithPropertiesOfObject:[(NSArray*)obj objectAtIndex:i]]];
         }
     }
     else {
-        returnProperties = [NSObject dictionaryWithPropertiesOfObject:obj];
+        returnProperties = [NSObject hb_dictionaryWithPropertiesOfObject:obj];
         
     }
     
     return returnProperties;
 }
 
-+(NSDictionary *)dictionaryWithPropertiesOfObject:(id)obj
++(NSDictionary *)hb_dictionaryWithPropertiesOfObject:(id)obj
 {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     
-    NSMutableArray *propertiesArray = [NSObject propertiesArrayFromObject:obj];
+    NSMutableArray *propertiesArray = [NSObject hb_propertiesArrayFromObject:obj];
     
     for (NSInteger i = 0; i < propertiesArray.count; i++) {
         NSString *key = propertiesArray[i];
@@ -594,27 +594,27 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
             continue;
         }
         
-        if ([self isArray:obj key:key]) {
-            [dict setObject:[self arrayForObject:[obj valueForKey:key]] forKey:key];
+        if ([self hb_isArray:obj key:key]) {
+            [dict setObject:[self hb_arrayForObject:[obj valueForKey:key]] forKey:key];
         }
-        else if ([self isDate:[obj valueForKey:key]]){
-            [dict setObject:[self dateForObject:[obj valueForKey:key]] forKey:key];
+        else if ([self hb_isDate:[obj valueForKey:key]]){
+            [dict setObject:[self hb_dateForObject:[obj valueForKey:key]] forKey:key];
         }
-        else if ([self isSystemObject:obj key:key]) {
+        else if ([self hb_isSystemObject:obj key:key]) {
             [dict setObject:[obj valueForKey:key] forKey:key];
         }
-        else if ([NSObject isData:[obj valueForKey:key]]){
+        else if ([NSObject hb_isData:[obj valueForKey:key]]){
             [dict setObject:[NSObject hb_encodeBase64WithData:[obj valueForKey:key]] forKey:key];
         }
         else {
-            [dict setObject:[self dictionaryWithPropertiesOfObject:[obj valueForKey:key]] forKey:key];
+            [dict setObject:[self hb_dictionaryWithPropertiesOfObject:[obj valueForKey:key]] forKey:key];
         }
     }
     
     return [NSDictionary dictionaryWithDictionary:dict];
 }
 
-+(NSMutableArray *)propertiesArrayFromObject:(id)obj {
++(NSMutableArray *)hb_propertiesArrayFromObject:(id)obj {
     
     NSMutableArray *props = [NSMutableArray array];
     
@@ -632,13 +632,13 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     
     NSString *superClassName = [[obj superclass] hb_nameOfClass];
     if (![superClassName isEqualToString:@"NSObject"]) {
-        [props addObjectsFromArray:[NSObject propertiesArrayFromObject:[[NSClassFromString(superClassName) alloc] init]]];
+        [props addObjectsFromArray:[NSObject hb_propertiesArrayFromObject:[[NSClassFromString(superClassName) alloc] init]]];
     }
     
     return props;
 }
 
--(BOOL)isSystemObject:(id)obj key:(NSString *)key{
+-(BOOL)hb_isSystemObject:(id)obj key:(NSString *)key{
     if ([[obj valueForKey:key] isKindOfClass:[NSString class]] || [[obj valueForKey:key] isKindOfClass:[NSNumber class]] || [[obj valueForKey:key] isKindOfClass:[NSDictionary class]]) {
         return YES;
     }
@@ -646,7 +646,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     return NO;
 }
 
--(BOOL)isSystemObject:(id)obj{
+-(BOOL)hb_isSystemObject:(id)obj{
     if ([obj isKindOfClass:[NSString class]] || [obj isKindOfClass:[NSNumber class]] || [obj isKindOfClass:[NSDictionary class]]) {
         return YES;
     }
@@ -654,7 +654,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     return NO;
 }
 
--(BOOL)isArray:(id)obj key:(NSString *)key{
+-(BOOL)hb_isArray:(id)obj key:(NSString *)key{
     if ([[obj valueForKey:key] isKindOfClass:[NSArray class]]) {
         return YES;
     }
@@ -662,7 +662,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     return NO;
 }
 
--(BOOL)isArray:(id)obj{
+-(BOOL)hb_isArray:(id)obj{
     if ([obj isKindOfClass:[NSArray class]]) {
         return YES;
     }
@@ -670,7 +670,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     return NO;
 }
 
-+(BOOL)isDate:(id)obj{
++(BOOL)hb_isDate:(id)obj{
     if ([obj isKindOfClass:[NSDate class]]) {
         return YES;
     }
@@ -678,7 +678,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     return NO;
 }
 
-+(BOOL)isData:(id)obj{
++(BOOL)hb_isData:(id)obj{
     if ([obj isKindOfClass:[NSData class]]) {
         return YES;
     }
@@ -686,7 +686,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     return NO;
 }
 
--(BOOL)isData:(id)obj{
+-(BOOL)hb_isData:(id)obj{
     if ([obj isKindOfClass:[NSData class]]) {
         return YES;
     }
@@ -694,21 +694,21 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     return NO;
 }
 
-+(NSArray *)arrayForObject:(id)obj{
++(NSArray *)hb_arrayForObject:(id)obj{
     NSArray *ContentArray = (NSArray *)obj;
     NSMutableArray *objectsArray = [[NSMutableArray alloc] init];
     for (NSInteger ii = 0; ii < ContentArray.count; ii++) {
-        if ([self isArray:ContentArray[ii]]) {
-            [objectsArray addObject:[self arrayForObject:[ContentArray objectAtIndex:ii]]];
+        if ([self hb_isArray:ContentArray[ii]]) {
+            [objectsArray addObject:[self hb_arrayForObject:[ContentArray objectAtIndex:ii]]];
         }
-        else if ([self isDate:ContentArray[ii]]){
-            [objectsArray addObject:[self dateForObject:[ContentArray objectAtIndex:ii]]];
+        else if ([self hb_isDate:ContentArray[ii]]){
+            [objectsArray addObject:[self hb_dateForObject:[ContentArray objectAtIndex:ii]]];
         }
-        else if ([self isSystemObject:[ContentArray objectAtIndex:ii]]) {
+        else if ([self hb_isSystemObject:[ContentArray objectAtIndex:ii]]) {
             [objectsArray addObject:[ContentArray objectAtIndex:ii]];
         }
         else {
-            [objectsArray addObject:[self dictionaryWithPropertiesOfObject:[ContentArray objectAtIndex:ii]]];
+            [objectsArray addObject:[self hb_dictionaryWithPropertiesOfObject:[ContentArray objectAtIndex:ii]]];
         }
         
     }
@@ -717,7 +717,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
 }
 
 
-+(NSString *)dateForObject:(id)obj{
++(NSString *)hb_dateForObject:(id)obj{
     NSDate *date = (NSDate *)obj;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -738,15 +738,15 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
 
 -(NSString *)hb_XMLString{
     NSMutableString *xmlString = [@"<?xml version=\"1.0\"?>" mutableCopy];
-    [xmlString appendString:[self xmlStringForSelfNamed:nil]];
+    [xmlString appendString:[self hb_xmlStringForSelfNamed:nil]];
     return xmlString;
 }
 
 -(NSString *)hb_SOAPString{
-    return [self soapStringForDictionary:(hb_SOAPObject *)self];
+    return [self hb_soapStringForDictionary:(hb_SOAPObject *)self];
 }
 
--(NSString *)soapStringForDictionary:(hb_SOAPObject *)obj{
+-(NSString *)hb_soapStringForDictionary:(hb_SOAPObject *)obj{
     // No object, return blank
     if (!obj) {
         return @"";
@@ -764,7 +764,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
         if (soapObject.Header) {
             // Add SoapHeader
             [soapString appendString:@"<soap:Header>"];
-            [soapString appendString:[soapObject.Header xmlStringForSelfNamed:nil]];
+            [soapString appendString:[soapObject.Header hb_xmlStringForSelfNamed:nil]];
             [soapString appendString:@"</soap:Header>"];
         }
     }
@@ -774,7 +774,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
         if (soapObject.Body) {
             // Add SoapBody
             [soapString appendString:@"<soap:Body>"];
-            [soapString appendString:[obj.Body xmlStringForSelfNamed:nil]];
+            [soapString appendString:[obj.Body hb_xmlStringForSelfNamed:nil]];
             [soapString appendString:@"</soap:Body>"];
         }
     }
@@ -787,7 +787,7 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
 
 #pragma mark - XMLString for Self (The Meat of the Operation)
 // Doesn't include <xml> or <soap> cruft - just the inside material
-- (NSString *)xmlStringForSelfNamed:(NSString *)name {
+- (NSString *)hb_xmlStringForSelfNamed:(NSString *)name {
     // XML doesn't handle NSDictionaries (to SPEC)
     if ([self isKindOfClass:[NSDictionary class]]) {
         return @"";
@@ -816,14 +816,14 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     // self is an Array
     else if ([self isKindOfClass:[NSArray class]]) {
         for (id arrayObj in (NSArray *)self) {
-            [xmlString appendString:[arrayObj xmlStringForSelfNamed:nil]];
+            [xmlString appendString:[arrayObj hb_xmlStringForSelfNamed:nil]];
         }
     }
     
     // self is a Dictionary
     else if ([self isKindOfClass:[NSDictionary class]]) {
         for (NSString *key in [(NSDictionary *)self allKeys]) {
-            [xmlString appendString:[[(NSDictionary *)self objectForKey:key] xmlStringForSelfNamed:key]];
+            [xmlString appendString:[[(NSDictionary *)self objectForKey:key] hb_xmlStringForSelfNamed:key]];
         }
     }
     
@@ -834,11 +834,11 @@ static const char _hbbase64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef
     
     // self is a custom Object
     else {
-        NSDictionary *dict = [NSObject dictionaryWithPropertiesOfObject:self];
+        NSDictionary *dict = [NSObject hb_dictionaryWithPropertiesOfObject:self];
         for (NSString *innerObj in dict.allKeys) {
             // if innerObj exists, use it
             if ([self valueForKey:innerObj]) {
-                [xmlString appendString:[[self valueForKey:innerObj] xmlStringForSelfNamed:innerObj]];
+                [xmlString appendString:[[self valueForKey:innerObj] hb_xmlStringForSelfNamed:innerObj]];
             }
             else {
                 [xmlString appendFormat:@"<%@ />", innerObj];
