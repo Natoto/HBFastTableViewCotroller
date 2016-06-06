@@ -42,20 +42,30 @@
  */
 -(void)loadplistConfig:(NSString *)plistname
 {
+    self.dataDictionary = [NSMutableDictionary dictionaryWithDictionary:[self loadplistConfigToDictionary:plistname]];
+}
+
+/**
+ *  从PLIST 文件中加载配置信息放到一个字典中而不是直接对datadictionary赋值
+ *
+ *  @param plistname plist文件的名字
+ */
+-(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname
+{
+    NSMutableDictionary * dataDictionary = [NSMutableDictionary new];
     NSString * filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
     NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
-    [self loadplistviewConfig:dic];
     for (NSString * key in dic.allKeys) {
         NSDictionary * adic = dic[key];
         if ([key containsString:@"section"] && adic) {
             CELL_STRUCT * cellstruct = [[CELL_STRUCT alloc] initWithPlistDictionary:adic];
             if (cellstruct) {
-                [self.dataDictionary setObject:cellstruct forKey:key];
+                [dataDictionary setObject:cellstruct forKey:key];
             }
         }
     }
+    return dataDictionary;
 }
-
 
 /**
  *  从json文件中配置信息

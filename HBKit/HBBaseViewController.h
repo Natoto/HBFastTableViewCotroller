@@ -88,6 +88,13 @@
  */
 -(void)loadplistConfig:(NSString *)plistname;
 
+/**
+ *  从PLIST 文件中加载配置信息放到一个字典中而不是直接对datadictionary赋值
+ *
+ *  @param plistname plist文件的名字
+ */
+-(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname;
+
 
 /**
  *  从json文件中配置信息

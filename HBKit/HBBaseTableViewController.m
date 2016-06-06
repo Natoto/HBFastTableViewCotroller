@@ -269,7 +269,8 @@
         label.font = [UIFont systemFontOfSize:sectionfont];
         label.textColor = [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectionfootercolor];
         label.textAlignment = NSTextAlignmentLeft;
-        view.backgroundColor = self.tableView.backgroundColor;
+        UIColor * bgcolor =  [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectionbgcolor];
+        view.backgroundColor = bgcolor?bgcolor:self.view.backgroundColor;
         [view addSubview:label];
         return view;
     }else {
