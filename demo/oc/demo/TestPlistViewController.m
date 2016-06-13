@@ -17,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    TABLEVIEW_CELL_SEPARATOR_NONE
     [self loadplistConfig:@"TestPlistViewController"];
     NSLog(@"%@",self.dataDictionary);
     

@@ -86,6 +86,7 @@
         self.imageView.center = CGPointMake(self.imageView.frame.origin.x + self.imageView.frame.size.width/2, self.contentView.bounds.size.height/2);
         self.textLabel.frame = CGRectMake(self.imageView.frame.origin.x + self.imageView.frame.size.width + 5, self.textLabel.frame.origin.y, self.textLabel.frame.size.width, self.textLabel.frame.size.height);
     }
+     
     NSString *textAlignment = [self.dictionary objectForKey:key_cellstruct_textAlignment];
     if (textAlignment) {
         if ([textAlignment isEqualToString:value_cellstruct_textAlignment_left]) {
@@ -104,17 +105,40 @@
     
     if (self.showTopLine) {
         [self drawToplinelayer];
-    }
+        
+        NSString * toplayerinset = self.dictionary[key_cellstruct_toplayerinsets];
+        if (toplayerinset) {
+            UIEdgeInsets  insets  = UIEdgeInsetsFromString(toplayerinset);
+            CGRect  layerframe = CGRectMake(insets.left, insets.top, [UIScreen mainScreen].bounds.size.width - insets.left - insets.right, 0.5);
+           self.toplayer.frame = layerframe;
+        }
+        else{
+            CGRect  layerframe = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0.5);
+            self.toplayer.frame = layerframe;
+        }
+     }
     else
     {
         [self clearTopLayer];
     }
     if (self.showBottomLine) {
         [self drawBottomlinelayer];
+        NSString * toplayerinset = self.dictionary[key_cellstruct_toplayerinsets];
+        if (toplayerinset) {
+            UIEdgeInsets  insets  = UIEdgeInsetsFromString(toplayerinset);
+            CGRect  layerframe = CGRectMake(insets.left,  self.frame.size.height - insets.bottom, [UIScreen mainScreen].bounds.size.width - insets.left - insets.right, 0.5);
+            self.bottomlayer.frame = layerframe;
+        }
+        else{
+            CGRect  layerframe = CGRectMake(0, self.frame.size.height - 0.5, [UIScreen mainScreen].bounds.size.width, 0.5);
+            self.bottomlayer.frame = layerframe;
+        }
     }else
     {
         [self clearBottomLayer];
     }
+    
+    
     self.redPoint.center = CGPointMake(self.contentView.frame.size.width - 20, self.contentView.frame.size.height/2);
 }
 

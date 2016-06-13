@@ -19,6 +19,13 @@ static NSString * notify_basetableview_sender = @"BaseViewController";
 #define TABLEVIEW_REGISTERXIBCELL_CLASS(TABLEVIEW,CELLCLSSTR) {[TABLEVIEW registerClass:NSClassFromString(CELLCLSSTR) forCellReuseIdentifier:CELLCLSSTR];\
 [TABLEVIEW registerNib:[UINib nibWithNibName:CELLCLSSTR bundle:nil] forCellReuseIdentifier:CELLCLSSTR];}
 
+
+#undef TABLEVIEW_REGISTER_CELLCLASS
+#define TABLEVIEW_REGISTER_CELLCLASS(TABLEVIEW,CELLCLSSTR) {[TABLEVIEW registerClass:NSClassFromString(CELLCLSSTR) forCellReuseIdentifier:CELLCLSSTR];}
+
+#undef TABLEVIEW_CELL_SEPARATOR_NONE
+#define TABLEVIEW_CELL_SEPARATOR_NONE self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
 @interface HBBaseTableViewController : HBBaseViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView               * tableView;
 //不自动配置tableview

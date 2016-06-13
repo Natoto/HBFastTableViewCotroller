@@ -49,7 +49,7 @@ static NSString * key_cellstruct_cellclass              = @"key_cellstruct_cellc
 static NSString * key_cellstruct_delegate               = @"key_cellstruct_delegate";
 static NSString * key_cellstruct_background             = @"key_cellstruct_background";
 static NSString * key_cellstruct_profile                = @"key_cellstruct_profile";
-static NSString * key_cellstruct_xibvalue              = @"key_cellstruct_xibvalue";
+static NSString * key_cellstruct_xibvalue               = @"key_cellstruct_xibvalue";
 static NSString * key_cellstruct_subvalue2              = @"key_cellstruct_subvalue2";
 
 static NSString * key_cellstruct_active                 = @"key_cellstruct_active";
@@ -58,16 +58,19 @@ static NSString * key_cellstruct_editabled              = @"key_cellstruct_edita
 static NSString * key_cellstruct_pushcontroller         = @"key_cellstruct_pushcontroller";
 static NSString * key_cellstruct_pushcontroller_xib     = @"key_cellstruct_pushcontroller_xib";
 static NSString * key_cellstruct_hiddenView             = @"key_cellstruct_hiddenView";
-static NSString * key_cellstruct_leftWidth             = @"key_cellstruct_leftWidth";
+static NSString * key_cellstruct_leftWidth              = @"key_cellstruct_leftWidth";
 static NSString * key_cellstruct_rightWidth             = @"key_cellstruct_rightWidth";
-static NSString * key_cellstruct_numberOfLines             = @"key_cellstruct_numberOfLines";
-static NSString * key_cellstruct_lbl_title_width      = @"key_cellstruct_lbl_title_width";
+static NSString * key_cellstruct_numberOfLines          = @"key_cellstruct_numberOfLines";
+static NSString * key_cellstruct_lbl_title_width        = @"key_cellstruct_lbl_title_width";
 static NSString * key_cellstruct_showtoplayer           = @"key_cellstruct_showtoplayer";
-static NSString * key_cellstruct_showbottomlayer           = @"key_cellstruct_showbottomlayer";
+static NSString * key_cellstruct_showbottomlayer        = @"key_cellstruct_showbottomlayer";
+static NSString * key_cellstruct_toplayerinsets         = @"key_cellstruct_toplayerinsets"; //分割线 用字符串表示edgeinsets {上,左,下,右}
+static NSString * key_cellstruct_bottomlayerinsets      = @"key_cellstruct_bottomlayerinsets";
+
 
 static NSString * key_cellstruct_imageHeight            = @"key_cellstruct_imageHeight";
 
-static NSString * key_cellstruct_AutoSavePictures             = @"key_cellstruct_AutoSavePictures";
+static NSString * key_cellstruct_AutoSavePictures       = @"key_cellstruct_AutoSavePictures";
 
 static NSString * value_cellstruct_black = @"black";      // 0.0 white
 static NSString * value_cellstruct_Gray = @"Gray"; //GrayColor;   // 0.333 white
