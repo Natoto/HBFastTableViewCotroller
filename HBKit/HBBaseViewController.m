@@ -42,7 +42,21 @@
  */
 -(void)loadplistConfig:(NSString *)plistname
 {
-    self.dataDictionary = [NSMutableDictionary dictionaryWithDictionary:[self loadplistConfigToDictionary:plistname]];
+    NSMutableDictionary * dataDictionary = [NSMutableDictionary new];
+    NSString * filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
+    NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
+    [self loadplistviewConfig:dic];
+    for (NSString * key in dic.allKeys) {
+        NSDictionary * adic = dic[key];
+        if ([key containsString:@"section"] && adic) {
+            CELL_STRUCT * cellstruct = [[CELL_STRUCT alloc] initWithPlistDictionary:adic];
+            if (cellstruct) {
+                [dataDictionary setObject:cellstruct forKey:key];
+            }
+        }
+    }
+    self.dataDictionary = dataDictionary;
+//    self.dataDictionary = [NSMutableDictionary dictionaryWithDictionary:[self loadplistConfigToDictionary:plistname]];
 }
 
 /**
