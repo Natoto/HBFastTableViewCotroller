@@ -192,6 +192,9 @@
 
 -(void)reloadTableViewCellWithKeyindexpath:(NSString *)keyindexpath
 {
+    if (!keyindexpath || ![keyindexpath containsString:@"section"]) {
+        return;
+    }
     NSString * sectionstr = KEY_INDEXPATH_SECTION_STR(keyindexpath);
     NSString * rowstr = KEY_INDEXPATH_ROW_STR(keyindexpath);
     [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:rowstr.intValue inSection:sectionstr.intValue]] withRowAnimation:UITableViewRowAnimationAutomatic];

@@ -111,14 +111,17 @@
         }
         
         [vclist.array enumerateObjectsUsingBlock:^(CELL_STRUCT * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            obj.dictionarystring  = [self URLDecoding:obj.dictionarystring];
+            obj.dictionary = [NSMutableDictionary dictionaryWithDictionary: [self dictionaryWithJsonString:obj.dictionarystring]];
             if (obj && [obj.key_indexpath containsString:@"section"] ) {
                 [self.dataDictionary setObject:obj forKey:obj.key_indexpath];
             }
         }];
     }
     
-//    NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
-//    [self loadplistviewConfig:dic];
+    //    NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
+    //    [self loadplistviewConfig:dic];
     
 }
 
@@ -303,5 +306,36 @@
 }
 
 
+/*!
+ * @brief 把格式化的JSON格式的字符串转换成字典
+ * @param jsonString JSON格式的字符串
+ * @return 返回字典
+ */
+- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    if(err) {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
+
+- (NSString *)URLDecoding:(NSString *)sourcestring
+{
+    NSMutableString * string = [NSMutableString stringWithString:sourcestring];
+    [string replaceOccurrencesOfString:@"+"
+                            withString:@" "
+                               options:NSLiteralSearch
+                                 range:NSMakeRange(0, [string length])];
+    return [string stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
 
 @end

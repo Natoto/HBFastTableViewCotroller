@@ -60,6 +60,7 @@
 @property (nonatomic,retain) NSString *  inputAccessoryView;
 @property (nonatomic,retain) NSString *  inputView;
 @property (nonatomic,retain) NSString *  key_indexpath;
+@property (nonatomic, strong) NSString * dictionarystring;
 
 @property (nonatomic,strong) NSMutableArray      *  array;
 @property (nonatomic,strong) NSMutableArray      *  uploadobjcts;
