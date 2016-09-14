@@ -105,6 +105,12 @@
  *  @param jsonfilepath  json文件存放的路径名
  */
 -(void)loadjsonfileConfig:(NSString *)jsonfilename;
+
+
+-(void)loadplistConfig:(NSString *)plistname filepath:(NSString *)filepath;
+-(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname filepath:(NSString *)filepath;
+-(void)loadjsonfileConfig:(NSString *)jsonfilename filepath:(NSString *)filepath;
+
 @end
 
 

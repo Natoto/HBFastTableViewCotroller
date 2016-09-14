@@ -24,7 +24,7 @@
     // Drawing code
 }
 @end
- 
+
 @implementation HBBaseViewController
 
 
@@ -40,10 +40,16 @@
  *
  *  @param plistname plist文件的名字
  */
--(void)loadplistConfig:(NSString *)plistname
+-(void)loadplistConfig:(NSString *)plistname{
+    [self loadplistConfig:plistname filepath:nil];
+}
+
+-(void)loadplistConfig:(NSString *)plistname filepath:(NSString *)filepath
 {
     NSMutableDictionary * dataDictionary = [NSMutableDictionary new];
-    NSString * filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
+    if (!filepath) {
+        filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
+    }
     NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
     [self loadplistviewConfig:dic];
     for (NSString * key in dic.allKeys) {
@@ -56,7 +62,7 @@
         }
     }
     self.dataDictionary = dataDictionary;
-//    self.dataDictionary = [NSMutableDictionary dictionaryWithDictionary:[self loadplistConfigToDictionary:plistname]];
+    //    self.dataDictionary = [NSMutableDictionary dictionaryWithDictionary:[self loadplistConfigToDictionary:plistname]];
 }
 
 /**
@@ -64,10 +70,16 @@
  *
  *  @param plistname plist文件的名字
  */
--(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname
+
+-(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname{
+    return [self loadplistConfigToDictionary:plistname filepath:nil];
+}
+-(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname filepath:(NSString *)filepath
 {
     NSMutableDictionary * dataDictionary = [NSMutableDictionary new];
-    NSString * filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
+    if (!filepath) {
+        filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
+    }
     NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
     for (NSString * key in dic.allKeys) {
         NSDictionary * adic = dic[key];
@@ -86,9 +98,16 @@
  *
  *  @param jsonfilepath  json文件存放的路径名
  */
--(void)loadjsonfileConfig:(NSString *)jsonfilename
+
+-(void)loadjsonfileConfig:(NSString *)jsonfilename{
+    [self loadjsonfileConfig:jsonfilename filepath:nil];
+}
+
+-(void)loadjsonfileConfig:(NSString *)jsonfilename filepath:(NSString *)filepath
 {
-    NSString * filepath = [[NSBundle mainBundle] pathForResource:jsonfilename ofType:@"json"];
+    if (!filepath) {
+        filepath = [[NSBundle mainBundle] pathForResource:jsonfilename ofType:@"json"];
+    }
     NSError * error;
     NSString * jsonstring = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
     if(error) { // If error object was instantiated, handle it.
@@ -133,7 +152,7 @@
     }
     NSString * backgroundcolor = [dic objectForKey:@"backgroundcolor"];
     if (backgroundcolor && [[backgroundcolor class] isSubclassOfClass:[NSString class]]) {
-       self.view.backgroundColor = [CELL_STRUCT_Common colorWithStructKey:backgroundcolor];
+        self.view.backgroundColor = [CELL_STRUCT_Common colorWithStructKey:backgroundcolor];
     }
     NSString * backgroundimage  = [dic objectForKey:@"backgroundimage"];
     if (backgroundimage && [[backgroundimage class] isSubclassOfClass:[NSString class]]) {
@@ -162,7 +181,7 @@
 -(void)dealloc
 {
     NSLog(@"%s",__func__);
-//    REMOVE_HBSIGNAL_OBSERVER(self, @"networkerror", @"HTTPSEngile")
+    //    REMOVE_HBSIGNAL_OBSERVER(self, @"networkerror", @"HTTPSEngile")
 }
 -(void)viewDidLoad
 {
@@ -183,7 +202,7 @@
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     }
     else
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
@@ -244,7 +263,7 @@
 
 -(void)changeBackGroundWithBackimg:(NSString *)imgname ofType:(NSString *)type
 {
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:imgname ofType:type]; 
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:imgname ofType:type];
     UIImage *img = [UIImage imageWithContentsOfFile:imagePath];
     UIImageView * imageview = (UIImageView *)[self.view viewWithTag:2222];
     if (!imageview) {
@@ -274,8 +293,8 @@
     {
         self.navigationItem.leftBarButtonItem = nil;
     }
-//TODO:设置返回键
-//    [self.navigationbar setleftBarButtonItemWithImage:[UIImage imageNamed:@"white_back_btn"] target:self selector:@selector(backtoparent:)];
+    //TODO:设置返回键
+    //    [self.navigationbar setleftBarButtonItemWithImage:[UIImage imageNamed:@"white_back_btn"] target:self selector:@selector(backtoparent:)];
 }
 
 -(IBAction)backtoparent:(id)sender
@@ -330,6 +349,9 @@
 
 - (NSString *)URLDecoding:(NSString *)sourcestring
 {
+    if (!sourcestring) {
+        return nil;
+    }
     NSMutableString * string = [NSMutableString stringWithString:sourcestring];
     [string replaceOccurrencesOfString:@"+"
                             withString:@" "
