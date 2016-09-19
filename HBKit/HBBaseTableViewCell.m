@@ -46,7 +46,8 @@
 }
 - (void)awakeFromNib {
     
-    
+    [super awakeFromNib];
+
 }
  
 -(void)layoutSubviews
@@ -153,7 +154,7 @@
 -(void)setcellimageCornerRadius:(BOOL)CornerRadius
 {
     _CornerRadius = CornerRadius;
-    [self layoutIfNeeded];
+    //[self layoutIfNeeded];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
