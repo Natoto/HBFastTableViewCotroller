@@ -9,5 +9,5 @@ s.platform     = :ios, "6.0"
 s.source       = { :git => "https://github.com/Natoto/HBFastTableViewCotroller.git", :tag => s.version }
 s.source_files = "HBKit/**/*.{h,m,plist}"
 s.requires_arc = true
-s.dependency "MJRefresh"
+#s.dependency "MJRefresh"
 end
