@@ -23,6 +23,11 @@
 
 @end
 @implementation HBBaseTableViewCell
+@synthesize indexPath = _indexPath;
+@synthesize CornerRadius = _CornerRadius;
+@synthesize dictionary = _dictionary;
+@synthesize object = _object;
+@synthesize object2 = _object2;
 
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -295,10 +300,22 @@
 -(void)setcellAction:(SEL)action{}
 -(void)setinputAccessoryView:(NSString *)inputAccessoryView{}
 -(void)setinputView:(NSString *)inputView{}
+
+-(void)draw{
+}
+
+- (void)clear{
+}
+- (void)releaseMemory{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self clear];
+    [super removeFromSuperview];
+}
+
 @end
 
 
-
+#pragma mark -  UIView(HBBASECELL)
 
 @implementation UIView(HBBASECELL)
 @dynamic toplayer;
@@ -313,9 +330,6 @@
 {
     UIView *imageLayer = self.toplayer;
     if (imageLayer) {
-//        imageLayer = [self createLayer:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0.5) color:[UIColor clearColor]];
-//        [self.layer replaceSublayer:self.toplayer with:imageLayer];
-//        self.toplayer = nil;
         imageLayer.hidden = YES;
     }
 }
@@ -372,6 +386,9 @@
     return imageLayer;
 }
 
+
+
+
 static char  key_toplayer;
 static char  key_bottomlayer;
 
@@ -395,14 +412,6 @@ static char  key_bottomlayer;
 {
     objc_setAssociatedObject(self, &key_bottomlayer, bottomlayer, OBJC_ASSOCIATION_RETAIN);
 }
-
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect {
- // Drawing code
- }
- */
 
 @end
 
@@ -453,9 +462,7 @@ static char  key_bottomlayer;
                      radius:(float)radius
 {
     CGContextRef     context = UIGraphicsGetCurrentContext();
-    
     CGMutablePathRef pathRef = CGPathCreateMutable();
-    
     CGPathAddArc(pathRef,
                  &CGAffineTransformIdentity,
                  center.x,

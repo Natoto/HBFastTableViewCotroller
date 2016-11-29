@@ -6,10 +6,10 @@
 //  Copyright (c) 2015年 BooB. All rights reserved.
 //
 
-#import "CELL_STRUCT.h" 
+#import "cell_struct.h" 
 #import <objc/runtime.h>
 
-@implementation CELL_STRUCT
+@implementation cell_struct
 
 @class HBBaseTableViewCell;
 @class HBBaseCollectionViewCell;
@@ -57,7 +57,7 @@
 #pragma mark - copy
 - (instancetype)copyWithZone:(NSZone *)zone
 {
-    CELL_STRUCT *copy = [[[self class] allocWithZone:zone] init];
+    cell_struct *copy = [[[self class] allocWithZone:zone] init];
     unsigned int outCount = 0;
     objc_property_t *properties = class_copyPropertyList([self class], &outCount);
     @try {
@@ -100,7 +100,7 @@
 {
     self = [super init];
     if (self) {
-        for ( Class clazzType = [CELL_STRUCT class];; )
+        for ( Class clazzType = [cell_struct class];; )
         { 
             unsigned int		propertyCount = 0;
             objc_property_t *	properties = class_copyPropertyList( clazzType, &propertyCount);            
@@ -137,7 +137,7 @@
 
 -(id)initWithJsonString:(NSString *)jsonstring
 {
-    CELL_STRUCT * cellstruct = [[CELL_STRUCT alloc] hb_initWithJSONData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
+    cell_struct * cellstruct = [[cell_struct alloc] hb_initWithJSONData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
     return cellstruct;
 }
 

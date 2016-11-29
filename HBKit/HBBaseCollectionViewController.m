@@ -12,9 +12,6 @@
 #import "CELL_STRUCT_Common.h"
 #import "HBBaseSectionCollectionReusableView.h"
 
-#if 1 //是否需要用到MJRefresh
-#import <MJRefresh/MJRefresh.h>
-#endif
 
 @interface HBBaseCollectionViewController ()
 {
@@ -104,22 +101,6 @@
     }
     return _collectionView;
 }
-
-#ifndef	weakify
-#if __has_feature(objc_arc)
-#define weakify( x )	autoreleasepool{} __weak __typeof__(x) __weak_##x##__ = x;
-#else	// #if __has_feature(objc_arc)
-#define weakify( x )	autoreleasepool{} __block __typeof__(x) __block_##x##__ = x;
-#endif	// #if __has_feature(objc_arc)
-#endif	// #ifndef	weakify
-
-#ifndef	strongify
-#if __has_feature(objc_arc)
-#define strongify( x )	try{} @finally{} __typeof__(x) x = __weak_##x##__;
-#else	// #if __has_feature(objc_arc)
-#define strongify( x )	try{} @finally{} __typeof__(x) x = __block_##x##__;
-#endif	// #if __has_feature(objc_arc)
-#endif	// #ifndef	@normalize
 
 
 -(void)viewDidCurrentView{
@@ -302,49 +283,5 @@
 {
     return UICollectionElementKindSectionHeader;
 }
-
-#pragma mark - 1
-
-#if 1 //是否需要用到MJRefresh
-
--(void)setNoHeaderFreshView:(BOOL)noHeaderFreshView
-{
-    _noHeaderFreshView = noHeaderFreshView;
-    if (!_noHeaderFreshView) { @weakify(self);
-        _collectionView.header =  [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            // 进入刷新状态后会自动调用这个block
-            @strongify(self)
-            [self refreshView];
-        }];
-    }
-}
-
--(void)setNoFooterView:(BOOL)noFooterView
-{
-    _noFooterView = noFooterView;
-    if (!_noFooterView) {
-        @weakify(self);
-        _collectionView.footer  = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{@strongify(self)
-            [self getNextPageView];
-        }];
-    }
-    else
-    {
-        _collectionView.footer = nil;
-    }
-}
-
--(void)refreshView
-{
-    //    [self.collectionView.header beginRefreshing];
-}
--(void)getNextPageView
-{
-    //    [self.collectionView.footer beginRefreshing];
-}
--(void)FinishedLoadData{
-    [self.collectionView.header endRefreshing];
-    [self.collectionView.footer endRefreshing];
-}
-#endif
+ 
 @end

@@ -11,9 +11,12 @@
 #import "HBBaseViewController.h" 
 #import "CELL_STRUCT_Common.h"
 
+//#if __has_include(<MJRefresh/MJRefresh.h>)
+
+
 static NSString * notify_basetableview_tap = @"basetableview_tap";
 static NSString * notify_basetableview_sender = @"BaseViewController";
-#define TAG_TABLEVIEW 1521
+static int TAG_TABLEVIEW = 1521;
 
 //注册cell
 #define TABLEVIEW_REGISTERXIBCELL_CLASS(TABLEVIEW,CELLCLSSTR) {[TABLEVIEW registerClass:NSClassFromString(CELLCLSSTR) forCellReuseIdentifier:CELLCLSSTR];\
@@ -33,20 +36,7 @@ static NSString * notify_basetableview_sender = @"BaseViewController";
 //点击之后不自动变回未选状态
 @property (nonatomic, assign) BOOL                       nodeselectRow;
 
-#if 1 //是否需要用到MJRefresh
-//上下拉要用到的
-@property (nonatomic, assign) BOOL                       noFooterView;
-@property (nonatomic, assign) BOOL                       noHeaderFreshView;
--(void)removeFooterView;
--(void)finishReloadingData;
--(void)setFooterView;
--(void)startHeaderLoading;
 
-//调用上下拉需要的
--(void)refreshView;
--(void)getNextPageView;
--(void)FinishedLoadData;
-#endif
 
 -(void)viewDidCurrentView;
 
@@ -75,7 +65,13 @@ static NSString * notify_basetableview_sender = @"BaseViewController";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
- 
+
+
+-(HBBaseTableViewCell *)getcellWithIndexPath:(NSIndexPath *)indexPath;
+////是否需要用到MJRefresh
+////上下拉要用到的
+//@property (nonatomic, assign) BOOL                       noFooterView;
+//@property (nonatomic, assign) BOOL                       noHeaderFreshView;
 @end
 
 

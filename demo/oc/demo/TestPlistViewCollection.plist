@@ -945,7 +945,7 @@
 		<string></string>
 	</dict>
 	<key>backgroundcolor</key>
-	<string>gray</string>
+	<string>green</string>
 	<key>title</key>
 	<string>test plist</string>
 	<key>backgroundimage</key>

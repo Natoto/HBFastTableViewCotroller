@@ -111,6 +111,10 @@
 -(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname filepath:(NSString *)filepath;
 -(void)loadjsonfileConfig:(NSString *)jsonfilename filepath:(NSString *)filepath;
 
+////是否需要用到MJRefresh
+////上下拉要用到的
+@property (nonatomic, assign) BOOL                       noFooterView;
+@property (nonatomic, assign) BOOL                       noHeaderFreshView;
 @end
 
 

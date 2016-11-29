@@ -10,10 +10,6 @@
 #import "HBBaseTableViewController.h"
 #import <objc/runtime.h>
 
-#if 1
-#import "MJRefresh.h"
-#endif
-
 @interface HBBaseTableViewController()
 
 @end;
@@ -111,83 +107,6 @@
     view.backgroundColor = [UIColor clearColor];
     [tableView setTableFooterView:view];
 }
-
-
-#if 1
-/**
- *  集成刷新控件
- */
-- (void)setupRefresh
-{
-    // 1.下拉刷新(进入刷新状态就会调用self的refreshView)
-    self.noHeaderFreshView = YES;
-    [self.tableView.header beginRefreshing];
-    self.noFooterView = YES;
-}
-
--(void)setNoHeaderFreshView:(BOOL)noHeaderFreshView
-{
-    _noHeaderFreshView = noHeaderFreshView;
-    if (noHeaderFreshView) {
-        [self.tableView.header removeFromSuperview];
-    }
-    else
-    {
-        self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshView)];
-//        [self.tableView addHeaderWithTarget:self action:@selector(refreshView)];
-    }
-}
-
--(void)setNoFooterView:(BOOL)noFooterView
-{
-    _noFooterView = noFooterView;
-    if (noFooterView) {
-        [self.tableView.footer removeFromSuperview];
-    }
-    else
-    {
-        self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(getNextPageView)];
-    }
-}
-
--(void)refreshView
-{
-}
--(void)removeFooterView{
-}
-
--(void)setFooterView{
-}
-
-//调用上下拉需要的
-
-//加载调用的方法
--(void)getNextPageView
-{
-    
-}
-
--(void)startHeaderLoading
-{
-    [self.tableView.header beginRefreshing];
-}
--(void)FinishedLoadData
-{
-    [self.tableView.header  endRefreshing];
-    [self.tableView.footer endRefreshing];
-}
-
--(void)noMore
-{
-    [self.tableView removeFromSuperview];
-}
-
--(void)finishReloadingData
-{
-    [self.tableView.header endRefreshing];
-    [self.tableView.footer endRefreshing];
-}
-#endif
 
 
 -(void)reloadTableViewCellWithKeyindexpath:(NSString *)keyindexpath
@@ -290,7 +209,7 @@
     for (int index = 0; index < keys.count; index ++) {
          NSString * key =[keys objectAtIndex:index];
         
-        NSString * sectionstr = KEY_SECTION_INDEX_STR(key); //[key substringWithRange:NSMakeRange(7, 1)];
+        NSString * sectionstr = KEY_SECTION_INDEX_STR(key);
         if ((sectionstr.integerValue +1) > maxsection) {
             maxsection = (sectionstr.integerValue + 1);
         }
@@ -303,7 +222,6 @@
     NSArray * keys = self.dataDictionary.allKeys;
     NSString * sectionx = KEY_SECTION_MARK(section);
     
-    //[NSString stringWithFormat:@"section%ld_",(long)section];
     NSInteger sectioncount = 0;
     for (int index = 0; index < keys.count; index ++) {
         NSString * key =[keys objectAtIndex:index];
@@ -314,20 +232,18 @@
     return sectioncount;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
+-(HBBaseTableViewCell *)getcellWithIndexPath:(NSIndexPath *)indexPath{
+
     CELL_STRUCT * cellstruct = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
     NSString * identifier01 = cellstruct.cellclass;
     HBBaseTableViewCell *cell ;
     if(cellstruct.xibvalue && [cellstruct.xibvalue isEqualToString:@"xib"])
     {
-//        [tableView registerClass:NSClassFromString(cellstruct.cellclass) forCellReuseIdentifier:identifier01];
-        cell =  [tableView dequeueReusableCellWithIdentifier:identifier01 forIndexPath:indexPath];
+        cell =  [self.tableView dequeueReusableCellWithIdentifier:identifier01 forIndexPath:indexPath];
     }
     else
     {
-        cell = [tableView dequeueReusableCellWithIdentifier:identifier01];
+        cell = [self.tableView dequeueReusableCellWithIdentifier:identifier01];
     }
     
     if (!cell) {
@@ -358,6 +274,14 @@
             
         }
     }
+    return cell;
+}
+
+- (void)drawCell:(HBBaseTableViewCell *)cell withIndexPath:(NSIndexPath *)indexPath
+{
+    CELL_STRUCT * cellstruct = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
+    NSString * identifier01 = cellstruct.cellclass;
+    
     if ([[cell class] isSubclassOfClass:[HBBaseTableViewCell class]]) {
         cell.delegate = self;
         cell.showTopLine = cellstruct.showTopLine;
@@ -367,10 +291,8 @@
         cell.selectionStyle = cellstruct.selectionStyle?UITableViewCellSelectionStyleDefault:UITableViewCellSelectionStyleNone;
         cell.accessoryType = cellstruct.accessory?UITableViewCellAccessoryDisclosureIndicator:UITableViewCellAccessoryNone;
         [cell setcellTitleLabelNumberOfLines:cellstruct.titleLabelNumberOfLines];
-//        [cell setcellimageRight:cellstruct.imageRight];
         [cell setcelldetailtitle:cellstruct.detailtitle];
         [cell setcellplaceholder:cellstruct.placeHolder];
-//        [cell setcelldictionary:cellstruct.dictionary];
         [cell setcellTitle:cellstruct.title];
         [cell setcellTitleFontsize:cellstruct.titlefontsize];
         [cell setcellTitleFont:cellstruct.titleFont];
@@ -386,6 +308,18 @@
         [cell setcelldictionary:cellstruct.dictionary];
         [cell setcellArray:cellstruct.array];
         [cell setcellimageCornerRadius:cellstruct.imageCornerRadius];
+    }
+}
+    
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    CELL_STRUCT * cellstruct = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
+    NSString * identifier01 = cellstruct.cellclass;
+    HBBaseTableViewCell *cell = [self getcellWithIndexPath:indexPath];
+    if ([[cell class] isSubclassOfClass:[HBBaseTableViewCell class]]) {
+        [self drawCell:cell withIndexPath:indexPath];
     }
     return cell;
 }
@@ -416,30 +350,6 @@
     return cellstruct.cellheight;
 }
 
-//-(UIColor *)colorWithStructKey:(NSString *)key
-//{
-//    if ([key isEqualToString:value_cellstruct_blue]) {
-//        return  CELL_STRUCT_COLOR(blue);
-//    }
-//    else if([key isEqualToString:value_cellstruct_red])
-//    {
-//        return CELL_STRUCT_COLOR(red);
-//    }
-//    else if([key isEqualToString:value_cellstruct_clear])
-//    {
-//        return CELL_STRUCT_COLOR(clear);
-//    }
-//    else if([key isEqualToString:value_cellstruct_white])
-//    {
-//        return CELL_STRUCT_COLOR(white);
-//    }
-//    else if([key isEqualToString:value_cellstruct_gray])
-//    {
-//        return CELL_STRUCT_COLOR(gray);
-//    }
-//    
-//    return nil;
-//}
 @end
 
 
