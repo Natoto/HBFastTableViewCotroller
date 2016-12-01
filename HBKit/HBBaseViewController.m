@@ -8,8 +8,11 @@
 #import "HBBaseViewController.h"
 #import "UIButton+PENG.h"
 #import "CELL_STRUCT_Common.h"
+#import "HBKitDataModel.h"
+
 
 #define HB_UIColorWithRGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+
 
 @implementation BackGroundView
 -(void)setImage:(UIImage *)image
@@ -25,15 +28,25 @@
 }
 @end
 
+@interface HBBaseViewController ()
+@property (nonatomic, strong) HBKitDataModel * datamodel;
+@end
+
 @implementation HBBaseViewController
 
+-(HBKitDataModel *)datamodel{
+    if (!_datamodel) {
+        _datamodel  = [HBKitDataModel new];
+    }
+    return _datamodel;
+}
+-(void)setDataDictionary:(NSMutableDictionary *)dataDictionary  {
+    [self.datamodel setDataDictionary:dataDictionary];
+}
 
 -(NSMutableDictionary *)dataDictionary
 {
-    if (!_dataDictionary) {
-        _dataDictionary = [NSMutableDictionary new];
-    }
-    return _dataDictionary;
+    return  self.datamodel.dataDictionary;
 }
 /**
  *  从PLIST 文件中加载配置信息
@@ -46,23 +59,9 @@
 
 -(void)loadplistConfig:(NSString *)plistname filepath:(NSString *)filepath
 {
-    NSMutableDictionary * dataDictionary = [NSMutableDictionary new];
-    if (!filepath) {
-        filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
-    }
-    NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
-    [self loadplistviewConfig:dic];
-    for (NSString * key in dic.allKeys) {
-        NSDictionary * adic = dic[key];
-        if ([key containsString:@"section"] && adic) {
-            CELL_STRUCT * cellstruct = [[CELL_STRUCT alloc] initWithPlistDictionary:adic];
-            if (cellstruct) {
-                [dataDictionary setObject:cellstruct forKey:key];
-            }
-        }
-    }
-    self.dataDictionary = dataDictionary;
-    //    self.dataDictionary = [NSMutableDictionary dictionaryWithDictionary:[self loadplistConfigToDictionary:plistname]];
+    [self.datamodel loadplistConfig:plistname configViewblock:^(NSMutableDictionary *dic) {
+         [self loadplistviewConfig:dic];
+    }];
 }
 
 /**
@@ -76,21 +75,7 @@
 }
 -(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname filepath:(NSString *)filepath
 {
-    NSMutableDictionary * dataDictionary = [NSMutableDictionary new];
-    if (!filepath) {
-        filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
-    }
-    NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
-    for (NSString * key in dic.allKeys) {
-        NSDictionary * adic = dic[key];
-        if ([key containsString:@"section"] && adic) {
-            CELL_STRUCT * cellstruct = [[CELL_STRUCT alloc] initWithPlistDictionary:adic];
-            if (cellstruct) {
-                [dataDictionary setObject:cellstruct forKey:key];
-            }
-        }
-    }
-    return dataDictionary;
+  return  [self.datamodel loadplistConfigToDictionary:plistname filepath:filepath];
 }
 
 /**
@@ -105,17 +90,7 @@
 
 -(void)loadjsonfileConfig:(NSString *)jsonfilename filepath:(NSString *)filepath
 {
-    if (!filepath) {
-        filepath = [[NSBundle mainBundle] pathForResource:jsonfilename ofType:@"json"];
-    }
-    NSError * error;
-    NSString * jsonstring = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
-    if(error) { // If error object was instantiated, handle it.
-        NSLog(@"ERROR while loading from file: %@", error);
-        // …
-    }
-    else{
-        CELL_STRUCT_ARRAY * vclist = [[CELL_STRUCT_ARRAY alloc] hb_initWithJSONData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
+    [self.datamodel loadjsonfileConfig:jsonfilename filepath:filepath configViewblock:^(CELL_STRUCT_ARRAY *vclist) {
         NSString * title = vclist.title;
         if (title && [[title class] isSubclassOfClass:[NSString class]]) {
             self.title = title;
@@ -128,19 +103,7 @@
         if (backgroundimage && [[backgroundimage class] isSubclassOfClass:[NSString class]]) {
             [self changeBackGroundWithBackImage:[UIImage imageNamed:backgroundimage]];
         }
-        
-        [vclist.array enumerateObjectsUsingBlock:^(CELL_STRUCT * obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            
-            obj.dictionarystring  = [self URLDecoding:obj.dictionarystring];
-            obj.dictionary = [NSMutableDictionary dictionaryWithDictionary: [self dictionaryWithJsonString:obj.dictionarystring]];
-            if (obj && [obj.key_indexpath containsString:@"section"] ) {
-                [self.dataDictionary setObject:obj forKey:obj.key_indexpath];
-            }
-        }];
-    }
-    
-    //    NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
-    //    [self loadplistviewConfig:dic];
+    }];
     
 }
 
@@ -181,7 +144,6 @@
 -(void)dealloc
 {
     NSLog(@"%s",__func__);
-    //    REMOVE_HBSIGNAL_OBSERVER(self, @"networkerror", @"HTTPSEngile")
 }
 -(void)viewDidLoad
 {
@@ -322,42 +284,6 @@
         _backgroundview = backgroundview;
     }
     return _backgroundview;
-}
-
-
-/*!
- * @brief 把格式化的JSON格式的字符串转换成字典
- * @param jsonString JSON格式的字符串
- * @return 返回字典
- */
-- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
-    if (jsonString == nil) {
-        return nil;
-    }
-    
-    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *err;
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                        options:NSJSONReadingMutableContainers
-                                                          error:&err];
-    if(err) {
-        NSLog(@"json解析失败：%@",err);
-        return nil;
-    }
-    return dic;
-}
-
-- (NSString *)URLDecoding:(NSString *)sourcestring
-{
-    if (!sourcestring) {
-        return nil;
-    }
-    NSMutableString * string = [NSMutableString stringWithString:sourcestring];
-    [string replaceOccurrencesOfString:@"+"
-                            withString:@" "
-                               options:NSLiteralSearch
-                                 range:NSMakeRange(0, [string length])];
-    return [string stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
 @end
