@@ -8,7 +8,7 @@
 //
 //
 //  Created by boob on 16/4/22.
-//  Copyright © 2016年 nonato. All rights reserved.
+//  Copyright © 2016年 YY.COM All rights reserved.
 //
 
 #import "testhb.h"

@@ -3,7 +3,7 @@
 //  PENG
 //
 //  Created by zeno on 15/11/18.
-//  Copyright © 2015年 nonato. All rights reserved.
+//  Copyright © 2015年 YY.COM All rights reserved.
 //
 #import "HBCollectionFallFLayout.h"
 #import "HBBaseViewController.h"

@@ -3,7 +3,7 @@
 //  PetAirbnb
 //
 //  Created by nonato on 14-11-25.
-//  Copyright (c) 2014年 Nonato. All rights reserved.
+//  Copyright (c) 2014年 YY.COM All rights reserved.
 //
 #import "CELL_STRUCT_Common.h"
 #import "CELL_STRUCT.h"

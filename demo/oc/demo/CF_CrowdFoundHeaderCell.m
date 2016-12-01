@@ -2,8 +2,8 @@
 //  CrowdFoundHeaderCell.m
 //  PENG
 //
-//  Created by 跑酷 on 15/8/7.
-//  Copyright (c) 2015年 nonato. All rights reserved.
+//  Created by HUANGBO on 15/8/7.
+//  Copyright (c) 2015年 YY.COM All rights reserved.
 //
 
 #import "CF_CrowdFoundHeaderCell.h"

@@ -2,8 +2,8 @@
 //  CELL_STRUCT_KVO.h
 //  PENG
 //
-//  Created by 跑酷 on 15/6/15.
-//  Copyright (c) 2015年 nonato. All rights reserved.
+//  Created by HUANGBO on 15/6/15.
+//  Copyright (c) 2015年 YY.COM All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

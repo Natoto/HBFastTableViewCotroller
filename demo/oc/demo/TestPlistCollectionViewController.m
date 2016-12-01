@@ -3,7 +3,7 @@
 //  demo
 //
 //  Created by BooB on 16/3/19.
-//  Copyright © 2016年 nonato. All rights reserved.
+//  Copyright © 2016年 YY.COM All rights reserved.
 //
 
 #import "TestPlistCollectionViewController.h" 
