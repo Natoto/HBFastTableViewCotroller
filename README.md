@@ -4,12 +4,12 @@
 
 
 ##用法
-添加主工程
+>添加主工程
 pod "HBKit", :git=>'https://github.com/Natoto/HBFastTableViewCotroller.git',:tag=>'0.6.31'
 添加拓展插件
 pod "HBKitRefresh", :git=>'https://github.com/Natoto/HBFastTableViewCotroller.git',:tag=>'0.6.31'
-
-#pod 'HBKit', :git => 'https://github.com/Natoto/HBFastTableViewCotroller.git'
+或者
+pod 'HBKit', :git => 'https://github.com/Natoto/HBFastTableViewCotroller.git'
 
 ```javascript
 
