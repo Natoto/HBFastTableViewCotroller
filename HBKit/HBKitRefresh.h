@@ -7,7 +7,7 @@
 //
 
 #import <HBKit/HBKit.h>
-#import "MJRefresh.h"
+#import <MJRefresh/MJRefresh.h>
 #import "HBBaseTableViewController.h"
 #import "HBBaseCollectionViewController.h"
 
