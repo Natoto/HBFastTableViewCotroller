@@ -19,7 +19,16 @@
 
 ![HBKit 示例](https://github.com/Natoto/HBOKit/blob/master/sgdir.gif?raw=true)
 
-
+```objc
+ 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+ 
+    [self loadjsonfileConfig:@"TestJson" ];
+    [self loadjsonfileConfig:@"TestJson" watch_directory:@"resource"];
+    
+}
+```
 
 
 ```javascript

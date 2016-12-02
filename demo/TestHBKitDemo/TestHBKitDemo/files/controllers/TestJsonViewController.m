@@ -7,7 +7,6 @@
 //
 
 #import "TestJsonViewController.h"
-#import "HBBaseTableViewCell.h"
 #import <HBKit/HBKit.h>
 #import <HBKitWatchDog/HBKitWatchDog.h>
 
@@ -19,10 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    NSLog(@"%@",[self jsonstring]);
-    NSString * jsonstring = [self jsonstring];
-    
+ 
     [self loadjsonfileConfig:@"TestJson" ];
     [self loadjsonfileConfig:@"TestJson" watch_directory:@"resource"];
     
