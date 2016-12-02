@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "HBKitWatchDog"
-s.version      = "0.6.31"
+s.version      = "0.6.32"
 s.summary      = "refresh view for hbkit."
 s.homepage     = "https://github.com/Natoto/HBFastTableViewCotroller"
 s.license      = "MIT"
