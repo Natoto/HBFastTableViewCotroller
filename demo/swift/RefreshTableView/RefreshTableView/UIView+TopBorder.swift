@@ -10,10 +10,10 @@ import UIKit
 import QuartzCore
 
 extension UIView {
-    func addTopBorder(width: CGFloat, height: CGFloat, color: UIColor) -> Self {
+    func addTopBorder(_ width: CGFloat, height: CGFloat, color: UIColor) -> Self {
         let topBorder = CALayer()
         topBorder.frame = CGRect(x: 0, y: 0, width: width, height: height)
-        topBorder.backgroundColor = color.CGColor
+        topBorder.backgroundColor = color.cgColor
         
         layer.addSublayer(topBorder)
         

@@ -9,7 +9,7 @@
 //   \\    \    \\\     \      \ \      \     \\\\\     \ \\\\\\      \\\
 //
 //  Created by 星盛 on 15/4/16.
-//  Copyright (c) 2015年 BooB. All rights reserved.
+//  Copyright (c) 2015年 YY.COM All rights reserved.
 //
 
 

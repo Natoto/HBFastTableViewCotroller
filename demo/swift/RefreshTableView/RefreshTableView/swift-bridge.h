@@ -10,7 +10,7 @@
 #define RefreshTableView_swift_bridge_h
 
 #define USE_MJREFRESH 1
-#import"HBTable.h"
+#import"HBKit.h"
 #import"MJRefresh.h"
 #import"ReactiveCocoa.h"
 #endif

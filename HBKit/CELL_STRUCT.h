@@ -16,12 +16,10 @@
 #undef  KEY_SECTION
 #define KEY_SECTION(SECTION) [NSString stringWithFormat:@"section%d",(int)(SECTION)]
 
-@class cell_struct;
+@class HBCellStruct;
+@compatibility_alias CELL_STRUCT HBCellStruct;
 
-@compatibility_alias CELL_STRUCT cell_struct;
-
-
-@interface cell_struct : NSObject<NSCopying>
+@interface HBCellStruct : NSObject<NSCopying>
 /*
  * 表示TableViewCELL的高度 或者  CollectionCell的size的高度
  */
@@ -29,6 +27,7 @@
 @property (nonatomic,assign) BOOL showBottomLine;//显示底部分割线
 @property (nonatomic,assign) BOOL accessory;//是否显示右边小箭头
 @property (nonatomic,assign) BOOL selectionStyle;//是否显示按下效果
+//@property (nonatomic,assign) BOOL Ø;
 @property (nonatomic,assign) BOOL imageCornerRadius;
 @property (nonatomic,assign) int  CellStyleValue;//修改cell默认的样式 0 1 2
 @property (nonatomic,assign) int  titleLabelNumberOfLines;//title的换行
@@ -39,6 +38,7 @@
 @property (nonatomic,assign) CGFloat   sectionheight;//section header的高度 只在row为0的时候生效
 @property (nonatomic,assign) CGFloat   sectionfooterheight;
 @property (nonatomic,assign) CGFloat   sectionfooterfont;
+//@property (nonatomic,assign) NSInteger uploadingIndex;
 @property (nonatomic,retain) NSNumber *  titlefontsize;//字体
 
 @property (nonatomic,retain) NSString *  title;
@@ -54,10 +54,12 @@
 @property (nonatomic,retain) NSString *  sectionfootercolor;
 @property (nonatomic,retain) NSString *  placeHolder;
 @property (nonatomic,retain) NSString *  value;
+//@property (nonatomic,retain) NSString *  tempvalue;
 @property (nonatomic,retain) NSString *  subvalue2;
 @property (nonatomic,retain) NSString *  titlecolor;//title 颜色
 @property (nonatomic,retain) NSString *  cellctr;
 @property (nonatomic,retain) NSString *  picturecolor;
+//@property (nonatomic,retain) NSString *  rightComponts;
 @property (nonatomic,retain) NSString *  rightValue;
 @property (nonatomic,retain) NSString *  inputAccessoryView;
 @property (nonatomic,retain) NSString *  inputView;
@@ -86,8 +88,8 @@
 
 
 /**
-  *  根据plist的键值对字典得到CELLSTRUCT对象
-  */
+ *  根据plist的键值对字典得到CELLSTRUCT对象
+ */
 -(id)initWithPlistDictionary:(NSDictionary *)plistdic;
 
 /**
@@ -106,5 +108,5 @@
 @property (nonatomic, strong) NSString *  backgroundcolor;
 @property (nonatomic, strong) NSString *  backgroundimage;
 
-@property (nonatomic, strong) NSMutableArray<CELL_STRUCT *> * array;
+@property (nonatomic, strong) NSMutableArray<HBCellStruct *> * array;
 @end

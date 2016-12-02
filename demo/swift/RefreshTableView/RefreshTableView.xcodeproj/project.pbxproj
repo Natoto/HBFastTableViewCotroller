@@ -251,9 +251,11 @@
 				TargetAttributes = {
 					337E22201BA114D60049E4A0 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0810;
 					};
 					337E22351BA114D80049E4A0 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0810;
 						TestTargetID = 337E22201BA114D60049E4A0;
 					};
 				};
@@ -483,6 +485,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RefreshTableView/swift-bridge.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -496,6 +499,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RefreshTableView/swift-bridge.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -514,6 +518,7 @@
 				INFOPLIST_FILE = RefreshTableViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RefreshTableView.app/RefreshTableView";
 			};
 			name = Debug;
@@ -529,6 +534,7 @@
 				INFOPLIST_FILE = RefreshTableViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RefreshTableView.app/RefreshTableView";
 			};
 			name = Release;

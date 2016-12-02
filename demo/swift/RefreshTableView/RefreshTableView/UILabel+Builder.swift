@@ -9,18 +9,18 @@
 import UIKit
 
 extension UILabel {
-    func align(d: NSTextAlignment) -> Self {
+    func align(_ d: NSTextAlignment) -> Self {
         textAlignment = d
         return self
     }
     
     func multiline() -> Self {
-        lineBreakMode = .ByWordWrapping
+        lineBreakMode = .byWordWrapping
         numberOfLines = 0
         return self
     }
     
-    func color(color: UIColor) -> Self {
+    func color(_ color: UIColor) -> Self {
         textColor = color
         return self
     }

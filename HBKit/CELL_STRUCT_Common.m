@@ -2,26 +2,26 @@
 //  CommonView.m
 //  JXL
 //
-//  Created by BooB on 15-5-1.
-//  Copyright (c) 2015年 BooB. All rights reserved.
+//  Created by HUANGBO on 15-5-1.
+//  Copyright (c) 2015年 YY.COM All rights reserved.
 //
 
 #import "CELL_STRUCT_Common.h"
-#import "HBBaseTableViewCell.h"
+#import <HBKit/HBKit.h>
 #import "CELL_STRUCT.h"
-#import "UIButton+PENG.h" 
+#import "UIButton+HBKit.h" 
 @implementation CELL_STRUCT_Common
 @end
 
-@implementation CELL_STRUCT(Common)
+@implementation HBCellStruct(Common)
 
 //最常用的
-+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title
++(HBCellStruct *)cell_x_x_struct:(NSString *)title
                     detailvalue:(NSString *)detailvalue
                          target:(id)target
                    selectAction:(SEL)selectAction
 {
-    return  [CELL_STRUCT cell_x_x_struct:title
+    return  [HBCellStruct cell_x_x_struct:title
                              detailvalue:detailvalue
                             footerheight:0
                           selectionStyle:YES
@@ -37,7 +37,7 @@
 }
 
 
-+(CELL_STRUCT *)cell_x_x_struct:(NSString *)title
++(HBCellStruct *)cell_x_x_struct:(NSString *)title
                     detailvalue:(NSString *)detailvalue
                    footerheight:(CGFloat)footerheight
                  selectionStyle:(BOOL)selectionStyle
@@ -52,7 +52,7 @@
                      titlecolor:(NSString *)titlecolor
                   sectionheight:(CGFloat)sectionheight
 {
-    CELL_STRUCT * cell1_0 = [[CELL_STRUCT alloc] initWithtitle:title cellclass:NSStringFromClass([HBBaseTableViewCell class]) placeholder:@"" accessory:accessory sel_selctor:selectAction delegate:target];
+    HBCellStruct * cell1_0 = [[HBCellStruct alloc] initWithtitle:title cellclass:NSStringFromClass([HBBaseTableViewCell class]) placeholder:@"" accessory:accessory sel_selctor:selectAction delegate:target];
     cell1_0.selectionStyle = selectionStyle;
     cell1_0.cellheight = cellheight;
     cell1_0.detailtitle = detailvalue?detailvalue:@"";
@@ -72,7 +72,7 @@
 
 //#define OBJECT_SETTER_FROM_DIC(OBJ,PARA,DIC) OBJ.m_##PARA=[NSString stringWithFormat:@"%@",[DIC objectForKey:[@#PARA stringByReplacingOccurrencesOfString:@"_" withString:@""]]];
 
-+(CELL_STRUCT *)cell_x_x_structWithDictionary:(NSDictionary *)dictionary
++(HBCellStruct *)cell_x_x_structWithDictionary:(NSDictionary *)dictionary
 {
     
     NSString * title = [dictionary objectForKey:key_cellstruct_title];
@@ -100,7 +100,7 @@
     OBJ_NULL_DEFAULT(sectionheight, @0)
     NSString * textAlignment = [dictionary objectForKey:key_cellstruct_textAlignment];
     
-    CELL_STRUCT * cell1_0 = [[CELL_STRUCT alloc] initWithtitle:title cellclass:NSStringFromClass([HBBaseTableViewCell class]) placeholder:@"" accessory:NO sel_selctor:selectAction delegate:target];
+    HBCellStruct * cell1_0 = [[HBCellStruct alloc] initWithtitle:title cellclass:NSStringFromClass([HBBaseTableViewCell class]) placeholder:@"" accessory:NO sel_selctor:selectAction delegate:target];
     cell1_0.selectionStyle = selectionStyle.boolValue;
     cell1_0.cellheight = cellheight.floatValue;
     cell1_0.detailtitle = detailvalue;
@@ -221,11 +221,11 @@
 
 @implementation NSDictionary(cellstruct)
 
--(CELL_STRUCT *)cellstructobjectForKey:(id)aKey
+-(HBCellStruct *)cellstructobjectForKey:(id)aKey
 {
-    CELL_STRUCT * cellstruct = [self objectForKey:aKey];
+    HBCellStruct * cellstruct = [self objectForKey:aKey];
     if (!cellstruct) {
-        cellstruct = [[CELL_STRUCT alloc] init];
+        cellstruct = [[HBCellStruct alloc] init];
         [self setValue:cellstruct forKey:aKey];
     }
     return cellstruct;
@@ -233,45 +233,42 @@
 @end
 
 
-@implementation UIViewController(KEYINDEXPATH)
--(NSString *)KEY_INDEXPATH:(NSInteger )SECTION ROW:(NSInteger)ROW
+@implementation NSObject(KEYINDEXPATH)
+-(NSString *)key_indexpath:(NSInteger )section row:(NSInteger)row
 {
-  return KEY_INDEXPATH(SECTION,ROW); //[NSString stringWithFormat:@"section%u_%u",(int)SECTION,(int)ROW];
+  return KEY_INDEXPATH(section,row);
 }
 
--(NSString *)KEY_SECTION:(NSInteger)SECTION
+-(NSString *)key_section:(NSInteger)section
 {
-    return KEY_SECTION(SECTION);
+    return KEY_SECTION(section);
 }
 //#define KEY_SECTION(SECTION) [NSString stringWithFormat:@"section%d",(int)SECTION]
 //#define KEY_SECTION_MARK(SECTION) [NSString stringWithFormat:@"section%d_",(int)SECTION]
--(NSString *)KEY_SECTION_MARK:(NSInteger)SECTION
+-(NSString *)key_section_mark:(NSInteger)section
 {
-    return  [NSString stringWithFormat:@"section%d_",(int)SECTION];
+    return  [NSString stringWithFormat:@"section%d_",(int)section];
 }
 
--(NSString *)KEY_SECTION_INDEX_STR:(NSString *)INDEXPATHKEY
+-(NSString *)key_section_index_str:(NSString *)indexpathkey
 {
-    return  ((INDEXPATHKEY.length >9)?[INDEXPATHKEY substringWithRange:NSMakeRange(7, 1)]:nil);
+    return  ((indexpathkey.length >9)?[indexpathkey substringWithRange:NSMakeRange(7, 1)]:nil);
 }
 //#define KEY_SECTION_INDEX_STR(INDEXPATHKEY)  ((INDEXPATHKEY.length >9)?[INDEXPATHKEY substringWithRange:NSMakeRange(7, 1)]:nil)
 
 //SECTION
 //#define KEY_INDEXPATH_SECTION_STR(INDEXPATHKEY)  ((INDEXPATHKEY.length >9)?[INDEXPATHKEY substringWithRange:NSMakeRange(7, 1)]:nil)
--(NSString *)KEY_INDEXPATH_SECTION_STR:(NSString *)INDEXPATHKEY
+
+-(NSString *)key_indexpath_section_str:(NSString *)indexpathkey
 {
-    return  ((INDEXPATHKEY.length >9)?[INDEXPATHKEY substringWithRange:NSMakeRange(7, 1)]:nil);
+    return  ((indexpathkey.length >9)?[indexpathkey substringWithRange:NSMakeRange(7, 1)]:nil);
 }
 
 //ROW
 //#define KEY_INDEXPATH_ROW_STR(INDEXPATHKEY)  [INDEXPATHKEY substringFromIndex:(([INDEXPATHKEY rangeOfString:@"_"]).location + ([INDEXPATHKEY rangeOfString:@"_"]).length)]
--(NSString *)KEY_INDEXPATH_ROW_STR:(NSString *)INDEXPATHKEY
+-(NSString *)key_indexpath_row_str:(NSString *)indexpathkey
 {
-    return  [INDEXPATHKEY substringFromIndex:(([INDEXPATHKEY rangeOfString:@"_"]).location + ([INDEXPATHKEY rangeOfString:@"_"]).length)];
+    return  [indexpathkey substringFromIndex:(([indexpathkey rangeOfString:@"_"]).location + ([indexpathkey rangeOfString:@"_"]).length)];
 }
-
-//-(void)reduceblock:(void (^)(NSString *, NSNumber *))block
-//{
-//}
-
+ 
 @end

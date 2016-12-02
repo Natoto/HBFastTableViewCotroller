@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tap:UITapGestureRecognizer! = UITapGestureRecognizer(target: self, action: Selector("viewTap:"))
+        let tap:UITapGestureRecognizer! = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.viewTap(_:)))
         self.view.addGestureRecognizer(tap)
         /*
         //拆解信号和过滤信号
@@ -39,26 +39,26 @@ class LoginViewController: UIViewController {
         
         self.txt_account.rac_textSignal().map { (obj) -> AnyObject! in
             let text:NSString! = obj as? NSString
-            return text.length
+            return text.length as AnyObject!
         }.filter { (filterobj) -> Bool in
             let str:NSNumber! = filterobj as! NSNumber
-            return str.integerValue > 3
+            return str.intValue > 3
         }.subscribeNext { (nextobj) -> Void in
             print("map->filter->subnext: \(nextobj)")
         }
         
         self.txt_password.rac_textSignal().map { (obj) -> AnyObject! in
             let text:NSString? = obj as?NSString
-            return text?.length
+            return text?.length as AnyObject!
         }.subscribeNext { (sublength) -> Void in
             let strlen:NSNumber! = sublength as! NSNumber
-            if strlen.integerValue < 6
+            if strlen.intValue < 6
             {
-                self.txt_password.backgroundColor = UIColor.clearColor()
+                self.txt_password.backgroundColor = UIColor.clear
             }
             else
             {
-                self.txt_password.backgroundColor = UIColor.yellowColor()
+                self.txt_password.backgroundColor = UIColor.yellow
             } 
         }
         //创建有效的状态信号
@@ -101,23 +101,23 @@ class LoginViewController: UIViewController {
     
     }
     
-    func isValidUsername( text : NSString )->Bool
+    func isValidUsername( _ text : NSString )->Bool
     {
         return text.length > 3 ? true : false;
     }
     
-    func isValidPassword( text: NSString )->Bool
+    func isValidPassword( _ text: NSString )->Bool
     {
         return text.length > 3 ? true : false;
     }
     
-    @IBAction func login(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+    @IBAction func login(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: { () -> Void in
             
         })
     }
  
-    func viewTap( gesture : UIGestureRecognizer )
+    func viewTap( _ gesture : UIGestureRecognizer )
     {
         self.txt_account.resignFirstResponder()
         self.txt_password.resignFirstResponder()

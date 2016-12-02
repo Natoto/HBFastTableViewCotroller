@@ -9,7 +9,7 @@
 #import "HBBaseCollectionViewCell.h"
 #import "CELL_STRUCT_Common.h"
 #import "CELL_STRUCT_KEY.h"
-#import "UIButton+PENG.h"
+#import "UIButton+HBKit.h"
 @interface HBBaseCollectionViewCell()
 @property (weak, nonatomic) IBOutlet UIButton *btn_title;
 

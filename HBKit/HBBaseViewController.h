@@ -3,7 +3,7 @@
 //  JXL
 //
 //  Created by 星盛 on 15/4/14.
-//  Copyright (c) 2015年 BooB. All rights reserved.
+//  Copyright (c) 2015年 YY.COM All rights reserved.
 //
  
 #import <UIKit/UIKit.h>
@@ -37,6 +37,7 @@
 @property(nonatomic,assign) BOOL statusBarStyleDefault;
 -(void)userDefaultBackground;
 
+-(void)configcellstructs;
 //改变背景颜色
 -(void)changeBackGroundWithBackImage:(UIImage *)Image;
 -(void)changeBackGroundWithBackimg:(NSString *)imgname ofType:(NSString *)type;

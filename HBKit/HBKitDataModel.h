@@ -2,7 +2,7 @@
 //  HBKitDataModel.h
 //  Pods
 //
-//  Created by boob on 16/11/30.
+//  Created by HUANGBO on 16/11/30.
 //
 //
 
@@ -32,9 +32,11 @@
 
 @class CELL_STRUCT_ARRAY;
 
+
 @interface HBKitDataModel : NSObject
 
 @property(nonatomic,strong) NSMutableDictionary * dataDictionary;
+@property(nonatomic,strong) NSMutableDictionary * viewConfigDictionary;
 
 /**
  *  从PLIST 文件中加载配置信息

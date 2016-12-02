@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 YY.COM All rights reserved.
 //
 #import "HBBaseViewController.h"
-#import "UIButton+PENG.h"
+#import "UIButton+HBKit.h"
 #import "CELL_STRUCT_Common.h"
 #import "HBKitDataModel.h"
 
@@ -44,6 +44,7 @@
     [self.datamodel setDataDictionary:dataDictionary];
 }
 
+-(void)configcellstructs{};
 -(NSMutableDictionary *)dataDictionary
 {
     return  self.datamodel.dataDictionary;
@@ -59,7 +60,7 @@
 
 -(void)loadplistConfig:(NSString *)plistname filepath:(NSString *)filepath
 {
-    [self.datamodel loadplistConfig:plistname configViewblock:^(NSMutableDictionary *dic) {
+    [self.datamodel loadplistConfig:plistname filepath:filepath  configViewblock:^(NSMutableDictionary *dic) {
          [self loadplistviewConfig:dic];
     }];
 }
@@ -127,18 +128,7 @@
 
 -(void)setShowBackItem:(BOOL)showBackItem
 {
-    _showBackItem = showBackItem;
-    //TODO:设置返回按钮
-    if (_showBackItem) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回"
-                                                                                style:UIBarButtonItemStylePlain
-                                                                               target:self
-                                                                               action:@selector(backtoparent:)];
-    }
-    else
-    {
-        self.navigationItem.leftBarButtonItem = nil;
-    }
+    _showBackItem = showBackItem; 
 }
 
 -(void)dealloc

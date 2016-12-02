@@ -21,8 +21,7 @@ static int TAG_TABLEVIEW = 1521;
 //注册cell
 #define TABLEVIEW_REGISTERXIBCELL_CLASS(TABLEVIEW,CELLCLSSTR) {[TABLEVIEW registerClass:NSClassFromString(CELLCLSSTR) forCellReuseIdentifier:CELLCLSSTR];\
 [TABLEVIEW registerNib:[UINib nibWithNibName:CELLCLSSTR bundle:nil] forCellReuseIdentifier:CELLCLSSTR];}
-
-
+ 
 #undef TABLEVIEW_REGISTER_CELLCLASS
 #define TABLEVIEW_REGISTER_CELLCLASS(TABLEVIEW,CELLCLSSTR) {[TABLEVIEW registerClass:NSClassFromString(CELLCLSSTR) forCellReuseIdentifier:CELLCLSSTR];}
 
@@ -65,13 +64,8 @@ static int TAG_TABLEVIEW = 1521;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-
-
 -(HBBaseTableViewCell *)getcellWithIndexPath:(NSIndexPath *)indexPath;
-////是否需要用到MJRefresh
-////上下拉要用到的
-//@property (nonatomic, assign) BOOL                       noFooterView;
-//@property (nonatomic, assign) BOOL                       noHeaderFreshView;
+
 @end
 
 

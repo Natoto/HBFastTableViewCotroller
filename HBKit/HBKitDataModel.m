@@ -2,13 +2,19 @@
 //  HBKitDataModel.m
 //  Pods
 //
-//  Created by boob on 16/11/30.
+//  Created by HUANGBO on 16/11/30.
 //
 //
 
 #import "HBKitDataModel.h"
 #import "CELL_STRUCT.h"
 #import "CELL_STRUCT_Common.h"
+
+//@implementation NSObject(hbkit) 
+//-(NSString *)key_indexpath:(int)section row:(int)row{
+//    return  [NSString stringWithFormat:@"section%u_%u",(int)section,(int)row];
+//}
+//@end
 
 @implementation HBKitDataModel
 
@@ -18,6 +24,14 @@
     }
     return _dataDictionary;
 }
+-(NSMutableDictionary *)viewConfigDictionary{
+    if (!_viewConfigDictionary) {
+        _viewConfigDictionary = [NSMutableDictionary new];
+    }
+    return _viewConfigDictionary;
+}
+
+
 
 /**
  *  从PLIST 文件中加载配置信息
@@ -30,13 +44,16 @@
     [self loadplistConfig:plistname filepath:nil configViewblock:configViewblock];
 }
 
+/**
+ * 从绝对路径中加载文件，filepath如果不填默认从系统文件中读取
+ */
 -(void)loadplistConfig:(NSString *)plistname
               filepath:(NSString *)filepath
-       configViewblock:(void(^)( NSMutableDictionary * dataDictionary))configViewblock
+       configViewblock:(void(^)( NSMutableDictionary * viewconfigDictionary))configViewblock
 {
     NSMutableDictionary * dataDictionary = [self loadplistConfigToDictionary:plistname filepath:filepath];
     if (configViewblock) {
-        configViewblock(dataDictionary);
+        configViewblock(self.viewConfigDictionary);
     }
     self.dataDictionary = dataDictionary;
 }
@@ -50,12 +67,29 @@
 -(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname{
     return [self loadplistConfigToDictionary:plistname filepath:nil];
 }
+
+-(BOOL)containkeys:(NSString *)key{
+    
+    NSArray * array = @[@"title",@"backgroundcolor",@"backgroundimage"];
+    __block  BOOL valiate = NO;
+    [array enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([key isEqualToString:obj]) {
+            valiate = YES;
+            *stop = YES;
+        }
+    }]; 
+    return valiate;
+}
+/**
+ * 从绝对路径中加载文件，filepath如果不填默认从系统文件中读取
+ */
 -(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname filepath:(NSString *)filepath
 {
     NSMutableDictionary * dataDictionary = [NSMutableDictionary new];
     if (!filepath) {
         filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
     }
+    
     NSFileManager *fileManager = [NSFileManager defaultManager];
     //访问【filepath】目录下的问题件，该目录下支持手动增加、修改、删除文件及目录
     if([fileManager fileExistsAtPath:filepath]) //如果存在
@@ -69,11 +103,20 @@
                     [dataDictionary setObject:cellstruct forKey:key];
                 }
             }
+            else if([self containkeys:key]){
+                NSObject * value = dic[key];
+                [self.viewConfigDictionary setObject:value forKey:key];
+            }
         }
     }
-   
+    else{
+        NSLog(@"文件不存在 path:%@",filepath);
+    }
     return dataDictionary;
 }
+
+
+
 
 #pragma mark - load with json
 

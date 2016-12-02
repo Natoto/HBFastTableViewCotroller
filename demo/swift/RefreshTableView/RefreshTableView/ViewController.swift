@@ -38,7 +38,7 @@ class ViewController: HB_BaseTableViewController {
     
     - parameter cellstruct: 参数
     */
-    func cellSelector(cellstruct:CELL_STRUCT)
+    func cellSelector(_ cellstruct:CELL_STRUCT)
     {
 //        if cellstruct.key_indexpath == nil
 //        {

@@ -9,47 +9,47 @@
 import UIKit
 
 extension UITextField {
-    func withPlaceholder(placeholder: String) -> Self {
+    func withPlaceholder(_ placeholder: String) -> Self {
         self.placeholder = placeholder
         return self
     }
     
     func secure() -> Self {
-        secureTextEntry = true
+        isSecureTextEntry = true
         return self
     }
     
-    func returnKey(type: UIReturnKeyType) -> Self {
+    func returnKey(_ type: UIReturnKeyType) -> Self {
         returnKeyType = type
         return self
     }
     
-    func keyboard(type: UIKeyboardType) -> Self {
+    func keyboard(_ type: UIKeyboardType) -> Self {
         keyboardType = type
         return self
     }
     
-    func autocap(type: UITextAutocapitalizationType) -> Self {
+    func autocap(_ type: UITextAutocapitalizationType) -> Self {
         autocapitalizationType = type
         return self
     }
     
-    func autocorrect(type: UITextAutocorrectionType) -> Self {
+    func autocorrect(_ type: UITextAutocorrectionType) -> Self {
         autocorrectionType = type
         return self
     }
     
-    func delegateTo(object: UITextFieldDelegate) -> Self {
+    func delegateTo(_ object: UITextFieldDelegate) -> Self {
         delegate = object
         return self
     }
     
-    func fontSize(size: CGFloat) -> Self {
-        font = UIFont.systemFontOfSize(size)
+    func fontSize(_ size: CGFloat) -> Self {
+        font = UIFont.systemFont(ofSize: size)
         return self
     }
     
-    func withFont(name: String, ofSize size: CGFloat) -> Self {
+    func withFont(_ name: String, ofSize size: CGFloat) -> Self {
         font = UIFont(name: name, size: size)
         return self
     }

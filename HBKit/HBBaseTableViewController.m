@@ -25,9 +25,6 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {//这个是需要的
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    }
     if (!self.noAutoConfigTableView) {
         [self configTableView];
     }
@@ -58,11 +55,6 @@
 -(void)TableViewDefaultConfigWithTitle:(NSString *)title
 {
 //TODO:默认设置标题等
-//    [self userDefaultBackground];
-//    [self.navigationbar setTitle:title];
-//    [self showhbnavigationbarBackItem:YES];
-//    [self.navigationbar setBackgroundColor:[UIColor clearColor]];
-//    [self adjustContentOffSet:HEIGHT_NAVIGATIONBAR bottom:0];
 }
 
 /**

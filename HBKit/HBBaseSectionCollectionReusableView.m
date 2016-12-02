@@ -7,7 +7,7 @@
 //
 
 #import "HBBaseSectionCollectionReusableView.h"
-#import "UIButton+PENG.h"
+#import "UIButton+HBKit.h"
 
 @interface HBBaseSectionCollectionReusableView()
 @end

@@ -6,14 +6,14 @@
 //  Copyright (c) 2015年 BooB. All rights reserved.
 //
 
-#import "cell_struct.h" 
+#import "CELL_STRUCT.h"
 #import <objc/runtime.h>
 
-@implementation cell_struct
+
+@implementation HBCellStruct
 
 @class HBBaseTableViewCell;
 @class HBBaseCollectionViewCell;
-
 -(instancetype)init
 {
     self = [super init];
@@ -24,6 +24,7 @@
     }
     return self;
 }
+
 -(instancetype)initWithtitle:(NSString *)title
                    cellclass:(NSString *)cellclass
                  placeholder:(NSString *)placehoder
@@ -31,9 +32,10 @@
                  sel_selctor:(SEL)selector
                     delegate:(id)delegate
 {
+    
     self = [super init];
     if (self) {
-//        self.uploadingIndex = 0;
+        //        self.uploadingIndex = 0;
         self.selectionStyle = YES;
         self.uploadobjcts = [NSMutableArray new];
         self.array = [NSMutableArray new];
@@ -57,7 +59,7 @@
 #pragma mark - copy
 - (instancetype)copyWithZone:(NSZone *)zone
 {
-    cell_struct *copy = [[[self class] allocWithZone:zone] init];
+    CELL_STRUCT *copy = [[[self class] allocWithZone:zone] init];
     unsigned int outCount = 0;
     objc_property_t *properties = class_copyPropertyList([self class], &outCount);
     @try {
@@ -70,14 +72,14 @@
             }
             id value = [self valueForKey:key];
             if (value) {
-                [copy setValue:value forKey:key];                
+                [copy setValue:value forKey:key];
             }
         }
     }
     @catch (NSException *exception) {
         NSLog(@"😢-->error:copywithzone  %@", exception);
     }
-    @finally {        
+    @finally {
     }
     free(properties);
     copy.sel_selector = self.sel_selector;
@@ -100,10 +102,10 @@
 {
     self = [super init];
     if (self) {
-        for ( Class clazzType = [cell_struct class];; )
-        { 
+        for ( Class clazzType = [CELL_STRUCT class];; )
+        {
             unsigned int		propertyCount = 0;
-            objc_property_t *	properties = class_copyPropertyList( clazzType, &propertyCount);            
+            objc_property_t *	properties = class_copyPropertyList( clazzType, &propertyCount);
             for ( NSUInteger i = 0; i < propertyCount; i++ )
             {
                 const char *	name = property_getName(properties[i]);
@@ -113,7 +115,7 @@
                     @try {
                         id object = [plistdic valueForKey:propertyName];
                         if (object) {
-                        // 1 对其赋值 类型错误不挂掉
+                            // 1 对其赋值 类型错误不挂掉
                             [self setValue:object forKey:propertyName];
                         }
                     }
@@ -137,7 +139,7 @@
 
 -(id)initWithJsonString:(NSString *)jsonstring
 {
-    cell_struct * cellstruct = [[cell_struct alloc] hb_initWithJSONData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
+    CELL_STRUCT * cellstruct = [[CELL_STRUCT alloc] hb_initWithJSONData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
     return cellstruct;
 }
 
@@ -149,7 +151,7 @@
 -(id)init{
     self = [super init];
     if (self) {
-        [self setValue:@"CELL_STRUCT" forKeyPath:[NSString stringWithFormat:@"propertyArrayMap.%@",@"array"]];
+        [self setValue:@"HBCellStruct" forKeyPath:[NSString stringWithFormat:@"propertyArrayMap.%@",@"array"]];
     }
     return self;
 }
