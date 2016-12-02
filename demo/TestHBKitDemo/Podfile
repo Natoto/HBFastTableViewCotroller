@@ -11,5 +11,6 @@ target 'TestHBKitDemo' do
  pod 'HBKit',:path=>"../../HBKit.podspec"
  pod 'HBKitRefresh', :path=>"../../HBKitRefresh.podspec"
  pod 'HBKitWatchDog',:path=>"../../HBKitWatchDog.podspec"
+ pod 'HBKitAnode',:path=>"../../HBKitAnode.podspec"
 end
 #注释

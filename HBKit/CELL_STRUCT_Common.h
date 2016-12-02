@@ -12,9 +12,24 @@
 @class HBCellStruct;
 @class CELL_STRUCT;
  
+#undef AS_CELL_STRUCT_COMMON
+#define AS_CELL_STRUCT_COMMON(OBJ) @property(nonatomic,retain) CELL_STRUCT * cell_struct_##OBJ;
 
+#undef GET_CELL_STRUCT_WITH
+#define GET_CELL_STRUCT_WITH(OBJ,TITLE) -(CELL_STRUCT *)cell_struct_##OBJ\
+{\
+if (!_cell_struct_##OBJ) {\
+_cell_struct_##OBJ = [CELL_STRUCT cell_x_x_struct:@#TITLE detailvalue:nil target:self selectAction:@selector(selectAction:)];\
+}\
+return _cell_struct_##OBJ;\
+}
+
+
+#undef DEFAULT_CELL_SELECT_ACTION
 #define DEFAULT_CELL_SELECT_ACTION @selector(selectAction:)
-//#define GET_CELL_SELECT_ACTION(SENDER) -(IBAction)selectAction:(HBCellStruct *)SENDER
+
+#undef GET_CELL_SELECT_ACTION
+#define GET_CELL_SELECT_ACTION(SENDER) -(IBAction)selectAction:(CELL_STRUCT *)SENDER
 
 @interface CELL_STRUCT_Common : HBCellStruct
 @end

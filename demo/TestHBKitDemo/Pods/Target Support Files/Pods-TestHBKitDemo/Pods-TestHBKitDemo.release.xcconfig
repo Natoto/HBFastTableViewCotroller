@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/HBKit" "${PODS_ROOT}/Headers/Public/HBKitRefresh" "${PODS_ROOT}/Headers/Public/HBKitWatchDog" "${PODS_ROOT}/Headers/Public/MJRefresh"
-LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/HBKit" "$PODS_CONFIGURATION_BUILD_DIR/HBKitRefresh" "$PODS_CONFIGURATION_BUILD_DIR/HBKitWatchDog" "$PODS_CONFIGURATION_BUILD_DIR/MJRefresh"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/HBKit" -isystem "${PODS_ROOT}/Headers/Public/HBKitRefresh" -isystem "${PODS_ROOT}/Headers/Public/HBKitWatchDog" -isystem "${PODS_ROOT}/Headers/Public/MJRefresh"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"HBKit" -l"HBKitRefresh" -l"HBKitWatchDog" -l"MJRefresh"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 $(inherited) PIN_REMOTE_IMAGE=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AsyncDisplayKit" "${PODS_ROOT}/Headers/Public/HBKit" "${PODS_ROOT}/Headers/Public/HBKitAnode" "${PODS_ROOT}/Headers/Public/HBKitRefresh" "${PODS_ROOT}/Headers/Public/HBKitWatchDog" "${PODS_ROOT}/Headers/Public/MJRefresh" "${PODS_ROOT}/Headers/Public/PINCache" "${PODS_ROOT}/Headers/Public/PINRemoteImage"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/AsyncDisplayKit" "$PODS_CONFIGURATION_BUILD_DIR/HBKit" "$PODS_CONFIGURATION_BUILD_DIR/HBKitAnode" "$PODS_CONFIGURATION_BUILD_DIR/HBKitRefresh" "$PODS_CONFIGURATION_BUILD_DIR/HBKitWatchDog" "$PODS_CONFIGURATION_BUILD_DIR/MJRefresh" "$PODS_CONFIGURATION_BUILD_DIR/PINCache" "$PODS_CONFIGURATION_BUILD_DIR/PINRemoteImage"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AsyncDisplayKit" -isystem "${PODS_ROOT}/Headers/Public/HBKit" -isystem "${PODS_ROOT}/Headers/Public/HBKitAnode" -isystem "${PODS_ROOT}/Headers/Public/HBKitRefresh" -isystem "${PODS_ROOT}/Headers/Public/HBKitWatchDog" -isystem "${PODS_ROOT}/Headers/Public/MJRefresh" -isystem "${PODS_ROOT}/Headers/Public/PINCache" -isystem "${PODS_ROOT}/Headers/Public/PINRemoteImage"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"AsyncDisplayKit" -l"HBKit" -l"HBKitAnode" -l"HBKitRefresh" -l"HBKitWatchDog" -l"MJRefresh" -l"PINCache" -l"PINRemoteImage" -l"c++" -framework "Accelerate" -framework "AssetsLibrary" -framework "Foundation" -framework "ImageIO" -framework "UIKit" -weak_framework "MapKit" -weak_framework "Photos" -weak_framework "UIKit"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods

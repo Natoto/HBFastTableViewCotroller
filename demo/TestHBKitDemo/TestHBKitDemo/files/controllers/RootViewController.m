@@ -18,6 +18,7 @@
 #import "TestDrawCellViewController.h"
 #import "TestPlistViewController.h"
 #import "TestJsonViewController.h"
+#import "TestAsynDisplayController.h"
 
 #import "AppDelegate.h"
 @interface RootViewController ()
@@ -34,9 +35,12 @@
  @property(nonatomic,retain) CELL_STRUCT * cell_struct_drawcell;
  @property(nonatomic,retain) CELL_STRUCT * cell_struct_copy;
  @property(nonatomic,retain) CELL_STRUCT * cell_struct_testjson;
-@end
 
+@property(nonatomic,retain) CELL_STRUCT * cell_struct_testanode;
+
+@end
 @implementation RootViewController
+GET_CELL_STRUCT_WITH(testanode, 测试asyndisplaynode);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -64,6 +68,7 @@
     [self.dataDictionary setObject:self.cell_struct_xib forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_autoheight forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     [self.dataDictionary setObject:self.cell_struct_refresh forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_testanode forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
     
     
     sectionIndex++,rowIndex = 0;
@@ -147,6 +152,10 @@
     }else if(cellstruct == self.cell_struct_testjson){
         TestJsonViewController * ctr = [TestJsonViewController new]; 
         [self.navigationController   pushViewController:ctr animated:YES];
+    }
+    else if(cellstruct == self.cell_struct_testanode){
+        TestAsynDisplayController * ctr = [TestAsynDisplayController new];
+        [self.navigationController pushViewController:ctr animated:YES];
     }
 }
 - (void)didReceiveMemoryWarning {

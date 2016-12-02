@@ -22,4 +22,6 @@
 #import "HBBaseTableViewCell.h"
 #import "HBBaseCollectionViewCell.h"
 #import "HBBaseCollectionViewController.h"
+#import "HBKitDirWatchdog.h"
+
 //#import "HBKitRefresh.h"

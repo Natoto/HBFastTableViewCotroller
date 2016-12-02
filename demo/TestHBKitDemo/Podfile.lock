@@ -1,14 +1,32 @@
 PODS:
-  - HBKit (0.6.31)
-  - HBKitRefresh (0.6.31):
+  - AsyncDisplayKit (1.9.92):
+    - AsyncDisplayKit/PINRemoteImage (= 1.9.92)
+  - AsyncDisplayKit/ASDealloc2MainObject (1.9.92)
+  - AsyncDisplayKit/Core (1.9.92):
+    - AsyncDisplayKit/ASDealloc2MainObject
+  - AsyncDisplayKit/PINRemoteImage (1.9.92):
+    - AsyncDisplayKit/Core
+    - PINCache (= 3.0.1-beta)
+    - PINRemoteImage/iOS (= 3.0.0-beta.3)
+  - HBKit (0.6.32)
+  - HBKitAnode (0.6.32):
+    - AsyncDisplayKit
+    - HBKit
+  - HBKitRefresh (0.6.32):
     - HBKit
     - MJRefresh
-  - HBKitWatchDog (0.6.31):
+  - HBKitWatchDog (0.6.32):
     - HBKit
   - MJRefresh (3.1.12)
+  - PINCache (3.0.1-beta)
+  - PINRemoteImage/Core (3.0.0-beta.3):
+    - PINCache (>= 3.0.0-beta)
+  - PINRemoteImage/iOS (3.0.0-beta.3):
+    - PINRemoteImage/Core
 
 DEPENDENCIES:
   - HBKit (from `../../HBKit.podspec`)
+  - HBKitAnode (from `../../HBKitAnode.podspec`)
   - HBKitRefresh (from `../../HBKitRefresh.podspec`)
   - HBKitWatchDog (from `../../HBKitWatchDog.podspec`)
   - MJRefresh
@@ -16,17 +34,23 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   HBKit:
     :path: "../../HBKit.podspec"
+  HBKitAnode:
+    :path: "../../HBKitAnode.podspec"
   HBKitRefresh:
     :path: "../../HBKitRefresh.podspec"
   HBKitWatchDog:
     :path: "../../HBKitWatchDog.podspec"
 
 SPEC CHECKSUMS:
-  HBKit: c5bce1fb091a875f38b968223db210219f3c2aaa
-  HBKitRefresh: 3b46b84a45f2772dfe1e78aa002c61c1d65cb73f
-  HBKitWatchDog: ce2c3a399ee0c4114955b0f01d973d6795928862
+  AsyncDisplayKit: 49d94f5739669d666ff7cdc3430f43f0b2cfbeaf
+  HBKit: 9a745bcd732af27364ffb5d5255796aaca3d83c5
+  HBKitAnode: d5b683352f899777f5a6b20616dfdff81dc07812
+  HBKitRefresh: 7ab9018da522e9dd672b594d16fccc721dddbb70
+  HBKitWatchDog: e5102210a34badd18c337d32d0f6581c415eadc0
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  PINCache: 6911fe422a633e18b3d3ddf2bd4f0e55e36e2892
+  PINRemoteImage: 308731aa6534500e58fc211b9cc2bb7252df25ba
 
-PODFILE CHECKSUM: 8f439964f57732f0deea25ec8118c15ed444dbd2
+PODFILE CHECKSUM: 903c354302992f353c552fb45e262ed361b71943
 
 COCOAPODS: 1.1.1

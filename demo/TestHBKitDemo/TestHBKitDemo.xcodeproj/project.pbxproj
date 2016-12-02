@@ -44,6 +44,7 @@
 		F84D37F31DF0FECC004AC2A6 /* DrawCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F84D37CD1DF0FECC004AC2A6 /* DrawCell.m */; };
 		F84D37F71DF0FF03004AC2A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F84D37F61DF0FF03004AC2A6 /* main.m */; };
 		F84D38011DF1262A004AC2A6 /* resource in Resources */ = {isa = PBXBuildFile; fileRef = F84D38001DF1262A004AC2A6 /* resource */; };
+		F873610E1DF14BE8008E218F /* TestAsynDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = F873610D1DF14BE8008E218F /* TestAsynDisplayController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,8 @@
 		F84D37CD1DF0FECC004AC2A6 /* DrawCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawCell.m; sourceTree = "<group>"; };
 		F84D37F61DF0FF03004AC2A6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F84D38001DF1262A004AC2A6 /* resource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resource; sourceTree = "<group>"; };
+		F873610C1DF14BE8008E218F /* TestAsynDisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAsynDisplayController.h; sourceTree = "<group>"; };
+		F873610D1DF14BE8008E218F /* TestAsynDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAsynDisplayController.m; sourceTree = "<group>"; };
 		F8E911ED1DF0229D005D7766 /* TestHBKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestHBKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -163,6 +166,8 @@
 			children = (
 				F84D378E1DF0FECC004AC2A6 /* NormalCollectionViewController.h */,
 				F84D378F1DF0FECC004AC2A6 /* NormalCollectionViewController.m */,
+				F873610C1DF14BE8008E218F /* TestAsynDisplayController.h */,
+				F873610D1DF14BE8008E218F /* TestAsynDisplayController.m */,
 				F84D37901DF0FECC004AC2A6 /* NormalTableViewController.h */,
 				F84D37911DF0FECC004AC2A6 /* NormalTableViewController.m */,
 				F84D37921DF0FECC004AC2A6 /* TEST2CollectionReusableView.h */,
@@ -441,6 +446,7 @@
 				F84D37EC1DF0FECC004AC2A6 /* BaseXIBCollectionViewCell.m in Sources */,
 				F84D37D51DF0FECC004AC2A6 /* TestCollectionViewCell.m in Sources */,
 				F84D37F11DF0FECC004AC2A6 /* CF_SupporterTableViewCell.m in Sources */,
+				F873610E1DF14BE8008E218F /* TestAsynDisplayController.m in Sources */,
 				F84D37DE1DF0FECC004AC2A6 /* TESTRefreshViewController.m in Sources */,
 				F84D37DA1DF0FECC004AC2A6 /* TestKVODetailViewController.m in Sources */,
 				F84D37E51DF0FECC004AC2A6 /* NSObject+FBKVOController.m in Sources */,

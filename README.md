@@ -19,18 +19,17 @@
 
 ![HBKit 示例](https://github.com/Natoto/HBOKit/blob/master/sgdir.gif?raw=true)
 
+###从json中加载
 ```objc
  
 - (void)viewDidLoad {
-    [super viewDidLoad];
- 
-    [self loadjsonfileConfig:@"TestJson" ];
-    [self loadjsonfileConfig:@"TestJson" watch_directory:@"resource"];
-    
+    [super viewDidLoad]; 
+    [self loadjsonfileConfig:@"TestJson" watch_directory:@"resource"]; 
 }
 ```
 
 
+###代码加载
 ```javascript
 
 @interface ViewController ()
@@ -107,8 +106,7 @@ cellstruct.accessory = index%2;
 cellstruct.selectionStyle = index%2;
 [cellstruct.dictionary setObject:HBRandomColor forKey:key_cellstruct_background];
 [self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(1, index)];
-}
-
+} 
 // Do any additional setup after loading the view.
 }
 ```

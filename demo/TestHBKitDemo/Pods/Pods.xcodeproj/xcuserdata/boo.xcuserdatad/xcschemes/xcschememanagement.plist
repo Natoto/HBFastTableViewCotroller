@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AsyncDisplayKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>HBKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>HBKitAnode.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -20,6 +30,16 @@
 			<false/>
 		</dict>
 		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PINCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PINRemoteImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,7 +62,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>646C7886F2AC5D232D7F3026A1EC0743</key>
+		<key>4957884B085DE143FDFB176337C1C373</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88499743FB9E3C772BB3144F89997CAA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>924AED5C1E131EFC40E84106111F4C2C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C66A20EA4ED21BA0E5A67B099A057F01</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EA94CBB24E018C0DB679A588EF190312</key>
+		<key>D08681248FEFCF211554AA6B1A80195A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EAF6E53892C408CF22D013610B4F9597</key>
 		<dict>
 			<key>primary</key>
 			<true/>
