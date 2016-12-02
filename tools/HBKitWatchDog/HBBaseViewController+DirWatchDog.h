@@ -18,12 +18,11 @@
  *  @param directory 文件所在的目录
  *
  
- 1. 需要在info.plist文件中做如下配置
- <?xml version="1.0" encoding="UTF-8"?>
- <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
- <plist version="1.0">
+ 1. 需要在info.plist文件中做如下配置 projectPath $(SRCROOT)/$(TARGET_NAME)
+ ---
+ <key>projectPath</key>
  <string>$(SRCROOT)/$(TARGET_NAME)</string>
- </plist>
+ ---
  2. 在工程文件中创建监听的目录 如 resource，将目录拉入工程中，注意Added folders选择Create folder references ,然后选择工程完成
  3. 添加此方法，每次按cmd+s会收到一个block，可以在此回调中完成重新配置,默认回调 configcellstructs 方法
  4. 所有的实时刷新都只在模拟器中进行
