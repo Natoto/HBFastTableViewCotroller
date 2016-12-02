@@ -10,6 +10,6 @@
 #define HBKitWatchDog_h
 
 #import "HBBaseViewController+DirWatchDog.h"
-#import "HBKitWatchDog.h"
+#import "HBDirWatchdog.h"
 
 #endif /* HBKitWatchDog_h */
