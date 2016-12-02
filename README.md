@@ -6,12 +6,21 @@
 ##用法
 >* 添加主工程
 * pod 'HBKit'
+* pod 'HBKitRefresh'  #添加上下拉刷新
+* pod 'HBKitWatchDog' #添加watchdog 实时刷新
 * OR
-* pod "HBKit", :git=>'https://github.com/Natoto/HBFastTableViewCotroller.git',:tag=>'0.6.31'
+* pod "HBKit", :git=>'https://github.com/Natoto/HBFastTableViewCotroller.git',:tag=>'0.6.32'
 * 添加拓展插件
-* pod "HBKitRefresh", :git=>'https://github.com/Natoto/HBFastTableViewCotroller.git',:tag=>'0.6.31'
+* pod "HBKitRefresh", :git=>'https://github.com/Natoto/HBFastTableViewCotroller.git',:tag=>'0.6.32'
+* pod "HBKitWatchDog", :git=>'https://github.com/Natoto/HBFastTableViewCotroller.git',:tag=>'0.6.32'
 * OR
 * pod 'HBKit', :git => 'https://github.com/Natoto/HBFastTableViewCotroller.git'
+
+
+![HBKit 示例](https://github.com/Natoto/HBOKit/blob/master/sgdir.gif?raw=true)
+
+
+
 
 ```javascript
 
@@ -94,9 +103,5 @@ cellstruct.selectionStyle = index%2;
 // Do any additional setup after loading the view.
 }
 ```
-![image](https://github.com/Natoto/HBFastTableViewCotroller/blob/master/iOS%20Simulator%20Screen%20Shot%202015%E5%B9%B48%E6%9C%8811%E6%97%A5%20%E4%B8%8B%E5%8D%885.24.09.png)
-
-
-
 
 
