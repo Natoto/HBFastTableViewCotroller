@@ -1,0 +1,6 @@
+framework module HBKitWatchDog {
+  umbrella header "HBKitWatchDog-umbrella.h"
+
+  export *
+  module * { export * }
+}

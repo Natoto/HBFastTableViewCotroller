@@ -1,0 +1,9 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/HBKit" "$PODS_CONFIGURATION_BUILD_DIR/HBKitRefresh" "$PODS_CONFIGURATION_BUILD_DIR/HBKitWatchDog" "$PODS_CONFIGURATION_BUILD_DIR/MJRefresh"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/HBKit/HBKit.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/HBKitRefresh/HBKitRefresh.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/HBKitWatchDog/HBKitWatchDog.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/MJRefresh/MJRefresh.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "HBKit" -framework "HBKitRefresh" -framework "HBKitWatchDog" -framework "MJRefresh"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}/Pods

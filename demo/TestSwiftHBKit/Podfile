@@ -1,0 +1,16 @@
+platform :ios,'7.0'
+use_frameworks!
+
+#pre_install do |installer|
+ 	 # Do something fancy!
+ 	$LOCALPATH = "/Users/boo/Documents/fenda_ios/branches/fenda1025/LocalPod"
+#end
+
+target 'TestSwiftHBKit' do
+ 
+ pod 'MJRefresh'
+ pod 'HBKit' 
+ pod 'HBKitRefresh' 
+ pod 'HBKitWatchDog' 
+end
+#注释

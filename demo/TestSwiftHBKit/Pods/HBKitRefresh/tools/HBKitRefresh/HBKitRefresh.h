@@ -7,7 +7,9 @@
 //
 
 #import <HBKit/HBKit.h>
-#import <MJRefresh/MJRefresh.h> 
+#import <MJRefresh/MJRefresh.h>
+#import "HBBaseTableViewController.h"
+#import "HBBaseCollectionViewController.h"
 
 @protocol  HBKitRefreshProtocol<NSObject>
 

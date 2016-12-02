@@ -1,0 +1,6 @@
+framework module HBKitRefresh {
+  umbrella header "HBKitRefresh-umbrella.h"
+
+  export *
+  module * { export * }
+}

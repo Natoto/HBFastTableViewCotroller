@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
  
-    [self loadjsonfileConfig:@"TestJson" ];
+//    [self loadjsonfileConfig:@"TestJson" ];
     [self loadjsonfileConfig:@"TestJson" watch_directory:@"resource"];
     
 }

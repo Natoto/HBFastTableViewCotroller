@@ -1,0 +1,24 @@
+PODS:
+  - HBKit (0.6.32)
+  - HBKitRefresh (0.6.32):
+    - HBKit
+    - MJRefresh
+  - HBKitWatchDog (0.6.32):
+    - HBKit
+  - MJRefresh (3.1.12)
+
+DEPENDENCIES:
+  - HBKit
+  - HBKitRefresh
+  - HBKitWatchDog
+  - MJRefresh
+
+SPEC CHECKSUMS:
+  HBKit: 9a745bcd732af27364ffb5d5255796aaca3d83c5
+  HBKitRefresh: 7ab9018da522e9dd672b594d16fccc721dddbb70
+  HBKitWatchDog: e5102210a34badd18c337d32d0f6581c415eadc0
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+
+PODFILE CHECKSUM: 61e7458564630e20fdfff8a1b64e35d97f3cc15d
+
+COCOAPODS: 1.1.1

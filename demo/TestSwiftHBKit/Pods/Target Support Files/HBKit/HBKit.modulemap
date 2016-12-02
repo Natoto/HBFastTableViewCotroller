@@ -1,0 +1,6 @@
+framework module HBKit {
+  umbrella header "HBKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
