@@ -30,17 +30,29 @@
 @synthesize object2 = _object2;
 
 
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier plistdic:(NSDictionary *)plistdic{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self firstconfigcell:plistdic];
+    }
+    return self;
+}
+
+-(void)firstconfigcell:(NSDictionary *)dic{
+    if (!self.customizedStyle) {
+        self.detailTextLabel.textColor = [UIColor grayColor];
+        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        _redPoint = [[HBRedPoint alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+        _redPoint.hidden = YES;
+        [self.contentView addSubview:_redPoint];
+    }
+}
+
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        if (!self.customizedStyle) {
-            self.detailTextLabel.textColor = [UIColor grayColor];
-            self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-            _redPoint = [[HBRedPoint alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
-            _redPoint.hidden = YES;
-            [self.contentView addSubview:_redPoint];
-        }
+        [self firstconfigcell:nil];
     }
     return self;
 }

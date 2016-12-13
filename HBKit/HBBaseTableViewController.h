@@ -65,7 +65,7 @@ static int TAG_TABLEVIEW = 1521;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 -(HBBaseTableViewCell *)getcellWithIndexPath:(NSIndexPath *)indexPath;
-
+- (void)drawCell:(HBBaseTableViewCell *)cell withIndexPath:(NSIndexPath *)indexPath;
 @end
 
 

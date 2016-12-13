@@ -43,7 +43,11 @@ __MOTHOD\
 @property (nonatomic,strong) NSIndexPath         * indexPath;
 @property (nonatomic,strong) NSString            * subvalue2;
 @property (nonatomic,strong) NSMutableDictionary * dictionary;
- 
+
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier plistdic:(NSDictionary *)plistdic;
+
+-(void)firstconfigcell:(NSDictionary *)dic;
 @end
 
 

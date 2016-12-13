@@ -231,7 +231,7 @@
     HBBaseTableViewCell *cell ;
     if(cellstruct.xibvalue && [cellstruct.xibvalue isEqualToString:@"xib"])
     {
-        cell =  [self.tableView dequeueReusableCellWithIdentifier:identifier01 forIndexPath:indexPath];
+        cell =  [self.tableView dequeueReusableCellWithIdentifier:identifier01 forIndexPath:indexPath ];
     }
     else
     {
@@ -247,23 +247,23 @@
         }
         else
         {
-            if(cellstruct.CellStyleValue == 1)
-            {
-                cell = [[cls alloc]  initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier01];
+            UITableViewCellStyle cellstyle = 0;
+            switch (cellstruct.CellStyleValue) {
+                case 1:
+                    cellstyle = UITableViewCellStyleValue1;
+                    break;
+                case 2:
+                    cellstyle = UITableViewCellStyleValue2;
+                    break;
+                case 3:
+                    cellstyle = UITableViewCellStyleSubtitle;
+                    break;
+                    
+                default:
+                    cellstyle = UITableViewCellStyleDefault;
+                    break;
             }
-            else if(cellstruct.CellStyleValue == 2)
-            {
-                cell = [[cls alloc]  initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:identifier01];
-            }
-            else if(cellstruct.CellStyleValue == 3)// (Used in iPod).
-            {
-                cell = [[cls alloc]  initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier01];
-            }
-            else
-            {
-                cell = [[cls alloc]  initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier01];
-            }
-            
+            cell = [[cls alloc]  initWithStyle:cellstyle reuseIdentifier:identifier01 plistdic:cellstruct.dictionary];
         }
     }
     return cell;
