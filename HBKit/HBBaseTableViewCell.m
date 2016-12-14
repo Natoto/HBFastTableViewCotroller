@@ -31,9 +31,8 @@
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier plistdic:(NSDictionary *)plistdic{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        [self firstconfigcell:plistdic];
+    self = [self initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) { 
     }
     return self;
 }
