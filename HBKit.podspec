@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "HBKit"
-s.version      = "0.6.51"
+s.version      = "0.6.52"
 s.summary      = "A  Fast Style TableViewController."
 s.homepage     = "https://github.com/Natoto/HBFastTableViewCotroller"
 s.license      = "MIT"
