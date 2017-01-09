@@ -309,13 +309,15 @@
     
     CELL_STRUCT * cellstruct = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
     NSString * identifier01 = cellstruct.cellclass;
-    HBBaseTableViewCell *cell = [self getcellWithIndexPath:indexPath];
+    HBBaseTableViewCell *cell;
+    cell = [self getcellWithIndexPath:indexPath];
     if ([[cell class] isSubclassOfClass:[HBBaseTableViewCell class]]) {
         [self drawCell:cell withIndexPath:indexPath];
     }
     return cell;
+
 }
- 
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (!self.nodeselectRow) {

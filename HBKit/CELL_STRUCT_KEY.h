@@ -32,6 +32,7 @@ static NSString * key_cellstruct_sectionHeaderView      = @"key_cellstruct_secti
 
 static NSString * key_cellstruct_title                  = @"key_cellstruct_title";
 static NSString * key_cellstruct_titleFont              = @"key_cellstruct_titleFont";
+static NSString * key_cellstruct_titleFontFamily        = @"key_cellstruct_titleFontFamily";
 static NSString * key_cellstruct_titlecolor             = @"key_cellstruct_titlecolor";
 static NSString * key_cellstruct_textAlignment          = @"key_cellstruct_textAlignment";
 

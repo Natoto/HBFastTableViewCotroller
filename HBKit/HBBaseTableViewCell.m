@@ -201,6 +201,11 @@
         self.contentView.backgroundColor = [CELL_STRUCT colorWithStructKey:bgcolorstring];
         self.backgroundColor = self.contentView.backgroundColor;
     }
+    NSString * titltfontname = dictionary[key_cellstruct_titleFontFamily];
+    if (titltfontname.length && [[titltfontname class] isSubclassOfClass:[NSString class]]) {
+        self.textLabel.font = [UIFont fontWithName:titltfontname size:self.textLabel.font.pointSize];
+    }
+    
     NSString * detailvalue = [dictionary objectForKey:key_cellstruct_detailvalue];
     OBJ_NULL_DEFAULT(detailvalue, @"")
     NSNumber * imageCornerRadius = DIC_OBJ_KEY(dictionary, key_cellstruct_detailvalue);
@@ -217,7 +222,7 @@
 -(void)setcellTitleFontsize:(NSNumber *)titleFontsize
 {
     if (titleFontsize.floatValue > 8) {
-        self.textLabel.font = [UIFont systemFontOfSize:titleFontsize.floatValue];
+        self.textLabel.font = [UIFont fontWithName:self.textLabel.font.fontName size:titleFontsize.floatValue];
     }
 }
 
