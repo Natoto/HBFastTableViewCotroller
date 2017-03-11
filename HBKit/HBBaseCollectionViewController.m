@@ -84,19 +84,16 @@
         collectionViewFlowLayout.headerHeight = 0;
         collectionViewFlowLayout.minimumColumnSpacing = self.configMinimumColumnSpacing;
         collectionViewFlowLayout.minimumInteritemSpacing = self.configMinimumInteritemSpacing;
-        collectionViewFlowLayout.sectionInset = self.configSectionInset;//UIEdgeInsetsMake(5, 5, 5, 5);
+        collectionViewFlowLayout.sectionInset = self.configSectionInset;
         collectionViewFlowLayout.columnCount = self.configColumnCount;
         self.collectionViewFlowLayout = collectionViewFlowLayout;
         _collectionView = [[UICollectionView alloc] initWithFrame:collectionViewFrame collectionViewLayout:collectionViewFlowLayout];
-//        _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-//        _collectionView.allowsMultipleSelection = YES;
-//        _collectionView.allowsSelection = YES;
         _collectionView.alwaysBounceVertical = YES;
         _collectionView.contentInset = UIEdgeInsetsMake(64., 0, 0, 0);
         [_collectionView registerClass:[HBBaseSectionCollectionReusableView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withReuseIdentifier:@"HBBaseSectionCollectionReusableView"];
-//        [_collectionView registerNib:[UINib nibWithNibName:@"HBBaseCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"HBBaseCollectionViewCell"];
+        _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [self.view addSubview:_collectionView];
     }
     return _collectionView;
