@@ -147,7 +147,7 @@
     if ([key rangeOfString:@"0x"].location!= NSNotFound || [key rangeOfString:@"0X"].location!= NSNotFound) {
         //先以16为参数告诉strtoul字符串参数表示16进制数字，然后使用0x%X转为数字类型
         unsigned long red = strtoul([key UTF8String],0,16);
-        NSLog(@"转换完的数字为：%lx",red);
+        //NSLog(@"转换完的数字为：%lx",red);
         UIColor * color = KT_HEXCOLOR(red);
         return color;
     }
