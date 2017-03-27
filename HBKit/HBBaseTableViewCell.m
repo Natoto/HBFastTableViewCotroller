@@ -122,7 +122,6 @@
     
     if (self.showTopLine) {
         [self drawToplinelayer];
-        
         NSString * toplayerinset = self.dictionary[key_cellstruct_toplayerinsets];
         if (toplayerinset) {
             UIEdgeInsets  insets  = UIEdgeInsetsFromString(toplayerinset);
@@ -138,24 +137,25 @@
     {
         [self clearTopLayer];
     }
+    
     if (self.showBottomLine) {
         [self drawBottomlinelayer];
         NSString * toplayerinset = self.dictionary[key_cellstruct_toplayerinsets];
         if (toplayerinset) {
             UIEdgeInsets  insets  = UIEdgeInsetsFromString(toplayerinset);
-            CGRect  layerframe = CGRectMake(insets.left,  self.frame.size.height - insets.bottom, [UIScreen mainScreen].bounds.size.width - insets.left - insets.right, 0.5);
+            CGRect  layerframe = CGRectMake(insets.left,  self.frame.size.height - insets.bottom - 0.5, [UIScreen mainScreen].bounds.size.width - insets.left - insets.right, 0.5);
             self.bottomlayer.frame = layerframe;
         }
-        else{
+        else
+        {
             CGRect  layerframe = CGRectMake(0, self.frame.size.height - 0.5, [UIScreen mainScreen].bounds.size.width, 0.5);
             self.bottomlayer.frame = layerframe;
         }
+        
     }else
     {
         [self clearBottomLayer];
     }
-    
-    
     self.redPoint.center = CGPointMake(self.contentView.frame.size.width - 20, self.contentView.frame.size.height/2);
 }
 
@@ -373,6 +373,7 @@
     {
         imageLayer.frame = layerframe;
     }
+    [self bringSubviewToFront:imageLayer];
     imageLayer.hidden = NO;
 }
 
@@ -388,6 +389,7 @@
     {
         imageLayer.frame = layerframe;
     }
+    [self bringSubviewToFront:imageLayer];
     imageLayer.hidden = NO;
 }
 
