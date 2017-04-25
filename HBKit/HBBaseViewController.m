@@ -15,17 +15,17 @@
 
 
 @implementation BackGroundView
--(void)setImage:(UIImage *)image
-{
-    _image = image;
-    [self setNeedsDisplay];
-}
-- (void)drawRect:(CGRect)rect {
-    
-    [super drawRect:rect];
-    [self.image drawInRect:CGRectMake(0, -10, rect.size.width, rect.size.height + 10)];
-    // Drawing code
-}
+//-(void)setImage:(UIImage *)image
+//{
+//    _image = image;
+//    [self setNeedsDisplay];
+//}
+//- (void)drawRect:(CGRect)rect {
+//    
+//    [super drawRect:rect];
+//    [self.image drawInRect:CGRectMake(0, -10, rect.size.width, rect.size.height + 10)];
+//    // Drawing code
+//}
 @end
 
 @interface HBBaseViewController ()

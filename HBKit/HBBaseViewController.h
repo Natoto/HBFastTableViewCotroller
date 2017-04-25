@@ -13,8 +13,8 @@
 
 #define ALPHA_NAVIGATIONBAR 0.7
 
-@interface BackGroundView : UIView
-@property(nonatomic,retain) UIImage * image;
+@interface BackGroundView : UIImageView
+//@property(nonatomic,retain) UIImage * image;
 @end
 
 @protocol BaseViewControllerDelegate ;
