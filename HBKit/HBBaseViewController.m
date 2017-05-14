@@ -249,15 +249,21 @@
     //    [self.navigationbar setleftBarButtonItemWithImage:[UIImage imageNamed:@"white_back_btn"] target:self selector:@selector(backtoparent:)];
 }
 
--(IBAction)backtoparent:(id)sender
+
+-(IBAction)backtoparent:(id)sender animate:(BOOL)animate
 {
     if (self.navigationController.childViewControllers.count >1 && self.navigationController.topViewController == self) {
-        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:animate];
         return;
     }
     if (self.presentingViewController) {
-        [self dismissViewControllerAnimated:YES completion:NULL];
+        [self dismissViewControllerAnimated:animate completion:NULL];
     }
+}
+
+-(IBAction)backtoparent:(id)sender
+{
+    [self backtoparent:sender animate:YES];
 }
 
 #pragma mark 点击手势

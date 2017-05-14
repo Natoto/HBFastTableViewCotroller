@@ -60,6 +60,10 @@
 -(void)observeTapgestureWithSuperView:(UIView *)superview target:(id)target sel:(SEL)seletor;
 
 -(IBAction)backtoparent:(id)sender;
+
+-(IBAction)backtoparent:(id)sender animate:(BOOL)animate;
+
+
 -(IBAction)hbNavigationbartitleTap:(id)sender;
 
 
