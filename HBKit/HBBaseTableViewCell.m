@@ -140,7 +140,7 @@
     
     if (self.showBottomLine) {
         [self drawBottomlinelayer];
-        NSString * toplayerinset = self.dictionary[key_cellstruct_toplayerinsets];
+        NSString * toplayerinset = self.dictionary[key_cellstruct_bottomlayerinsets];
         if (toplayerinset) {
             UIEdgeInsets  insets  = UIEdgeInsetsFromString(toplayerinset);
             CGRect  layerframe = CGRectMake(insets.left,  self.frame.size.height - insets.bottom - 0.5, [UIScreen mainScreen].bounds.size.width - insets.left - insets.right, 0.5);
