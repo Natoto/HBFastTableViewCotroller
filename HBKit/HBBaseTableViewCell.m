@@ -366,7 +366,7 @@
     UIView *imageLayer = self.bottomlayer;
     CGRect layerframe =  CGRectMake(0, self.frame.size.height - 0.5, [UIScreen mainScreen].bounds.size.width, 0.5);
     if (!imageLayer) {
-        imageLayer =  [self createLayer:layerframe color:PENG_COLOR_LINE];
+        imageLayer =  [self createLayer:layerframe color:self.top_bottom_line_color];
         [self addSubview:imageLayer];
         self.bottomlayer = imageLayer;
     }else
@@ -377,12 +377,16 @@
     imageLayer.hidden = NO;
 }
 
+-(UIColor *)top_bottom_line_color{
+    return PENG_COLOR_LINE;
+}
+
 -(void)drawToplinelayer
 {
     UIView *imageLayer = self.toplayer;
     CGRect  layerframe = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0.5);
     if (!imageLayer) {
-        imageLayer =  [self createLayer:layerframe color:PENG_COLOR_LINE];
+        imageLayer =  [self createLayer:layerframe color:self.top_bottom_line_color];
         [self addSubview:imageLayer];
         self.toplayer = imageLayer;
     }else
