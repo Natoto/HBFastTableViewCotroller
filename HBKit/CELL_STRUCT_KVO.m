@@ -10,7 +10,7 @@
 #import "CELL_STRUCT.h"
 #import <objc/runtime.h>
 
-@implementation UIViewController(CELL_STRUCT_KVO)
+@implementation HBBaseTableViewController(CELL_STRUCT_KVO)
 
 static char cellstruct_OperationKey;
 

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "CELL_STRUCT.h"
+#import "HBBaseTableViewController.h"
+
+@class HBBaseTableViewController;
+
 #define ADD_CELLSTRUCT_KVO(CELLSTRUCTARRAY) [self beginObservingValuesForKeyPaths:[self  cellstruct_observedKeyPaths] options:[self cellstruct_observationOptions] cellstructs:CELLSTRUCTARRAY];
 
 #define REMOVE_CELLSTRUCT_KVO(CELLSTRUCTARRAY) [self endObservingValuesForKeysPaths:[self cellstruct_observedKeyPaths] cellstructs:CELLSTRUCTARRAY];
@@ -15,7 +19,8 @@
 #define ON_CELLSTRUCT_HANDEL_KVO(KEYPATH) -(void)handle_cell_struct_datachange:(NSString *)KEYPATH
 
 #define ON_CELLSTRUCT_HANDEL_KVO_CELLSTRUCT_KEYPATH(CELLSTRUCT,KEYPATH) -(void)handle_cell_struct_datachange:(CELL_STRUCT *)CELLSTRUCT  keypath:(NSString *)KEYPATH
-@interface UIViewController(CELL_STRUCT_KVO)
+
+@interface HBBaseTableViewController(CELL_STRUCT_KVO)
 
 - (NSSet *)cellstruct_observedKeyPaths;
 - (NSKeyValueObservingOptions)cellstruct_observationOptions;
