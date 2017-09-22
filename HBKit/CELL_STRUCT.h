@@ -10,12 +10,6 @@
 #import "CELL_STRUCT_KEY.h"
 #import "NSObject+HBObjectMap.h"
 
-#undef KEY_INDEXPATH
-#define KEY_INDEXPATH(SECTION,ROW) [NSString stringWithFormat:@"section%u_%u",(int)(SECTION),(int)(ROW)]
-
-#undef  KEY_SECTION
-#define KEY_SECTION(SECTION) [NSString stringWithFormat:@"section%d",(int)(SECTION)]
-
 @class HBCellStruct;
 @compatibility_alias CELL_STRUCT HBCellStruct;
 

@@ -1,25 +1,28 @@
 //
-//  BaseCollectionViewController.m
-//  PENG
+//  HBBaseCollectionView.m
+//  HBKit
 //
-//  Created by zeno on 15/11/18.
-//  Copyright © 2015年 YY.COM All rights reserved.
+//  Created by boob on 2017/9/22.
 //
 
-#import "HBBaseCollectionViewController.h"
+#import "HBBaseCollectionView.h"
+#import "CELL_STRUCT.h"
 #import "HBBaseCollectionViewCell.h"
-#import "HBCollectionFallFLayout.h"
-#import "CELL_STRUCT_Common.h"
 #import "HBBaseSectionCollectionReusableView.h"
+#import "CELL_STRUCT_Common.h"
+#import "CELL_STRUCT_KEY.h"
 
+@implementation HBBaseCollectionView
 
-@interface HBBaseCollectionViewController ()
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    BOOL config;
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.collectionView.backgroundColor = [UIColor clearColor];
+        
+    }
+    return self;
 }
-@end
-
-@implementation HBBaseCollectionViewController
 
 -(NSInteger)configColumnCount
 {
@@ -54,20 +57,6 @@
     return 2;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {//这个是需要的
-        self.edgesForExtendedLayout = UIRectEdgeAll;//UIRectEdgeNone;
-    }
-     self.collectionView.backgroundColor = [UIColor clearColor];
-     self.showBackItem = YES;
-}
- 
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
 
 #define UISCREEN_BOUNDS [UIScreen mainScreen].bounds
 
@@ -76,46 +65,24 @@
     if (!_collectionView) {
         CGRect collectionViewFrame = CGRectMake(0,\
                                                 0,\
-                                                self.view.bounds.size.width,\
-                                                self.view.bounds.size.height);
-        
-        HBCollectionFallFLayout *collectionViewFlowLayout = [[HBCollectionFallFLayout alloc] init];
-        collectionViewFlowLayout.delegate = self;
-        collectionViewFlowLayout.headerHeight = 0;
-        collectionViewFlowLayout.minimumColumnSpacing = self.configMinimumColumnSpacing;
-        collectionViewFlowLayout.minimumInteritemSpacing = self.configMinimumInteritemSpacing;
-        collectionViewFlowLayout.sectionInset = self.configSectionInset;
-        collectionViewFlowLayout.columnCount = self.configColumnCount;
-        self.collectionViewFlowLayout = collectionViewFlowLayout;
-        _collectionView = [[UICollectionView alloc] initWithFrame:collectionViewFrame collectionViewLayout:collectionViewFlowLayout];
-        _collectionView.dataSource = self;
-        _collectionView.delegate = self;
-        _collectionView.alwaysBounceVertical = YES;
-        _collectionView.contentInset = UIEdgeInsetsMake(64., 0, 0, 0);
-        [_collectionView registerClass:[HBBaseCollectionViewCell class] forCellWithReuseIdentifier:@"HBBaseCollectionViewCell"];
-        [_collectionView registerClass:[HBBaseSectionCollectionReusableView class] forSupplementaryViewOfKind:@"UICollectionElementKindSectionHeader" withReuseIdentifier:@"HBBaseSectionCollectionReusableView"];
-        _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        [self.view addSubview:_collectionView];
+                                                self.bounds.size.width,\
+                                                self.bounds.size.height);
+        _collectionView = [HBCProtocol createCollectionView:self frame:collectionViewFrame];
+        [self addSubview:_collectionView];
     }
     return _collectionView;
 }
 
 
 -(void)viewDidCurrentView{
-
+    
 }
 
 -(CGRect)adjustContentOffSet:(CGFloat)top bottom:(CGFloat)bottom
 {
-    self.collectionView.frame = CGRectMake(0, top, self.view.bounds.size.width ,self.view.bounds.size.height - top - bottom);
+    self.collectionView.frame = CGRectMake(0, top, self.bounds.size.width ,self.bounds.size.height - top - bottom);
     return self.collectionView.frame;
-    
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -145,7 +112,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-//    return self.dataDictionary.allKeys.count;
+    //    return self.dataDictionary.allKeys.count;
     NSArray * keys = self.dataDictionary.allKeys;
     NSString * sectionx = KEY_SECTION_MARK(section);
     NSInteger rowcount = 0;
@@ -176,7 +143,7 @@
 -(NSString *)valiateCellClass:(NSString *)cellclass
 {
     if ([cellclass isEqualToString:@"HBBaseTableViewCell"]) {
-            return @"HBBaseCollectionViewCell";
+        return @"HBBaseCollectionViewCell";
     }
     return cellclass;
 }
@@ -190,7 +157,8 @@
     }
     @catch (NSException *exception) {
         NSLog(@"😫--> 重用的cell %@找不到\n%@",identifier01,exception);
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier01 forIndexPath:indexPath];
+        //        identifier01 = NSStringFromClass([HBBaseCollectionViewCell class]);
+        cell =  [collectionView dequeueReusableCellWithReuseIdentifier:identifier01 forIndexPath:indexPath];
     }
     @finally {
     }
@@ -200,6 +168,7 @@
     if ([[cell class] isSubclassOfClass:[HBBaseCollectionViewCell class]]) {
         cell.delegate = self;
         cell.indexPath = indexPath;
+        //        [cell setcellimageRight:cellstruct.imageRight];
         [cell setcelldetailtitle:cellstruct.detailtitle];
         [cell setcellTitle:cellstruct.title];
         [cell setcellProfile:cellstruct.picture];
@@ -216,19 +185,19 @@
 
 -(CGFloat)itemWidth
 {
-    return  (self.view.bounds.size.width - 5 * (self.configColumnCount + 1)) / self.configColumnCount;;
+    return  (self.bounds.size.width - 5 * (self.configColumnCount + 1)) / self.configColumnCount;;
 }
 #pragma mark - UICollectionViewDelegateFlowLayout
- 
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UIEdgeInsets edgeinset = [self configInsetForSectionAtIndex:indexPath.section];
-     CELL_STRUCT * cellstruct = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
+    CELL_STRUCT * cellstruct = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
     NSInteger realcolumcount = self.configColumnCount;
     if ([self respondsToSelector:@selector(collectionView:ColumnCountOfSection:)]) {
         realcolumcount = [self collectionView:collectionView ColumnCountOfSection:indexPath.section];
     }
-    CGFloat cellSideLength = (self.view.bounds.size.width - edgeinset.left * (realcolumcount + 1)) / realcolumcount;
+    CGFloat cellSideLength = (self.bounds.size.width - edgeinset.left * (realcolumcount + 1)) / realcolumcount;
     CGFloat itemheight = (cellstruct.cellheight>0) ? cellstruct.cellheight:cellSideLength;
     CGSize cellSize = CGSizeMake(cellSideLength, itemheight);
     return cellSize;
@@ -260,17 +229,7 @@
 {
     if (kind == UICollectionElementKindSectionHeader)
     {
-        HBBaseSectionCollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HBBaseSectionCollectionReusableView" forIndexPath:indexPath];
-        CELL_STRUCT *cell_struce = [self.dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, 0)];
-        
-        view.titleLabel.text = cell_struce.sectiontitle;
-        CGFloat sectionfont = (cell_struce.sectionfont > 0)?cell_struce.sectionfont:12;
-        view.titleLabel.font = [UIFont systemFontOfSize:sectionfont];
-        view.titleLabel.textColor = [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectioncolor];
-        view.titleLabel.textAlignment = NSTextAlignmentLeft;
-        UIColor * bgcolor =  [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectionbgcolor];
-        view.backgroundColor = bgcolor?bgcolor:self.view.backgroundColor;
-        
+        UICollectionReusableView *view = [HBCProtocol collectionView:collectionView viewForSupplementaryElementOfKind:kind atIndexPath:indexPath background:self.backgroundColor dataDictionary:self.dataDictionary];
         return view;
     }
     return nil;
@@ -279,5 +238,6 @@
 {
     return UICollectionElementKindSectionHeader;
 }
- 
+
+
 @end

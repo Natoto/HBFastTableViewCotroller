@@ -421,6 +421,10 @@
 		F4F1449416213E5C8E45802FA16CA5D3 /* _ASPendingState.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BA30959119909A989161C55FB0097C1 /* _ASPendingState.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F5EA51E6515F6CFF6EF7987DBE743013 /* UICollectionViewLayout+ASConvenience.h in Headers */ = {isa = PBXBuildFile; fileRef = B4E16528717B16037E16F7A0A555D578 /* UICollectionViewLayout+ASConvenience.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F641A2313B39E6567A37C1668581CD37 /* ASControlNode+tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E2A94720E7EFBE31B35DC7F8CBEA5D4 /* ASControlNode+tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8D0D1841F74BC9700990977 /* HBBaseCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D0D1821F74BC9700990977 /* HBBaseCollectionView.h */; };
+		F8D0D1851F74BC9700990977 /* HBBaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D0D1831F74BC9700990977 /* HBBaseCollectionView.m */; };
+		F8D0D1881F74C41400990977 /* HBCProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D0D1861F74C41400990977 /* HBCProtocol.h */; };
+		F8D0D1891F74C41400990977 /* HBCProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D0D1871F74C41400990977 /* HBCProtocol.m */; };
 		FAA5BB8775FC923E55D3550FF4E7A09E /* ASPagerFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = F2ACE00994EEE93C5EA09085C0CAEC41 /* ASPagerFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAFD64980255CBCFB0B1B3B03A1983FA /* ASStackLayoutable.h in Headers */ = {isa = PBXBuildFile; fileRef = 5365F8BA26C147E06C784ED720B651E5 /* ASStackLayoutable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FB36B6CE2E99F4C39C96B29FCB853018 /* PINImageView+PINRemoteImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 99340E14F928D872D0C6C09A52ED048D /* PINImageView+PINRemoteImage.m */; };
@@ -552,26 +556,26 @@
 		0293434DD12FCF56F0E24D6ED0B648CA /* ASInternalHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASInternalHelpers.h; path = AsyncDisplayKit/Private/ASInternalHelpers.h; sourceTree = "<group>"; };
 		03101B3BDF13916487E9BE4DF57E3F5D /* MJRefreshBackGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackGifFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m; sourceTree = "<group>"; };
 		035B2B1FABFAE894713F0A2E019B2064 /* ASImageContainerProtocolCategories.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASImageContainerProtocolCategories.h; path = AsyncDisplayKit/Details/ASImageContainerProtocolCategories.h; sourceTree = "<group>"; };
-		03BD0CC3A2420689A4F80BA92F205D52 /* ASInsetLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASInsetLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASInsetLayoutSpec.mm; sourceTree = "<group>"; };
-		03E32F89ED3D08C790549286E1C209F2 /* ASRelativeLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASRelativeLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASRelativeLayoutSpec.mm; sourceTree = "<group>"; };
-		0551562A93038C5CFE861492FF0CA26E /* ASDimension.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASDimension.mm; path = AsyncDisplayKit/Layout/ASDimension.mm; sourceTree = "<group>"; };
-		06B706120F8F24B2A801A13C899A33E9 /* ASTextKitRenderer.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASTextKitRenderer.mm; path = AsyncDisplayKit/TextKit/ASTextKitRenderer.mm; sourceTree = "<group>"; };
-		0728DC19E2D899DE71773AB2F39CC518 /* ASDisplayNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASDisplayNode.mm; path = AsyncDisplayKit/ASDisplayNode.mm; sourceTree = "<group>"; };
-		079DE156B56D5DA455B290DA7494434E /* _ASCoreAnimationExtras.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = _ASCoreAnimationExtras.mm; path = AsyncDisplayKit/Private/_ASCoreAnimationExtras.mm; sourceTree = "<group>"; };
+		03BD0CC3A2420689A4F80BA92F205D52 /* ASInsetLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASInsetLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASInsetLayoutSpec.mm; sourceTree = "<group>"; };
+		03E32F89ED3D08C790549286E1C209F2 /* ASRelativeLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASRelativeLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASRelativeLayoutSpec.mm; sourceTree = "<group>"; };
+		0551562A93038C5CFE861492FF0CA26E /* ASDimension.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASDimension.mm; path = AsyncDisplayKit/Layout/ASDimension.mm; sourceTree = "<group>"; };
+		06B706120F8F24B2A801A13C899A33E9 /* ASTextKitRenderer.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASTextKitRenderer.mm; path = AsyncDisplayKit/TextKit/ASTextKitRenderer.mm; sourceTree = "<group>"; };
+		0728DC19E2D899DE71773AB2F39CC518 /* ASDisplayNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASDisplayNode.mm; path = AsyncDisplayKit/ASDisplayNode.mm; sourceTree = "<group>"; };
+		079DE156B56D5DA455B290DA7494434E /* _ASCoreAnimationExtras.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = _ASCoreAnimationExtras.mm; path = AsyncDisplayKit/Private/_ASCoreAnimationExtras.mm; sourceTree = "<group>"; };
 		082F157FA712FE30A51E8F050E64CC06 /* PINRemoteImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINRemoteImageManager.h; path = Pod/Classes/PINRemoteImageManager.h; sourceTree = "<group>"; };
-		0838D530E1E83817EF13AB39946F4995 /* ASPendingStateController.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASPendingStateController.mm; path = AsyncDisplayKit/Private/ASPendingStateController.mm; sourceTree = "<group>"; };
+		0838D530E1E83817EF13AB39946F4995 /* ASPendingStateController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASPendingStateController.mm; path = AsyncDisplayKit/Private/ASPendingStateController.mm; sourceTree = "<group>"; };
 		093FCCF9D5FE4669C5F2BF67468D04BA /* ASAsciiArtBoxCreator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASAsciiArtBoxCreator.h; path = AsyncDisplayKit/Layout/ASAsciiArtBoxCreator.h; sourceTree = "<group>"; };
-		09832F4DCAAE2562FC2A1A0B21880526 /* ASStackUnpositionedLayout.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASStackUnpositionedLayout.mm; path = AsyncDisplayKit/Private/ASStackUnpositionedLayout.mm; sourceTree = "<group>"; };
+		09832F4DCAAE2562FC2A1A0B21880526 /* ASStackUnpositionedLayout.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASStackUnpositionedLayout.mm; path = AsyncDisplayKit/Private/ASStackUnpositionedLayout.mm; sourceTree = "<group>"; };
 		09C33CB80107A3F7F051F95D13B13EEA /* PINRemoteImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PINRemoteImage-dummy.m"; sourceTree = "<group>"; };
 		0A43FAA35973B460DF22E199C9405651 /* ASDimension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDimension.h; path = AsyncDisplayKit/Layout/ASDimension.h; sourceTree = "<group>"; };
 		0C2B7F6063C732404EE74EF8E2CB4C6E /* ASVideoNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASVideoNode.h; path = AsyncDisplayKit/ASVideoNode.h; sourceTree = "<group>"; };
-		0CDE12C3AE2475986D5EF8709F3F2D1A /* ASLayoutable.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASLayoutable.mm; path = AsyncDisplayKit/Layout/ASLayoutable.mm; sourceTree = "<group>"; };
+		0CDE12C3AE2475986D5EF8709F3F2D1A /* ASLayoutable.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASLayoutable.mm; path = AsyncDisplayKit/Layout/ASLayoutable.mm; sourceTree = "<group>"; };
 		0D516FE1BD11930C1F6C2916DEF32063 /* AsyncDisplayKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AsyncDisplayKit-prefix.pch"; sourceTree = "<group>"; };
 		0DD615F4887EED61ACC045EC1BB81472 /* HBKitWatchDog-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HBKitWatchDog-prefix.pch"; sourceTree = "<group>"; };
-		0E90793895DE8BC9200EDFC5FE3C4449 /* libHBKitAnode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHBKitAnode.a; path = libHBKitAnode.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E90793895DE8BC9200EDFC5FE3C4449 /* libHBKitAnode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHBKitAnode.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB680D22FCBFC951EBA3FF27943FE92 /* ASTextKitCoreTextAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASTextKitCoreTextAdditions.m; path = AsyncDisplayKit/TextKit/ASTextKitCoreTextAdditions.m; sourceTree = "<group>"; };
-		0F5E03CCCD392543531B04DCC705A07B /* libPINRemoteImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPINRemoteImage.a; path = libPINRemoteImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1046EFEEF5E20C75EC1C68CD0A6831B4 /* ASMainSerialQueue.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASMainSerialQueue.mm; path = AsyncDisplayKit/Details/ASMainSerialQueue.mm; sourceTree = "<group>"; };
+		0F5E03CCCD392543531B04DCC705A07B /* libPINRemoteImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPINRemoteImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1046EFEEF5E20C75EC1C68CD0A6831B4 /* ASMainSerialQueue.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASMainSerialQueue.mm; path = AsyncDisplayKit/Details/ASMainSerialQueue.mm; sourceTree = "<group>"; };
 		10BA6C8F91813EA87C2666322F630EB7 /* CELL_STRUCT_Common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT_Common.h; sourceTree = "<group>"; };
 		111E4F2BD8A14FC091B01FD61A12851E /* _ASHierarchyChangeSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASHierarchyChangeSet.h; path = AsyncDisplayKit/Private/_ASHierarchyChangeSet.h; sourceTree = "<group>"; };
 		11683F9D94443741DADB36E4CDC31872 /* ASViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASViewController.h; path = AsyncDisplayKit/ASViewController.h; sourceTree = "<group>"; };
@@ -583,7 +587,7 @@
 		13546C949A191BDCD00A4B0FAECCE326 /* PINButton+PINRemoteImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PINButton+PINRemoteImage.h"; path = "Pod/Classes/Image Categories/PINButton+PINRemoteImage.h"; sourceTree = "<group>"; };
 		13DC0BAC88156199735010A45A69E823 /* HBBaseViewController+DirWatchDog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HBBaseViewController+DirWatchDog.m"; sourceTree = "<group>"; };
 		140A28C177A4F2DF7017FEACDA65D67C /* HBDirWatchdog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HBDirWatchdog.h; sourceTree = "<group>"; };
-		141F1E3562CD0FEE29AE5713329BF41B /* ASTextKitContext.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASTextKitContext.mm; path = AsyncDisplayKit/TextKit/ASTextKitContext.mm; sourceTree = "<group>"; };
+		141F1E3562CD0FEE29AE5713329BF41B /* ASTextKitContext.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASTextKitContext.mm; path = AsyncDisplayKit/TextKit/ASTextKitContext.mm; sourceTree = "<group>"; };
 		14361EBD87DD87FA358BBDB0741B62BE /* MJRefreshBackNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackNormalFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h; sourceTree = "<group>"; };
 		150624C35CADED1BE0391EB21B7C5316 /* ASTraitCollection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASTraitCollection.m; path = AsyncDisplayKit/Details/ASTraitCollection.m; sourceTree = "<group>"; };
 		153978F838E088B98FD7E62528EF7459 /* PINImage+DecodedImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PINImage+DecodedImage.h"; path = "Pod/Classes/Categories/PINImage+DecodedImage.h"; sourceTree = "<group>"; };
@@ -591,13 +595,13 @@
 		15A11FDABD8A61F7E92A4654BEA8F46A /* HBKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HBKit-prefix.pch"; sourceTree = "<group>"; };
 		15C756EDD0839443120DD2CB6BEFA362 /* MJRefreshComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshComponent.m; path = MJRefresh/Base/MJRefreshComponent.m; sourceTree = "<group>"; };
 		17A3964996E15DE18EC468C255943D90 /* ASAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASAssert.h; path = Base/ASAssert.h; sourceTree = "<group>"; };
-		186BB284916D14ED47C234D349994731 /* ASEqualityHashHelpers.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASEqualityHashHelpers.mm; path = AsyncDisplayKit/ASEqualityHashHelpers.mm; sourceTree = "<group>"; };
+		186BB284916D14ED47C234D349994731 /* ASEqualityHashHelpers.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASEqualityHashHelpers.mm; path = AsyncDisplayKit/ASEqualityHashHelpers.mm; sourceTree = "<group>"; };
 		192B464053CBF2D7EEBCA6A83CE9FA0F /* ASMutableAttributedStringBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASMutableAttributedStringBuilder.h; path = AsyncDisplayKit/Details/ASMutableAttributedStringBuilder.h; sourceTree = "<group>"; };
-		19F516F1B9BB722F7A29E5CC23F4375B /* ASLayout.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASLayout.mm; path = AsyncDisplayKit/Layout/ASLayout.mm; sourceTree = "<group>"; };
+		19F516F1B9BB722F7A29E5CC23F4375B /* ASLayout.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASLayout.mm; path = AsyncDisplayKit/Layout/ASLayout.mm; sourceTree = "<group>"; };
 		1A249807401FA8A261C7CBFA47DC5A3F /* HBBaseViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HBBaseViewController.h; sourceTree = "<group>"; };
 		1A69B92EAA2B14A446B5133CA2D48A05 /* ASSentinel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASSentinel.h; path = AsyncDisplayKit/Private/ASSentinel.h; sourceTree = "<group>"; };
 		1AAC56E5C3FE7B2A90EC986F5622489D /* ASCollectionInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASCollectionInternal.h; path = AsyncDisplayKit/Details/ASCollectionInternal.h; sourceTree = "<group>"; };
-		1AD81CFFBE6723EAA59E22ABADA6BAB3 /* ASRatioLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASRatioLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASRatioLayoutSpec.mm; sourceTree = "<group>"; };
+		1AD81CFFBE6723EAA59E22ABADA6BAB3 /* ASRatioLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASRatioLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASRatioLayoutSpec.mm; sourceTree = "<group>"; };
 		1B5C5A4C60C1DE6D82CA92A51F9C17B6 /* ASTextKitTruncating.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTextKitTruncating.h; path = AsyncDisplayKit/TextKit/ASTextKitTruncating.h; sourceTree = "<group>"; };
 		1BA30959119909A989161C55FB0097C1 /* _ASPendingState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASPendingState.h; path = AsyncDisplayKit/Private/_ASPendingState.h; sourceTree = "<group>"; };
 		1BD5B7D8FF58C389A73676599CCA192F /* UIView+ASConvenience.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ASConvenience.h"; path = "AsyncDisplayKit/Details/UIView+ASConvenience.h"; sourceTree = "<group>"; };
@@ -605,51 +609,51 @@
 		1D9991C7EAE8755DEE51F32C163221C5 /* HBBaseViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HBBaseViewController.m; sourceTree = "<group>"; };
 		1F3A0ABE1C84AFC5F169913F30A2B6EB /* Nullability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Nullability.h; path = PINCache/Nullability.h; sourceTree = "<group>"; };
 		2000B91C52EF8A1A7599E496135A1EA8 /* _ASAsyncTransaction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASAsyncTransaction.h; path = AsyncDisplayKit/Details/Transactions/_ASAsyncTransaction.h; sourceTree = "<group>"; };
-		2060932F6ECF626D15E752D3AC4CB3D0 /* ASDisplayNodeExtras.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASDisplayNodeExtras.mm; path = AsyncDisplayKit/ASDisplayNodeExtras.mm; sourceTree = "<group>"; };
+		2060932F6ECF626D15E752D3AC4CB3D0 /* ASDisplayNodeExtras.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASDisplayNodeExtras.mm; path = AsyncDisplayKit/ASDisplayNodeExtras.mm; sourceTree = "<group>"; };
 		2287F07B3A9A8640EB3E7F2EC31153D8 /* ASMapNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASMapNode.h; path = AsyncDisplayKit/ASMapNode.h; sourceTree = "<group>"; };
 		233C48EE9E6344109743F9D9A3D4EB78 /* NSObject+HBObjectMap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+HBObjectMap.h"; sourceTree = "<group>"; };
 		23B54D1721298ABF83DC247EC7AC849B /* ASTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTableView.h; path = AsyncDisplayKit/ASTableView.h; sourceTree = "<group>"; };
-		24AADF4F72D081BBA7E922FD10930195 /* libAsyncDisplayKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAsyncDisplayKit.a; path = libAsyncDisplayKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		24AADF4F72D081BBA7E922FD10930195 /* libAsyncDisplayKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAsyncDisplayKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2583F55F921C2B2AC1D234E315CCA524 /* NSData+ImageDetectors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageDetectors.m"; path = "Pod/Classes/Categories/NSData+ImageDetectors.m"; sourceTree = "<group>"; };
 		2593C889B8AC3A60378836ED179B8651 /* MJRefreshStateHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshStateHeader.h; path = MJRefresh/Custom/Header/MJRefreshStateHeader.h; sourceTree = "<group>"; };
 		2722D75D98D3BF781A8EFC150CD03332 /* AsyncDisplayKit+Debug.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "AsyncDisplayKit+Debug.m"; path = "AsyncDisplayKit/AsyncDisplayKit+Debug.m"; sourceTree = "<group>"; };
 		27A53223AB7892FF971D2CE061EBBCC4 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJExtension.m"; path = "MJRefresh/UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
 		27D32FBECB4A8F14201E160213603E18 /* PINRemoteImageProcessorTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINRemoteImageProcessorTask.h; path = Pod/Classes/PINRemoteImageProcessorTask.h; sourceTree = "<group>"; };
-		2979C9979FBA98B0F5292912FA52565C /* ASRunLoopQueue.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASRunLoopQueue.mm; path = AsyncDisplayKit/ASRunLoopQueue.mm; sourceTree = "<group>"; };
+		2979C9979FBA98B0F5292912FA52565C /* ASRunLoopQueue.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASRunLoopQueue.mm; path = AsyncDisplayKit/ASRunLoopQueue.mm; sourceTree = "<group>"; };
 		298DD0EEE4C1870383324D54BC5DC31A /* ASLayoutManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASLayoutManager.m; path = AsyncDisplayKit/TextKit/ASLayoutManager.m; sourceTree = "<group>"; };
 		29A49283036B57C87E8CCA82F9FF726E /* ASNetworkImageNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASNetworkImageNode.h; path = AsyncDisplayKit/ASNetworkImageNode.h; sourceTree = "<group>"; };
 		29BEC6F34DE997E6CF4CAC56E8DC2284 /* ASScrollDirection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASScrollDirection.m; path = AsyncDisplayKit/Details/ASScrollDirection.m; sourceTree = "<group>"; };
-		2A0F2E76F3D5C73C16D5D3509B442163 /* ASTextNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASTextNode.mm; path = AsyncDisplayKit/ASTextNode.mm; sourceTree = "<group>"; };
+		2A0F2E76F3D5C73C16D5D3509B442163 /* ASTextNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASTextNode.mm; path = AsyncDisplayKit/ASTextNode.mm; sourceTree = "<group>"; };
 		2A47A47D6EF6818D24C986779586034A /* ASPhotosFrameworkImageRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASPhotosFrameworkImageRequest.m; path = AsyncDisplayKit/Details/ASPhotosFrameworkImageRequest.m; sourceTree = "<group>"; };
 		2A636A58FEFD9D0A0ADFC4287754CC4C /* ASRatioLayoutSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASRatioLayoutSpec.h; path = AsyncDisplayKit/Layout/ASRatioLayoutSpec.h; sourceTree = "<group>"; };
 		2ABC4EF800EA7B5C05BC26557AC8361F /* PINCacheObjectSubscripting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINCacheObjectSubscripting.h; path = PINCache/PINCacheObjectSubscripting.h; sourceTree = "<group>"; };
 		2AD3B76ABF4FBA596AA1A2001B5098BF /* NSIndexSet+ASHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSIndexSet+ASHelpers.m"; path = "AsyncDisplayKit/Details/NSIndexSet+ASHelpers.m"; sourceTree = "<group>"; };
 		2ADD76D0FFBE4D51D0072682CBB3EAAB /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJExtension.h"; path = "MJRefresh/UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
-		2AFD58AAF2E93CAC07A235E72C3367DB /* ASRelativeSize.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASRelativeSize.mm; path = AsyncDisplayKit/Layout/ASRelativeSize.mm; sourceTree = "<group>"; };
+		2AFD58AAF2E93CAC07A235E72C3367DB /* ASRelativeSize.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASRelativeSize.mm; path = AsyncDisplayKit/Layout/ASRelativeSize.mm; sourceTree = "<group>"; };
 		2B19463F32D0ECE2BBC58E09A65678CA /* ASHighlightOverlayLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASHighlightOverlayLayer.h; path = AsyncDisplayKit/Details/ASHighlightOverlayLayer.h; sourceTree = "<group>"; };
-		2B1BEFAEFF626FE9592325812725C394 /* ASEnvironmentInternal.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASEnvironmentInternal.mm; path = AsyncDisplayKit/Private/ASEnvironmentInternal.mm; sourceTree = "<group>"; };
-		2B8B4A307A707916D08045014FE471A5 /* ASEnvironment.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASEnvironment.mm; path = AsyncDisplayKit/Details/ASEnvironment.mm; sourceTree = "<group>"; };
-		2DB8431879AF36586EFEA09B51F20CC7 /* ASTextKitShadower.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASTextKitShadower.mm; path = AsyncDisplayKit/TextKit/ASTextKitShadower.mm; sourceTree = "<group>"; };
+		2B1BEFAEFF626FE9592325812725C394 /* ASEnvironmentInternal.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASEnvironmentInternal.mm; path = AsyncDisplayKit/Private/ASEnvironmentInternal.mm; sourceTree = "<group>"; };
+		2B8B4A307A707916D08045014FE471A5 /* ASEnvironment.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASEnvironment.mm; path = AsyncDisplayKit/Details/ASEnvironment.mm; sourceTree = "<group>"; };
+		2DB8431879AF36586EFEA09B51F20CC7 /* ASTextKitShadower.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASTextKitShadower.mm; path = AsyncDisplayKit/TextKit/ASTextKitShadower.mm; sourceTree = "<group>"; };
 		2DCEC107B47D240E477C92A674889FF7 /* ASBatchFetching.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASBatchFetching.m; path = AsyncDisplayKit/Private/ASBatchFetching.m; sourceTree = "<group>"; };
 		2DE14018AA821F6528D451B351226A5D /* ASLayoutManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutManager.h; path = AsyncDisplayKit/TextKit/ASLayoutManager.h; sourceTree = "<group>"; };
 		2E27428D92A75DFB30178038532B81D6 /* HBBaseCollectionViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HBBaseCollectionViewController.m; sourceTree = "<group>"; };
-		2F522B1A6C6A958E1BA53CCA645F6721 /* ASLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASLayoutSpec.mm; sourceTree = "<group>"; };
+		2F522B1A6C6A958E1BA53CCA645F6721 /* ASLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASLayoutSpec.mm; sourceTree = "<group>"; };
 		2F661C48803FB402CD8CAD5D5BC06F45 /* HBKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HBKit.h; sourceTree = "<group>"; };
 		30FE4D4A338E8FD815F20AC3C2C942B1 /* UIView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MJExtension.m"; path = "MJRefresh/UIView+MJExtension.m"; sourceTree = "<group>"; };
 		3234D2059F3C4D31F6C2320AC3AE40F8 /* ASRelativeSize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASRelativeSize.h; path = AsyncDisplayKit/Layout/ASRelativeSize.h; sourceTree = "<group>"; };
-		32372F4BF65A14DB97F9D776ECD535B0 /* _ASDisplayView.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = _ASDisplayView.mm; path = AsyncDisplayKit/Details/_ASDisplayView.mm; sourceTree = "<group>"; };
-		32ADE89611F7EB669B9E5E9660B240D8 /* ASDisplayNode+AsyncDisplay.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = "ASDisplayNode+AsyncDisplay.mm"; path = "AsyncDisplayKit/Private/ASDisplayNode+AsyncDisplay.mm"; sourceTree = "<group>"; };
+		32372F4BF65A14DB97F9D776ECD535B0 /* _ASDisplayView.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = _ASDisplayView.mm; path = AsyncDisplayKit/Details/_ASDisplayView.mm; sourceTree = "<group>"; };
+		32ADE89611F7EB669B9E5E9660B240D8 /* ASDisplayNode+AsyncDisplay.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "ASDisplayNode+AsyncDisplay.mm"; path = "AsyncDisplayKit/Private/ASDisplayNode+AsyncDisplay.mm"; sourceTree = "<group>"; };
 		331D05D516AF50F3D68F2BD631C296D1 /* PINCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PINCache-dummy.m"; sourceTree = "<group>"; };
 		338ECFB1F486DEBC444A16213378B260 /* HBKitAnode-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HBKitAnode-prefix.pch"; sourceTree = "<group>"; };
 		33B81B66DE7EE92BA3DF0D5A17F6F21D /* UIView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MJExtension.h"; path = "MJRefresh/UIView+MJExtension.h"; sourceTree = "<group>"; };
 		340D128F1DDBB43A197DFF999A5E9B58 /* MJRefreshConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshConst.m; path = MJRefresh/MJRefreshConst.m; sourceTree = "<group>"; };
 		346563CAFDB31A12FE5C59EA65AE4E35 /* HBKitDirWatchdog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HBKitDirWatchdog.m; sourceTree = "<group>"; };
-		355241A70BB4722C497E0CAC87252DDB /* ASDataController.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASDataController.mm; path = AsyncDisplayKit/Details/ASDataController.mm; sourceTree = "<group>"; };
+		355241A70BB4722C497E0CAC87252DDB /* ASDataController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASDataController.mm; path = AsyncDisplayKit/Details/ASDataController.mm; sourceTree = "<group>"; };
 		36290BD31CEE3E4F1A5B731B01907DB5 /* HBKitRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HBKitRefresh-dummy.m"; sourceTree = "<group>"; };
 		367573860FD8C3764687D353481737B8 /* ASCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASCollectionView.h; path = AsyncDisplayKit/ASCollectionView.h; sourceTree = "<group>"; };
 		368B6AA9DF8D9D6F1F3D14D27D77A805 /* PINRemoteImageManagerResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINRemoteImageManagerResult.h; path = Pod/Classes/PINRemoteImageManagerResult.h; sourceTree = "<group>"; };
 		372BE72247E06FACEA4093B4DA431375 /* ASTextKitEntityAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASTextKitEntityAttribute.m; path = AsyncDisplayKit/TextKit/ASTextKitEntityAttribute.m; sourceTree = "<group>"; };
-		379DCB3FA97BCF5DBFFB51D9C8DB408E /* ASControlNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASControlNode.mm; path = AsyncDisplayKit/ASControlNode.mm; sourceTree = "<group>"; };
+		379DCB3FA97BCF5DBFFB51D9C8DB408E /* ASControlNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASControlNode.mm; path = AsyncDisplayKit/ASControlNode.mm; sourceTree = "<group>"; };
 		380F43D2928BB91F9F486D6A6ADA7C1B /* CELL_STRUCT_KVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT_KVO.h; sourceTree = "<group>"; };
 		3854963C62D6244AD86E6FB859D18C14 /* ASWeakProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASWeakProxy.h; path = AsyncDisplayKit/Details/ASWeakProxy.h; sourceTree = "<group>"; };
 		3861DDCE94905D177729749BF8C3BEAD /* ASTextKitContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTextKitContext.h; path = AsyncDisplayKit/TextKit/ASTextKitContext.h; sourceTree = "<group>"; };
@@ -657,8 +661,8 @@
 		3A5C3F3C5F73898DC101BDF76976E235 /* ASInsetLayoutSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASInsetLayoutSpec.h; path = AsyncDisplayKit/Layout/ASInsetLayoutSpec.h; sourceTree = "<group>"; };
 		3A9292E60A2B3D1C5BEEC3580B1F787B /* PINURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PINURLSessionManager.m; path = Pod/Classes/PINURLSessionManager.m; sourceTree = "<group>"; };
 		3A97F3B92EC44C05A3F97A656CEC8FEF /* HBKitRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HBKitRefresh.h; sourceTree = "<group>"; };
-		3AFBB8053E29EE3C8F455D8C352A70CB /* _ASAsyncTransaction.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = _ASAsyncTransaction.mm; path = AsyncDisplayKit/Details/Transactions/_ASAsyncTransaction.mm; sourceTree = "<group>"; };
-		3AFCBC6C2E942AAB9E6614B15A19196D /* _ASHierarchyChangeSet.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = _ASHierarchyChangeSet.mm; path = AsyncDisplayKit/Private/_ASHierarchyChangeSet.mm; sourceTree = "<group>"; };
+		3AFBB8053E29EE3C8F455D8C352A70CB /* _ASAsyncTransaction.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = _ASAsyncTransaction.mm; path = AsyncDisplayKit/Details/Transactions/_ASAsyncTransaction.mm; sourceTree = "<group>"; };
+		3AFCBC6C2E942AAB9E6614B15A19196D /* _ASHierarchyChangeSet.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = _ASHierarchyChangeSet.mm; path = AsyncDisplayKit/Private/_ASHierarchyChangeSet.mm; sourceTree = "<group>"; };
 		3B10CBA85AEC6054C68C72E0008685FC /* ASButtonNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASButtonNode.h; path = AsyncDisplayKit/ASButtonNode.h; sourceTree = "<group>"; };
 		3B153617304C07D74FEBFBCA4EBED40A /* ASLayoutableExtensibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutableExtensibility.h; path = AsyncDisplayKit/Layout/ASLayoutableExtensibility.h; sourceTree = "<group>"; };
 		3CEE8BF79A53EB921226C0F355D097ED /* ASBaseDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASBaseDefines.h; path = Base/ASBaseDefines.h; sourceTree = "<group>"; };
@@ -675,19 +679,19 @@
 		42F5ADA21F21A705A78D946EE01D80D6 /* MJRefresh.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = MJRefresh.bundle; path = MJRefresh/MJRefresh.bundle; sourceTree = "<group>"; };
 		43D513AC4C142C9F32438D760A07E21A /* ASBatchContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASBatchContext.h; path = AsyncDisplayKit/Details/ASBatchContext.h; sourceTree = "<group>"; };
 		44A9E0DFEC87C44F063FCE73AFBB47D4 /* ASFlowLayoutController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASFlowLayoutController.h; path = AsyncDisplayKit/Details/ASFlowLayoutController.h; sourceTree = "<group>"; };
-		454299826BE2B98A6F3FAB8A8558C9F4 /* ASMultidimensionalArrayUtils.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASMultidimensionalArrayUtils.mm; path = AsyncDisplayKit/Private/ASMultidimensionalArrayUtils.mm; sourceTree = "<group>"; };
+		454299826BE2B98A6F3FAB8A8558C9F4 /* ASMultidimensionalArrayUtils.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASMultidimensionalArrayUtils.mm; path = AsyncDisplayKit/Private/ASMultidimensionalArrayUtils.mm; sourceTree = "<group>"; };
 		45E4E9EB8F2ADFEBBB0CDE66439351CE /* CGRect+ASConvenience.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CGRect+ASConvenience.m"; path = "AsyncDisplayKit/Details/CGRect+ASConvenience.m"; sourceTree = "<group>"; };
 		46E03111C7B68DDCC24868D8E8E1E2E5 /* HBKitAnode.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HBKitAnode.xcconfig; sourceTree = "<group>"; };
 		46F62E10BF76CF96E775583A2D05B3EB /* ASLayoutTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutTransition.h; path = AsyncDisplayKit/Private/ASLayoutTransition.h; sourceTree = "<group>"; };
 		485FCD88E3FC4EBCC0AA0AFAC603A21A /* ASImageNode+tvOS.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ASImageNode+tvOS.m"; path = "AsyncDisplayKit/ASImageNode+tvOS.m"; sourceTree = "<group>"; };
 		48FCC3AA193FEC4F3AE3C89758AA98B1 /* PINMemoryCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINMemoryCache.h; path = PINCache/PINMemoryCache.h; sourceTree = "<group>"; };
-		4C90A075EBCC841223E77B701F403B0A /* ASTextKitRenderer+Positioning.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = "ASTextKitRenderer+Positioning.mm"; path = "AsyncDisplayKit/TextKit/ASTextKitRenderer+Positioning.mm"; sourceTree = "<group>"; };
+		4C90A075EBCC841223E77B701F403B0A /* ASTextKitRenderer+Positioning.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "ASTextKitRenderer+Positioning.mm"; path = "AsyncDisplayKit/TextKit/ASTextKitRenderer+Positioning.mm"; sourceTree = "<group>"; };
 		4D6437802D24960687FAD473DA9F94DE /* HBDirWatchdog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HBDirWatchdog.m; sourceTree = "<group>"; };
 		4DBD40B6D2CC34BEAA870814199370C6 /* NSData+ImageDetectors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageDetectors.h"; path = "Pod/Classes/Categories/NSData+ImageDetectors.h"; sourceTree = "<group>"; };
 		5027DF0D8C10B5868C18E4D949C82568 /* HBBaseTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HBBaseTableViewCell.m; sourceTree = "<group>"; };
 		50F8E4DE5F8F4FC2711E763AC6D02EEE /* ASNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASNavigationController.m; path = AsyncDisplayKit/ASNavigationController.m; sourceTree = "<group>"; };
 		526B6005CBB61298C4E78E6DE8E49D11 /* MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefresh.h; path = MJRefresh/MJRefresh.h; sourceTree = "<group>"; };
-		52A3ADD6305D9D5CA7F70F73FDF600EA /* ASStackBaselinePositionedLayout.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASStackBaselinePositionedLayout.mm; path = AsyncDisplayKit/Private/ASStackBaselinePositionedLayout.mm; sourceTree = "<group>"; };
+		52A3ADD6305D9D5CA7F70F73FDF600EA /* ASStackBaselinePositionedLayout.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASStackBaselinePositionedLayout.mm; path = AsyncDisplayKit/Private/ASStackBaselinePositionedLayout.mm; sourceTree = "<group>"; };
 		530EEC1FC9F44A72F8978746EC238C9C /* PINProgressiveImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PINProgressiveImage.m; path = Pod/Classes/PINProgressiveImage.m; sourceTree = "<group>"; };
 		531D5B7597B2EEF8EA4560DB91C866A0 /* ASTextKitRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTextKitRenderer.h; path = AsyncDisplayKit/TextKit/ASTextKitRenderer.h; sourceTree = "<group>"; };
 		5365F8BA26C147E06C784ED720B651E5 /* ASStackLayoutable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStackLayoutable.h; path = AsyncDisplayKit/Layout/ASStackLayoutable.h; sourceTree = "<group>"; };
@@ -696,13 +700,13 @@
 		56397D2D7F9677A50E91846BE67B9959 /* CELL_STRUCT_KEY.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT_KEY.h; sourceTree = "<group>"; };
 		566C0BADEDB11452ECF0EEBCA255ABD8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
 		56D5E6B66E7D3F70352E189096B1E0CE /* NSMutableAttributedString+TextKitAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableAttributedString+TextKitAdditions.h"; path = "AsyncDisplayKit/Details/NSMutableAttributedString+TextKitAdditions.h"; sourceTree = "<group>"; };
-		5726546613D1393176B8A71DFBD26AD4 /* ASNetworkImageNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASNetworkImageNode.mm; path = AsyncDisplayKit/ASNetworkImageNode.mm; sourceTree = "<group>"; };
-		5759CBD725362FC891F21A4931BCA36B /* ASRangeController.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASRangeController.mm; path = AsyncDisplayKit/Details/ASRangeController.mm; sourceTree = "<group>"; };
+		5726546613D1393176B8A71DFBD26AD4 /* ASNetworkImageNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASNetworkImageNode.mm; path = AsyncDisplayKit/ASNetworkImageNode.mm; sourceTree = "<group>"; };
+		5759CBD725362FC891F21A4931BCA36B /* ASRangeController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASRangeController.mm; path = AsyncDisplayKit/Details/ASRangeController.mm; sourceTree = "<group>"; };
 		58888F7383A4986D101BE39C39C2A4EC /* NSBundle+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+MJRefresh.m"; path = "MJRefresh/NSBundle+MJRefresh.m"; sourceTree = "<group>"; };
 		5896619264230B8B4657B4B618B07CEF /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackFooter.h; path = MJRefresh/Base/MJRefreshBackFooter.h; sourceTree = "<group>"; };
 		5A10D3518C239F8901052074E65A079F /* UIImage+ASConvenience.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ASConvenience.h"; path = "AsyncDisplayKit/UIImage+ASConvenience.h"; sourceTree = "<group>"; };
-		5A92D923AA4846DEDDE050B35C679C8E /* ASTextKitAttributes.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASTextKitAttributes.mm; path = AsyncDisplayKit/TextKit/ASTextKitAttributes.mm; sourceTree = "<group>"; };
-		5B912891B177FF921FC239B7555007A2 /* ASStackLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASStackLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASStackLayoutSpec.mm; sourceTree = "<group>"; };
+		5A92D923AA4846DEDDE050B35C679C8E /* ASTextKitAttributes.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASTextKitAttributes.mm; path = AsyncDisplayKit/TextKit/ASTextKitAttributes.mm; sourceTree = "<group>"; };
+		5B912891B177FF921FC239B7555007A2 /* ASStackLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASStackLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASStackLayoutSpec.mm; sourceTree = "<group>"; };
 		5BB4ED5723B6B255541BC290468C1F72 /* ASStackBaselinePositionedLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStackBaselinePositionedLayout.h; path = AsyncDisplayKit/Private/ASStackBaselinePositionedLayout.h; sourceTree = "<group>"; };
 		5BF98AA91A9376CA97473CBCF1CD6A37 /* ASVideoPlayerNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASVideoPlayerNode.h; path = AsyncDisplayKit/ASVideoPlayerNode.h; sourceTree = "<group>"; };
 		5C1B6A43C2E6D540CCA73F9C8F7C6772 /* PINRemoteImageMemoryContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINRemoteImageMemoryContainer.h; path = Pod/Classes/PINRemoteImageMemoryContainer.h; sourceTree = "<group>"; };
@@ -717,17 +721,17 @@
 		5F27A0B9CC319896ECCD8242703B05AE /* ASCollectionViewLayoutController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASCollectionViewLayoutController.h; path = AsyncDisplayKit/Details/ASCollectionViewLayoutController.h; sourceTree = "<group>"; };
 		5F587ED457653B82D05761386640337A /* PINAnimatedImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PINAnimatedImage.m; path = Pod/Classes/PINAnimatedImage.m; sourceTree = "<group>"; };
 		5FCF2483828F36409B18EA13EEB0B672 /* ASCollectionViewLayoutFacilitatorProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASCollectionViewLayoutFacilitatorProtocol.h; path = AsyncDisplayKit/ASCollectionViewLayoutFacilitatorProtocol.h; sourceTree = "<group>"; };
-		602AAE6B2B0F453A44381D2E2D497271 /* libPINCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPINCache.a; path = libPINCache.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		602AAE6B2B0F453A44381D2E2D497271 /* libPINCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPINCache.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6045C156A649EBEA94F9FF296DB337EC /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoFooter.m; path = MJRefresh/Base/MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		60AEFBDE2B94A36A4307586C65B4E18F /* ASPagerNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASPagerNode.h; path = AsyncDisplayKit/ASPagerNode.h; sourceTree = "<group>"; };
-		6112BB9F914751A65531DCB882F54B53 /* ASTextKitFontSizeAdjuster.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASTextKitFontSizeAdjuster.mm; path = AsyncDisplayKit/TextKit/ASTextKitFontSizeAdjuster.mm; sourceTree = "<group>"; };
+		6112BB9F914751A65531DCB882F54B53 /* ASTextKitFontSizeAdjuster.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASTextKitFontSizeAdjuster.mm; path = AsyncDisplayKit/TextKit/ASTextKitFontSizeAdjuster.mm; sourceTree = "<group>"; };
 		613BFCA7AABABF675BC4CAC2F531B106 /* MJRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MJRefresh-dummy.m"; sourceTree = "<group>"; };
 		6283A96CD0D9E66D52F396802DB80EA4 /* _ASDisplayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASDisplayView.h; path = AsyncDisplayKit/Details/_ASDisplayView.h; sourceTree = "<group>"; };
 		63A0013F96EB5ECF24159F71614A1E86 /* Pods-TestHBKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TestHBKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		63E01C96148D21F82D836366B1AFCE8F /* HBBaseSectionCollectionReusableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HBBaseSectionCollectionReusableView.m; sourceTree = "<group>"; };
 		644725222249E30A6C0027CC6D268DFC /* AsyncDisplayKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AsyncDisplayKit-dummy.m"; sourceTree = "<group>"; };
 		64976F4EE5C6C0EFFF48ADF3E8DAD581 /* ASCollectionDataController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASCollectionDataController.h; path = AsyncDisplayKit/Details/ASCollectionDataController.h; sourceTree = "<group>"; };
-		64B890A67BDBC46727F746BEF68A042F /* libHBKitWatchDog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHBKitWatchDog.a; path = libHBKitWatchDog.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		64B890A67BDBC46727F746BEF68A042F /* libHBKitWatchDog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHBKitWatchDog.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		654FED7531DA7CB41DF4FD8A67319CDB /* MJRefreshBackStateFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackStateFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.h; sourceTree = "<group>"; };
 		6744A0B05F751E819CEA962521042F15 /* ASBackgroundLayoutSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASBackgroundLayoutSpec.h; path = AsyncDisplayKit/Layout/ASBackgroundLayoutSpec.h; sourceTree = "<group>"; };
 		67529AB6276E5BA6E599F15450B337CE /* MJRefreshConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshConst.h; path = MJRefresh/MJRefreshConst.h; sourceTree = "<group>"; };
@@ -743,13 +747,13 @@
 		6B1AFCBA2EAF0E8F5EE784065C65BF00 /* ASTabBarController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTabBarController.h; path = AsyncDisplayKit/ASTabBarController.h; sourceTree = "<group>"; };
 		6B4417FE55EF6A4B47C9620983BCE2BA /* ASDisplayNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDisplayNode.h; path = AsyncDisplayKit/ASDisplayNode.h; sourceTree = "<group>"; };
 		6D3DFC981F71D153A66563872FA08AD8 /* ASStackLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStackLayoutDefines.h; path = AsyncDisplayKit/Layout/ASStackLayoutDefines.h; sourceTree = "<group>"; };
-		6E8392171DCAC88F02EF445E555CE583 /* libHBKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHBKit.a; path = libHBKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E8392171DCAC88F02EF445E555CE583 /* libHBKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHBKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		705AA77625A6720A8943663A895311E7 /* MJRefreshAutoGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoGifFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h; sourceTree = "<group>"; };
-		70EA05260B083FEE46885AFB92ED6110 /* ASCenterLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASCenterLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASCenterLayoutSpec.mm; sourceTree = "<group>"; };
+		70EA05260B083FEE46885AFB92ED6110 /* ASCenterLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASCenterLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASCenterLayoutSpec.mm; sourceTree = "<group>"; };
 		70FEC06BA434F7391C9828A3A0A7DDCB /* _ASAsyncTransactionGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASAsyncTransactionGroup.h; path = AsyncDisplayKit/Details/Transactions/_ASAsyncTransactionGroup.h; sourceTree = "<group>"; };
 		71C4E87AFEB81FBBCBFE143FAC9277BD /* ASDisplayNodeInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDisplayNodeInternal.h; path = AsyncDisplayKit/Private/ASDisplayNodeInternal.h; sourceTree = "<group>"; };
 		720F7512911B1235AB58358C47903196 /* HBBaseTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HBBaseTableViewController.m; sourceTree = "<group>"; };
-		724C5EA455FDCBD15F5B8B8BB631AB80 /* ASHighlightOverlayLayer.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASHighlightOverlayLayer.mm; path = AsyncDisplayKit/Details/ASHighlightOverlayLayer.mm; sourceTree = "<group>"; };
+		724C5EA455FDCBD15F5B8B8BB631AB80 /* ASHighlightOverlayLayer.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASHighlightOverlayLayer.mm; path = AsyncDisplayKit/Details/ASHighlightOverlayLayer.mm; sourceTree = "<group>"; };
 		72D68C790CF19BDD0102593818D053E7 /* Pods-TestHBKitDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TestHBKitDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		734C3D36F524740CAC2406E9A5831899 /* ASCellNode+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ASCellNode+Internal.h"; path = "AsyncDisplayKit/ASCellNode+Internal.h"; sourceTree = "<group>"; };
 		7350DE84D12179DD9CBFC560C5AC5CFF /* PINImage+WebP.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "PINImage+WebP.m"; path = "Pod/Classes/Categories/PINImage+WebP.m"; sourceTree = "<group>"; };
@@ -758,7 +762,7 @@
 		76325354FF5B38A787C991FE0214EA9E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		768C9E67275D4C8A49B48B16CAC5E6D6 /* ASDataController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDataController.h; path = AsyncDisplayKit/Details/ASDataController.h; sourceTree = "<group>"; };
 		76E16393B0C65657A01FB76F3A57B985 /* PINRemoteImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINRemoteImage.h; path = Pod/Classes/PINRemoteImage.h; sourceTree = "<group>"; };
-		76F027BD2CBBC527C19E54172B1E6804 /* ASVideoNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASVideoNode.mm; path = AsyncDisplayKit/ASVideoNode.mm; sourceTree = "<group>"; };
+		76F027BD2CBBC527C19E54172B1E6804 /* ASVideoNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASVideoNode.mm; path = AsyncDisplayKit/ASVideoNode.mm; sourceTree = "<group>"; };
 		776BF469269999F48610429B35C3F81A /* ASIndexPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASIndexPath.h; path = AsyncDisplayKit/Details/ASIndexPath.h; sourceTree = "<group>"; };
 		7776B4F24E8C883C5100747E8084CC0E /* MJRefreshAutoNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoNormalFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.h; sourceTree = "<group>"; };
 		7791514E347CDF4F1DF2A212E3B4F169 /* ASMainSerialQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASMainSerialQueue.h; path = AsyncDisplayKit/Details/ASMainSerialQueue.h; sourceTree = "<group>"; };
@@ -770,12 +774,12 @@
 		7BD41680612613274F0AD6E4E9F8718B /* PINCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PINCache.m; path = PINCache/PINCache.m; sourceTree = "<group>"; };
 		7C6B972C718620005E0AD5DA3C1F49ED /* PINRemoteImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PINRemoteImage.xcconfig; sourceTree = "<group>"; };
 		7CF0989F5C178F2F7D444739A0063FA1 /* PINRemoteImageCategoryManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINRemoteImageCategoryManager.h; path = Pod/Classes/PINRemoteImageCategoryManager.h; sourceTree = "<group>"; };
-		7CF8BB5BB96515D82AFF7EFD477044F3 /* ASBasicImageDownloader.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASBasicImageDownloader.mm; path = AsyncDisplayKit/Details/ASBasicImageDownloader.mm; sourceTree = "<group>"; };
+		7CF8BB5BB96515D82AFF7EFD477044F3 /* ASBasicImageDownloader.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASBasicImageDownloader.mm; path = AsyncDisplayKit/Details/ASBasicImageDownloader.mm; sourceTree = "<group>"; };
 		7DAB8F6C0F022D885B630970C67D2700 /* ASPagerFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASPagerFlowLayout.m; path = AsyncDisplayKit/ASPagerFlowLayout.m; sourceTree = "<group>"; };
 		7DEB273F34A5B559827B993583A645A1 /* ASTextKitRenderer+TextChecking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ASTextKitRenderer+TextChecking.h"; path = "AsyncDisplayKit/TextKit/ASTextKitRenderer+TextChecking.h"; sourceTree = "<group>"; };
-		7EF7F7C20E646A5068E5CCA99D41E263 /* ASBackgroundLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASBackgroundLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASBackgroundLayoutSpec.mm; sourceTree = "<group>"; };
+		7EF7F7C20E646A5068E5CCA99D41E263 /* ASBackgroundLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASBackgroundLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASBackgroundLayoutSpec.mm; sourceTree = "<group>"; };
 		7F21F30C87E9CAA7B7EF043864B49448 /* PINImage+WebP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PINImage+WebP.h"; path = "Pod/Classes/Categories/PINImage+WebP.h"; sourceTree = "<group>"; };
-		7F37DAFE4134E17B2281B6512F248927 /* ASVideoPlayerNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASVideoPlayerNode.mm; path = AsyncDisplayKit/ASVideoPlayerNode.mm; sourceTree = "<group>"; };
+		7F37DAFE4134E17B2281B6512F248927 /* ASVideoPlayerNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASVideoPlayerNode.mm; path = AsyncDisplayKit/ASVideoPlayerNode.mm; sourceTree = "<group>"; };
 		7F72A32D54F791CED021B9936963C3A2 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJRefresh.m"; path = "MJRefresh/UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		80F52035D9FB542795F68615A658257A /* ASMultidimensionalArrayUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASMultidimensionalArrayUtils.h; path = AsyncDisplayKit/Private/ASMultidimensionalArrayUtils.h; sourceTree = "<group>"; };
 		82B4A2DC504FD3E678861BDE3730545B /* ASStaticLayoutSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStaticLayoutSpec.h; path = AsyncDisplayKit/Layout/ASStaticLayoutSpec.h; sourceTree = "<group>"; };
@@ -783,14 +787,14 @@
 		839AE2A4FE324C406653AD0AE42E4098 /* CELL_STRUCT_Common.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CELL_STRUCT_Common.m; sourceTree = "<group>"; };
 		83D7BF374DCC1C29D7344D56353D9397 /* PINProgressiveImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINProgressiveImage.h; path = Pod/Classes/PINProgressiveImage.h; sourceTree = "<group>"; };
 		8434BD5B77352BCEFB1704EDCEEA0803 /* ASLayoutRangeType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutRangeType.h; path = AsyncDisplayKit/Details/ASLayoutRangeType.h; sourceTree = "<group>"; };
-		8762FCED92C63C6A0D0EF7156FA9BC6F /* ASTableNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASTableNode.mm; path = AsyncDisplayKit/ASTableNode.mm; sourceTree = "<group>"; };
+		8762FCED92C63C6A0D0EF7156FA9BC6F /* ASTableNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASTableNode.mm; path = AsyncDisplayKit/ASTableNode.mm; sourceTree = "<group>"; };
 		8766C52679C6E6623F6C26F85FF7685F /* ASPhotosFrameworkImageRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASPhotosFrameworkImageRequest.h; path = AsyncDisplayKit/Details/ASPhotosFrameworkImageRequest.h; sourceTree = "<group>"; };
 		881B1641BF59D917F4DDD1FE3688F3AA /* PINAnimatedImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINAnimatedImageManager.h; path = Pod/Classes/PINAnimatedImageManager.h; sourceTree = "<group>"; };
 		88213A810AD78072AE22D4EEA36AC0EE /* CELL_STRUCT.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CELL_STRUCT.m; sourceTree = "<group>"; };
 		8A3161950842E01F53079BD7FAA17AF0 /* ASDisplayNode+Subclasses.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ASDisplayNode+Subclasses.h"; path = "AsyncDisplayKit/ASDisplayNode+Subclasses.h"; sourceTree = "<group>"; };
-		8B8DF04053324FDDFA638DE5BDED6B99 /* libHBKitRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHBKitRefresh.a; path = libHBKitRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B8DF04053324FDDFA638DE5BDED6B99 /* libHBKitRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHBKitRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C3208A25B4F3BC7A582ECAE7456595A /* _ASScopeTimer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASScopeTimer.h; path = AsyncDisplayKit/Private/_ASScopeTimer.h; sourceTree = "<group>"; };
-		8C7C4E0D6F4075B48F8DC08C649F1A43 /* ASImageNode+AnimatedImage.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = "ASImageNode+AnimatedImage.mm"; path = "AsyncDisplayKit/ASImageNode+AnimatedImage.mm"; sourceTree = "<group>"; };
+		8C7C4E0D6F4075B48F8DC08C649F1A43 /* ASImageNode+AnimatedImage.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "ASImageNode+AnimatedImage.mm"; path = "AsyncDisplayKit/ASImageNode+AnimatedImage.mm"; sourceTree = "<group>"; };
 		8D0A119E222529674C616A54D3B58F0C /* PINURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINURLSessionManager.h; path = Pod/Classes/PINURLSessionManager.h; sourceTree = "<group>"; };
 		8D7B7B4E05DD3A90DF3EF87FFC6897A6 /* NSIndexSet+ASHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSIndexSet+ASHelpers.h"; path = "AsyncDisplayKit/Details/NSIndexSet+ASHelpers.h"; sourceTree = "<group>"; };
 		8DEBA886F2465455CC3596782451AB59 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -801,13 +805,13 @@
 		8F915EE279555ACD6D1B6456EDF51837 /* ASThread.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASThread.h; path = AsyncDisplayKit/Details/ASThread.h; sourceTree = "<group>"; };
 		8FEB58B79CD5F01E8628B4BE16712107 /* PINRemoteLock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINRemoteLock.h; path = Pod/Classes/PINRemoteLock.h; sourceTree = "<group>"; };
 		90CC30639489292A9085086D9F55CC3E /* ASDelegateProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASDelegateProxy.m; path = AsyncDisplayKit/Details/ASDelegateProxy.m; sourceTree = "<group>"; };
-		90F9C8C5B17B199705C193B2EE012400 /* ASLayoutValidation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASLayoutValidation.mm; path = AsyncDisplayKit/Layout/ASLayoutValidation.mm; sourceTree = "<group>"; };
+		90F9C8C5B17B199705C193B2EE012400 /* ASLayoutValidation.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASLayoutValidation.mm; path = AsyncDisplayKit/Layout/ASLayoutValidation.mm; sourceTree = "<group>"; };
 		913E0E0DB60D72DFE79A18A39DFACA90 /* PINRemoteImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PINRemoteImage-prefix.pch"; sourceTree = "<group>"; };
-		919407B1F656745AC62A44E915C1D687 /* ASButtonNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASButtonNode.mm; path = AsyncDisplayKit/ASButtonNode.mm; sourceTree = "<group>"; };
+		919407B1F656745AC62A44E915C1D687 /* ASButtonNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASButtonNode.mm; path = AsyncDisplayKit/ASButtonNode.mm; sourceTree = "<group>"; };
 		91B739BFC14E06B4BC5CE98F8C74D326 /* ASScrollNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASScrollNode.m; path = AsyncDisplayKit/ASScrollNode.m; sourceTree = "<group>"; };
 		926FC8843037D596BDADA151C05B700B /* ASTextNodeWordKerner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASTextNodeWordKerner.m; path = AsyncDisplayKit/TextKit/ASTextNodeWordKerner.m; sourceTree = "<group>"; };
 		93920BE0BCFAD05151AB1F6C72105B1B /* ASTabBarController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASTabBarController.m; path = AsyncDisplayKit/ASTabBarController.m; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94200C942825742111F92A1908DA2CA9 /* ASTextNode+Beta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ASTextNode+Beta.h"; path = "AsyncDisplayKit/ASTextNode+Beta.h"; sourceTree = "<group>"; };
 		9519FB5D7673FF4649D4A48D22DD734D /* ASTextKitCoreTextAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTextKitCoreTextAdditions.h; path = AsyncDisplayKit/TextKit/ASTextKitCoreTextAdditions.h; sourceTree = "<group>"; };
 		967737294FC8ABA86C2A6C1A73BBB7F4 /* PINRemoteImageMemoryContainer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PINRemoteImageMemoryContainer.m; path = Pod/Classes/PINRemoteImageMemoryContainer.m; sourceTree = "<group>"; };
@@ -815,48 +819,48 @@
 		979F49B55BFC2CFFEA490D21BF3F5386 /* PINMemoryCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PINMemoryCache.m; path = PINCache/PINMemoryCache.m; sourceTree = "<group>"; };
 		98466DA9EE93A452AB1EF237D0E19F6D /* ASWeakSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASWeakSet.h; path = AsyncDisplayKit/Private/ASWeakSet.h; sourceTree = "<group>"; };
 		99340E14F928D872D0C6C09A52ED048D /* PINImageView+PINRemoteImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "PINImageView+PINRemoteImage.m"; path = "Pod/Classes/Image Categories/PINImageView+PINRemoteImage.m"; sourceTree = "<group>"; };
-		9949D82C8564360F97CDC25CA733D682 /* _ASDisplayViewAccessiblity.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = _ASDisplayViewAccessiblity.mm; path = AsyncDisplayKit/Details/_ASDisplayViewAccessiblity.mm; sourceTree = "<group>"; };
-		9A5A2FA118B3938C3D5A0254499305AE /* ASViewController.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASViewController.mm; path = AsyncDisplayKit/ASViewController.mm; sourceTree = "<group>"; };
+		9949D82C8564360F97CDC25CA733D682 /* _ASDisplayViewAccessiblity.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = _ASDisplayViewAccessiblity.mm; path = AsyncDisplayKit/Details/_ASDisplayViewAccessiblity.mm; sourceTree = "<group>"; };
+		9A5A2FA118B3938C3D5A0254499305AE /* ASViewController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASViewController.mm; path = AsyncDisplayKit/ASViewController.mm; sourceTree = "<group>"; };
 		9B321A0D4E6AA2706F8CAF390D1681B9 /* ASEqualityHashHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASEqualityHashHelpers.h; path = AsyncDisplayKit/TextKit/ASEqualityHashHelpers.h; sourceTree = "<group>"; };
 		9B4C7FFC6BEE2E785ACF54030433A5CF /* ASCollectionNode+Beta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ASCollectionNode+Beta.h"; path = "AsyncDisplayKit/ASCollectionNode+Beta.h"; sourceTree = "<group>"; };
 		9BAB27AFB6E7F503D007E2E814A0CCC0 /* PINAlternateRepresentationProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINAlternateRepresentationProvider.h; path = Pod/Classes/PINAlternateRepresentationProvider.h; sourceTree = "<group>"; };
 		9C0B319B0DA0DF8A0D38EC746C4B34BD /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
-		9D5A7F2BD053D304AE1896643A50F5BD /* ASDisplayNode+DebugTiming.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = "ASDisplayNode+DebugTiming.mm"; path = "AsyncDisplayKit/Private/ASDisplayNode+DebugTiming.mm"; sourceTree = "<group>"; };
-		9DA38B5B8F564797AC06D9A888662BBE /* ASImageNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASImageNode.mm; path = AsyncDisplayKit/ASImageNode.mm; sourceTree = "<group>"; };
+		9D5A7F2BD053D304AE1896643A50F5BD /* ASDisplayNode+DebugTiming.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "ASDisplayNode+DebugTiming.mm"; path = "AsyncDisplayKit/Private/ASDisplayNode+DebugTiming.mm"; sourceTree = "<group>"; };
+		9DA38B5B8F564797AC06D9A888662BBE /* ASImageNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASImageNode.mm; path = AsyncDisplayKit/ASImageNode.mm; sourceTree = "<group>"; };
 		9E7799F254AB562E0EC8E210EFD97E08 /* PINAnimatedImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINAnimatedImage.h; path = Pod/Classes/PINAnimatedImage.h; sourceTree = "<group>"; };
-		9E8F6413D8444F112825A9265DB7341E /* ASFlowLayoutController.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASFlowLayoutController.mm; path = AsyncDisplayKit/Details/ASFlowLayoutController.mm; sourceTree = "<group>"; };
+		9E8F6413D8444F112825A9265DB7341E /* ASFlowLayoutController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASFlowLayoutController.mm; path = AsyncDisplayKit/Details/ASFlowLayoutController.mm; sourceTree = "<group>"; };
 		9FC1FFD79F6DB8402AC2203707D6FC32 /* MJRefreshBackNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackNormalFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.m; sourceTree = "<group>"; };
 		A11DCBDEF82214B4A9A3097403A167E8 /* HBKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HBKit-dummy.m"; sourceTree = "<group>"; };
-		A278646B5D3A856429D62D0C6BF56854 /* ASCollectionViewLayoutController.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASCollectionViewLayoutController.mm; path = AsyncDisplayKit/Details/ASCollectionViewLayoutController.mm; sourceTree = "<group>"; };
+		A278646B5D3A856429D62D0C6BF56854 /* ASCollectionViewLayoutController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASCollectionViewLayoutController.mm; path = AsyncDisplayKit/Details/ASCollectionViewLayoutController.mm; sourceTree = "<group>"; };
 		A2E8DE40D03338A74208DD7DAC636ACE /* ASScrollNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASScrollNode.h; path = AsyncDisplayKit/ASScrollNode.h; sourceTree = "<group>"; };
 		A388974978F758F5249B5666442B0AFB /* HBKitWatchDog-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HBKitWatchDog-dummy.m"; sourceTree = "<group>"; };
 		A4259748A9810AF613DF6313DB3285F0 /* ASStackUnpositionedLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStackUnpositionedLayout.h; path = AsyncDisplayKit/Private/ASStackUnpositionedLayout.h; sourceTree = "<group>"; };
 		A65D805D74F3000ACEDB691D27FC10B6 /* HBBaseViewController+DirWatchDog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HBBaseViewController+DirWatchDog.h"; sourceTree = "<group>"; };
-		A681A1F47FAFED8EA9A90E843602CDDC /* ASDisplayNode+UIViewBridge.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = "ASDisplayNode+UIViewBridge.mm"; path = "AsyncDisplayKit/Private/ASDisplayNode+UIViewBridge.mm"; sourceTree = "<group>"; };
+		A681A1F47FAFED8EA9A90E843602CDDC /* ASDisplayNode+UIViewBridge.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "ASDisplayNode+UIViewBridge.mm"; path = "AsyncDisplayKit/Private/ASDisplayNode+UIViewBridge.mm"; sourceTree = "<group>"; };
 		A7200BFDC2AAC8153A27216B16FD5A97 /* NSArray+Diffing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Diffing.h"; path = "AsyncDisplayKit/Private/NSArray+Diffing.h"; sourceTree = "<group>"; };
 		A748393E2E1A04BC6F8BB440CE4B5BEF /* ASHBaseTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ASHBaseTableViewCell.m; sourceTree = "<group>"; };
 		A85D240E6FA14872E8FD478C2587B927 /* ASDisplayNode+DebugTiming.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ASDisplayNode+DebugTiming.h"; path = "AsyncDisplayKit/Private/ASDisplayNode+DebugTiming.h"; sourceTree = "<group>"; };
 		AA0DB34ABBA620DE29262A9AC3EB681A /* ASDisplayNodeExtras.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDisplayNodeExtras.h; path = AsyncDisplayKit/ASDisplayNodeExtras.h; sourceTree = "<group>"; };
-		AB33E576795D0DE7415129C617E99031 /* ASLayoutTransition.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASLayoutTransition.mm; path = AsyncDisplayKit/Private/ASLayoutTransition.mm; sourceTree = "<group>"; };
-		AB5A34A964665A1A67B2E0EA0231CA60 /* _ASPendingState.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = _ASPendingState.mm; path = AsyncDisplayKit/Private/_ASPendingState.mm; sourceTree = "<group>"; };
+		AB33E576795D0DE7415129C617E99031 /* ASLayoutTransition.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASLayoutTransition.mm; path = AsyncDisplayKit/Private/ASLayoutTransition.mm; sourceTree = "<group>"; };
+		AB5A34A964665A1A67B2E0EA0231CA60 /* _ASPendingState.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = _ASPendingState.mm; path = AsyncDisplayKit/Private/_ASPendingState.mm; sourceTree = "<group>"; };
 		AC179FD99099CD5C7696128A4DDF0CD6 /* ASHBaseViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ASHBaseViewController.h; sourceTree = "<group>"; };
 		AC5B6CD63126F5A802FA2E82D6057E1D /* MJRefresh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MJRefresh.xcconfig; sourceTree = "<group>"; };
 		AC6527C08A2AC66E0EE2E1A4D2C432EE /* PINRemoteImageCallbacks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINRemoteImageCallbacks.h; path = Pod/Classes/PINRemoteImageCallbacks.h; sourceTree = "<group>"; };
-		ACCDC54EAC0599DD0B66F5115CBCD039 /* ASMultiplexImageNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASMultiplexImageNode.mm; path = AsyncDisplayKit/ASMultiplexImageNode.mm; sourceTree = "<group>"; };
+		ACCDC54EAC0599DD0B66F5115CBCD039 /* ASMultiplexImageNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASMultiplexImageNode.mm; path = AsyncDisplayKit/ASMultiplexImageNode.mm; sourceTree = "<group>"; };
 		ACD5E2DF67D64BC74C6FD66E888F1BAF /* CELL_STRUCT.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CELL_STRUCT.h; sourceTree = "<group>"; };
 		ACFB554B329F2CDAB13686DDFE869080 /* HBCollectionFallFLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HBCollectionFallFLayout.m; sourceTree = "<group>"; };
 		AD5D82C8D1B672E22DC877B47D30221A /* MJRefreshBackGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackGifFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h; sourceTree = "<group>"; };
-		AF2001EEA9FA4466A9B1D5BEAC6E00E5 /* ASStackPositionedLayout.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASStackPositionedLayout.mm; path = AsyncDisplayKit/Private/ASStackPositionedLayout.mm; sourceTree = "<group>"; };
+		AF2001EEA9FA4466A9B1D5BEAC6E00E5 /* ASStackPositionedLayout.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASStackPositionedLayout.mm; path = AsyncDisplayKit/Private/ASStackPositionedLayout.mm; sourceTree = "<group>"; };
 		B0226199F7DB646523BC743D10D07EAD /* ASAbstractLayoutController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASAbstractLayoutController.h; path = AsyncDisplayKit/Details/ASAbstractLayoutController.h; sourceTree = "<group>"; };
 		B03E4EE8C9A6440B7E8CD48E64BE1ED3 /* ASTextKitShadower.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTextKitShadower.h; path = AsyncDisplayKit/TextKit/ASTextKitShadower.h; sourceTree = "<group>"; };
 		B09DF22F85ACD60D4EFA781FE9FCCC9A /* ASTextKitAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTextKitAttributes.h; path = AsyncDisplayKit/TextKit/ASTextKitAttributes.h; sourceTree = "<group>"; };
 		B1A8C5EEEE3FE9422E59CB42E0255E4B /* _ASDisplayViewAccessiblity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASDisplayViewAccessiblity.h; path = AsyncDisplayKit/Details/_ASDisplayViewAccessiblity.h; sourceTree = "<group>"; };
 		B1CAFF00D959D94688A0B3663DC991F9 /* _AS-objc-internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "_AS-objc-internal.h"; path = "AsyncDisplayKit/Private/_AS-objc-internal.h"; sourceTree = "<group>"; };
-		B295AD42EACA2FBD009ABB725174B57E /* ASOverlayLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASOverlayLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASOverlayLayoutSpec.mm; sourceTree = "<group>"; };
-		B298EBEC6BF46027B307BA0BE088ECB4 /* ASCollectionView.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASCollectionView.mm; path = AsyncDisplayKit/ASCollectionView.mm; sourceTree = "<group>"; };
+		B295AD42EACA2FBD009ABB725174B57E /* ASOverlayLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASOverlayLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASOverlayLayoutSpec.mm; sourceTree = "<group>"; };
+		B298EBEC6BF46027B307BA0BE088ECB4 /* ASCollectionView.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASCollectionView.mm; path = AsyncDisplayKit/ASCollectionView.mm; sourceTree = "<group>"; };
 		B4051A286F58C2047E38061DCC54EDE1 /* ASLayoutable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutable.h; path = AsyncDisplayKit/Layout/ASLayoutable.h; sourceTree = "<group>"; };
 		B42BC4D5AE574DBC98D3004507A486CB /* PINRemoteImageProcessorTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PINRemoteImageProcessorTask.m; path = Pod/Classes/PINRemoteImageProcessorTask.m; sourceTree = "<group>"; };
-		B49BA879FFA19D57BD1CA8CB6BF7A9C9 /* ASTableView.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASTableView.mm; path = AsyncDisplayKit/ASTableView.mm; sourceTree = "<group>"; };
+		B49BA879FFA19D57BD1CA8CB6BF7A9C9 /* ASTableView.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASTableView.mm; path = AsyncDisplayKit/ASTableView.mm; sourceTree = "<group>"; };
 		B4E16528717B16037E16F7A0A555D578 /* UICollectionViewLayout+ASConvenience.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionViewLayout+ASConvenience.h"; path = "AsyncDisplayKit/Details/UICollectionViewLayout+ASConvenience.h"; sourceTree = "<group>"; };
 		B55AF2CC231726CFE273BD56BC9AED16 /* ASPendingStateController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASPendingStateController.h; path = AsyncDisplayKit/Private/ASPendingStateController.h; sourceTree = "<group>"; };
 		B59D26BB3B92144388E285FE05CD74F0 /* PINRemoteImageDownloadTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINRemoteImageDownloadTask.h; path = Pod/Classes/PINRemoteImageDownloadTask.h; sourceTree = "<group>"; };
@@ -865,7 +869,7 @@
 		B6241BFF74883123379A5E5CD313528F /* NSObject+HBObjectMap.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HBObjectMap.m"; sourceTree = "<group>"; };
 		B788E9C2EEF5B04EBACCEB4E5DC29704 /* ASPINRemoteImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASPINRemoteImageDownloader.h; path = AsyncDisplayKit/Details/ASPINRemoteImageDownloader.h; sourceTree = "<group>"; };
 		B8B64E1256676178506B34CAF2AC762D /* ASContextTransitioning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASContextTransitioning.h; path = AsyncDisplayKit/ASContextTransitioning.h; sourceTree = "<group>"; };
-		B8BAB21A81253C29176A0F399AD1A926 /* libPods-TestHBKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-TestHBKitDemo.a"; path = "libPods-TestHBKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8BAB21A81253C29176A0F399AD1A926 /* libPods-TestHBKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestHBKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8CB97FDC4E2B4A7C4A533B727874367 /* NSBundle+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+MJRefresh.h"; path = "MJRefresh/NSBundle+MJRefresh.h"; sourceTree = "<group>"; };
 		BAD03C2E8CAD60634671EE146CC9F5F8 /* MJRefreshComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshComponent.h; path = MJRefresh/Base/MJRefreshComponent.h; sourceTree = "<group>"; };
 		BB5358844262FB735913B49E08F93325 /* ASTextKitFontSizeAdjuster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTextKitFontSizeAdjuster.h; path = AsyncDisplayKit/TextKit/ASTextKitFontSizeAdjuster.h; sourceTree = "<group>"; };
@@ -877,23 +881,23 @@
 		BE6E838783F858885B53AB08322350B3 /* ASDealloc2MainObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASDealloc2MainObject.m; path = AsyncDisplayKit/Details/ASDealloc2MainObject.m; sourceTree = "<group>"; };
 		BEC81A020EF78FB9A7782FC8B6C5B761 /* HBKitRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HBKitRefresh.m; sourceTree = "<group>"; };
 		BFE6CB0DB263E14C6E17289C7FDA69CA /* MJRefreshAutoNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoNormalFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.m; sourceTree = "<group>"; };
-		C008C0ED030E6047B40DC5A3D10D5C0F /* ASStaticLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASStaticLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASStaticLayoutSpec.mm; sourceTree = "<group>"; };
+		C008C0ED030E6047B40DC5A3D10D5C0F /* ASStaticLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASStaticLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASStaticLayoutSpec.mm; sourceTree = "<group>"; };
 		C05041819D626815D23C134E7ABF46E3 /* ASOverlayLayoutSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASOverlayLayoutSpec.h; path = AsyncDisplayKit/Layout/ASOverlayLayoutSpec.h; sourceTree = "<group>"; };
 		C09259B7AFC83DFAFE2FD54C87619F5D /* MJRefreshAutoGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoGifFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.m; sourceTree = "<group>"; };
 		C092C6517ACD63135B68D4EF5D5E024B /* ASCollectionViewFlowLayoutInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASCollectionViewFlowLayoutInspector.m; path = AsyncDisplayKit/Details/ASCollectionViewFlowLayoutInspector.m; sourceTree = "<group>"; };
 		C098582A7029E90629F7E4438A1F6630 /* PINDataTaskOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PINDataTaskOperation.m; path = Pod/Classes/PINDataTaskOperation.m; sourceTree = "<group>"; };
-		C180B2C225469E4FE1B7B0337AED1C98 /* _ASDisplayLayer.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = _ASDisplayLayer.mm; path = AsyncDisplayKit/Details/_ASDisplayLayer.mm; sourceTree = "<group>"; };
+		C180B2C225469E4FE1B7B0337AED1C98 /* _ASDisplayLayer.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = _ASDisplayLayer.mm; path = AsyncDisplayKit/Details/_ASDisplayLayer.mm; sourceTree = "<group>"; };
 		C1AD0C8CC9EB2EA8CACF571CDB90F901 /* ASDelegateProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDelegateProxy.h; path = AsyncDisplayKit/Details/ASDelegateProxy.h; sourceTree = "<group>"; };
 		C2BAF366336AD2B07C822C41857A0F09 /* ASTextKitComponents.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASTextKitComponents.m; path = AsyncDisplayKit/TextKit/ASTextKitComponents.m; sourceTree = "<group>"; };
 		C31D2A349E7D02EF98041061C58D3499 /* HBCollectionFallFLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HBCollectionFallFLayout.h; sourceTree = "<group>"; };
 		C3612D8DA01F740ABCF41510AA2A1ABE /* HBBaseCollectionViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HBBaseCollectionViewController.h; sourceTree = "<group>"; };
 		C39AE41168FED3018CE727955D768BEB /* ASTableNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTableNode.h; path = AsyncDisplayKit/ASTableNode.h; sourceTree = "<group>"; };
 		C3B00743126D8E250C548739D6A4BE86 /* PINDataTaskOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINDataTaskOperation.h; path = Pod/Classes/PINDataTaskOperation.h; sourceTree = "<group>"; };
-		C4499B4870BC4DCF7468C316A1CB4725 /* ASIndexedNodeContext.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASIndexedNodeContext.mm; path = AsyncDisplayKit/Details/ASIndexedNodeContext.mm; sourceTree = "<group>"; };
-		C453DAAB1321086A13C3BEF17732B0E8 /* ASBatchContext.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASBatchContext.mm; path = AsyncDisplayKit/Details/ASBatchContext.mm; sourceTree = "<group>"; };
+		C4499B4870BC4DCF7468C316A1CB4725 /* ASIndexedNodeContext.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASIndexedNodeContext.mm; path = AsyncDisplayKit/Details/ASIndexedNodeContext.mm; sourceTree = "<group>"; };
+		C453DAAB1321086A13C3BEF17732B0E8 /* ASBatchContext.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASBatchContext.mm; path = AsyncDisplayKit/Details/ASBatchContext.mm; sourceTree = "<group>"; };
 		C4592CF77F9B94DB6DDE53DF559F442C /* ASScrollDirection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASScrollDirection.h; path = AsyncDisplayKit/Details/ASScrollDirection.h; sourceTree = "<group>"; };
 		C4A3EE32E5C593B961EECF1699959D7C /* MJRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJRefresh-prefix.pch"; sourceTree = "<group>"; };
-		C542F7446F8EE9A6B0C6A20751505254 /* ASChangeSetDataController.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASChangeSetDataController.mm; path = AsyncDisplayKit/Details/ASChangeSetDataController.mm; sourceTree = "<group>"; };
+		C542F7446F8EE9A6B0C6A20751505254 /* ASChangeSetDataController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASChangeSetDataController.mm; path = AsyncDisplayKit/Details/ASChangeSetDataController.mm; sourceTree = "<group>"; };
 		C57191E8AEBAAAD51506002845CB4861 /* ASSentinel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASSentinel.m; path = AsyncDisplayKit/Private/ASSentinel.m; sourceTree = "<group>"; };
 		C68C5AE55D9C8AC17C0CF5C7E4F002B8 /* ASLayoutSpecUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutSpecUtilities.h; path = AsyncDisplayKit/Private/ASLayoutSpecUtilities.h; sourceTree = "<group>"; };
 		C6ACAE4DCAE92694B6853D0E092890F6 /* _ASCoreAnimationExtras.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASCoreAnimationExtras.h; path = AsyncDisplayKit/Private/_ASCoreAnimationExtras.h; sourceTree = "<group>"; };
@@ -911,7 +915,7 @@
 		CA78EADCA4DFDB308AE922C915BEC4D1 /* ASEditableTextNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASEditableTextNode.h; path = AsyncDisplayKit/ASEditableTextNode.h; sourceTree = "<group>"; };
 		CB8AB6BC7154E4060B8847679648B4C7 /* HBKitRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HBKitRefresh-prefix.pch"; sourceTree = "<group>"; };
 		CBCF645D5E0345DE769BC3F99494183D /* ASStackPositionedLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStackPositionedLayout.h; path = AsyncDisplayKit/Private/ASStackPositionedLayout.h; sourceTree = "<group>"; };
-		CC904B08E147D47606574B9659FFDC2F /* ASCollectionDataController.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASCollectionDataController.mm; path = AsyncDisplayKit/Details/ASCollectionDataController.mm; sourceTree = "<group>"; };
+		CC904B08E147D47606574B9659FFDC2F /* ASCollectionDataController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASCollectionDataController.mm; path = AsyncDisplayKit/Details/ASCollectionDataController.mm; sourceTree = "<group>"; };
 		CDA8E6B4DA519358CA6A156EF1DF77EB /* Pods-TestHBKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TestHBKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		CEE144A785194A3F7D72ED0F9DD56D54 /* HBKitWatchDog.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HBKitWatchDog.xcconfig; sourceTree = "<group>"; };
 		CF2C1ABB193AD03CCAA85BE471D10F44 /* ASHBaseTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ASHBaseTableViewCell.h; sourceTree = "<group>"; };
@@ -937,19 +941,19 @@
 		D8518531D0528F62DBBB446B3A44093B /* HBKitDataModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HBKitDataModel.m; sourceTree = "<group>"; };
 		D8C41D1A73DFEE45346DBC2A807895D1 /* ASImageProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASImageProtocols.h; path = AsyncDisplayKit/Details/ASImageProtocols.h; sourceTree = "<group>"; };
 		D9697AF7156E6FD98C8796F8CD0937A5 /* PINDiskCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PINDiskCache.m; path = PINCache/PINDiskCache.m; sourceTree = "<group>"; };
-		D9CCD448807E2CB1CA5F6DBE238F38B5 /* ASCollectionNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASCollectionNode.mm; path = AsyncDisplayKit/ASCollectionNode.mm; sourceTree = "<group>"; };
+		D9CCD448807E2CB1CA5F6DBE238F38B5 /* ASCollectionNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASCollectionNode.mm; path = AsyncDisplayKit/ASCollectionNode.mm; sourceTree = "<group>"; };
 		DB0BD5F049F399C8BD3F00835006558C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DB8E21FC8640B61F0EB986246096FD55 /* ASCollectionInternal.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASCollectionInternal.m; path = AsyncDisplayKit/Details/ASCollectionInternal.m; sourceTree = "<group>"; };
-		DCF753A41D95AA93163E26C0D2EB04CC /* ASAbstractLayoutController.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASAbstractLayoutController.mm; path = AsyncDisplayKit/Details/ASAbstractLayoutController.mm; sourceTree = "<group>"; };
+		DCF753A41D95AA93163E26C0D2EB04CC /* ASAbstractLayoutController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASAbstractLayoutController.mm; path = AsyncDisplayKit/Details/ASAbstractLayoutController.mm; sourceTree = "<group>"; };
 		DD617E16693770B57F4E43F78C57E133 /* ASRangeControllerUpdateRangeProtocol+Beta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ASRangeControllerUpdateRangeProtocol+Beta.h"; path = "AsyncDisplayKit/Details/ASRangeControllerUpdateRangeProtocol+Beta.h"; sourceTree = "<group>"; };
-		DE5530E9408B52BBB8C3DE03EDB3E16F /* ASEditableTextNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASEditableTextNode.mm; path = AsyncDisplayKit/ASEditableTextNode.mm; sourceTree = "<group>"; };
+		DE5530E9408B52BBB8C3DE03EDB3E16F /* ASEditableTextNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASEditableTextNode.mm; path = AsyncDisplayKit/ASEditableTextNode.mm; sourceTree = "<group>"; };
 		DE6616DE172C67321D4C1A9D8CF806E5 /* ASRangeController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASRangeController.h; path = AsyncDisplayKit/Details/ASRangeController.h; sourceTree = "<group>"; };
 		DF01ABADBCFA0DF727B50CA61A03D488 /* ASDefaultPlayButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDefaultPlayButton.h; path = AsyncDisplayKit/Private/ASDefaultPlayButton.h; sourceTree = "<group>"; };
 		DF5C462934944BDA6DCAA3F28620ACB4 /* PINRemoteImageTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINRemoteImageTask.h; path = Pod/Classes/PINRemoteImageTask.h; sourceTree = "<group>"; };
 		DF61315F4B0DE23730EB279699645EDB /* PINDiskCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINDiskCache.h; path = PINCache/PINDiskCache.h; sourceTree = "<group>"; };
 		DFEBA21623DBE5BD58FA4449025FDFD0 /* ASStaticLayoutable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStaticLayoutable.h; path = AsyncDisplayKit/Layout/ASStaticLayoutable.h; sourceTree = "<group>"; };
-		E02E75B22E29E5A19B3DEF9DD2F79B2B /* libMJRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMJRefresh.a; path = libMJRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E09E65E3566A2EC05790CFD3DE59E6D1 /* ASTextKitTailTruncater.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASTextKitTailTruncater.mm; path = AsyncDisplayKit/TextKit/ASTextKitTailTruncater.mm; sourceTree = "<group>"; };
+		E02E75B22E29E5A19B3DEF9DD2F79B2B /* libMJRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMJRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E09E65E3566A2EC05790CFD3DE59E6D1 /* ASTextKitTailTruncater.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASTextKitTailTruncater.mm; path = AsyncDisplayKit/TextKit/ASTextKitTailTruncater.mm; sourceTree = "<group>"; };
 		E21AA6DFBDC736905AB2E8DC6C45ECE4 /* ASPINRemoteImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASPINRemoteImageDownloader.m; path = AsyncDisplayKit/Details/ASPINRemoteImageDownloader.m; sourceTree = "<group>"; };
 		E3535289906A0C1FBFCDDDBED99E4C39 /* _ASTransitionContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _ASTransitionContext.m; path = AsyncDisplayKit/_ASTransitionContext.m; sourceTree = "<group>"; };
 		E5D83E018ABD6C537E88C14C6772AF9E /* PINRemoteImageCategoryManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PINRemoteImageCategoryManager.m; path = Pod/Classes/PINRemoteImageCategoryManager.m; sourceTree = "<group>"; };
@@ -957,13 +961,13 @@
 		E6ABD75945E7D8949503C56CD28CF61E /* _ASAsyncTransactionGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _ASAsyncTransactionGroup.m; path = AsyncDisplayKit/Details/Transactions/_ASAsyncTransactionGroup.m; sourceTree = "<group>"; };
 		E6E2B979BD6F8088287CD4D56FC5D3F6 /* ASLayoutValidation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutValidation.h; path = AsyncDisplayKit/Layout/ASLayoutValidation.h; sourceTree = "<group>"; };
 		E7067F5E9C6AE633A47BFA2FE4632DCE /* ASMutableAttributedStringBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASMutableAttributedStringBuilder.m; path = AsyncDisplayKit/Details/ASMutableAttributedStringBuilder.m; sourceTree = "<group>"; };
-		E74DCD23BE6DE6EE889B6DD5F645E7FB /* ASMapNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASMapNode.mm; path = AsyncDisplayKit/ASMapNode.mm; sourceTree = "<group>"; };
+		E74DCD23BE6DE6EE889B6DD5F645E7FB /* ASMapNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASMapNode.mm; path = AsyncDisplayKit/ASMapNode.mm; sourceTree = "<group>"; };
 		E88519A73FE449DA30169914458CA70B /* ASCenterLayoutSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASCenterLayoutSpec.h; path = AsyncDisplayKit/Layout/ASCenterLayoutSpec.h; sourceTree = "<group>"; };
 		E9AFD69CC00E2B9F9DC1B561B75C5BAA /* ASVisibilityProtocols.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASVisibilityProtocols.m; path = AsyncDisplayKit/ASVisibilityProtocols.m; sourceTree = "<group>"; };
 		EA193E7F92011FCA9E0E8DEC2E09F09A /* MJRefreshGifHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshGifHeader.m; path = MJRefresh/Custom/Header/MJRefreshGifHeader.m; sourceTree = "<group>"; };
 		EAB146AC8BF0D75F2774311D1588510D /* ASDisplayNode+FrameworkPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ASDisplayNode+FrameworkPrivate.h"; path = "AsyncDisplayKit/Private/ASDisplayNode+FrameworkPrivate.h"; sourceTree = "<group>"; };
-		EB177CC72DA7C7324A5A9DFE868CE033 /* ASCellNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = ASCellNode.mm; path = AsyncDisplayKit/ASCellNode.mm; sourceTree = "<group>"; };
-		ECD3809671FC82F099EC1D42C7FA832D /* ASTextKitRenderer+TextChecking.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = "ASTextKitRenderer+TextChecking.mm"; path = "AsyncDisplayKit/TextKit/ASTextKitRenderer+TextChecking.mm"; sourceTree = "<group>"; };
+		EB177CC72DA7C7324A5A9DFE868CE033 /* ASCellNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASCellNode.mm; path = AsyncDisplayKit/ASCellNode.mm; sourceTree = "<group>"; };
+		ECD3809671FC82F099EC1D42C7FA832D /* ASTextKitRenderer+TextChecking.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "ASTextKitRenderer+TextChecking.mm"; path = "AsyncDisplayKit/TextKit/ASTextKitRenderer+TextChecking.mm"; sourceTree = "<group>"; };
 		ED1B83B8BF5ACD370DF378ECAEAA52BD /* HBBaseCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HBBaseCollectionViewCell.h; sourceTree = "<group>"; };
 		ED3DF32A11B4BBE49259BA918285EBC3 /* ASDisplayNode+Beta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ASDisplayNode+Beta.h"; path = "AsyncDisplayKit/ASDisplayNode+Beta.h"; sourceTree = "<group>"; };
 		ED49493FBCDFDD2B69CF2B3C4A3A1905 /* ASIndexedNodeContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASIndexedNodeContext.h; path = AsyncDisplayKit/Details/ASIndexedNodeContext.h; sourceTree = "<group>"; };
@@ -985,6 +989,10 @@
 		F6E28DB6B59C42A4640DD4BC0D9A6A6C /* ASDealloc2MainObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDealloc2MainObject.h; path = AsyncDisplayKit/Details/ASDealloc2MainObject.h; sourceTree = "<group>"; };
 		F88737D5F79A767828FEA9D5D293A636 /* MJRefreshGifHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshGifHeader.h; path = MJRefresh/Custom/Header/MJRefreshGifHeader.h; sourceTree = "<group>"; };
 		F8AB47A41491D4F59C43B0E2BBA979AA /* ASHBaseViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ASHBaseViewController.m; sourceTree = "<group>"; };
+		F8D0D1821F74BC9700990977 /* HBBaseCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBBaseCollectionView.h; sourceTree = "<group>"; };
+		F8D0D1831F74BC9700990977 /* HBBaseCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBBaseCollectionView.m; sourceTree = "<group>"; };
+		F8D0D1861F74C41400990977 /* HBCProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBCProtocol.h; sourceTree = "<group>"; };
+		F8D0D1871F74C41400990977 /* HBCProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBCProtocol.m; sourceTree = "<group>"; };
 		F99FDA1AD76DFB31A79444CBC0732482 /* MJRefreshNormalHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshNormalHeader.m; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.m; sourceTree = "<group>"; };
 		FA3135B64892FE04F440C355ABF31BFE /* ASDefaultPlaybackButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASDefaultPlaybackButton.m; path = AsyncDisplayKit/Private/ASDefaultPlaybackButton.m; sourceTree = "<group>"; };
 		FA79A0566261E51577F20118AC55C3E3 /* ASAvailability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASAvailability.h; path = Base/ASAvailability.h; sourceTree = "<group>"; };
@@ -1152,7 +1160,6 @@
 				2E99BE8247504D08B8819E6846219054 /* Core */,
 				034ABA3583CFDBFB2D0F903B8FD7D932 /* Support Files */,
 			);
-			name = PINRemoteImage;
 			path = PINRemoteImage;
 			sourceTree = "<group>";
 		};
@@ -1210,7 +1217,6 @@
 			children = (
 				94C07D8C5EBD6E83FA00751FD507FA62 /* HBKitRefresh */,
 			);
-			name = tools;
 			path = tools;
 			sourceTree = "<group>";
 		};
@@ -1227,7 +1233,6 @@
 				979F49B55BFC2CFFEA490D21BF3F5386 /* PINMemoryCache.m */,
 				86B62D16F4D4F6C80A10C9D0F3DB2EFF /* Support Files */,
 			);
-			name = PINCache;
 			path = PINCache;
 			sourceTree = "<group>";
 		};
@@ -1236,7 +1241,6 @@
 			children = (
 				E96F7A987F3C4E05EFC0FA92E18E04C9 /* HBKitAnode */,
 			);
-			name = tools;
 			path = tools;
 			sourceTree = "<group>";
 		};
@@ -1284,7 +1288,6 @@
 			children = (
 				C5AE68C7B09EE545FF88919B93766DFF /* HBKitWatchDog */,
 			);
-			name = tools;
 			path = tools;
 			sourceTree = "<group>";
 		};
@@ -1295,7 +1298,6 @@
 				8E048D90B3FB7AAB18FD87EC3200C2B0 /* Core */,
 				ACC07CE0F815EB51B21B9AD364C15957 /* Support Files */,
 			);
-			name = AsyncDisplayKit;
 			path = AsyncDisplayKit;
 			sourceTree = "<group>";
 		};
@@ -1600,7 +1602,6 @@
 				3A97F3B92EC44C05A3F97A656CEC8FEF /* HBKitRefresh.h */,
 				BEC81A020EF78FB9A7782FC8B6C5B761 /* HBKitRefresh.m */,
 			);
-			name = HBKitRefresh;
 			path = HBKitRefresh;
 			sourceTree = "<group>";
 		};
@@ -1664,10 +1665,14 @@
 				380F43D2928BB91F9F486D6A6ADA7C1B /* CELL_STRUCT_KVO.h */,
 				BC430A526EE87ECCFCB58451CF53A324 /* CELL_STRUCT_KVO.m */,
 				8ED78DB2FB6A1AE33AF5F0A8A1F9166F /* cellstruct.plist */,
+				F8D0D1861F74C41400990977 /* HBCProtocol.h */,
+				F8D0D1871F74C41400990977 /* HBCProtocol.m */,
 				ED1B83B8BF5ACD370DF378ECAEAA52BD /* HBBaseCollectionViewCell.h */,
 				F65293800A55C7EBDFF2FFDB4249FE5E /* HBBaseCollectionViewCell.m */,
 				C3612D8DA01F740ABCF41510AA2A1ABE /* HBBaseCollectionViewController.h */,
 				2E27428D92A75DFB30178038532B81D6 /* HBBaseCollectionViewController.m */,
+				F8D0D1821F74BC9700990977 /* HBBaseCollectionView.h */,
+				F8D0D1831F74BC9700990977 /* HBBaseCollectionView.m */,
 				5DCEDAE4F860DE4FF40D0F5038848D46 /* HBBaseProtocol.h */,
 				5EBCA84FC0E53649639F0ECA2D4F141A /* HBBaseSectionCollectionReusableView.h */,
 				63E01C96148D21F82D836366B1AFCE8F /* HBBaseSectionCollectionReusableView.m */,
@@ -1689,7 +1694,6 @@
 				FF58AAC6B310E233EE380FCD98FEA1D3 /* UIButton+HBKit.h */,
 				12CE8003F2F34D1C294EA07AD1324BB9 /* UIButton+HBkit.m */,
 			);
-			name = HBKit;
 			path = HBKit;
 			sourceTree = "<group>";
 		};
@@ -1702,7 +1706,6 @@
 				4D6437802D24960687FAD473DA9F94DE /* HBDirWatchdog.m */,
 				F1AFA50762E4D34F3F8DCB8C8B16A80D /* HBKitWatchDog.h */,
 			);
-			name = HBKitWatchDog;
 			path = HBKitWatchDog;
 			sourceTree = "<group>";
 		};
@@ -1751,7 +1754,6 @@
 				A757DB9405E1F3399A0DA16C0EB90137 /* Resources */,
 				8EC89F4A568412A2D588CAAB30086D57 /* Support Files */,
 			);
-			name = MJRefresh;
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
@@ -1794,7 +1796,6 @@
 				F8AB47A41491D4F59C43B0E2BBA979AA /* ASHBaseViewController.m */,
 				FE8385AAE5F2E16B0A3E78321B4B4E43 /* HBKitAnode.h */,
 			);
-			name = HBKitAnode;
 			path = HBKitAnode;
 			sourceTree = "<group>";
 		};
@@ -2096,6 +2097,8 @@
 			files = (
 				EB6847940F74D1FDE95398D02A208055 /* CELL_STRUCT.h in Headers */,
 				15C822F1B3C4B5D3FA6C8B338BAD9D91 /* CELL_STRUCT_Common.h in Headers */,
+				F8D0D1841F74BC9700990977 /* HBBaseCollectionView.h in Headers */,
+				F8D0D1881F74C41400990977 /* HBCProtocol.h in Headers */,
 				698548C2A6C328E4E9C5C6AA58E65228 /* CELL_STRUCT_KEY.h in Headers */,
 				20CE6044E2DB01FB9DA90792BB898515 /* CELL_STRUCT_KVO.h in Headers */,
 				495E0E2B647117A9FF9B2D86B6A464C1 /* HBBaseCollectionViewCell.h in Headers */,
@@ -2550,6 +2553,7 @@
 				EB566A74081E937B40D1FEF45FBDB47F /* HBBaseSectionCollectionReusableView.m in Sources */,
 				3D1207CE404D4597542F9D833D760E15 /* HBBaseTableViewCell.m in Sources */,
 				9CC9423622827FD7836F83996778C39E /* HBBaseTableViewController.m in Sources */,
+				F8D0D1851F74BC9700990977 /* HBBaseCollectionView.m in Sources */,
 				907239C94CD529464EB308B095C8940C /* HBBaseViewController.m in Sources */,
 				DA2F10494A7D342497E10F0F9210955B /* HBCollectionFallFLayout.m in Sources */,
 				357E4EAC9F6F929283DBBD6D0549F950 /* HBKit-dummy.m in Sources */,
@@ -2557,6 +2561,7 @@
 				AEAE68E5F21CB7C239E094505B95F265 /* HBKitDirWatchdog.m in Sources */,
 				09B18CD964807AF3E052FFD48A6EDB24 /* NSObject+HBObjectMap.m in Sources */,
 				5DC6EDE263DB7FB3C36644771C52CF3B /* UIButton+HBkit.m in Sources */,
+				F8D0D1891F74C41400990977 /* HBCProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

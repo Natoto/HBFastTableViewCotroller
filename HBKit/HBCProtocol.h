@@ -1,17 +1,16 @@
 //
-//  BaseCollectionViewController.h
-//  PENG
+//  HBCProtocol.h
+//  HBKit
 //
-//  Created by zeno on 15/11/18.
-//  Copyright © 2015年 YY.COM All rights reserved.
+//  Created by boob on 2017/9/22.
 //
-#import "HBCollectionFallFLayout.h"
-#import "HBBaseViewController.h"
+
+#import <Foundation/Foundation.h>
 
 #warning 使用之前注册collection cell
 /*
-注册collection NIB CELL
-     [self.collectionView registerNib:[UINib nibWithNibName:@"BaseXIBCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"BaseXIBCollectionViewCell"];
+ 注册collection NIB CELL
+ [self.collectionView registerNib:[UINib nibWithNibName:@"BaseXIBCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"BaseXIBCollectionViewCell"];
  */
 #define COLLECTIONVIEW_REGISTER_XIB_CELLCLASS( COLLECTIONVIEW , CELLCLSSTR )  [ COLLECTIONVIEW registerNib:[UINib nibWithNibName: CELLCLSSTR bundle:nil] forCellWithReuseIdentifier: CELLCLSSTR ];
 
@@ -24,7 +23,7 @@
  注册SECTION header 或者 footer class 暂时有点问题 如需注册手动编写
  */
 //#define COLLECTIONVIEW_REGISTER_CLASS_FORSUPPLEMENTARYVIEW(COLLECTIONVIEW,CELLSLSSTR) \
-    [COLLECTIONVIEW registerClass:[CELLSLSSTR class] forSupplementaryViewOfKind:CELLSLSSTR withReuseIdentifier:CELLSLSSTR];
+[COLLECTIONVIEW registerClass:[CELLSLSSTR class] forSupplementaryViewOfKind:CELLSLSSTR withReuseIdentifier:CELLSLSSTR];
 
 
 /*
@@ -37,6 +36,7 @@
 
 @protocol HBCollectionViewControllerConfig <NSObject>
 @required
+@property (nonatomic, strong) UICollectionViewLayout * collectionViewFlowLayout;
 /**
  *  自己配置列数量需要对其重写
  *
@@ -72,18 +72,18 @@
 -(CGFloat)configMinimumInteritemSpacing;
 @end
 
-@interface HBBaseCollectionViewController : HBBaseViewController<
-UICollectionViewDataSource,
-UICollectionViewDelegate,
-UICollectionViewDelegateFlowLayout,HBCollectionViewControllerConfig,HBWaterFLayoutDelegate>
+@protocol HBWaterFLayoutDelegate;
 
-@property (nonatomic, strong) UICollectionView          *collectionView;
-@property (nonatomic, strong) HBCollectionFallFLayout   *collectionViewFlowLayout;
+@interface HBCProtocol : NSObject
 
 
-@property (nonatomic, assign         ) BOOL    nodeselectRow;
-@property (nonatomic, assign,readonly) CGFloat itemWidth;
 
--(void)viewDidCurrentView;
--(CGRect)adjustContentOffSet:(CGFloat)top bottom:(CGFloat)bottom; 
++ (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath
+                                  background:(UIColor *)backgroundColor
+                              dataDictionary:(NSMutableDictionary *)dataDictionary;
+
++(UICollectionView *)createCollectionView:(id<HBCollectionViewControllerConfig,HBWaterFLayoutDelegate,UICollectionViewDataSource,UICollectionViewDelegate>)target frame:(CGRect)frame;
+
 @end
