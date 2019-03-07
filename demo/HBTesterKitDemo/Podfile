@@ -1,0 +1,7 @@
+platform :ios,'7.0'
+ 
+
+target 'TestHBKitDemo' do  
+ pod 'HBTesterKit',:path=>"./HBTesterKit.podspec" 
+end
+#注释

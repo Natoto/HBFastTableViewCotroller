@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[HBKitDataModel loadplistConfig:filepath:configViewblock:]:HBKitDataModel.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ASHBaseViewController loadplistConfig:filepath:]:ASHBaseViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.datamodel.dataDictionary">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__50-[ASHBaseViewController loadplistConfig:filepath:]_block_invoke:ASHBaseViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.datamodel.dataDictionary">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
