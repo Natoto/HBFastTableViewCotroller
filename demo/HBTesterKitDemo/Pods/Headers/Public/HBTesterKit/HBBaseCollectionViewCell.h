@@ -1,0 +1,1 @@
+../../../../HBTesterKit/HBBaseCollectionViewCell.h
