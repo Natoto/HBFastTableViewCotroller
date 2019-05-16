@@ -1,3 +1,5 @@
+# 已升级到 HBKit
+
 ## HBFastTableViewController 
 * The easiest way to create tableview 
 * 用法最简单的创建tableview新框架 
