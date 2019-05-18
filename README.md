@@ -1,4 +1,4 @@
-# 已升级到 HBKit
+# 已升级到 [HBKit](https://github.com/Natoto/HBKit)
 
 ## HBFastTableViewController 
 * The easiest way to create tableview 
