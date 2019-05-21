@@ -1,1 +1,0 @@
-../../../../HBTesterKit/NSObject+HBObjectMap.h
